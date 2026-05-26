@@ -1,711 +1,1660 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Áreas de Práctica — BPP Abogados</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
 
-/* ══════════════════════════════════════════════════════
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Áreas de Práctica — BPP Abogados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════════════════
    VARIABLES
 ══════════════════════════════════════════════════════ */
-:root {
-  --blue:     #1B64C8;
-  --blue-dk:  #1450A8;
-  --blue-xdk: #0A2A5E;
-  --blue-md:  #3D7FD4;
-  --blue-lt:  #85B7EB;
-  --wa-green: #25D366;
-  --li-blue:  #0A66C2;
-  --white:    #FFFFFF;
-  --gray-bg:  #F5F5F5;
-  --gray-lt:  #E2E2E2;
-  --gray-mid: #999999;
-  --gray-dk:  #2A2A2A;
-  --area-bg:  #F0EDE6;
-}
+    :root {
+      --blue: #1B64C8;
+      --blue-dk: #1450A8;
+      --blue-xdk: #0A2A5E;
+      --blue-md: #3D7FD4;
+      --blue-lt: #85B7EB;
+      --wa-green: #25D366;
+      --li-blue: #0A66C2;
+      --white: #FFFFFF;
+      --gray-bg: #F5F5F5;
+      --gray-lt: #E2E2E2;
+      --gray-mid: #999999;
+      --gray-dk: #2A2A2A;
+      --area-bg: #F0EDE6;
+    }
 
-/* ══════════════════════════════════════════════════════
+    /* ══════════════════════════════════════════════════════
    RESET Y BASE
 ══════════════════════════════════════════════════════ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--gray-bg);
-  color: var(--gray-dk);
-  overflow-x: hidden;
-  padding-top: 108px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ══════════════════════════════════════════════════════
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gray-bg);
+      color: var(--gray-dk);
+      overflow-x: hidden;
+      padding-top: 108px;
+    }
+
+    /* ══════════════════════════════════════════════════════
    TOPBAR
 ══════════════════════════════════════════════════════ */
-.topbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  background: var(--blue-xdk); height: 36px;
-  display: flex; align-items: center; padding: 0 80px; gap: 18px;
-}
-.topbar-left           { display: flex; align-items: center; gap: 18px; }
-.topbar-spacer         { flex: 1; }
-.topbar-right          { display: flex; align-items: center; gap: 10px; }
-.topbar-sep            { width: 1px; height: 12px; background: rgba(255,255,255,.15); }
-.topbar-link           { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255,255,255,.55); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
-.topbar-link:hover     { color: #fff; }
-.topbar-link-icon      { width: 12px; height: 12px; flex-shrink: 0; }
-.topbar-btn {
-  display: inline-flex; align-items: center; gap: 7px; height: 24px; padding: 0 12px;
-  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 400;
-  letter-spacing: .08em; text-transform: uppercase;
-  text-decoration: none; color: #fff; background: transparent;
-  transition: background .2s, border-color .2s, transform .15s;
-}
-.topbar-btn:hover              { transform: translateY(-1px); }
-.topbar-btn-icon               { width: 12px; height: 12px; flex-shrink: 0; }
-.topbar-btn--wa                { border: 1.5px solid rgba(255,255,255,.45); }
-.topbar-btn--wa:hover          { background: var(--wa-green); border-color: var(--wa-green); }
-.topbar-btn--li                { border: 1.5px solid rgba(255,255,255,.25); }
-.topbar-btn--li:hover          { background: var(--li-blue); border-color: var(--li-blue); }
-.topbar-btn-label--short       { display: none; }
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: var(--blue-xdk);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      gap: 18px;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar-spacer {
+      flex: 1;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-sep {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, .15);
+    }
+
+    .topbar-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      letter-spacing: .03em;
+      transition: color .2s;
+    }
+
+    .topbar-link:hover {
+      color: #fff;
+    }
+
+    .topbar-link-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .topbar-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 24px;
+      padding: 0 12px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: transparent;
+      transition: background .2s, border-color .2s, transform .15s;
+    }
+
+    .topbar-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .topbar-btn-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .topbar-btn--wa {
+      border: 1.5px solid rgba(255, 255, 255, .45);
+    }
+
+    .topbar-btn--wa:hover {
+      background: var(--wa-green);
+      border-color: var(--wa-green);
+    }
+
+    .topbar-btn--li {
+      border: 1.5px solid rgba(255, 255, 255, .25);
+    }
+
+    .topbar-btn--li:hover {
+      background: var(--li-blue);
+      border-color: var(--li-blue);
+    }
+
+    .topbar-btn-label--short {
+      display: none;
+    }
+
+    /* ══════════════════════════════════════════════════════
    NAV
 ══════════════════════════════════════════════════════ */
-.nav {
-  position: fixed; top: 36px; left: 0; right: 0; height: 72px; z-index: 200;
-  display: flex; align-items: center; justify-content: space-between; padding: 0 80px;
-  background: var(--blue); box-shadow: 0 1px 0 rgba(0,0,0,.12);
-}
-.nav-logo        { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.nav-right       { display: flex; align-items: center; gap: 40px; }
-.nav-links       { display: flex; gap: 36px; list-style: none; }
-.nav-links li a {
-  font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300;
-  letter-spacing: .18em; text-transform: uppercase;
-  text-decoration: none; transition: color .2s; white-space: nowrap;
-  color: rgba(255,255,255,.72);
-}
-.nav-links li a:hover,
-.nav-links li a.active { color: #fff; }
-.nav-cta {
-  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 400;
-  letter-spacing: .18em; text-transform: uppercase;
-  text-decoration: none; padding: 10px 24px;
-  color: var(--blue); background: #fff; border: 1.5px solid #fff;
-  transition: background .2s; white-space: nowrap;
-}
-.nav-cta:hover { background: rgba(255,255,255,.88); }
+    .nav {
+      position: fixed;
+      top: 36px;
+      left: 0;
+      right: 0;
+      height: 72px;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      background: var(--blue);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
+    }
 
-/* ══════════════════════════════════════════════════════
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color .2s;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #fff;
+    }
+
+    .nav-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 24px;
+      color: var(--blue);
+      background: #fff;
+      border: 1.5px solid #fff;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: rgba(255, 255, 255, .88);
+    }
+
+    /* ══════════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════════ */
-.section-hero {
-  height: 306px; background: var(--blue-xdk);
-  position: relative; overflow: hidden; display: flex; align-items: flex-end;
-}
-.sh-img {
-  position: absolute; inset: 0;
-  background-image: url('./BPP_Areas_Hero.png');
-  background-size: cover; background-position: center;
-}
-.sh-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(27,100,200,.95) 0%,
-    rgba(20,80,168,.82)  20%,
-    rgba(10,50,130,.72)  50%,
-    rgba(10,40,100,.62)  100%
-  );
-}
-.sh-wave           { position: absolute; inset: 0; opacity: .2; pointer-events: none; }
-.sh-sq1            { position: absolute; top: 48px; right:  80px; width: 18px; height: 18px; background: var(--blue);    opacity: .85; z-index: 3; }
-.sh-sq2            { position: absolute; top: 70px; right: 102px; width: 11px; height: 11px; background: rgba(255,255,255,.4);             z-index: 3; }
-.sh-sq3            { position: absolute; top: 58px; right: 114px; width: 13px; height: 13px; background: var(--blue-md); opacity: .5;  z-index: 3; }
-.sh-inner {
-  position: relative; z-index: 4; width: 100%; max-width: 1180px; margin: 0 auto;
-  padding: 0 80px 44px; display: flex; align-items: flex-end; gap: 80px;
-}
-.sh-left           { flex: 0 0 320px; }
-.sh-eyebrow {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-  color: rgba(255,255,255,.6); letter-spacing: .22em; text-transform: uppercase;
-  margin-bottom: 14px; display: block;
-}
-.sh-title {
-  font-size: clamp(32px,4vw,52px); font-weight: 800; color: #fff;
-  line-height: 1.0; text-transform: uppercase; letter-spacing: .02em;
-}
-.sh-right          { flex: 1; padding-bottom: 4px; }
-.sh-desc           { font-size: 14px; color: rgba(255,255,255,.72); line-height: 1.8; }
-.sh-desc p         { margin-bottom: 14px; }
-.sh-desc p:last-child { margin-bottom: 0; }
+    .section-hero {
+      height: 306px;
+      background: var(--blue-xdk);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .sh-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('./BPP_Areas_Hero.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sh-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(27, 100, 200, .95) 0%,
+          rgba(20, 80, 168, .82) 20%,
+          rgba(10, 50, 130, .72) 50%,
+          rgba(10, 40, 100, .62) 100%);
+    }
+
+    .sh-wave {
+      position: absolute;
+      inset: 0;
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .sh-sq1 {
+      position: absolute;
+      top: 48px;
+      right: 80px;
+      width: 18px;
+      height: 18px;
+      background: var(--blue);
+      opacity: .85;
+      z-index: 3;
+    }
+
+    .sh-sq2 {
+      position: absolute;
+      top: 70px;
+      right: 102px;
+      width: 11px;
+      height: 11px;
+      background: rgba(255, 255, 255, .4);
+      z-index: 3;
+    }
+
+    .sh-sq3 {
+      position: absolute;
+      top: 58px;
+      right: 114px;
+      width: 13px;
+      height: 13px;
+      background: var(--blue-md);
+      opacity: .5;
+      z-index: 3;
+    }
+
+    .sh-inner {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 44px;
+      display: flex;
+      align-items: flex-end;
+      gap: 80px;
+    }
+
+    .sh-left {
+      flex: 0 0 320px;
+    }
+
+    .sh-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .sh-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.0;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .sh-right {
+      flex: 1;
+      padding-bottom: 4px;
+    }
+
+    .sh-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .72);
+      line-height: 1.8;
+    }
+
+    .sh-desc p {
+      margin-bottom: 14px;
+    }
+
+    .sh-desc p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ══════════════════════════════════════════════════════
    SELECTOR DE VISTA
 ══════════════════════════════════════════════════════ */
-.prop-selector {
-  display: flex; justify-content: flex-end; align-items: center;
-  max-width: 1180px; margin: 0 auto; padding: 20px 80px 0; gap: 8px;
-}
-.prop-selector-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px;
-  color: var(--gray-mid); letter-spacing: .12em; text-transform: uppercase;
-  margin-right: 4px;
-}
-.prop-btn {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600;
-  letter-spacing: .1em; text-transform: uppercase; padding: 6px 14px;
-  border: 1px solid var(--gray-lt); background: #fff; color: var(--gray-mid);
-  cursor: pointer; transition: all .2s;
-}
-.prop-btn:hover,
-.prop-btn.active { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .prop-selector {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 20px 80px 0;
+      gap: 8px;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .prop-selector-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    .prop-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--gray-lt);
+      background: #fff;
+      color: var(--gray-mid);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .prop-btn:hover,
+    .prop-btn.active {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════════════════════════════
    VISTA 1 — LISTA DE FILAS
 ══════════════════════════════════════════════════════ */
-.areas-section { background: var(--gray-bg); padding: 20px 0 0; }
-.areas-list    { max-width: 1180px; margin: 0 auto; padding: 0 80px 64px; }
+    .areas-section {
+      background: var(--gray-bg);
+      padding: 20px 0 0;
+    }
 
-.area-row {
-  display: flex; align-items: stretch;
-  border-bottom: .5px solid #C4C0B8;
-  height: 168px; position: relative; overflow: hidden;
-  transition: box-shadow .2s; margin-bottom: 16px;
-}
-.area-row:last-child { margin-bottom: 0; }
+    .areas-list {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 64px;
+    }
 
-.ar-light { background: #F0EDE6; }
-.ar-dark  { background: var(--blue-xdk); }
+    .area-row {
+      display: flex;
+      align-items: stretch;
+      border-bottom: .5px solid #C4C0B8;
+      height: 168px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .2s;
+      margin-bottom: 16px;
+    }
 
-.ar-left {
-  width: 38%; padding: 24px 36px;
-  display: flex; flex-direction: column; justify-content: center;
-  flex-shrink: 0; position: relative; z-index: 2;
-}
-.ar-num            { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 10px; }
-.ar-num-l          { color: var(--blue-lt); }
-.ar-num-d          { color: rgba(255,255,255,.28); }
-.ar-title          { font-size: 17px; font-weight: 800; line-height: 1.15; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 18px; }
-.ar-title-l        { color: var(--blue-xdk); }
-.ar-title-d        { color: #fff; }
+    .area-row:last-child {
+      margin-bottom: 0;
+    }
 
-.ar-btn {
-  display: inline-flex; align-items: center; height: 30px;
-  border: 1.5px solid; width: fit-content; text-decoration: none; transition: background .2s;
-}
-.ar-btn-l              { border-color: var(--blue); }
-.ar-btn-l:hover        { background: var(--blue); }
-.ar-btn-l:hover .ar-btn-lbl { color: #fff; }
-.ar-btn-l:hover .ar-btn-sep { background: rgba(255,255,255,.4); }
-.ar-btn-l:hover .ar-btn-arr { color: #fff; }
-.ar-btn-d              { border-color: rgba(255,255,255,.45); }
-.ar-btn-d:hover        { background: rgba(255,255,255,.12); }
+    .ar-light {
+      background: #F0EDE6;
+    }
 
-.ar-btn-lbl        { font-size: 9px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; padding: 0 12px; transition: color .2s; }
-.ar-btn-lbl-l      { color: var(--blue-xdk); }
-.ar-btn-lbl-d      { color: #fff; }
-.ar-btn-sep        { width: 1.5px; height: 16px; transition: background .2s; }
-.ar-btn-sep-l      { background: var(--blue); }
-.ar-btn-sep-d      { background: rgba(255,255,255,.35); }
-.ar-btn-arr        { font-size: 12px; padding: 0 10px; transition: color .2s; }
-.ar-btn-arr-l      { color: var(--blue); }
-.ar-btn-arr-d      { color: rgba(255,255,255,.65); }
+    .ar-dark {
+      background: var(--blue-xdk);
+    }
 
-.ar-right          { flex: 1; position: relative; overflow: hidden; }
-.ar-img            { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
-.area-row:hover .ar-img { transform: scale(1.04); }
-.ar-img-ph         { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-.ar-ph-lbl         { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
-.ar-ph-lbl-l       { color: rgba(0,0,0,.18); }
-.ar-ph-lbl-d       { color: rgba(255,255,255,.18); }
-.ar-sq             { position: absolute; pointer-events: none; }
-.ar-hover-overlay  { position: absolute; inset: 0; background: rgba(13,79,160,0); transition: background .3s ease; }
-.area-row:hover .ar-hover-overlay { background: rgba(13,79,160,.18); }
+    .ar-left {
+      width: 38%;
+      padding: 24px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .ar-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .ar-num-l {
+      color: var(--blue-lt);
+    }
+
+    .ar-num-d {
+      color: rgba(255, 255, 255, .28);
+    }
+
+    .ar-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-bottom: 18px;
+    }
+
+    .ar-title-l {
+      color: var(--blue-xdk);
+    }
+
+    .ar-title-d {
+      color: #fff;
+    }
+
+    .ar-btn {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      border: 1.5px solid;
+      width: fit-content;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .ar-btn-l {
+      border-color: var(--blue);
+    }
+
+    .ar-btn-l:hover {
+      background: var(--blue);
+    }
+
+    .ar-btn-l:hover .ar-btn-lbl {
+      color: #fff;
+    }
+
+    .ar-btn-l:hover .ar-btn-sep {
+      background: rgba(255, 255, 255, .4);
+    }
+
+    .ar-btn-l:hover .ar-btn-arr {
+      color: #fff;
+    }
+
+    .ar-btn-d {
+      border-color: rgba(255, 255, 255, .45);
+    }
+
+    .ar-btn-d:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .ar-btn-lbl {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 0 12px;
+      transition: color .2s;
+    }
+
+    .ar-btn-lbl-l {
+      color: var(--blue-xdk);
+    }
+
+    .ar-btn-lbl-d {
+      color: #fff;
+    }
+
+    .ar-btn-sep {
+      width: 1.5px;
+      height: 16px;
+      transition: background .2s;
+    }
+
+    .ar-btn-sep-l {
+      background: var(--blue);
+    }
+
+    .ar-btn-sep-d {
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .ar-btn-arr {
+      font-size: 12px;
+      padding: 0 10px;
+      transition: color .2s;
+    }
+
+    .ar-btn-arr-l {
+      color: var(--blue);
+    }
+
+    .ar-btn-arr-d {
+      color: rgba(255, 255, 255, .65);
+    }
+
+    .ar-right {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ar-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform .4s ease;
+    }
+
+    .area-row:hover .ar-img {
+      transform: scale(1.04);
+    }
+
+    .ar-img-ph {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ar-ph-lbl {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .ar-ph-lbl-l {
+      color: rgba(0, 0, 0, .18);
+    }
+
+    .ar-ph-lbl-d {
+      color: rgba(255, 255, 255, .18);
+    }
+
+    .ar-sq {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .ar-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 79, 160, 0);
+      transition: background .3s ease;
+    }
+
+    .area-row:hover .ar-hover-overlay {
+      background: rgba(13, 79, 160, .18);
+    }
+
+    /* ══════════════════════════════════════════════════════
    VISTA 2 — GRID DE TARJETAS (5 columnas)
 ══════════════════════════════════════════════════════ */
-.p2-section        { background: var(--blue-xdk); padding: 20px 0 64px; display: none; }
-.p2-header         { max-width: 1180px; margin: 0 auto; padding: 0 80px 28px; display: flex; justify-content: space-between; align-items: flex-end; }
-.p2-eyebrow        { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.5); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 6px; display: block; }
-.p2-title          { font-size: 20px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .04em; }
-.p2-grid           { max-width: 1180px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: repeat(5,1fr); gap: 3px; }
+    .p2-section {
+      background: #F5F5F5;
+      padding: 52px 0 80px;
+      display: none;
+    }
 
-.area-card {
-  position: relative; overflow: hidden; cursor: pointer; text-decoration: none;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  height: 220px; min-width: 0;
-}
-.area-card-img {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  opacity: .28; transition: opacity .35s ease, transform .4s ease;
-}
-.area-card:hover .area-card-img        { opacity: .18; transform: scale(1.05); }
-.area-card-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,26,62,.88) 0%, rgba(10,26,62,.2) 60%, transparent 100%);
-  transition: background .3s;
-}
-.area-card:hover .area-card-overlay    { background: rgba(27,100,200,.88); }
-.area-card-body {
-  position: relative; z-index: 2; padding: 14px 16px;
-  display: flex; flex-direction: column; justify-content: flex-end; height: 100%;
-}
-.area-card-num     { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.45); letter-spacing: .12em; margin-bottom: 5px; }
-.area-card-title   { font-size: 11px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .04em; line-height: 1.3; margin-bottom: 6px; }
-.area-card-desc    { font-size: 9.5px; color: rgba(255,255,255,.7); line-height: 1.55; margin-bottom: 10px; opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease; }
-.area-card-cta     { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600; color: #fff; letter-spacing: .1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.45); padding: 4px 10px; width: fit-content; opacity: 0; transform: translateY(6px); transition: opacity .3s ease .05s, transform .3s ease .05s; }
-.area-card:hover .area-card-desc,
-.area-card:hover .area-card-cta        { opacity: 1; transform: translateY(0); }
+    .p2-header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .p2-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .p2-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .p2-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .area-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 280px;
+      min-width: 0;
+      background: var(--blue-xdk);
+    }
+
+    .area-card-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: .28;
+      transition: opacity .35s ease, transform .4s ease;
+    }
+
+    .area-card:hover .area-card-img {
+      opacity: .18;
+      transform: scale(1.05);
+    }
+
+    .area-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 26, 62, .88) 0%, rgba(10, 26, 62, .2) 60%, transparent 100%);
+      transition: background .3s;
+    }
+
+    .area-card:hover .area-card-overlay {
+      background: rgba(27, 100, 200, .88);
+    }
+
+    .area-card-body {
+      position: relative;
+      z-index: 2;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    .area-card-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .45);
+      letter-spacing: .12em;
+      margin-bottom: 5px;
+    }
+
+    .area-card-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .area-card-desc {
+      font-size: 9.5px;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.55;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .area-card-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, .45);
+      padding: 4px 10px;
+      width: fit-content;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease .05s, transform .3s ease .05s;
+    }
+
+    .area-card:hover .area-card-desc,
+    .area-card:hover .area-card-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════════════════════════════
    VISTA 3 — CARDS CON IMAGEN FULL-BLEED (2 columnas)
 ══════════════════════════════════════════════════════ */
-.p3-section        { background: #1B3E78; padding: 20px 0 0; display: none; }
-.p3-header         { max-width: 1180px; margin: 0 auto; padding: 0 80px 18px; display: flex; justify-content: space-between; align-items: flex-end; }
-.p3-eyebrow        { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.45); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 5px; }
-.p3-title          { font-size: 20px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .04em; }
-.p3-count          { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(255,255,255,.35); letter-spacing: .1em; }
-.p3-grid           { max-width: 1180px; margin: 0 auto; padding: 0 80px; display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+    .p3-section {
+      background: #F5F5F5;
+      padding: 52px 0 80px;
+      display: none;
+    }
 
-.p3-card {
-  position: relative; overflow: hidden; cursor: pointer; text-decoration: none;
-  display: flex; align-items: flex-end; min-height: 160px;
-}
-.p3-bg {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  transition: transform .4s ease;
-}
-.p3-card:hover .p3-bg { transform: scale(1.05); }
-.p3-ov {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,26,62,.92) 0%, rgba(10,26,62,.55) 50%, rgba(10,26,62,.3) 100%);
-  transition: background .3s;
-}
-.p3-card:hover .p3-ov {
-  background: linear-gradient(to top, rgba(27,100,200,.92) 0%, rgba(27,100,200,.65) 50%, rgba(27,100,200,.35) 100%);
-}
-.p3-accent         { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; z-index: 2; }
-.p3-body           { position: relative; z-index: 2; padding: 16px 20px; display: flex; flex-direction: column; gap: 5px; width: 100%; }
-.p3-num            { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.4); letter-spacing: .14em; }
-.p3-name           { font-size: 13px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .03em; line-height: 1.25; }
-.p3-desc           { font-size: 10.5px; color: rgba(255,255,255,.65); line-height: 1.55; }
-.p3-cta            { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(255,255,255,.5); letter-spacing: .08em; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; margin-top: 2px; }
-.p3-card:hover .p3-cta { opacity: 1; transform: translateY(0); }
+    .p3-header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
 
-/* Colores de acento por jerarquía de área */
-.pa-01 { background: #0A2A5E; }
-.pa-02 { background: #1B64C8; }
-.pa-03 { background: #1450A8; }
-.pa-04 { background: #3D7FD4; }
-.pa-05 { background: #5A90DA; }
-.pa-06 { background: #85B7EB; }
-.pa-07 { background: #6B9CD4; }
-.pa-08 { background: #7AAED8; }
-.pa-09 { background: #8ABCDE; }
-.pa-10 { background: #9ACAE4; }
+    .p3-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .p3-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .p3-count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .1em;
+    }
+
+    .p3-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .p3-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-end;
+      min-height: 210px;
+    }
+
+    .p3-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform .4s ease;
+    }
+
+    .p3-card:hover .p3-bg {
+      transform: scale(1.05);
+    }
+
+    .p3-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 26, 62, .92) 0%, rgba(10, 26, 62, .55) 50%, rgba(10, 26, 62, .3) 100%);
+      transition: background .3s;
+    }
+
+    .p3-card:hover .p3-ov {
+      background: linear-gradient(to top, rgba(27, 100, 200, .92) 0%, rgba(27, 100, 200, .65) 50%, rgba(27, 100, 200, .35) 100%);
+    }
+
+    .p3-accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      z-index: 2;
+    }
+
+    .p3-body {
+      position: relative;
+      z-index: 2;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+    }
+
+    .p3-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .4);
+      letter-spacing: .14em;
+    }
+
+    .p3-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      line-height: 1.25;
+    }
+
+    .p3-desc {
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.55;
+    }
+
+    .p3-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .08em;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .2s, transform .2s;
+      margin-top: 2px;
+    }
+
+    .p3-card:hover .p3-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Colores de acento por jerarquía de área */
+    .pa-01 {
+      background: #0A2A5E;
+    }
+
+    .pa-02 {
+      background: #1B64C8;
+    }
+
+    .pa-03 {
+      background: #1450A8;
+    }
+
+    .pa-04 {
+      background: #3D7FD4;
+    }
+
+    .pa-05 {
+      background: #5A90DA;
+    }
+
+    .pa-06 {
+      background: #85B7EB;
+    }
+
+    .pa-07 {
+      background: #6B9CD4;
+    }
+
+    .pa-08 {
+      background: #7AAED8;
+    }
+
+    .pa-09 {
+      background: #8ABCDE;
+    }
+
+    .pa-10 {
+      background: #9ACAE4;
+    }
+
+    /* ══════════════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════════════ */
-.footer            { background: white; border-top: 2px solid var(--blue); }
-.footer-inner      { max-width: 1180px; margin: 0 auto; padding: 0 80px; }
-.footer-top        { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding: 52px 0 44px; position: relative; }
-.footer-decor-1    { position: absolute; top: 0;    right: 0;    width: 16px; height: 16px; background: var(--blue);    opacity: .7; }
-.footer-decor-2    { position: absolute; top: 18px; right: 18px; width: 10px; height: 10px; background: var(--blue-lt); opacity: .5; }
-.footer-logo       { display: flex; align-items: center; margin-bottom: 14px; }
-.footer-col-title  { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700; color: var(--blue-xdk); letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1.5px solid var(--blue); }
-.footer-col-link   { font-size: 13px; color: #888; text-decoration: none; padding: 8px 0; border-bottom: .5px solid #F0F0F0; display: flex; align-items: center; justify-content: space-between; transition: color .2s; }
-.footer-col-link:hover             { color: var(--blue); }
-.footer-col-link:last-child        { border-bottom: none; }
-.footer-col-link-arrow { font-size: 12px; color: var(--blue); opacity: 0; transition: opacity .2s; }
-.footer-col-link:hover .footer-col-link-arrow { opacity: 1; }
-.footer-bottom     { border-top: .5px solid var(--gray-lt); padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
-.footer-copy       { font-size: 11px; color: #aaa; font-weight: 300; }
-.footer-legal-links { display: flex; gap: 20px; }
-.footer-legal-link { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color .2s; }
-.footer-legal-link:hover { color: var(--blue); }
+    .footer {
+      background: white;
+      border-top: 2px solid var(--blue);
+    }
 
-/* ══════════════════════════════════════════════════════
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding: 52px 0 44px;
+      position: relative;
+    }
+
+    .footer-decor-1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--blue);
+      opacity: .7;
+    }
+
+    .footer-decor-2 {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 10px;
+      height: 10px;
+      background: var(--blue-lt);
+      opacity: .5;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-col-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--blue);
+    }
+
+    .footer-col-link {
+      font-size: 13px;
+      color: #888;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: .5px solid #F0F0F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: color .2s;
+    }
+
+    .footer-col-link:hover {
+      color: var(--blue);
+    }
+
+    .footer-col-link:last-child {
+      border-bottom: none;
+    }
+
+    .footer-col-link-arrow {
+      font-size: 12px;
+      color: var(--blue);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .footer-col-link:hover .footer-col-link-arrow {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      border-top: .5px solid var(--gray-lt);
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #aaa;
+      font-weight: 300;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-legal-link:hover {
+      color: var(--blue);
+    }
+
+    /* ══════════════════════════════════════════════════════
    FAB WHATSAPP
 ══════════════════════════════════════════════════════ */
-.fab {
-  position: fixed; bottom: 36px; right: 36px; z-index: 9999;
-  display: inline-flex; align-items: center; background: #fff;
-  border: 1.5px solid var(--wa-green); height: 44px;
-  text-decoration: none; overflow: hidden;
-  box-shadow: 0 4px 18px rgba(37,211,102,.2); transition: box-shadow .2s, transform .2s;
-}
-.fab:hover                 { box-shadow: 0 6px 24px rgba(37,211,102,.35); transform: translateY(-2px); }
-.fab-icon-wrap             { width: 44px; height: 100%; background: var(--wa-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
-.fab:hover .fab-icon-wrap  { background: #1DA851; }
-.fab-icon                  { width: 22px; height: 22px; display: block; }
-.fab-label                 { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; color: var(--blue-xdk); letter-spacing: .07em; text-transform: uppercase; padding: 0 18px; white-space: nowrap; }
-.fab-decor-1               { position: fixed; bottom: 94px;  right: 36px; width: 10px; height: 10px; background: var(--wa-green); opacity: .4; pointer-events: none; z-index: 9998; }
-.fab-decor-2               { position: fixed; bottom: 106px; right: 50px; width:  7px; height:  7px; background: #fff; border: 1px solid var(--gray-lt); opacity: .7; pointer-events: none; z-index: 9998; }
+    .fab {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1.5px solid var(--wa-green);
+      height: 44px;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, .2);
+      transition: box-shadow .2s, transform .2s;
+    }
 
-/* ══════════════════════════════════════════════════════
+    .fab:hover {
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .35);
+      transform: translateY(-2px);
+    }
+
+    .fab-icon-wrap {
+      width: 44px;
+      height: 100%;
+      background: var(--wa-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+
+    .fab:hover .fab-icon-wrap {
+      background: #1DA851;
+    }
+
+    .fab-icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .fab-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--blue-xdk);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 0 18px;
+      white-space: nowrap;
+    }
+
+    .fab-decor-1 {
+      position: fixed;
+      bottom: 94px;
+      right: 36px;
+      width: 10px;
+      height: 10px;
+      background: var(--wa-green);
+      opacity: .4;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .fab-decor-2 {
+      position: fixed;
+      bottom: 106px;
+      right: 50px;
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border: 1px solid var(--gray-lt);
+      opacity: .7;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    /* ══════════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .topbar-btn-label--long  { display: none; }
-  .topbar-btn-label--short { display: inline; }
-}
+    @media (max-width: 900px) {
+      .topbar-btn-label--long {
+        display: none;
+      }
 
-@media (max-width: 1179px) {
-  .nav, .topbar            { padding-left: 32px; padding-right: 32px; }
-  .sh-inner                { padding: 0 32px 36px; gap: 48px; }
-  .areas-list              { padding: 0 32px 48px; }
-  .p2-header, .p2-grid     { padding-left: 32px; padding-right: 32px; }
-  .p3-header, .p3-grid     { padding-left: 32px; padding-right: 32px; }
-  .prop-selector           { padding-left: 32px; padding-right: 32px; }
-  .footer-inner            { padding: 0 32px; }
-  .area-row                { height: auto; min-height: 140px; }
-}
+      .topbar-btn-label--short {
+        display: inline;
+      }
+    }
 
-@media (max-width: 767px) {
-  .nav                     { padding: 0 20px; height: 56px; }
-  .nav-links               { display: none; }
-  .topbar                  { padding: 0 16px; }
-  .section-hero            { height: auto; min-height: 260px; }
-  .sh-inner                { flex-direction: column; gap: 16px; padding: 0 20px 28px; }
-  .sh-left                 { flex: none; }
-  .sh-title                { font-size: clamp(26px,6vw,38px); }
-  .areas-list              { padding: 0 20px 40px; }
-  .area-row                { height: auto; min-height: 130px; flex-direction: column; }
-  .ar-left                 { width: 100%; padding: 20px 20px 16px; }
-  .ar-right                { min-height: 100px; }
-  .p2-header, .p2-grid     { padding-left: 20px; padding-right: 20px; }
-  .p2-grid                 { grid-template-columns: repeat(2,1fr); }
-  .p3-header, .p3-grid     { padding-left: 20px; padding-right: 20px; }
-  .p3-grid                 { grid-template-columns: 1fr; }
-  .prop-selector           { padding-left: 20px; padding-right: 20px; }
-  .footer-inner            { padding: 0 20px; }
-  .footer-top              { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 24px; }
-  .footer-bottom           { flex-direction: column; gap: 12px; }
-}
+    @media (max-width: 1179px) {
 
-</style>
+      .nav,
+      .topbar {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .sh-inner {
+        padding: 0 32px 36px;
+        gap: 48px;
+      }
+
+      .areas-list {
+        padding: 0 32px 48px;
+      }
+
+      .p2-header,
+      .p2-grid {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .p3-header,
+      .p3-grid {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .prop-selector {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .footer-inner {
+        padding: 0 32px;
+      }
+
+      .area-row {
+        height: auto;
+        min-height: 140px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nav {
+        padding: 0 20px;
+        height: 56px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .topbar {
+        padding: 0 16px;
+      }
+
+      .section-hero {
+        height: auto;
+        min-height: 260px;
+      }
+
+      .sh-inner {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 20px 28px;
+      }
+
+      .sh-left {
+        flex: none;
+      }
+
+      .sh-title {
+        font-size: clamp(26px, 6vw, 38px);
+      }
+
+      .areas-list {
+        padding: 0 20px 40px;
+      }
+
+      .area-row {
+        height: auto;
+        min-height: 130px;
+        flex-direction: column;
+      }
+
+      .ar-left {
+        width: 100%;
+        padding: 20px 20px 16px;
+      }
+
+      .ar-right {
+        min-height: 100px;
+      }
+
+      .p2-header,
+      .p2-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .p2-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .p3-header,
+      .p3-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .p3-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prop-selector {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer-inner {
+        padding: 0 20px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="topbar-left">
-    <a href="tel:+56949409721" class="topbar-link">
-      <svg class="topbar-link-icon" viewBox="0 0 16 16" fill="none">
-        <path d="M3 1h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L11.5 9l4 1.5V14c0 1.1-.9 2-2 2C6.4 16 0 9.6 0 3c0-1.1.9-2 2-2h1z" fill="currentColor"/>
-      </svg>
-      +56 9 4940 9721
-    </a>
-    <div class="topbar-sep"></div>
-    <a href="mailto:info@berriospalavecino.cl" class="topbar-link">
-      <svg class="topbar-link-icon" viewBox="0 0 16 12" fill="none">
-        <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M1 3l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>
-      info@berriospalavecino.cl
-    </a>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="tel:+56949409721" class="topbar-link">
+        <svg class="topbar-link-icon" viewBox="0 0 16 16" fill="none">
+          <path
+            d="M3 1h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L11.5 9l4 1.5V14c0 1.1-.9 2-2 2C6.4 16 0 9.6 0 3c0-1.1.9-2 2-2h1z"
+            fill="currentColor" />
+        </svg>
+        +56 9 4940 9721
+      </a>
+      <div class="topbar-sep"></div>
+      <a href="mailto:info@berriospalavecino.cl" class="topbar-link">
+        <svg class="topbar-link-icon" viewBox="0 0 16 12" fill="none">
+          <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4" />
+          <path d="M1 3l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+        info@berriospalavecino.cl
+      </a>
+    </div>
+    <div class="topbar-spacer"></div>
+    <div class="topbar-right">
+      <a href="https://wa.me/56949409721" class="topbar-btn topbar-btn--wa" target="_blank" rel="noopener">
+        <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+            fill="currentColor" opacity=".95" />
+          <path
+            d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
+            fill="#0A2A5E" />
+        </svg>
+        <span class="topbar-btn-label--long">Agendar WhatsApp</span>
+        <span class="topbar-btn-label--short">WhatsApp</span>
+      </a>
+      <a href="https://www.linkedin.com/company/bpp-abogados" class="topbar-btn topbar-btn--li" target="_blank"
+        rel="noopener">
+        <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+        </svg>
+        <span class="topbar-btn-label--long">Síguenos en LinkedIn</span>
+        <span class="topbar-btn-label--short">LinkedIn</span>
+      </a>
+    </div>
   </div>
-  <div class="topbar-spacer"></div>
-  <div class="topbar-right">
-    <a href="https://wa.me/56949409721" class="topbar-btn topbar-btn--wa" target="_blank" rel="noopener">
-      <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="currentColor" opacity=".95"/>
-        <path d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z" fill="#0A2A5E"/>
-      </svg>
-      <span class="topbar-btn-label--long">Agendar WhatsApp</span>
-      <span class="topbar-btn-label--short">WhatsApp</span>
-    </a>
-    <a href="https://www.linkedin.com/company/bpp-abogados" class="topbar-btn topbar-btn--li" target="_blank" rel="noopener">
-      <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
-      </svg>
-      <span class="topbar-btn-label--long">Síguenos en LinkedIn</span>
-      <span class="topbar-btn-label--short">LinkedIn</span>
-    </a>
-  </div>
-</div>
 
-<!-- NAV -->
-<nav class="nav">
-  <a href="./index.html" class="nav-logo">
-    <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
-      <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1" fill="#FFFFFF">BPP</text>
-      <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1"/>
-      <text x="98" y="9"  font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">BERRÍOS</text>
-      <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PALAVECINO</text>
-      <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PINOCHET</text>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="./index.html" class="nav-logo">
+      <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
+        <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1"
+          fill="#FFFFFF">BPP</text>
+        <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1" />
+        <text x="98" y="9" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">BERRÍOS</text>
+        <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">PALAVECINO</text>
+        <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">PINOCHET</text>
+      </svg>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./BPP_Areas.html" class="active">Áreas</a></li>
+        <li><a href="./BPP_Equipo.html">Equipo</a></li>
+        <li><a href="./BPP_Noticias.html">Noticias</a></li>
+        <li><a href="#">El Estudio</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section-hero">
+    <div class="sh-img"></div>
+    <div class="sh-overlay"></div>
+    <svg class="sh-wave" viewBox="0 0 1180 306" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,153 C180,100 360,206 540,153 S900,100 1180,153" stroke="#4ECDC4" stroke-width="1.8" fill="none" />
+      <path d="M0,183 C200,130 400,230 600,183 S950,130 1180,183" stroke="#4ECDC4" stroke-width="1.2" fill="none"
+        opacity=".6" />
+      <path d="M0,123 C160,75 320,173 480,128 S820,75 1180,123" stroke="#4ECDC4" stroke-width=".9" fill="none"
+        opacity=".4" />
     </svg>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="./index.html">Inicio</a></li>
-      <li><a href="./BPP_Areas.html" class="active">Áreas</a></li>
-      <li><a href="./BPP_Equipo.html">Equipo</a></li>
-      <li><a href="./BPP_Noticias.html">Noticias</a></li>
-      <li><a href="#">El Estudio</a></li>
-    </ul>
-    <a href="#" class="nav-cta">Contacto</a>
+    <div class="sh-sq1"></div>
+    <div class="sh-sq2"></div>
+    <div class="sh-sq3"></div>
+    <div class="sh-inner">
+      <div class="sh-left">
+        <span class="sh-eyebrow">Especialización · BPP Abogados</span>
+        <h1 class="sh-title">Áreas de<br>Práctica</h1>
+      </div>
+      <div class="sh-right">
+        <div class="sh-desc">
+          <p>Ofrecemos representación jurídica especializada en derecho laboral chileno, con más de 35 años de
+            trayectoria y presencia constante en los debates jurídicos más relevantes del país.</p>
+          <p>Nuestro equipo combina litigación de alta eficacia con asesoría estratégica corporativa, cubriendo todo el
+            espectro de las relaciones laborales: desde la negociación colectiva hasta la defensa en juicio, el
+            compliance y los procesos de due diligence en fusiones y adquisiciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE PRÁCTICA -->
+  <!-- SELECTOR DE PROPUESTA -->
+  <div class="prop-selector">
+    <span class="prop-selector-label">Vista</span>
+    <button class="prop-btn active" onclick="showProp(1)">Lista</button>
+    <button class="prop-btn" onclick="showProp(2)">Grilla</button>
+    <button class="prop-btn" onclick="showProp(3)">Cards</button>
   </div>
-</nav>
 
-<!-- HERO -->
-<section class="section-hero">
-  <div class="sh-img"></div>
-  <div class="sh-overlay"></div>
-  <svg class="sh-wave" viewBox="0 0 1180 306" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,153 C180,100 360,206 540,153 S900,100 1180,153" stroke="#4ECDC4" stroke-width="1.8" fill="none"/>
-    <path d="M0,183 C200,130 400,230 600,183 S950,130 1180,183" stroke="#4ECDC4" stroke-width="1.2" fill="none" opacity=".6"/>
-    <path d="M0,123 C160,75 320,173 480,128 S820,75 1180,123" stroke="#4ECDC4" stroke-width=".9" fill="none" opacity=".4"/>
-  </svg>
-  <div class="sh-sq1"></div><div class="sh-sq2"></div><div class="sh-sq3"></div>
-  <div class="sh-inner">
-    <div class="sh-left">
-      <span class="sh-eyebrow">Especialización · BPP Abogados</span>
-      <h1 class="sh-title">Áreas de<br>Práctica</h1>
-    </div>
-    <div class="sh-right">
-      <div class="sh-desc">
-        <p>Ofrecemos representación jurídica especializada en derecho laboral chileno, con más de 35 años de trayectoria y presencia constante en los debates jurídicos más relevantes del país.</p>
-        <p>Nuestro equipo combina litigación de alta eficacia con asesoría estratégica corporativa, cubriendo todo el espectro de las relaciones laborales: desde la negociación colectiva hasta la defensa en juicio, el compliance y los procesos de due diligence en fusiones y adquisiciones.</p>
+  <!-- PROPUESTA 1: LISTA DE FILAS -->
+  <section class="areas-section" id="prop-1">
+    <div class="areas-list">
+      <!-- 01 Derecho Laboral -->
+      <div class="area-row ar-light">
+        <div class="ar-left">
+          <div class="ar-num ar-num-l">01</div>
+          <div class="ar-title ar-title-l">Derecho<br>Laboral</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
+            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-l"></span>
+            <span class="ar-btn-arr ar-btn-arr-l">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-l"
+            style="background-image:url('area-img-01.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+      <!-- 02 Litigios Laborales y Civiles -->
+      <div class="area-row ar-dark">
+        <div class="ar-left">
+          <div class="ar-num ar-num-d">02</div>
+          <div class="ar-title ar-title-d">Litigios Laborales<br>y Civiles</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
+            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-d"></span>
+            <span class="ar-btn-arr ar-btn-arr-d">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-d"
+            style="background-image:url('area-img-02.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq"
+            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 03 Asesoría Laboral Corporativa -->
+      <div class="area-row ar-light">
+        <div class="ar-left">
+          <div class="ar-num ar-num-l">03</div>
+          <div class="ar-title ar-title-l">Asesoría Laboral<br>Corporativa</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
+            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-l"></span>
+            <span class="ar-btn-arr ar-btn-arr-l">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-l"
+            style="background-image:url('area-img-03.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 04 Cumplimiento Normativo Laboral y Penal -->
+      <div class="area-row ar-dark">
+        <div class="ar-left">
+          <div class="ar-num ar-num-d">04</div>
+          <div class="ar-title ar-title-d">Cumplimiento Normativo<br>Laboral y Penal</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
+            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-d"></span>
+            <span class="ar-btn-arr ar-btn-arr-d">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-d"
+            style="background-image:url('area-img-04.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq"
+            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 05 Protección de Datos -->
+      <div class="area-row ar-light">
+        <div class="ar-left">
+          <div class="ar-num ar-num-l">05</div>
+          <div class="ar-title ar-title-l">Protección<br>de Datos</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
+            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-l"></span>
+            <span class="ar-btn-arr ar-btn-arr-l">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-l"
+            style="background-image:url('area-img-05.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 06 Derecho Administrativo y Sancionador -->
+      <div class="area-row ar-dark">
+        <div class="ar-left">
+          <div class="ar-num ar-num-d">06</div>
+          <div class="ar-title ar-title-d">Derecho Administrativo<br>y Sancionador</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
+            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-d"></span>
+            <span class="ar-btn-arr ar-btn-arr-d">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-d"
+            style="background-image:url('area-img-06.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq"
+            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 07 Derecho Penal Económico -->
+      <div class="area-row ar-light">
+        <div class="ar-left">
+          <div class="ar-num ar-num-l">07</div>
+          <div class="ar-title ar-title-l">Derecho Penal<br>Económico</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
+            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-l"></span>
+            <span class="ar-btn-arr ar-btn-arr-l">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-l"
+            style="background-image:url('area-img-07.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 08 Patrimonios Familiares y Planificación Sucesoria -->
+      <div class="area-row ar-dark">
+        <div class="ar-left">
+          <div class="ar-num ar-num-d">08</div>
+          <div class="ar-title ar-title-d">Patrimonios Familiares y<br>Planificación Sucesoria</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
+            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-d"></span>
+            <span class="ar-btn-arr ar-btn-arr-d">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-d"
+            style="background-image:url('area-img-08.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq"
+            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 09 Estrategia Comunicacional -->
+      <div class="area-row ar-light">
+        <div class="ar-left">
+          <div class="ar-num ar-num-l">09</div>
+          <div class="ar-title ar-title-l">Estrategia<br>Comunicacional</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
+            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-l"></span>
+            <span class="ar-btn-arr ar-btn-arr-l">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-l"
+            style="background-image:url('area-img-09.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+      <!-- 10 Representación · Ley de Lobby -->
+      <div class="area-row ar-dark">
+        <div class="ar-left">
+          <div class="ar-num ar-num-d">10</div>
+          <div class="ar-title ar-title-d">Representación Org.<br>Públicos · Lobby</div>
+          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
+            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
+            <span class="ar-btn-sep ar-btn-sep-d"></span>
+            <span class="ar-btn-arr ar-btn-arr-d">→</span>
+          </a>
+        </div>
+        <div class="ar-right">
+          <div class="ar-img ar-img-ph ar-img-ph-d"
+            style="background-image:url('area-img-10.jpg');background-size:cover;background-position:center;"></div>
+          <div class="ar-hover-overlay"></div>
+          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
+          <div class="ar-sq"
+            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
+        </div>
+      </div>
+    </div><!-- fin areas-list -->
+  </section>
 
-<!-- ÁREAS DE PRÁCTICA -->
-<!-- SELECTOR DE PROPUESTA -->
-<div class="prop-selector">
-  <span class="prop-selector-label">Vista</span>
-  <button class="prop-btn active" onclick="showProp(1)">Lista</button>
-  <button class="prop-btn" onclick="showProp(2)">Grilla</button>
-  <button class="prop-btn" onclick="showProp(3)">Cards</button>
-</div>
-
-<!-- PROPUESTA 1: LISTA DE FILAS -->
-<section class="areas-section" id="prop-1">
-  <div class="areas-list">
-    <!-- 01 Derecho Laboral -->
-    <div class="area-row ar-light">
-      <div class="ar-left">
-        <div class="ar-num ar-num-l">01</div>
-        <div class="ar-title ar-title-l">Derecho<br>Laboral</div>
-        <a href="#" class="ar-btn ar-btn-l">
-          <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-l"></span>
-          <span class="ar-btn-arr ar-btn-arr-l">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-l" style="background-image:url('area-img-01.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
+  <!-- PROPUESTA 2: GRID DE TARJETAS -->
+  <section class="p2-section" id="prop-2">
+    <div class="p2-header">
+      <div>
+        <span class="p2-eyebrow">Especialización · BPP Abogados</span>
+        <div class="p2-title">Áreas de Práctica</div>
       </div>
     </div>
-    <!-- 02 Litigios Laborales y Civiles -->
-    <div class="area-row ar-dark">
-      <div class="ar-left">
-        <div class="ar-num ar-num-d">02</div>
-        <div class="ar-title ar-title-d">Litigios Laborales<br>y Civiles</div>
-        <a href="#" class="ar-btn ar-btn-d">
-          <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-d"></span>
-          <span class="ar-btn-arr ar-btn-arr-d">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-d" style="background-image:url('area-img-02.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 03 Asesoría Laboral Corporativa -->
-    <div class="area-row ar-light">
-      <div class="ar-left">
-        <div class="ar-num ar-num-l">03</div>
-        <div class="ar-title ar-title-l">Asesoría Laboral<br>Corporativa</div>
-        <a href="#" class="ar-btn ar-btn-l">
-          <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-l"></span>
-          <span class="ar-btn-arr ar-btn-arr-l">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-l" style="background-image:url('area-img-03.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 04 Cumplimiento Normativo Laboral y Penal -->
-    <div class="area-row ar-dark">
-      <div class="ar-left">
-        <div class="ar-num ar-num-d">04</div>
-        <div class="ar-title ar-title-d">Cumplimiento Normativo<br>Laboral y Penal</div>
-        <a href="#" class="ar-btn ar-btn-d">
-          <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-d"></span>
-          <span class="ar-btn-arr ar-btn-arr-d">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-d" style="background-image:url('area-img-04.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 05 Protección de Datos -->
-    <div class="area-row ar-light">
-      <div class="ar-left">
-        <div class="ar-num ar-num-l">05</div>
-        <div class="ar-title ar-title-l">Protección<br>de Datos</div>
-        <a href="#" class="ar-btn ar-btn-l">
-          <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-l"></span>
-          <span class="ar-btn-arr ar-btn-arr-l">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-l" style="background-image:url('area-img-05.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 06 Derecho Administrativo y Sancionador -->
-    <div class="area-row ar-dark">
-      <div class="ar-left">
-        <div class="ar-num ar-num-d">06</div>
-        <div class="ar-title ar-title-d">Derecho Administrativo<br>y Sancionador</div>
-        <a href="#" class="ar-btn ar-btn-d">
-          <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-d"></span>
-          <span class="ar-btn-arr ar-btn-arr-d">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-d" style="background-image:url('area-img-06.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 07 Derecho Penal Económico -->
-    <div class="area-row ar-light">
-      <div class="ar-left">
-        <div class="ar-num ar-num-l">07</div>
-        <div class="ar-title ar-title-l">Derecho Penal<br>Económico</div>
-        <a href="#" class="ar-btn ar-btn-l">
-          <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-l"></span>
-          <span class="ar-btn-arr ar-btn-arr-l">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-l" style="background-image:url('area-img-07.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 08 Patrimonios Familiares y Planificación Sucesoria -->
-    <div class="area-row ar-dark">
-      <div class="ar-left">
-        <div class="ar-num ar-num-d">08</div>
-        <div class="ar-title ar-title-d">Patrimonios Familiares y<br>Planificación Sucesoria</div>
-        <a href="#" class="ar-btn ar-btn-d">
-          <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-d"></span>
-          <span class="ar-btn-arr ar-btn-arr-d">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-d" style="background-image:url('area-img-08.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 09 Estrategia Comunicacional -->
-    <div class="area-row ar-light">
-      <div class="ar-left">
-        <div class="ar-num ar-num-l">09</div>
-        <div class="ar-title ar-title-l">Estrategia<br>Comunicacional</div>
-        <a href="#" class="ar-btn ar-btn-l">
-          <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-l"></span>
-          <span class="ar-btn-arr ar-btn-arr-l">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-l" style="background-image:url('area-img-09.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-    <!-- 10 Representación · Ley de Lobby -->
-    <div class="area-row ar-dark">
-      <div class="ar-left">
-        <div class="ar-num ar-num-d">10</div>
-        <div class="ar-title ar-title-d">Representación Org.<br>Públicos · Lobby</div>
-        <a href="#" class="ar-btn ar-btn-d">
-          <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-          <span class="ar-btn-sep ar-btn-sep-d"></span>
-          <span class="ar-btn-arr ar-btn-arr-d">→</span>
-        </a>
-      </div>
-      <div class="ar-right">
-        <div class="ar-img ar-img-ph ar-img-ph-d" style="background-image:url('area-img-10.jpg');background-size:cover;background-position:center;"></div>
-        <div class="ar-hover-overlay"></div>
-        <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-        <div class="ar-sq" style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-      </div>
-    </div>
-  </div><!-- fin areas-list -->
-</section>
-
-<!-- PROPUESTA 2: GRID DE TARJETAS -->
-<section class="p2-section" id="prop-2">
-  <div class="p2-header">
-    <div>
-      <span class="p2-eyebrow">Especialización · BPP Abogados</span>
-      <div class="p2-title">Áreas de Práctica</div>
-    </div>
-  </div>
-  <div class="p2-grid">
-    <a href="#" class="area-card">
+    <div class="p2-grid">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-01.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
           <div class="area-card-num">01</div>
           <div class="area-card-title">Derecho Laboral</div>
-          <div class="area-card-desc">Asesoría integral en relaciones laborales individuales y colectivas, contratos y fiscalizaciones.</div>
+          <div class="area-card-desc">Asesoría integral en relaciones laborales individuales y colectivas, contratos y
+            fiscalizaciones.</div>
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-02.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
           <div class="area-card-num">02</div>
           <div class="area-card-title">Litigios Laborales y Civiles</div>
-          <div class="area-card-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.</div>
+          <div class="area-card-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.
+          </div>
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-03.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -715,7 +1664,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-04.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -725,7 +1674,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-05.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -735,7 +1684,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-06.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -745,7 +1694,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-07.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -755,7 +1704,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-08.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -765,7 +1714,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-09.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -775,7 +1724,7 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-      <a href="#" class="area-card">
+      <a href="./BPP_Area_Detalle.html" class="area-card">
         <div class="area-card-img" style="background-image:url('area-img-10.jpg');"></div>
         <div class="area-card-overlay"></div>
         <div class="area-card-body">
@@ -785,155 +1734,232 @@ body {
           <div class="area-card-cta">Ver área →</div>
         </div>
       </a>
-  </div>
-</section>
-
-<!-- PROPUESTA 3: CARDS CON IMAGEN FULL-BLEED -->
-<section class="p3-section" id="prop-3">
-  <div class="p3-header">
-    <div>
-      <div class="p3-eyebrow">Especialización · BPP Abogados</div>
-      <div class="p3-title">Áreas de Práctica</div>
     </div>
-    <div class="p3-count">10 áreas</div>
-  </div>
-  <div class="p3-grid">
+  </section>
 
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-01.jpg');background-color:#0A2A5E;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-01"></div>
-      <div class="p3-body"><div class="p3-num">01</div><div class="p3-name">Derecho Laboral</div><div class="p3-desc">Asesoría integral en relaciones laborales individuales y colectivas.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-02.jpg');background-color:#1B64C8;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-02"></div>
-      <div class="p3-body"><div class="p3-num">02</div><div class="p3-name">Litigios Laborales y Civiles</div><div class="p3-desc">Representación en Juzgados del Trabajo y Cortes de Apelaciones.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-03.jpg');background-color:#1450A8;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-03"></div>
-      <div class="p3-body"><div class="p3-num">03</div><div class="p3-name">Asesoría Laboral Corporativa</div><div class="p3-desc">Gestión laboral corporativa preventiva y estratégica.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-04.jpg');background-color:#3D7FD4;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-04"></div>
-      <div class="p3-body"><div class="p3-num">04</div><div class="p3-name">Cumplimiento Normativo Laboral y Penal</div><div class="p3-desc">Modelos de compliance, Ley Karin y prevención de riesgos legales.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-05.jpg');background-color:#5A90DA;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-05"></div>
-      <div class="p3-body"><div class="p3-num">05</div><div class="p3-name">Protección de Datos</div><div class="p3-desc">Adecuación a la Ley 21.719 de Protección de Datos Personales.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-06.jpg');background-color:#85B7EB;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-06"></div>
-      <div class="p3-body"><div class="p3-num">06</div><div class="p3-name">Derecho Administrativo y Sancionador</div><div class="p3-desc">Procedimientos sancionatorios ante organismos reguladores.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-07.jpg');background-color:#6B9CD4;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-07"></div>
-      <div class="p3-body"><div class="p3-num">07</div><div class="p3-name">Derecho Penal Económico</div><div class="p3-desc">Defensa en delitos económicos y responsabilidad penal empresarial.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-08.jpg');background-color:#7AAED8;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-08"></div>
-      <div class="p3-body"><div class="p3-num">08</div><div class="p3-name">Patrimonios Familiares y Planificación Sucesoria</div><div class="p3-desc">Planificación patrimonial, hereditaria y estructuras familiares.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-09.jpg');background-color:#8ABCDE;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-09"></div>
-      <div class="p3-body"><div class="p3-num">09</div><div class="p3-name">Estrategia Comunicacional</div><div class="p3-desc">Asesoría en comunicación jurídica y gestión de crisis reputacional.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-    <a href="#" class="p3-card">
-      <div class="p3-bg" style="background-image:url('area-img-10.jpg');background-color:#9ACAE4;"></div>
-      <div class="p3-ov"></div><div class="p3-accent pa-10"></div>
-      <div class="p3-body"><div class="p3-num">10</div><div class="p3-name">Representación Org. Públicos · Lobby</div><div class="p3-desc">Gestión ante organismos reguladores y Ley de Lobby.</div><div class="p3-cta">Ver área →</div></div>
-    </a>
-
-  </div>
-</section>
-
-<script>
-function showProp(n) {
-  document.getElementById('prop-1').style.display = n === 1 ? '' : 'none';
-  document.getElementById('prop-2').style.display  = n === 2 ? 'block' : 'none';
-  document.getElementById('prop-3').style.display  = n === 3 ? 'block' : 'none';
-  document.querySelectorAll('.prop-btn').forEach((b,i) => b.classList.toggle('active', i+1 === n));
-}
-</script>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-decor-1"></div>
-      <div class="footer-decor-2"></div>
+  <!-- PROPUESTA 3: CARDS CON IMAGEN FULL-BLEED -->
+  <section class="p3-section" id="prop-3">
+    <div class="p3-header">
       <div>
-        <div class="footer-logo">
-          <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
-            <rect width="310" height="310" fill="#1B64C8"/>
-            <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF" letter-spacing="-1">BPP</text>
-            <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1"/>
-            <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
-            <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
-            <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
-          </svg>
+        <div class="p3-eyebrow">Especialización · BPP Abogados</div>
+        <div class="p3-title">Áreas de Práctica</div>
+      </div>
+      <div class="p3-count">10 áreas</div>
+    </div>
+    <div class="p3-grid">
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-01.jpg');background-color:#0A2A5E;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-01"></div>
+        <div class="p3-body">
+          <div class="p3-num">01</div>
+          <div class="p3-name">Derecho Laboral</div>
+          <div class="p3-desc">Asesoría integral en relaciones laborales individuales y colectivas.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-02.jpg');background-color:#1B64C8;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-02"></div>
+        <div class="p3-body">
+          <div class="p3-num">02</div>
+          <div class="p3-name">Litigios Laborales y Civiles</div>
+          <div class="p3-desc">Representación en Juzgados del Trabajo y Cortes de Apelaciones.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-03.jpg');background-color:#1450A8;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-03"></div>
+        <div class="p3-body">
+          <div class="p3-num">03</div>
+          <div class="p3-name">Asesoría Laboral Corporativa</div>
+          <div class="p3-desc">Gestión laboral corporativa preventiva y estratégica.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-04.jpg');background-color:#3D7FD4;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-04"></div>
+        <div class="p3-body">
+          <div class="p3-num">04</div>
+          <div class="p3-name">Cumplimiento Normativo Laboral y Penal</div>
+          <div class="p3-desc">Modelos de compliance, Ley Karin y prevención de riesgos legales.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-05.jpg');background-color:#5A90DA;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-05"></div>
+        <div class="p3-body">
+          <div class="p3-num">05</div>
+          <div class="p3-name">Protección de Datos</div>
+          <div class="p3-desc">Adecuación a la Ley 21.719 de Protección de Datos Personales.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-06.jpg');background-color:#85B7EB;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-06"></div>
+        <div class="p3-body">
+          <div class="p3-num">06</div>
+          <div class="p3-name">Derecho Administrativo y Sancionador</div>
+          <div class="p3-desc">Procedimientos sancionatorios ante organismos reguladores.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-07.jpg');background-color:#6B9CD4;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-07"></div>
+        <div class="p3-body">
+          <div class="p3-num">07</div>
+          <div class="p3-name">Derecho Penal Económico</div>
+          <div class="p3-desc">Defensa en delitos económicos y responsabilidad penal empresarial.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-08.jpg');background-color:#7AAED8;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-08"></div>
+        <div class="p3-body">
+          <div class="p3-num">08</div>
+          <div class="p3-name">Patrimonios Familiares y Planificación Sucesoria</div>
+          <div class="p3-desc">Planificación patrimonial, hereditaria y estructuras familiares.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-09.jpg');background-color:#8ABCDE;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-09"></div>
+        <div class="p3-body">
+          <div class="p3-num">09</div>
+          <div class="p3-name">Estrategia Comunicacional</div>
+          <div class="p3-desc">Asesoría en comunicación jurídica y gestión de crisis reputacional.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="p3-card">
+        <div class="p3-bg" style="background-image:url('area-img-10.jpg');background-color:#9ACAE4;"></div>
+        <div class="p3-ov"></div>
+        <div class="p3-accent pa-10"></div>
+        <div class="p3-body">
+          <div class="p3-num">10</div>
+          <div class="p3-name">Representación Org. Públicos · Lobby</div>
+          <div class="p3-desc">Gestión ante organismos reguladores y Ley de Lobby.</div>
+          <div class="p3-cta">Ver área →</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <script>
+    function showProp(n) {
+      document.getElementById('prop-1').style.display = n === 1 ? '' : 'none';
+      document.getElementById('prop-2').style.display = n === 2 ? 'block' : 'none';
+      document.getElementById('prop-3').style.display = n === 3 ? 'block' : 'none';
+      document.querySelectorAll('.prop-btn').forEach((b, i) => b.classList.toggle('active', i + 1 === n));
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-decor-1"></div>
+        <div class="footer-decor-2"></div>
+        <div>
+          <div class="footer-logo">
+            <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
+              <rect width="310" height="310" fill="#1B64C8" />
+              <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62"
+                fill="#FFFFFF" letter-spacing="-1">BPP</text>
+              <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
+              <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
+              <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
+              <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">El Estudio</div>
+          <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span
+              class="footer-col-link-arrow">→</span></a>
+        </div>
+        <div>
+          <div class="footer-col-title">Áreas de Práctica</div>
+          <a href="./BPP_Areas.html" class="footer-col-link">Derecho del Trabajo <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
+              class="footer-col-link-arrow">→</span></a>
+        </div>
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
+          <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span
+              class="footer-col-link-arrow">→</span></a>
         </div>
       </div>
-      <div>
-        <div class="footer-col-title">El Estudio</div>
-        <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span class="footer-col-link-arrow">→</span></a>
-        <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span class="footer-col-link-arrow">→</span></a>
-      </div>
-      <div>
-        <div class="footer-col-title">Áreas de Práctica</div>
-        <a href="./BPP_Areas.html" class="footer-col-link">Derecho del Trabajo <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span class="footer-col-link-arrow">→</span></a>
-      </div>
-      <div>
-        <div class="footer-col-title">Contacto</div>
-        <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span class="footer-col-link-arrow">→</span></a>
-        <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
-        <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span class="footer-col-link-arrow">→</span></a>
-        <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span class="footer-col-link-arrow">→</span></a>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos reservados.</span>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-legal-link">LinkedIn</a>
+          <a href="#" class="footer-legal-link">Política de privacidad</a>
+          <a href="#" class="footer-legal-link">Postulaciones</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos reservados.</span>
-      <div class="footer-legal-links">
-        <a href="#" class="footer-legal-link">LinkedIn</a>
-        <a href="#" class="footer-legal-link">Política de privacidad</a>
-        <a href="#" class="footer-legal-link">Postulaciones</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- FAB WHATSAPP -->
-<a href="https://wa.me/56949409721" class="fab" target="_blank" rel="noopener">
-  <div class="fab-icon-wrap">
-    <svg class="fab-icon" viewBox="0 0 24 24" fill="none">
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="rgba(255,255,255,0.15)"/>
-      <path d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z" fill="white"/>
-    </svg>
-  </div>
-  <span class="fab-label">Agendar consulta</span>
-</a>
-<div class="fab-decor-1"></div>
-<div class="fab-decor-2"></div>
+  <!-- FAB WHATSAPP -->
+  <a href="https://wa.me/56949409721" class="fab" target="_blank" rel="noopener">
+    <div class="fab-icon-wrap">
+      <svg class="fab-icon" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+          fill="rgba(255,255,255,0.15)" />
+        <path
+          d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
+          fill="white" />
+      </svg>
+    </div>
+    <span class="fab-label">Agendar consulta</span>
+  </a>
+  <div class="fab-decor-1"></div>
+  <div class="fab-decor-2"></div>
 
 </body>
+
 </html>
