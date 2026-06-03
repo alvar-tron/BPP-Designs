@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publicaciones & Noticias — BPP Abogados</title>
+  <title>El impacto de la Ley Karin — BPP Abogados</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
     rel="stylesheet">
   <style>
     /* ══════════════════════════════════════════════════════
@@ -45,7 +45,7 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--gray-bg);
+      background: #fff;
       color: var(--gray-dk);
       overflow-x: hidden;
       padding-top: 108px;
@@ -234,314 +234,364 @@
     }
 
     /* ══════════════════════════════════════════════════════
-   HERO
+   IMAGEN FULL-WIDTH
 ══════════════════════════════════════════════════════ */
-    .section-hero {
-      height: 275px;
-      background: var(--blue-xdk);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .sh-img {
-      position: absolute;
-      inset: 0;
-      background-image: url('./BPP_Areas_Hero.png');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .sh-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg,
-          rgba(27, 100, 200, .95) 0%,
-          rgba(20, 80, 168, .82) 20%,
-          rgba(10, 50, 130, .72) 50%,
-          rgba(10, 40, 100, .62) 100%);
-    }
-
-    .sh-wave {
-      position: absolute;
-      inset: 0;
-      opacity: .2;
-      pointer-events: none;
-    }
-
-    .sh-sq1 {
-      position: absolute;
-      top: 48px;
-      right: 80px;
-      width: 18px;
-      height: 18px;
-      background: var(--blue);
-      opacity: .85;
-      z-index: 3;
-    }
-
-    .sh-sq2 {
-      position: absolute;
-      top: 70px;
-      right: 102px;
-      width: 11px;
-      height: 11px;
-      background: rgba(255, 255, 255, .4);
-      z-index: 3;
-    }
-
-    .sh-sq3 {
-      position: absolute;
-      top: 58px;
-      right: 114px;
-      width: 13px;
-      height: 13px;
-      background: var(--blue-md);
-      opacity: .5;
-      z-index: 3;
-    }
-
-    .sh-inner {
-      position: relative;
-      z-index: 4;
+    .article-hero {
       width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 80px 44px;
-      display: flex;
-      align-items: flex-end;
-      gap: 80px;
-    }
-
-    .sh-left {
-      flex: 0 0 400px;
-    }
-
-    .sh-eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, .6);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .sh-title {
-      font-size: clamp(28px, 3.5vw, 48px);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.0;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-    }
-
-    .sh-right {
-      flex: 1;
-      padding-bottom: 4px;
-    }
-
-    .sh-desc {
-      font-size: 14px;
-      color: rgba(255, 255, 255, .7);
-      line-height: 1.8;
-    }
-
-    /* ══════════════════════════════════════════════════════
-   SECCIÓN PRINCIPAL
-══════════════════════════════════════════════════════ */
-    .news-section {
-      background: #fff;
-      padding: 52px 0 72px;
-    }
-
-    .news-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 80px;
-    }
-
-    /* ── NOTICIA DESTACADA ── */
-    .featured-block {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 0;
-      margin-bottom: 52px;
-      border: .5px solid var(--gray-lt);
-    }
-
-    .featured-img {
+      height: 460px;
       position: relative;
       overflow: hidden;
-      min-height: 360px;
       background: var(--blue-xdk);
     }
 
-    .featured-img img {
+    .article-hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform .4s ease;
     }
 
-    .featured-block:hover .featured-img img {
-      transform: scale(1.03);
-    }
-
-    .featured-img-ph {
+    .article-hero-ph {
       width: 100%;
       height: 100%;
-      min-height: 360px;
-      background: linear-gradient(160deg, var(--blue-xdk) 0%, var(--blue-dk) 100%);
+      background: linear-gradient(135deg, var(--blue-xdk) 0%, var(--blue-dk) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .featured-img-ph span {
+    .article-hero-ph span {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      color: rgba(255, 255, 255, .25);
+      font-size: 10px;
+      color: rgba(255, 255, 255, .2);
       letter-spacing: .14em;
       text-transform: uppercase;
     }
 
-    .featured-content {
-      padding: 36px 36px 36px;
-      background: var(--area-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          transparent 40%,
+          rgba(255, 255, 255, .15) 70%,
+          rgba(255, 255, 255, .6) 100%);
     }
 
-    .featured-label {
+    /* cuadrados decorativos */
+    .article-hero-sq1 {
+      position: absolute;
+      top: 20px;
+      right: 80px;
+      width: 14px;
+      height: 14px;
+      background: var(--blue);
+      opacity: .7;
+      z-index: 2;
+    }
+
+    .article-hero-sq2 {
+      position: absolute;
+      top: 38px;
+      right: 98px;
+      width: 9px;
+      height: 9px;
+      background: rgba(255, 255, 255, .35);
+      z-index: 2;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   CABECERA DEL ARTÍCULO
+══════════════════════════════════════════════════════ */
+    .article-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 32px;
+      border-bottom: .5px solid var(--gray-lt);
+    }
+
+    .article-breadcrumb {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .06em;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .article-breadcrumb a {
+      color: var(--gray-mid);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: var(--blue);
+    }
+
+    .article-meta {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
       margin-bottom: 18px;
     }
 
-    .feat-eyebrow {
+    .article-cat {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 700;
-      color: rgba(255, 255, 255, .6);
-      letter-spacing: .16em;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      background: var(--blue);
       padding: 3px 10px;
+      border: 1.5px solid var(--blue);
+      color: var(--blue);
     }
 
-    .feat-eyebrow-light {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      padding: 3px 0;
-    }
-
-    .featured-date {
+    .article-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: var(--gray-mid);
-      letter-spacing: .06em;
+      letter-spacing: .04em;
     }
 
-    .featured-title {
-      font-size: clamp(18px, 2vw, 26px);
-      font-weight: 800;
-      color: var(--blue-xdk);
-      line-height: 1.2;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      margin-bottom: 14px;
+    .article-meta-sep {
+      color: var(--gray-lt);
     }
 
-    .featured-author {
+    .article-byline {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
-      font-weight: 600;
       color: var(--blue);
-      letter-spacing: .06em;
+      letter-spacing: .04em;
+    }
+
+    .article-title {
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 800;
+      color: var(--blue-xdk);
+      line-height: 1.15;
       text-transform: uppercase;
+      letter-spacing: .02em;
       margin-bottom: 16px;
     }
 
-    .featured-excerpt {
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 16px;
-      font-style: italic;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 28px;
-      flex: 1;
+    .article-reading-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
-    .featured-cta {
+    /* ══════════════════════════════════════════════════════
+   CUERPO DEL ARTÍCULO
+══════════════════════════════════════════════════════ */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px 52px;
+    }
+
+    /* Entradilla / lead */
+    .article-lead {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #333;
+      line-height: 1.75;
+      margin-bottom: 32px;
+      padding-left: 20px;
+      border-left: 3px solid var(--blue);
+    }
+
+    /* Párrafos */
+    .article-body p {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      color: #2A2A2A;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Subtítulos H2 */
+    .article-body h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--blue);
+    }
+
+    /* Subtítulos H3 */
+    .article-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      line-height: 1.3;
+      margin: 28px 0 12px;
+    }
+
+    /* Cita destacada */
+    .article-quote {
+      background: var(--area-bg);
+      border-left: 4px solid var(--blue);
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .article-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-style: normal;
+      color: var(--blue);
+      letter-spacing: .06em;
+    }
+
+    /* Lista */
+    .article-body ul,
+    .article-body ol {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      color: #2A2A2A;
+      line-height: 1.9;
+      padding-left: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   PIE DEL ARTÍCULO — compartir + área vinculada
+══════════════════════════════════════════════════════ */
+    .article-footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 24px 40px;
+      border-top: .5px solid var(--gray-lt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .article-share {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-share-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gray-mid);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .share-btn {
       display: inline-flex;
       align-items: center;
-      border: 1.5px solid var(--blue);
-      height: 40px;
-      text-decoration: none;
-      background: transparent;
-      transition: background .2s;
-      align-self: flex-start;
-    }
-
-    .featured-cta:hover {
-      background: var(--blue);
-    }
-
-    .featured-cta:hover .fcta-label {
-      color: #fff;
-    }
-
-    .featured-cta:hover .fcta-div {
-      background: rgba(255, 255, 255, .4);
-    }
-
-    .featured-cta:hover .fcta-arrow {
-      color: #fff;
-    }
-
-    .fcta-label {
-      font-size: 10px;
+      gap: 5px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
       font-weight: 600;
       color: var(--blue-xdk);
-      padding: 0 16px;
-      letter-spacing: .08em;
+      border: 1px solid var(--gray-lt);
+      padding: 5px 12px;
+      cursor: pointer;
+      background: #fff;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      transition: color .2s;
+      text-decoration: none;
+      transition: all .2s;
     }
 
-    .fcta-div {
-      width: 1.5px;
-      height: 20px;
-      background: var(--blue);
-      transition: background .2s;
-    }
-
-    .fcta-arrow {
-      font-size: 13px;
+    .share-btn:hover {
+      border-color: var(--blue);
       color: var(--blue);
-      padding: 0 14px;
-      transition: color .2s;
+      background: rgba(27, 100, 200, .05);
     }
 
-    /* ── TÍTULO DE SECCIÓN ── */
-    .section-divider {
+    .share-btn.copied {
+      border-color: #25D366;
+      color: #25D366;
+    }
+
+    .article-area-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .article-area-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .article-area-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      border: 1.5px solid var(--blue);
+      padding: 5px 14px;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .article-area-btn:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   SECCIÓN NOTICIAS RELACIONADAS
+══════════════════════════════════════════════════════ */
+    .related-section {
+      background: var(--gray-bg);
+      padding: 52px 0 72px;
+    }
+
+    .related-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .related-header {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 28px;
     }
 
-    .section-divider-label {
+    .related-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       font-weight: 700;
@@ -551,27 +601,25 @@
       white-space: nowrap;
     }
 
-    .section-divider-line {
+    .related-line {
       flex: 1;
       height: 1px;
       background: var(--gray-lt);
     }
 
-    /* ── GRILLA DE NOTICIAS ── */
-    .news-grid {
+    .related-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    /* card de noticia */
+    /* card de noticia relacionada — igual a BPP_Noticias.html */
     .news-card {
       background: #fff;
       border: .5px solid var(--gray-lt);
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity .45s ease, transform .45s ease, box-shadow .2s ease;
@@ -587,7 +635,6 @@
       box-shadow: 0 10px 28px rgba(27, 100, 200, .1);
     }
 
-    /* imagen */
     .news-card-img {
       height: 180px;
       overflow: hidden;
@@ -600,7 +647,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
       display: block;
       transition: transform .4s ease;
     }
@@ -626,7 +672,6 @@
       text-transform: uppercase;
     }
 
-    /* borde superior de color por categoría */
     .news-card-bar {
       height: 3px;
       flex-shrink: 0;
@@ -648,7 +693,6 @@
       background: var(--blue-xdk);
     }
 
-    /* cuerpo */
     .news-card-body {
       padding: 18px 18px 20px;
       display: flex;
@@ -740,72 +784,6 @@
 
     .news-card.is-visible:hover .news-card-read {
       opacity: 1;
-    }
-
-    /* ── CARGAR MÁS ── */
-    .load-more-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 48px;
-    }
-
-    .load-more-btn {
-      display: inline-flex;
-      align-items: center;
-      border: 1.5px solid var(--blue);
-      height: 40px;
-      background: transparent;
-      cursor: pointer;
-      transition: background .2s;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .load-more-btn:hover {
-      background: var(--blue);
-    }
-
-    .load-more-btn:hover .lm-label {
-      color: #fff;
-    }
-
-    .load-more-btn:hover .lm-div {
-      background: rgba(255, 255, 255, .4);
-    }
-
-    .load-more-btn:hover .lm-arrow {
-      color: #fff;
-    }
-
-    .lm-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--blue-xdk);
-      padding: 0 18px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-
-    .lm-div {
-      width: 1.5px;
-      height: 20px;
-      background: var(--blue);
-      transition: background .2s;
-    }
-
-    .lm-arrow {
-      font-size: 13px;
-      color: var(--blue);
-      padding: 0 14px;
-      transition: color .2s;
-    }
-
-    .load-more-btn.loading .lm-label {
-      color: var(--gray-mid);
-    }
-
-    .load-more-btn.all-loaded {
-      display: none;
     }
 
     /* ══════════════════════════════════════════════════════
@@ -1025,7 +1003,7 @@
         display: inline;
       }
 
-      .news-grid {
+      .related-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -1038,12 +1016,7 @@
         padding-right: 32px;
       }
 
-      .sh-inner {
-        padding: 0 32px 36px;
-        gap: 48px;
-      }
-
-      .news-inner {
+      .related-inner {
         padding: 0 32px;
       }
 
@@ -1051,8 +1024,8 @@
         padding: 0 32px;
       }
 
-      .featured-block {
-        grid-template-columns: 1fr 1fr;
+      .article-hero {
+        height: 380px;
       }
     }
 
@@ -1074,40 +1047,41 @@
         padding: 0 16px;
       }
 
-      .section-hero {
-        height: auto;
-        min-height: 240px;
+      .article-hero {
+        height: 240px;
       }
 
-      .sh-inner {
+      .article-header,
+      .article-body,
+      .article-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .article-title {
+        font-size: clamp(20px, 5vw, 28px);
+      }
+
+      .article-lead {
+        font-size: 17px;
+      }
+
+      .article-body p {
+        font-size: 16px;
+      }
+
+      .article-footer {
         flex-direction: column;
-        gap: 16px;
-        padding: 0 20px 28px;
+        align-items: flex-start;
+        gap: 14px;
       }
 
-      .sh-left {
-        flex: none;
-      }
-
-      .sh-title {
-        font-size: clamp(24px, 6vw, 36px);
-      }
-
-      .news-inner {
+      .related-inner {
         padding: 0 20px;
       }
 
-      .featured-block {
+      .related-grid {
         grid-template-columns: 1fr;
-      }
-
-      .featured-img {
-        min-height: 220px;
-      }
-
-      .news-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
       }
 
       .footer-inner {
@@ -1203,79 +1177,155 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="section-hero">
-    <div class="sh-img"></div>
-    <div class="sh-overlay"></div>
-    <svg class="sh-wave" viewBox="0 0 1180 306" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,153 C180,100 360,206 540,153 S900,100 1180,153" stroke="#4ECDC4" stroke-width="1.8" fill="none" />
-      <path d="M0,183 C200,130 400,230 600,183 S950,130 1180,183" stroke="#4ECDC4" stroke-width="1.2" fill="none"
-        opacity=".6" />
-      <path d="M0,123 C160,75 320,173 480,128 S820,75 1180,123" stroke="#4ECDC4" stroke-width=".9" fill="none"
-        opacity=".4" />
-    </svg>
-    <div class="sh-sq1"></div>
-    <div class="sh-sq2"></div>
-    <div class="sh-sq3"></div>
-    <div class="sh-inner">
-      <div class="sh-left">
-        <span class="sh-eyebrow">Publicaciones · BPP Abogados</span>
-        <h1 class="sh-title">Noticias &<br>Publicaciones</h1>
-      </div>
-      <div class="sh-right">
-        <p class="sh-desc">Columnas de opinión, análisis jurídicos, sentencias comentadas y noticias del estudio.
-          Actualizados permanentemente por los socios y equipo de BPP.</p>
-      </div>
+  <!-- IMAGEN FULL-WIDTH -->
+  <div class="article-hero">
+    <img src="./noticia-detalle.png" alt="El impacto de la Ley Karin"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="article-hero-ph" style="display:none"><span>imagen del artículo</span></div>
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-sq1"></div>
+    <div class="article-hero-sq2"></div>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="article-header">
+    <span class="article-breadcrumb">
+      <a href="./index.html">Inicio</a> ›
+      <a href="./BPP_Noticias.html">Noticias</a> ›
+      El impacto de la Ley Karin
+    </span>
+    <div class="article-meta">
+      <span class="article-cat">Columna</span>
+      <span class="article-date">Mayo 2025</span>
+      <span class="article-meta-sep">·</span>
+      <span class="article-byline">Por Claudio Palavecino Cáceres</span>
     </div>
-  </section>
+    <h1 class="article-title">El impacto de la Ley Karin en los procedimientos de tutela laboral: un año de aplicación
+    </h1>
+    <span class="article-reading-time">Lectura estimada: 8 minutos</span>
+  </header>
 
-  <!-- SECCIÓN PRINCIPAL -->
-  <section class="news-section">
-    <div class="news-inner">
+  <!-- CUERPO DEL ARTÍCULO -->
+  <article class="article-body">
 
-      <!-- NOTICIA DESTACADA -->
-      <div class="featured-block">
-        <div class="featured-img">
-          <img src="./noticia-destacada.png" alt="El impacto de la Ley Karin"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="featured-img-ph" style="display:none"><span>imagen destacada</span></div>
-        </div>
-        <div class="featured-content">
-          <div>
-            <div class="featured-label">
-              <span class="feat-eyebrow">Columna</span>
-              <span class="featured-date">Mayo 2025</span>
-            </div>
-            <h2 class="featured-title">El impacto de la Ley Karin en los procedimientos de tutela laboral: un año de
-              aplicación</h2>
-            <div class="featured-author">Por Claudio Palavecino Cáceres</div>
-            <p class="featured-excerpt">Análisis de los primeros doce meses de vigencia de la Ley 21.643 y su efecto
-              concreto en la litigación laboral chilena, con especial atención a los criterios de los Juzgados del
-              Trabajo y las tendencias emergentes en materia de responsabilidad empresarial.</p>
-          </div>
-          <a href="./BPP_Noticia_Detalle.html" class="featured-cta">
-            <span class="fcta-label">Leer publicación</span>
-            <span class="fcta-div"></span>
-            <span class="fcta-arrow">→</span>
-          </a>
-        </div>
+    <p class="article-lead">
+      Análisis de los primeros doce meses de vigencia de la Ley 21.643 y su efecto concreto en la litigación laboral
+      chilena, con especial atención a los criterios emergentes de los Juzgados del Trabajo y las tendencias en materia
+      de responsabilidad empresarial.
+    </p>
+
+    <p>
+      La Ley N° 21.643, conocida como Ley Karin, entró en vigencia el 1 de agosto de 2024 introduciendo modificaciones
+      sustanciales al régimen de acoso laboral y sexual en Chile. Transcurrido un año desde su implementación, es
+      posible hacer un primer balance sobre el impacto que ha tenido en la litigación laboral y, en particular, en los
+      procedimientos de tutela de derechos fundamentales.
+    </p>
+
+    <p>
+      La normativa incorporó obligaciones concretas para los empleadores: la existencia de un protocolo de prevención de
+      acoso laboral, sexual y violencia en el trabajo; la designación de un encargado de prevención; y la obligación de
+      investigar las denuncias de manera imparcial, con plazos acotados y garantías para todas las partes involucradas.
+    </p>
+
+    <h2>Criterios jurisprudenciales en el primer año</h2>
+
+    <p>
+      Durante los doce meses transcurridos desde la entrada en vigencia de la Ley Karin, los Juzgados del Trabajo han
+      comenzado a construir un cuerpo jurisprudencial que delimita el alcance de las nuevas obligaciones. Las tendencias
+      más relevantes pueden agruparse en tres ejes: la exigencia de proporcionalidad en las medidas de resguardo, los
+      estándares probatorios en la acreditación de las conductas y la responsabilidad del empleador por omisión.
+    </p>
+
+    <blockquote class="article-quote">
+      "La obligación del empleador no se agota en la existencia formal del protocolo. Los tribunales exigen que las
+      medidas adoptadas sean efectivas, proporcionales y oportunas, bajo riesgo de configurar una vulneración autónoma
+      del derecho a la integridad psíquica del trabajador."
+      <cite>— Sentencia del 2° Juzgado del Trabajo de Santiago, enero 2025</cite>
+    </blockquote>
+
+    <p>
+      En cuanto a los estándares probatorios, se aprecia una tendencia a aplicar las reglas de facilitación probatoria
+      propias del procedimiento de tutela, de modo que corresponde al empleador acreditar que las medidas adoptadas
+      fueron adecuadas y que el procedimiento de investigación respetó los principios de imparcialidad y
+      confidencialidad.
+    </p>
+
+    <h2>Responsabilidad del empleador por omisión</h2>
+
+    <p>
+      Uno de los aspectos más discutidos en la práctica ha sido la responsabilidad del empleador cuando, existiendo
+      denuncia, no adopta medidas de resguardo oportunas. La mayoría de los tribunales ha sostenido que la pasividad del
+      empleador frente a una denuncia de acoso configura por sí misma una vulneración del deber de protección consagrado
+      en el artículo 184 del Código del Trabajo.
+    </p>
+
+    <h3>El rol del encargado de prevención</h3>
+
+    <p>
+      La figura del encargado de prevención —obligatoria para empresas con más de diez trabajadores— ha sido objeto de
+      cuestionamientos jurisprudenciales cuando su designación carece de autonomía funcional respecto de la jefatura
+      directa del denunciado. Los tribunales han entendido que una investigación conducida por alguien en subordinación
+      directa al imputado vulnera la garantía de imparcialidad.
+    </p>
+
+    <p>
+      En este contexto, recomendamos a las empresas revisar los protocolos vigentes asegurando que la cadena de
+      investigación sea independiente del área involucrada, y que los plazos de resguardo se activen de forma automática
+      desde la recepción de la denuncia, con independencia de su admisibilidad formal.
+    </p>
+
+    <h2>Conclusiones</h2>
+
+    <p>
+      La Ley Karin ha producido un primer año de aplicación marcado por la incertidumbre interpretativa, pero con
+      señales claras desde la judicatura: el cumplimiento formal del protocolo no es suficiente. La jurisprudencia exige
+      efectividad real en las medidas de resguardo, imparcialidad genuina en la investigación y celeridad en la adopción
+      de medidas cautelares. Las empresas que no adapten sus protocolos a estos estándares emergentes enfrentarán una
+      exposición creciente en sede de tutela laboral.
+    </p>
+
+  </article>
+
+  <!-- PIE DEL ARTÍCULO -->
+  <div class="article-footer">
+    <div class="article-share">
+      <span class="article-share-label">Compartir</span>
+      <a href="https://www.linkedin.com/shareArticle?url=https://bppabogados.cl/noticias/ley-karin" class="share-btn"
+        target="_blank" rel="noopener">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+        </svg>
+        LinkedIn
+      </a>
+      <button class="share-btn" id="copy-link-btn" onclick="copyLink()">
+        <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+          <rect x="4" y="4" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.2" />
+          <path d="M2 10V2h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+        Copiar link
+      </button>
+    </div>
+    <div class="article-area-link">
+      <span class="article-area-label">Área relacionada</span>
+      <a href="./BPP_Area_Detalle.html" class="article-area-btn">
+        Derecho Laboral →
+      </a>
+    </div>
+  </div>
+
+  <!-- NOTICIAS RELACIONADAS -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-header">
+        <span class="related-label">Otras publicaciones</span>
+        <div class="related-line"></div>
       </div>
+      <div class="related-grid">
 
-      <!-- SEPARADOR -->
-      <div class="section-divider">
-        <span class="section-divider-label">Publicaciones recientes</span>
-        <div class="section-divider-line"></div>
-      </div>
-
-      <!-- GRILLA DE NOTICIAS -->
-      <!-- data-cat y data-page se usan para el lazy loading JS -->
-      <div class="news-grid" id="news-grid">
-
-        <!-- PÁGINA 1 — visibles al cargar -->
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
+        <a href="./BPP_Noticia_Detalle.html" class="news-card">
           <div class="news-card-img">
-            <img src="./noticia-01.png" alt=""
+            <img src="noticia-02.png" alt=""
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1288,36 +1338,15 @@
             <div class="news-card-title">Responsabilidad solidaria en grupos empresariales: criterios de la Corte
               Suprema 2024</div>
             <div class="news-card-author">Francisco Pinochet Cantwell</div>
-            <div class="news-card-excerpt">Revisión de los fallos más relevantes de la Corte Suprema en materia de
-              responsabilidad del holding frente a obligaciones laborales de filiales.</div>
+            <div class="news-card-excerpt">Revisión de los fallos más relevantes en materia de responsabilidad del
+              holding frente a obligaciones laborales de filiales.</div>
             <span class="news-card-read">Leer →</span>
           </div>
         </a>
 
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
+        <a href="./BPP_Noticia_Detalle.html" class="news-card">
           <div class="news-card-img">
-            <img src="./noticia-02.png" alt=""
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-noticia"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-noticia">Noticia del estudio</span>
-              <span class="news-card-date">Febrero 2025</span>
-            </div>
-            <div class="news-card-title">BPP obtiene fallo favorable en macro litigio de 140 causas laborales acumuladas
-            </div>
-            <div class="news-card-author">BPP Abogados</div>
-            <div class="news-card-excerpt">La Corte Suprema dictó sentencia de unificación de jurisprudencia en materia
-              de subcontratación, favoreciendo al cliente en la totalidad de las causas.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
-          <div class="news-card-img">
-            <img src="./noticia-03.png" alt=""
+            <img src="noticia-03.png" alt=""
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1331,14 +1360,14 @@
               Apelaciones</div>
             <div class="news-card-author">Matías Berríos Fuchslocher</div>
             <div class="news-card-excerpt">Comentario crítico a la sentencia que delimita el alcance de los derechos
-              fundamentales frente a las facultades disciplinarias del empleador.</div>
+              fundamentales frente a las facultades disciplinarias.</div>
             <span class="news-card-read">Leer →</span>
           </div>
         </a>
 
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
+        <a href="./BPP_Noticia_Detalle.html" class="news-card">
           <div class="news-card-img">
-            <img src="./noticia-04.png" alt=""
+            <img src="noticia-04.png" alt=""
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1351,180 +1380,13 @@
             <div class="news-card-title">Negociación colectiva reglada: desafíos para la empresa moderna</div>
             <div class="news-card-author">Claudio Palavecino Cáceres</div>
             <div class="news-card-excerpt">Los nuevos instrumentos colectivos y sus implicancias para las empresas en el
-              contexto de la reforma laboral y los cambios en la cultura sindical.</div>
+              contexto de la reforma laboral.</div>
             <span class="news-card-read">Leer →</span>
           </div>
         </a>
 
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
-          <div class="news-card-img">
-            <img src="./noticia-05.png" alt=""
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-analisis"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-analisis">Análisis jurídico</span>
-              <span class="news-card-date">Noviembre 2024</span>
-            </div>
-            <div class="news-card-title">Subcontratación: régimen de responsabilidades tras la reforma procesal laboral
-            </div>
-            <div class="news-card-author">Francisco Pinochet Cantwell</div>
-            <div class="news-card-excerpt">Efectos de la reforma en los procedimientos de fiscalización DT y en la
-              distribución de responsabilidades entre empresa principal y contratista.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
-          <div class="news-card-img">
-            <img src="./noticia-06.png" alt=""
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-noticia"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-noticia">Noticia del estudio</span>
-              <span class="news-card-date">Octubre 2024</span>
-            </div>
-            <div class="news-card-title">BPP reconocido en Chambers & Partners 2025 — Band 1 Derecho Laboral</div>
-            <div class="news-card-author">BPP Abogados</div>
-            <div class="news-card-excerpt">Por tercer año consecutivo el estudio es incluido en la primera banda del
-              ranking internacional en la categoría Employment & Labour Law Chile.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <!-- PÁGINA 2 — ocultas, se revelan con "Cargar más" -->
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-columna"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-columna">Columna</span>
-              <span class="news-card-date">Septiembre 2024</span>
-            </div>
-            <div class="news-card-title">La responsabilidad penal de la empresa en materia laboral: nuevos estándares
-            </div>
-            <div class="news-card-author">Matías Berríos Fuchslocher</div>
-            <div class="news-card-excerpt">Análisis del modelo de prevención de delitos laborales y los criterios del
-              Ministerio Público en su aplicación.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-sentencia"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-sentencia">Sentencia comentada</span>
-              <span class="news-card-date">Agosto 2024</span>
-            </div>
-            <div class="news-card-title">Acoso laboral: estándares probatorios tras la Ley Karin — comentario de fallo
-            </div>
-            <div class="news-card-author">Claudio Palavecino Cáceres</div>
-            <div class="news-card-excerpt">Examen de los criterios que aplican los tribunales para dar por acreditada la
-              conducta de acoso en el marco del nuevo procedimiento.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-noticia"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-noticia">Noticia del estudio</span>
-              <span class="news-card-date">Julio 2024</span>
-            </div>
-            <div class="news-card-title">Francisco Pinochet en la Universidad de Lima: conferencia sobre litigación
-              laboral comparada</div>
-            <div class="news-card-author">BPP Abogados</div>
-            <div class="news-card-excerpt">El socio fundador presentó los resultados del macro litigio laboral ante
-              académicos y abogados de Chile, Perú y Argentina.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-analisis"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-analisis">Análisis jurídico</span>
-              <span class="news-card-date">Junio 2024</span>
-            </div>
-            <div class="news-card-title">Protección de datos del trabajador: obligaciones del empleador ante la nueva
-              ley</div>
-            <div class="news-card-author">Matías Berríos Fuchslocher</div>
-            <div class="news-card-excerpt">Implicancias de la Ley 21.719 en la gestión de datos personales de
-              trabajadores y los protocolos de adecuación recomendados.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-columna"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-columna">Columna</span>
-              <span class="news-card-date">Mayo 2024</span>
-            </div>
-            <div class="news-card-title">Due diligence laboral en fusiones y adquisiciones: checklist esencial para el
-              abogado</div>
-            <div class="news-card-author">Francisco Pinochet Cantwell</div>
-            <div class="news-card-excerpt">Guía práctica para la revisión del pasivo laboral en procesos de M&A, con
-              énfasis en los riesgos más frecuentes en el mercado chileno.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-        <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="2" style="display:none">
-          <div class="news-card-img">
-            <div class="news-card-img-ph" style="display:flex"><span>imagen</span></div>
-          </div>
-          <div class="news-card-bar cat-sentencia"></div>
-          <div class="news-card-body">
-            <div class="news-card-meta">
-              <span class="news-card-cat cat-tag-sentencia">Sentencia comentada</span>
-              <span class="news-card-date">Abril 2024</span>
-            </div>
-            <div class="news-card-title">Unificación de jurisprudencia en tutela laboral: el giro del Tribunal Supremo
-            </div>
-            <div class="news-card-author">Claudio Palavecino Cáceres</div>
-            <div class="news-card-excerpt">Análisis de la sentencia que unifica criterios contradictorios en materia de
-              tutela laboral por vulneración de derechos fundamentales.</div>
-            <span class="news-card-read">Leer →</span>
-          </div>
-        </a>
-
-      </div><!-- fin news-grid -->
-
-      <!-- CARGAR MÁS -->
-      <div class="load-more-wrap">
-        <button class="load-more-btn" id="load-more-btn">
-          <span class="lm-label">Cargar más publicaciones</span>
-          <span class="lm-div"></span>
-          <span class="lm-arrow">↓</span>
-        </button>
       </div>
-
-    </div><!-- fin news-inner -->
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -1608,7 +1470,20 @@
   <div class="fab-decor-2"></div>
 
   <script>
-    /* ── ANIMACIÓN DE ENTRADA — cards con IntersectionObserver ── */
+    /* ── COPIAR LINK ── */
+    function copyLink() {
+      const btn = document.getElementById('copy-link-btn');
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> ¡Copiado!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="11" height="11" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M2 10V2h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Copiar link';
+        }, 2500);
+      });
+    }
+
+    /* ── ANIMACIÓN NOTICIAS RELACIONADAS ── */
     (function () {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1617,34 +1492,11 @@
             obs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08 });
+      }, { threshold: 0.1 });
 
-      /* Animar cards de página 1 al cargar */
-      document.querySelectorAll('.news-card[data-page="1"]').forEach((card, i) => {
-        card.style.transitionDelay = `${i * 60}ms`;
+      document.querySelectorAll('.news-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 80}ms`;
         obs.observe(card);
-      });
-
-      /* ── CARGAR MÁS ── */
-      const btn = document.getElementById('load-more-btn');
-      let loaded = false;
-
-      btn.addEventListener('click', () => {
-        if (loaded) return;
-        loaded = true;
-        btn.querySelector('.lm-label').textContent = 'Cargando...';
-        btn.classList.add('loading');
-
-        /* Pequeño delay para simular carga */
-        setTimeout(() => {
-          const page2 = document.querySelectorAll('.news-card[data-page="2"]');
-          page2.forEach((card, i) => {
-            card.style.display = '';
-            card.style.transitionDelay = `${i * 60}ms`;
-            requestAnimationFrame(() => requestAnimationFrame(() => obs.observe(card)));
-          });
-          btn.classList.add('all-loaded'); /* oculta el botón */
-        }, 400);
       });
     })();
   </script>
