@@ -330,12 +330,17 @@
       background: rgba(255, 255, 255, .88);
     }
 
+    .content-wrap {
+      position: absolute;
+      top: 108px;
+    }
+
     /* ══════════════════════════════════════
        HERO
     ══════════════════════════════════════ */
     .hero {
       position: relative;
-      height: 80vh;
+      height: 70vh;
       min-height: 520px;
       overflow: hidden;
     }
@@ -388,7 +393,7 @@
 
     .hero-slide-title {
       font-size: clamp(36px, 5vw, 62px);
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       line-height: 1.05;
       text-transform: uppercase;
@@ -2036,620 +2041,629 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-slides">
-      <div class="hero-slide hero-slide--active" style="background-image:url('slide1.png');">
-        <div class="hero-slide-overlay"></div>
-        <div class="hero-slide-content">
-          <span class="hero-slide-category">Derecho Laboral</span>
-          <h1 class="hero-slide-title">Experiencia que<br>define resultados.</h1>
-          <a href="./BPP_Areas.html" class="hero-slide-btn">
-            <span class="hero-slide-btn-label">Ver áreas laborales</span>
-            <span class="hero-slide-btn-divider"></span>
-            <span class="hero-slide-btn-arrow">→</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-slide" style="background-image:url('slide2.png');">
-        <div class="hero-slide-overlay"></div>
-        <div class="hero-slide-content">
-          <span class="hero-slide-category">Litigios y Controversias</span>
-          <h1 class="hero-slide-title">Representación que<br>marca precedentes.</h1>
-          <a href="./BPP_Areas.html" class="hero-slide-btn">
-            <span class="hero-slide-btn-label">Ver litigios</span>
-            <span class="hero-slide-btn-divider"></span>
-            <span class="hero-slide-btn-arrow">→</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-slide" style="background-image:url('slide3.png');">
-        <div class="hero-slide-overlay"></div>
-        <div class="hero-slide-content">
-          <span class="hero-slide-category">Asesoría Corporativa</span>
-          <h1 class="hero-slide-title">Soluciones jurídicas<br>de precisión.</h1>
-          <a href="./BPP_Areas.html" class="hero-slide-btn">
-            <span class="hero-slide-btn-label">Ver asesoría</span>
-            <span class="hero-slide-btn-divider"></span>
-            <span class="hero-slide-btn-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <a href="./index.html" class="hero-logo">
-      <svg viewBox="0 0 310 310" width="127" height="127" xmlns="http://www.w3.org/2000/svg">
-        <rect width="310" height="310" fill="#1B64C8" />
-        <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF"
-          letter-spacing="-1">BPP</text>
-        <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
-        <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
-          letter-spacing="1.2">BERRÍOS</text>
-        <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
-          letter-spacing="1.2">PALAVECINO</text>
-        <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
-          letter-spacing="1.2">PINOCHET</text>
-      </svg>
-    </a>
-
-    <div class="hero-decor hero-decor--1"></div>
-    <div class="hero-decor hero-decor--2"></div>
-    <div class="hero-decor hero-decor--3"></div>
-
-    <div class="hero-controls">
-      <div class="hero-dots">
-        <div class="hero-dot hero-dot--active" onclick="goSlide(0)"></div>
-        <div class="hero-dot" onclick="goSlide(1)"></div>
-        <div class="hero-dot" onclick="goSlide(2)"></div>
-      </div>
-      <div class="hero-nav">
-        <button class="hero-nav-btn hero-nav-btn--prev" onclick="prevSlide()">‹</button>
-        <button class="hero-nav-btn hero-nav-btn--next" onclick="nextSlide()">›</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGROS E HITOS -->
-  <section class="hitos-section">
-    <div class="hitos-container">
-      <div class="hitos-header">
-        <span class="hitos-eyebrow">BPP Abogados · Resultados</span>
-        <h2 class="hitos-title">Logros e Hitos</h2>
-      </div>
-      <div class="hitos-grid">
-
-        <div class="hito-card">
-          <div class="hito-card-decor"></div>
-          <div class="hito-card-number">1.250+</div>
-          <div class="hito-card-label">Clientes vigentes</div>
-          <p class="hito-card-desc">Más de 1.250 clientes activos representados a lo largo de Chile en materias
-            laborales, civiles y corporativas.</p>
-        </div>
-
-        <div class="hito-card">
-          <div class="hito-card-decor"></div>
-          <div class="hito-card-number">+38</div>
-          <div class="hito-card-label">Años de trayectoria</div>
-          <p class="hito-card-desc">Fundados en 1988, somos uno de los estudios jurídicos laborales de mayor tradición y
-            continuidad en Chile.</p>
-        </div>
-
-        <div class="hito-leido">
-          <svg class="hito-leido-wave" viewBox="0 0 400 200" preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,100 C80,50 160,150 240,100 S360,50 400,100" stroke="#4ECDC4" stroke-width="1.5" fill="none" />
-            <path d="M0,130 C90,80 170,175 260,125 S375,75 400,130" stroke="#4ECDC4" stroke-width="1" fill="none"
-              opacity=".5" />
-            <path d="M0,70 C70,25 150,120 220,75 S345,25 400,70" stroke="#4ECDC4" stroke-width=".8" fill="none"
-              opacity=".35" />
-          </svg>
-          <span class="hito-leido-eyebrow">Lo más leído</span>
-          <div class="hito-leido-title">Noticias destacadas</div>
-          <div class="hito-leido-list">
-            <a href="./BPP_Noticias.html" class="hito-leido-item">
-              <span class="hito-leido-item-num">01</span>
-              <span class="hito-leido-item-text">BPP lidera el primer macro evento judicial laboral tras la reforma
-                procesal — más de 100 sentencias favorables</span>
-            </a>
-            <a href="./BPP_Noticias.html" class="hito-leido-item">
-              <span class="hito-leido-item-num">02</span>
-              <span class="hito-leido-item-text">Acción judicial contra Multitiendas Corona: declaración de unidad
-                económica del holding</span>
-            </a>
-            <a href="./BPP_Noticias.html" class="hito-leido-item">
-              <span class="hito-leido-item-num">03</span>
-              <span class="hito-leido-item-text">Claudio Palavecino en la Universidad de Alcalá: Curso de Altos Estudios
-                en España</span>
+  <div class="content-wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-slides">
+        <div class="hero-slide hero-slide--active" style="background-image:url('slide1.png');">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-slide-category">Derecho Laboral</span>
+            <h1 class="hero-slide-title">Experiencia que<br>define resultados.</h1>
+            <a href="./BPP_Areas.html" class="hero-slide-btn">
+              <span class="hero-slide-btn-label">Ver áreas laborales</span>
+              <span class="hero-slide-btn-divider"></span>
+              <span class="hero-slide-btn-arrow">→</span>
             </a>
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EQUIPO -->
-  <section class="team-section">
-    <div class="team-container">
-      <span class="team-eyebrow">Quiénes somos</span>
-      <h2 class="team-title">Nuestro Equipo</h2>
-
-      <div class="socios-carousel" id="socios-carousel">
-        <div class="socios-track" id="socios-track">
-
-          <div class="socio">
-            <img src="matias.webp" alt="Matías Berríos Fuchslocher" onerror="this.style.display='none'">
-            <div class="socio-overlay">
-              <div class="socio-name">Matías Berríos Fuchslocher</div>
-              <div class="socio-role">Socio</div>
-              <div class="socio-spec">Estrategia Laboral · Litigios</div>
-              <div class="socio-linkedin">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
-                  <circle cx="5" cy="5" r="1" fill="white" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
-                    stroke-linecap="round" />
-                </svg>
-                Ver LinkedIn
-              </div>
-            </div>
+        <div class="hero-slide" style="background-image:url('slide2.png');">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-slide-category">Litigios y Controversias</span>
+            <h1 class="hero-slide-title">Representación que<br>marca precedentes.</h1>
+            <a href="./BPP_Areas.html" class="hero-slide-btn">
+              <span class="hero-slide-btn-label">Ver litigios</span>
+              <span class="hero-slide-btn-divider"></span>
+              <span class="hero-slide-btn-arrow">→</span>
+            </a>
           </div>
-
-          <div class="socio">
-            <img src="claudio.webp" alt="Claudio Palavecino Cáceres" onerror="this.style.display='none'">
-            <div class="socio-overlay">
-              <div class="socio-name">Claudio Palavecino Cáceres</div>
-              <div class="socio-role">Socio</div>
-              <div class="socio-spec">Negociación Colectiva · Due Diligence</div>
-              <div class="socio-linkedin">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
-                  <circle cx="5" cy="5" r="1" fill="white" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
-                    stroke-linecap="round" />
-                </svg>
-                Ver LinkedIn
-              </div>
-            </div>
+        </div>
+        <div class="hero-slide" style="background-image:url('slide3.png');">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content">
+            <span class="hero-slide-category">Asesoría Corporativa</span>
+            <h1 class="hero-slide-title">Soluciones jurídicas<br>de precisión.</h1>
+            <a href="./BPP_Areas.html" class="hero-slide-btn">
+              <span class="hero-slide-btn-label">Ver asesoría</span>
+              <span class="hero-slide-btn-divider"></span>
+              <span class="hero-slide-btn-arrow">→</span>
+            </a>
           </div>
-
         </div>
       </div>
 
-      <div class="socios-dots" id="socios-dots">
-        <div class="socios-dot socios-dot--active" onclick="socioGoTo(0)"></div>
-        <div class="socios-dot" onclick="socioGoTo(1)"></div>
-      </div>
-    </div>
-
-    <div class="team-grid" id="team-grid">
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Patricio González</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado2.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Manuel Gutiérrez</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Franco Benavides</div>
-          <div class="team-cell-area">Neg. Colectiva</div>
-        </div>
-      </div>
-      <!-- POSICIÓN FIJA: fila 1, celda 4 — Francisco Pinochet -->
-      <div class="team-cell" data-fixed><img src="francisco.webp" alt="Francisco Pinochet Cantwell">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Francisco Pinochet</div>
-          <div class="team-cell-area">Socio Fundador</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Polett Rodríguez</div>
-          <div class="team-cell-area">Compliance</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Dante Gariboldi</div>
-          <div class="team-cell-area">Due Diligence</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">José J. Ossa</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado7.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Gonzalo Doren</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Sofía Hernández</div>
-          <div class="team-cell-area">Compliance</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Constanza Godoy</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Felipe Kuthe</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Valentina Espinoza</div>
-          <div class="team-cell-area">Neg. Colectiva</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Lucas Ortiz</div>
-          <div class="team-cell-area">Due Diligence</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Macarena Valenzuela</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Nicolás Yáñez</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Rocío Cartagena</div>
-          <div class="team-cell-area">Seg. Social</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado5.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Simón Gutiérrez</div>
-          <div class="team-cell-area">Estrategia</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Andrea Morales</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Rodrigo Pizarro</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado8.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Camila Reyes</div>
-          <div class="team-cell-area">Compliance</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Felipe Araya</div>
-          <div class="team-cell-area">Due Diligence</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Isidora Soto</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Martín Fuentes</div>
-          <div class="team-cell-area">Litigios</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Javiera Bravo</div>
-          <div class="team-cell-area">Neg. Colectiva</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Diego Castillo</div>
-          <div class="team-cell-area">Estrategia</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Fernanda Lagos</div>
-          <div class="team-cell-area">Seg. Social</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Sebastián Moya</div>
-          <div class="team-cell-area">Compliance</div>
-        </div>
-      </div>
-      <div class="team-cell" data-random>
-        <div class="team-cell-overlay">
-          <div class="team-cell-name">Catalina Vera</div>
-          <div class="team-cell-area">Der. Laboral</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="team-cta-wrap">
-      <a href="./BPP_Equipo.html" class="btn-split">
-        <span class="btn-split-label">Ver equipo completo</span>
-        <span class="btn-split-divider"></span>
-        <span class="btn-split-arrow">→</span>
+      <a href="./index.html" class="hero-logo">
+        <svg viewBox="0 0 310 310" width="127" height="127" xmlns="http://www.w3.org/2000/svg">
+          <rect width="310" height="310" fill="#1B64C8" />
+          <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF"
+            letter-spacing="-1">BPP</text>
+          <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
+          <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+            fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
+          <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+            fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
+          <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+            fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
+        </svg>
       </a>
-    </div>
-  </section>
 
-  <!-- ÁREAS DE PRÁCTICA -->
-  <section class="areas-section">
-    <div class="areas-container">
-      <div class="areas-header">
-        <div>
-          <span class="areas-eyebrow">Especialización</span>
-          <h2 class="areas-title">Áreas de Práctica</h2>
+      <div class="hero-decor hero-decor--1"></div>
+      <div class="hero-decor hero-decor--2"></div>
+      <div class="hero-decor hero-decor--3"></div>
+
+      <div class="hero-controls">
+        <div class="hero-dots">
+          <div class="hero-dot hero-dot--active" onclick="goSlide(0)"></div>
+          <div class="hero-dot" onclick="goSlide(1)"></div>
+          <div class="hero-dot" onclick="goSlide(2)"></div>
         </div>
-        <a href="./BPP_Areas.html" class="areas-cta-link">Ver todas las áreas →</a>
+        <div class="hero-nav">
+          <button class="hero-nav-btn hero-nav-btn--prev" onclick="prevSlide()">‹</button>
+          <button class="hero-nav-btn hero-nav-btn--next" onclick="nextSlide()">›</button>
+        </div>
       </div>
+    </section>
 
-      <!-- Grilla principal: 01 ocupa 2 filas, 02 ocupa 2 columnas -->
-      <div class="areas-main-grid">
+    <!-- LOGROS E HITOS -->
+    <section class="hitos-section">
+      <div class="hitos-container">
+        <div class="hitos-header">
+          <span class="hitos-eyebrow">BPP Abogados · Resultados</span>
+          <h2 class="hitos-title">Logros e Hitos</h2>
+        </div>
+        <div class="hitos-grid">
 
-        <!-- 01 — Derecho Laboral: más importante, doble alto -->
-        <a href="./BPP_Areas.html" class="area-cell ac-xdk area-cell--01">
-          <img src="area-img-01.jpg" alt="Derecho Laboral">
-          <div class="area-cell-bignum">01</div>
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Derecho Laboral</div>
-            <div class="area-cell-hover-desc">Asesoría integral en relaciones laborales individuales y colectivas,
-              contratos y fiscalizaciones.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
+          <div class="hito-card">
+            <div class="hito-card-decor"></div>
+            <div class="hito-card-number">1.250+</div>
+            <div class="hito-card-label">Clientes vigentes</div>
+            <p class="hito-card-desc">Más de 1.250 clientes activos representados a lo largo de Chile en materias
+              laborales, civiles y corporativas.</p>
           </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">01</div>
-            <div class="area-cell-name">Derecho<br>Laboral</div>
-          </div>
-        </a>
 
-        <!-- 02 — Litigios: segunda en importancia, doble ancho -->
-        <a href="./BPP_Areas.html" class="area-cell ac-blue area-cell--02">
-          <img src="area-img-02.jpg" alt="Litigios Laborales y Civiles">
-          <div class="area-cell-bignum" style="font-size:40px;">02</div>
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Litigios Laborales y Civiles</div>
-            <div class="area-cell-hover-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte
-              Suprema.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
+          <div class="hito-card">
+            <div class="hito-card-decor"></div>
+            <div class="hito-card-number">+38</div>
+            <div class="hito-card-label">Años de trayectoria</div>
+            <p class="hito-card-desc">Fundados en 1988, somos uno de los estudios jurídicos laborales de mayor tradición
+              y
+              continuidad en Chile.</p>
           </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">02</div>
-            <div class="area-cell-name">Litigios Laborales<br>y Civiles</div>
-          </div>
-        </a>
 
-        <!-- 03 — Asesoría Corporativa -->
-        <a href="./BPP_Areas.html" class="area-cell ac-navy area-cell--03">
-          <img src="area-img-03.jpg" alt="Asesoría Laboral Corporativa">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Asesoría Laboral Corporativa</div>
-            <div class="area-cell-hover-desc">Gestión laboral corporativa preventiva y estratégica.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">03</div>
-            <div class="area-cell-name">Asesoría<br>Laboral Corporativa</div>
-          </div>
-        </a>
-
-        <!-- 04 — Cumplimiento Normativo -->
-        <a href="./BPP_Areas.html" class="area-cell ac-md area-cell--04">
-          <img src="area-img-04.jpg" alt="Cumplimiento Normativo">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Cumplimiento Normativo Laboral y Penal</div>
-            <div class="area-cell-hover-desc">Modelos de compliance, Ley Karin y prevención de riesgos legales.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">04</div>
-            <div class="area-cell-name">Cumplimiento<br>Normativo</div>
-          </div>
-        </a>
-
-        <!-- 05 — Protección de Datos -->
-        <a href="./BPP_Areas.html" class="area-cell ac-pale area-cell--05">
-          <img src="area-img-05.jpg" alt="Protección de Datos">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Protección de Datos</div>
-            <div class="area-cell-hover-desc">Adecuación a la Ley 21.719 de Protección de Datos Personales.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">05</div>
-            <div class="area-cell-name">Protección<br>de Datos</div>
-          </div>
-        </a>
-
-        <!-- 06 — Derecho Administrativo -->
-        <a href="./BPP_Areas.html" class="area-cell ac-lt area-cell--06">
-          <img src="area-img-06.jpg" alt="Derecho Administrativo y Sancionador">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Derecho Administrativo y Sancionador</div>
-            <div class="area-cell-hover-desc">Procedimientos sancionatorios ante organismos reguladores.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">06</div>
-            <div class="area-cell-name">Derecho<br>Administrativo y Sancionador</div>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Fila inferior: áreas 07-10, más altas que antes -->
-      <div class="areas-bottom-grid">
-
-        <a href="./BPP_Areas.html" class="area-cell ac-b1 area-cell--bottom" style="--delay:320ms">
-          <img src="area-img-07.jpg" alt="Derecho Penal Económico">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Derecho Penal Económico</div>
-            <div class="area-cell-hover-desc">Defensa en delitos económicos y responsabilidad penal empresarial.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">07</div>
-            <div class="area-cell-name">Derecho Penal Económico</div>
-          </div>
-        </a>
-
-        <a href="./BPP_Areas.html" class="area-cell ac-b2 area-cell--bottom" style="--delay:400ms">
-          <img src="area-img-08.jpg" alt="Patrimonios Familiares">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Patrimonios Familiares y Planificación Sucesoria</div>
-            <div class="area-cell-hover-desc">Planificación patrimonial, hereditaria y estructuras familiares.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">08</div>
-            <div class="area-cell-name">Patrimonios Familiares y<br>Planificación Sucesoria</div>
-          </div>
-        </a>
-
-        <a href="./BPP_Areas.html" class="area-cell ac-b3 area-cell--bottom" style="--delay:460ms">
-          <img src="area-img-09.jpg" alt="Estrategia Comunicacional">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Estrategia Comunicacional</div>
-            <div class="area-cell-hover-desc">Asesoría en comunicación jurídica y gestión de crisis reputacional.</div>
-            <div class="area-cell-hover-btn">Ver área →</div>
-          </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">09</div>
-            <div class="area-cell-name">Estrategia Comunicacional</div>
-          </div>
-        </a>
-
-        <a href="./BPP_Areas.html" class="area-cell ac-b4 area-cell--bottom" style="--delay:520ms">
-          <img src="area-img-10.jpg" alt="Representación Organismos Públicos">
-          <div class="area-cell-fade"></div>
-          <div class="area-cell-hover">
-            <div class="area-cell-hover-name">Representación · Ley de Lobby</div>
-            <div class="area-cell-hover-desc">Gestión ante organismos reguladores y representación en Ley de Lobby.
+          <div class="hito-leido">
+            <svg class="hito-leido-wave" viewBox="0 0 400 200" preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M0,100 C80,50 160,150 240,100 S360,50 400,100" stroke="#4ECDC4" stroke-width="1.5" fill="none" />
+              <path d="M0,130 C90,80 170,175 260,125 S375,75 400,130" stroke="#4ECDC4" stroke-width="1" fill="none"
+                opacity=".5" />
+              <path d="M0,70 C70,25 150,120 220,75 S345,25 400,70" stroke="#4ECDC4" stroke-width=".8" fill="none"
+                opacity=".35" />
+            </svg>
+            <span class="hito-leido-eyebrow">Lo más leído</span>
+            <div class="hito-leido-title">Noticias destacadas</div>
+            <div class="hito-leido-list">
+              <a href="./BPP_Noticias.html" class="hito-leido-item">
+                <span class="hito-leido-item-num">01</span>
+                <span class="hito-leido-item-text">BPP lidera el primer macro evento judicial laboral tras la reforma
+                  procesal — más de 100 sentencias favorables</span>
+              </a>
+              <a href="./BPP_Noticias.html" class="hito-leido-item">
+                <span class="hito-leido-item-num">02</span>
+                <span class="hito-leido-item-text">Acción judicial contra Multitiendas Corona: declaración de unidad
+                  económica del holding</span>
+              </a>
+              <a href="./BPP_Noticias.html" class="hito-leido-item">
+                <span class="hito-leido-item-num">03</span>
+                <span class="hito-leido-item-text">Claudio Palavecino en la Universidad de Alcalá: Curso de Altos
+                  Estudios
+                  en España</span>
+              </a>
             </div>
-            <div class="area-cell-hover-btn">Ver área →</div>
           </div>
-          <div class="area-cell-content">
-            <div class="area-cell-num">10</div>
-            <div class="area-cell-name">Representación Org. Públicos · Lobby</div>
-          </div>
-        </a>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section class="team-section">
+      <div class="team-container">
+        <span class="team-eyebrow">Quiénes somos</span>
+        <h2 class="team-title">Nuestro Equipo</h2>
+
+        <div class="socios-carousel" id="socios-carousel">
+          <div class="socios-track" id="socios-track">
+
+            <div class="socio">
+              <img src="matias.webp" alt="Matías Berríos Fuchslocher" onerror="this.style.display='none'">
+              <div class="socio-overlay">
+                <div class="socio-name">Matías Berríos Fuchslocher</div>
+                <div class="socio-role">Socio</div>
+                <div class="socio-spec">Estrategia Laboral · Litigios</div>
+                <div class="socio-linkedin">
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
+                    <circle cx="5" cy="5" r="1" fill="white" />
+                    <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
+                      stroke-linecap="round" />
+                  </svg>
+                  Ver LinkedIn
+                </div>
+              </div>
+            </div>
+
+            <div class="socio">
+              <img src="claudio.webp" alt="Claudio Palavecino Cáceres" onerror="this.style.display='none'">
+              <div class="socio-overlay">
+                <div class="socio-name">Claudio Palavecino Cáceres</div>
+                <div class="socio-role">Socio</div>
+                <div class="socio-spec">Negociación Colectiva · Due Diligence</div>
+                <div class="socio-linkedin">
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
+                    <circle cx="5" cy="5" r="1" fill="white" />
+                    <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
+                      stroke-linecap="round" />
+                  </svg>
+                  Ver LinkedIn
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="socios-dots" id="socios-dots">
+          <div class="socios-dot socios-dot--active" onclick="socioGoTo(0)"></div>
+          <div class="socios-dot" onclick="socioGoTo(1)"></div>
+        </div>
       </div>
 
-      <div class="areas-cta-wrap">
-        <a href="./BPP_Areas.html" class="btn-split btn-split--white">
-          <span class="btn-split-label">Ver todas las áreas</span>
+      <div class="team-grid" id="team-grid">
+        <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Patricio González</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado2.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Manuel Gutiérrez</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Franco Benavides</div>
+            <div class="team-cell-area">Neg. Colectiva</div>
+          </div>
+        </div>
+        <!-- POSICIÓN FIJA: fila 1, celda 4 — Francisco Pinochet -->
+        <div class="team-cell" data-fixed><img src="francisco.webp" alt="Francisco Pinochet Cantwell">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Francisco Pinochet</div>
+            <div class="team-cell-area">Socio Fundador</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Polett Rodríguez</div>
+            <div class="team-cell-area">Compliance</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Dante Gariboldi</div>
+            <div class="team-cell-area">Due Diligence</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">José J. Ossa</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado7.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Gonzalo Doren</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Sofía Hernández</div>
+            <div class="team-cell-area">Compliance</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Constanza Godoy</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Felipe Kuthe</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Valentina Espinoza</div>
+            <div class="team-cell-area">Neg. Colectiva</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Lucas Ortiz</div>
+            <div class="team-cell-area">Due Diligence</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Macarena Valenzuela</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Nicolás Yáñez</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Rocío Cartagena</div>
+            <div class="team-cell-area">Seg. Social</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado5.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Simón Gutiérrez</div>
+            <div class="team-cell-area">Estrategia</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Andrea Morales</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Rodrigo Pizarro</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado8.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Camila Reyes</div>
+            <div class="team-cell-area">Compliance</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Felipe Araya</div>
+            <div class="team-cell-area">Due Diligence</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Isidora Soto</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Martín Fuentes</div>
+            <div class="team-cell-area">Litigios</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Javiera Bravo</div>
+            <div class="team-cell-area">Neg. Colectiva</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Diego Castillo</div>
+            <div class="team-cell-area">Estrategia</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Fernanda Lagos</div>
+            <div class="team-cell-area">Seg. Social</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Sebastián Moya</div>
+            <div class="team-cell-area">Compliance</div>
+          </div>
+        </div>
+        <div class="team-cell" data-random>
+          <div class="team-cell-overlay">
+            <div class="team-cell-name">Catalina Vera</div>
+            <div class="team-cell-area">Der. Laboral</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-cta-wrap">
+        <a href="./BPP_Equipo.html" class="btn-split">
+          <span class="btn-split-label">Ver equipo completo</span>
           <span class="btn-split-divider"></span>
           <span class="btn-split-arrow">→</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ÁREAS DE PRÁCTICA -->
+    <section class="areas-section">
+      <div class="areas-container">
+        <div class="areas-header">
+          <div>
+            <span class="areas-eyebrow">Especialización</span>
+            <h2 class="areas-title">Áreas de Práctica</h2>
+          </div>
+          <a href="./BPP_Areas.html" class="areas-cta-link">Ver todas las áreas →</a>
+        </div>
+
+        <!-- Grilla principal: 01 ocupa 2 filas, 02 ocupa 2 columnas -->
+        <div class="areas-main-grid">
+
+          <!-- 01 — Derecho Laboral: más importante, doble alto -->
+          <a href="./BPP_Areas.html" class="area-cell ac-xdk area-cell--01">
+            <img src="area-img-01.jpg" alt="Derecho Laboral">
+            <div class="area-cell-bignum">01</div>
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Derecho Laboral</div>
+              <div class="area-cell-hover-desc">Asesoría integral en relaciones laborales individuales y colectivas,
+                contratos y fiscalizaciones.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">01</div>
+              <div class="area-cell-name">Derecho<br>Laboral</div>
+            </div>
+          </a>
+
+          <!-- 02 — Litigios: segunda en importancia, doble ancho -->
+          <a href="./BPP_Areas.html" class="area-cell ac-blue area-cell--02">
+            <img src="area-img-02.jpg" alt="Litigios Laborales y Civiles">
+            <div class="area-cell-bignum" style="font-size:40px;">02</div>
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Litigios Laborales y Civiles</div>
+              <div class="area-cell-hover-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte
+                Suprema.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">02</div>
+              <div class="area-cell-name">Litigios Laborales<br>y Civiles</div>
+            </div>
+          </a>
+
+          <!-- 03 — Asesoría Corporativa -->
+          <a href="./BPP_Areas.html" class="area-cell ac-navy area-cell--03">
+            <img src="area-img-03.jpg" alt="Asesoría Laboral Corporativa">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Asesoría Laboral Corporativa</div>
+              <div class="area-cell-hover-desc">Gestión laboral corporativa preventiva y estratégica.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">03</div>
+              <div class="area-cell-name">Asesoría<br>Laboral Corporativa</div>
+            </div>
+          </a>
+
+          <!-- 04 — Cumplimiento Normativo -->
+          <a href="./BPP_Areas.html" class="area-cell ac-md area-cell--04">
+            <img src="area-img-04.jpg" alt="Cumplimiento Normativo">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Cumplimiento Normativo Laboral y Penal</div>
+              <div class="area-cell-hover-desc">Modelos de compliance, Ley Karin y prevención de riesgos legales.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">04</div>
+              <div class="area-cell-name">Cumplimiento<br>Normativo</div>
+            </div>
+          </a>
+
+          <!-- 05 — Protección de Datos -->
+          <a href="./BPP_Areas.html" class="area-cell ac-pale area-cell--05">
+            <img src="area-img-05.jpg" alt="Protección de Datos">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Protección de Datos</div>
+              <div class="area-cell-hover-desc">Adecuación a la Ley 21.719 de Protección de Datos Personales.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">05</div>
+              <div class="area-cell-name">Protección<br>de Datos</div>
+            </div>
+          </a>
+
+          <!-- 06 — Derecho Administrativo -->
+          <a href="./BPP_Areas.html" class="area-cell ac-lt area-cell--06">
+            <img src="area-img-06.jpg" alt="Derecho Administrativo y Sancionador">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Derecho Administrativo y Sancionador</div>
+              <div class="area-cell-hover-desc">Procedimientos sancionatorios ante organismos reguladores.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">06</div>
+              <div class="area-cell-name">Derecho<br>Administrativo y Sancionador</div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Fila inferior: áreas 07-10, más altas que antes -->
+        <div class="areas-bottom-grid">
+
+          <a href="./BPP_Areas.html" class="area-cell ac-b1 area-cell--bottom" style="--delay:320ms">
+            <img src="area-img-07.jpg" alt="Derecho Penal Económico">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Derecho Penal Económico</div>
+              <div class="area-cell-hover-desc">Defensa en delitos económicos y responsabilidad penal empresarial.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">07</div>
+              <div class="area-cell-name">Derecho Penal Económico</div>
+            </div>
+          </a>
+
+          <a href="./BPP_Areas.html" class="area-cell ac-b2 area-cell--bottom" style="--delay:400ms">
+            <img src="area-img-08.jpg" alt="Patrimonios Familiares">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Patrimonios Familiares y Planificación Sucesoria</div>
+              <div class="area-cell-hover-desc">Planificación patrimonial, hereditaria y estructuras familiares.</div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">08</div>
+              <div class="area-cell-name">Patrimonios Familiares y<br>Planificación Sucesoria</div>
+            </div>
+          </a>
+
+          <a href="./BPP_Areas.html" class="area-cell ac-b3 area-cell--bottom" style="--delay:460ms">
+            <img src="area-img-09.jpg" alt="Estrategia Comunicacional">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Estrategia Comunicacional</div>
+              <div class="area-cell-hover-desc">Asesoría en comunicación jurídica y gestión de crisis reputacional.
+              </div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">09</div>
+              <div class="area-cell-name">Estrategia Comunicacional</div>
+            </div>
+          </a>
+
+          <a href="./BPP_Areas.html" class="area-cell ac-b4 area-cell--bottom" style="--delay:520ms">
+            <img src="area-img-10.jpg" alt="Representación Organismos Públicos">
+            <div class="area-cell-fade"></div>
+            <div class="area-cell-hover">
+              <div class="area-cell-hover-name">Representación · Ley de Lobby</div>
+              <div class="area-cell-hover-desc">Gestión ante organismos reguladores y representación en Ley de Lobby.
+              </div>
+              <div class="area-cell-hover-btn">Ver área →</div>
+            </div>
+            <div class="area-cell-content">
+              <div class="area-cell-num">10</div>
+              <div class="area-cell-name">Representación Org. Públicos · Lobby</div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="areas-cta-wrap">
+          <a href="./BPP_Areas.html" class="btn-split btn-split--white">
+            <span class="btn-split-label">Ver todas las áreas</span>
+            <span class="btn-split-divider"></span>
+            <span class="btn-split-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-decor-1"></div>
-        <div class="footer-decor-2"></div>
-        <div>
-          <div class="footer-logo">
-            <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
-              <rect width="310" height="310" fill="#1B64C8" />
-              <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62"
-                fill="#FFFFFF" letter-spacing="-1">BPP</text>
-              <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
-              <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
-              <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
-              <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
-            </svg>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-decor-1"></div>
+          <div class="footer-decor-2"></div>
+          <div>
+            <div class="footer-logo">
+              <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
+                <rect width="310" height="310" fill="#1B64C8" />
+                <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62"
+                  fill="#FFFFFF" letter-spacing="-1">BPP</text>
+                <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
+                <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                  fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
+                <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                  fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
+                <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                  fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">El Estudio</div>
+            <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span
+                class="footer-col-link-arrow">→</span></a>
+          </div>
+          <div>
+            <div class="footer-col-title">Áreas de Práctica</div>
+            <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Litigios Laborales y Civiles<span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Cumplimiento Normativo <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas →
+              <span class="footer-col-link-arrow">→</span></a>
+          </div>
+          <div>
+            <div class="footer-col-title">Contacto</div>
+            <a href="#" class="footer-col-link">Av. Apoquindo 3000, piso 15, of. 1501 <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
+            <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
+                class="footer-col-link-arrow">→</span></a>
+            <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span
+                class="footer-col-link-arrow">→</span></a>
           </div>
         </div>
-        <div>
-          <div class="footer-col-title">El Estudio</div>
-          <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span
-              class="footer-col-link-arrow">→</span></a>
-        </div>
-        <div>
-          <div class="footer-col-title">Áreas de Práctica</div>
-          <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Cumplimiento Normativo <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
-              class="footer-col-link-arrow">→</span></a>
-        </div>
-        <div>
-          <div class="footer-col-title">Contacto</div>
-          <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
-          <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span
-              class="footer-col-link-arrow">→</span></a>
+        <div class="footer-bottom">
+          <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos
+            reservados.</span>
+          <div class="footer-legal-links">
+            <a href="#" class="footer-legal-link">LinkedIn</a>
+            <a href="#" class="footer-legal-link">Política de privacidad</a>
+            <a href="#" class="footer-legal-link">Postulaciones</a>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos reservados.</span>
-        <div class="footer-legal-links">
-          <a href="#" class="footer-legal-link">LinkedIn</a>
-          <a href="#" class="footer-legal-link">Política de privacidad</a>
-          <a href="#" class="footer-legal-link">Postulaciones</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
+
+
 
   <!-- FAB WHATSAPP -->
   <a href="https://wa.me/56949409721" class="fab" target="_blank" rel="noopener">

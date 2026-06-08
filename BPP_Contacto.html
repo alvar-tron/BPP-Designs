@@ -442,12 +442,12 @@
     }
 
     .sh-title {
-      font-size: clamp(28px, 3.5vw, 44px);
-      font-weight: 800;
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 500;
       color: #fff;
-      line-height: 1.0;
+      line-height: 1.1;
       text-transform: uppercase;
-      letter-spacing: .02em;
+      letter-spacing: .04em;
       margin-bottom: 8px;
     }
 
@@ -1432,7 +1432,8 @@
           <div class="footer-col-title">Áreas de Práctica</div>
           <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span
               class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Litigios Laborales y Civiles<span
+              class="footer-col-link-arrow">→</span></a>
           <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
               class="footer-col-link-arrow">→</span></a>
           <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
@@ -1546,18 +1547,18 @@
       /* SEO */
       document.title = data.seoTitle;
       document.querySelector('meta[name="description"]')
-              .setAttribute('content', data.seoDesc);
+        .setAttribute('content', data.seoDesc);
 
       /* Hero */
       document.getElementById('hero-img').style.backgroundImage = `url('${data.heroImg}')`;
-      document.getElementById('hero-eyebrow').textContent        = data.eyebrow;
-      document.getElementById('hero-subtitle').textContent       = data.subtitle;
-      document.getElementById('breadcrumb-area').textContent     = data.title;
+      document.getElementById('hero-eyebrow').textContent = data.eyebrow;
+      document.getElementById('hero-subtitle').textContent = data.subtitle;
+      document.getElementById('breadcrumb-area').textContent = data.title;
 
       /* Intro */
-      document.getElementById('intro-tag').textContent   = data.tag;
+      document.getElementById('intro-tag').textContent = data.tag;
       document.getElementById('intro-title').textContent = data.introTitle;
-      document.getElementById('intro-text').innerHTML    = data.introText;
+      document.getElementById('intro-text').innerHTML = data.introText;
 
       /* Selector del formulario */
       const select = document.getElementById('area');
@@ -1581,7 +1582,7 @@
        INICIALIZACIÓN — lee ?area= al cargar
     ══════════════════════════════════════════════════════ */
     (function () {
-      const params  = new URLSearchParams(window.location.search);
+      const params = new URLSearchParams(window.location.search);
       const areaKey = (params.get('area') || '').toLowerCase();
       if (AREAS[areaKey]) applyArea(areaKey, false);
     })();
@@ -1597,7 +1598,7 @@
     /* Botón atrás/adelante del navegador */
     window.addEventListener('popstate', function (e) {
       const areaKey = (e.state && e.state.area) ||
-                      new URLSearchParams(window.location.search).get('area') || '';
+        new URLSearchParams(window.location.search).get('area') || '';
       if (AREAS[areaKey]) applyArea(areaKey, false);
     });
 

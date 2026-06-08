@@ -416,12 +416,12 @@
     }
 
     .sh-title {
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 800;
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 500;
       color: #fff;
-      line-height: 1.0;
+      line-height: 1.1;
       text-transform: uppercase;
-      letter-spacing: .02em;
+      letter-spacing: .04em;
     }
 
     .sh-right {
@@ -441,49 +441,6 @@
 
     .sh-desc p:last-child {
       margin-bottom: 0;
-    }
-
-    /* ══════════════════════════════════════════════════════
-   SELECTOR DE VISTA
-══════════════════════════════════════════════════════ */
-    .prop-selector {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 20px 80px 0;
-      gap: 8px;
-    }
-
-    .prop-selector-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      color: var(--gray-mid);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-right: 4px;
-    }
-
-    .prop-btn {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border: 1px solid var(--gray-lt);
-      background: #fff;
-      color: var(--gray-mid);
-      cursor: pointer;
-      transition: all .2s;
-    }
-
-    .prop-btn:hover,
-    .prop-btn.active {
-      border-color: var(--blue);
-      background: var(--blue);
-      color: #fff;
     }
 
     /* ══════════════════════════════════════════════════════
@@ -858,7 +815,6 @@
     .p3-section {
       background: #F5F5F5;
       padding: 52px 0 80px;
-      display: none;
     }
 
     .p3-header {
@@ -1517,328 +1473,6 @@
   </section>
 
   <!-- ÁREAS DE PRÁCTICA -->
-  <!-- SELECTOR DE PROPUESTA -->
-  <div class="prop-selector">
-    <span class="prop-selector-label">Vista</span>
-    <button class="prop-btn active" onclick="showProp(1)">Lista</button>
-    <button class="prop-btn" onclick="showProp(2)">Grilla</button>
-    <button class="prop-btn" onclick="showProp(3)">Cards</button>
-  </div>
-
-  <!-- PROPUESTA 1: LISTA DE FILAS -->
-  <section class="areas-section" id="prop-1">
-    <div class="areas-list">
-      <!-- 01 Derecho Laboral -->
-      <div class="area-row ar-light">
-        <div class="ar-left">
-          <div class="ar-num ar-num-l">01</div>
-          <div class="ar-title ar-title-l">Derecho<br>Laboral</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
-            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-l"></span>
-            <span class="ar-btn-arr ar-btn-arr-l">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-l"
-            style="background-image:url('area-img-01.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 02 Litigios Laborales y Civiles -->
-      <div class="area-row ar-dark">
-        <div class="ar-left">
-          <div class="ar-num ar-num-d">02</div>
-          <div class="ar-title ar-title-d">Litigios Laborales<br>y Civiles</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
-            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-d"></span>
-            <span class="ar-btn-arr ar-btn-arr-d">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-d"
-            style="background-image:url('area-img-02.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq"
-            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 03 Asesoría Laboral Corporativa -->
-      <div class="area-row ar-light">
-        <div class="ar-left">
-          <div class="ar-num ar-num-l">03</div>
-          <div class="ar-title ar-title-l">Asesoría Laboral<br>Corporativa</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
-            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-l"></span>
-            <span class="ar-btn-arr ar-btn-arr-l">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-l"
-            style="background-image:url('area-img-03.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 04 Cumplimiento Normativo Laboral y Penal -->
-      <div class="area-row ar-dark">
-        <div class="ar-left">
-          <div class="ar-num ar-num-d">04</div>
-          <div class="ar-title ar-title-d">Cumplimiento Normativo<br>Laboral y Penal</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
-            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-d"></span>
-            <span class="ar-btn-arr ar-btn-arr-d">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-d"
-            style="background-image:url('area-img-04.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq"
-            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 05 Protección de Datos -->
-      <div class="area-row ar-light">
-        <div class="ar-left">
-          <div class="ar-num ar-num-l">05</div>
-          <div class="ar-title ar-title-l">Protección<br>de Datos</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
-            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-l"></span>
-            <span class="ar-btn-arr ar-btn-arr-l">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-l"
-            style="background-image:url('area-img-05.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 06 Derecho Administrativo y Sancionador -->
-      <div class="area-row ar-dark">
-        <div class="ar-left">
-          <div class="ar-num ar-num-d">06</div>
-          <div class="ar-title ar-title-d">Derecho Administrativo<br>y Sancionador</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
-            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-d"></span>
-            <span class="ar-btn-arr ar-btn-arr-d">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-d"
-            style="background-image:url('area-img-06.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq"
-            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 07 Derecho Penal Económico -->
-      <div class="area-row ar-light">
-        <div class="ar-left">
-          <div class="ar-num ar-num-l">07</div>
-          <div class="ar-title ar-title-l">Derecho Penal<br>Económico</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
-            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-l"></span>
-            <span class="ar-btn-arr ar-btn-arr-l">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-l"
-            style="background-image:url('area-img-07.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 08 Patrimonios Familiares y Planificación Sucesoria -->
-      <div class="area-row ar-dark">
-        <div class="ar-left">
-          <div class="ar-num ar-num-d">08</div>
-          <div class="ar-title ar-title-d">Patrimonios Familiares y<br>Planificación Sucesoria</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
-            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-d"></span>
-            <span class="ar-btn-arr ar-btn-arr-d">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-d"
-            style="background-image:url('area-img-08.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq"
-            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 09 Estrategia Comunicacional -->
-      <div class="area-row ar-light">
-        <div class="ar-left">
-          <div class="ar-num ar-num-l">09</div>
-          <div class="ar-title ar-title-l">Estrategia<br>Comunicacional</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-l">
-            <span class="ar-btn-lbl ar-btn-lbl-l">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-l"></span>
-            <span class="ar-btn-arr ar-btn-arr-l">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-l"
-            style="background-image:url('area-img-09.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#1B64C8;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq" style="width:8px;height:8px;background:#3D7FD4;opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-      <!-- 10 Representación · Ley de Lobby -->
-      <div class="area-row ar-dark">
-        <div class="ar-left">
-          <div class="ar-num ar-num-d">10</div>
-          <div class="ar-title ar-title-d">Representación Org.<br>Públicos · Lobby</div>
-          <a href="./BPP_Area_Detalle.html" class="ar-btn ar-btn-d">
-            <span class="ar-btn-lbl ar-btn-lbl-d">Ver más</span>
-            <span class="ar-btn-sep ar-btn-sep-d"></span>
-            <span class="ar-btn-arr ar-btn-arr-d">→</span>
-          </a>
-        </div>
-        <div class="ar-right">
-          <div class="ar-img ar-img-ph ar-img-ph-d"
-            style="background-image:url('area-img-10.jpg');background-size:cover;background-position:center;"></div>
-          <div class="ar-hover-overlay"></div>
-          <div class="ar-sq" style="width:13px;height:13px;background:#85B7EB;opacity:.42;right:48px;top:20px;"></div>
-          <div class="ar-sq"
-            style="width:8px;height:8px;background:rgba(255,255,255,.18);opacity:.3;right:20px;bottom:22px;"></div>
-        </div>
-      </div>
-    </div><!-- fin areas-list -->
-  </section>
-
-  <!-- PROPUESTA 2: GRID DE TARJETAS -->
-  <section class="p2-section" id="prop-2">
-    <div class="p2-header">
-      <div>
-        <span class="p2-eyebrow">Especialización · BPP Abogados</span>
-        <div class="p2-title">Áreas de Práctica</div>
-      </div>
-    </div>
-    <div class="p2-grid">
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-01.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">01</div>
-          <div class="area-card-title">Derecho Laboral</div>
-          <div class="area-card-desc">Asesoría integral en relaciones laborales individuales y colectivas, contratos y
-            fiscalizaciones.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-02.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">02</div>
-          <div class="area-card-title">Litigios Laborales y Civiles</div>
-          <div class="area-card-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.
-          </div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-03.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">03</div>
-          <div class="area-card-title">Asesoría Laboral Corporativa</div>
-          <div class="area-card-desc">Gestión laboral corporativa preventiva y estratégica para empresas.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-04.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">04</div>
-          <div class="area-card-title">Cumplimiento Normativo Laboral y Penal</div>
-          <div class="area-card-desc">Modelos de compliance, Ley Karin y prevención de riesgos legales.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-05.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">05</div>
-          <div class="area-card-title">Protección de Datos</div>
-          <div class="area-card-desc">Adecuación a la Ley 21.719 de Protección de Datos Personales.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-06.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">06</div>
-          <div class="area-card-title">Derecho Administrativo y Sancionador</div>
-          <div class="area-card-desc">Procedimientos sancionatorios ante organismos reguladores.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-07.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">07</div>
-          <div class="area-card-title">Derecho Penal Económico</div>
-          <div class="area-card-desc">Defensa en delitos económicos y responsabilidad penal empresarial.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-08.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">08</div>
-          <div class="area-card-title">Patrimonios Familiares y Planificación Sucesoria</div>
-          <div class="area-card-desc">Planificación patrimonial, hereditaria y estructuras familiares.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-09.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">09</div>
-          <div class="area-card-title">Estrategia Comunicacional</div>
-          <div class="area-card-desc">Asesoría en comunicación jurídica y gestión de crisis reputacional.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-      <a href="./BPP_Area_Detalle.html" class="area-card">
-        <div class="area-card-img" style="background-image:url('area-img-10.jpg');"></div>
-        <div class="area-card-overlay"></div>
-        <div class="area-card-body">
-          <div class="area-card-num">10</div>
-          <div class="area-card-title">Representación · Ley de Lobby</div>
-          <div class="area-card-desc">Gestión ante organismos reguladores y representación en Ley de Lobby.</div>
-          <div class="area-card-cta">Ver área →</div>
-        </div>
-      </a>
-    </div>
-  </section>
 
   <!-- PROPUESTA 3: CARDS CON IMAGEN FULL-BLEED -->
   <section class="p3-section" id="prop-3">
@@ -1974,14 +1608,6 @@
     </div>
   </section>
 
-  <script>
-    function showProp(n) {
-      document.getElementById('prop-1').style.display = n === 1 ? '' : 'none';
-      document.getElementById('prop-2').style.display = n === 2 ? 'block' : 'none';
-      document.getElementById('prop-3').style.display = n === 3 ? 'block' : 'none';
-      document.querySelectorAll('.prop-btn').forEach((b, i) => b.classList.toggle('active', i + 1 === n));
-    }
-  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -2018,7 +1644,8 @@
           <div class="footer-col-title">Áreas de Práctica</div>
           <a href="./BPP_Areas.html" class="footer-col-link">Derecho del Trabajo <span
               class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Litigios Laborales y Civiles<span
+              class="footer-col-link-arrow">→</span></a>
           <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
               class="footer-col-link-arrow">→</span></a>
           <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
@@ -2026,7 +1653,7 @@
         </div>
         <div>
           <div class="footer-col-title">Contacto</div>
-          <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span
+          <a href="#" class="footer-col-link">Av. Apoquindo 3000, piso 15, of. 1501 <span
               class="footer-col-link-arrow">→</span></a>
           <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
           <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
