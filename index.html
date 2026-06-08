@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BPP Abogados — Berríos Palavecino Pinochet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Montserrat:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
   <style>
-
     /* ══════════════════════════════════════
        VARIABLES
     ══════════════════════════════════════ */
     :root {
-      --blue:     #1B64C8;
-      --blue-dk:  #1450A8;
+      --blue: #1B64C8;
+      --blue-dk: #1450A8;
       --blue-xdk: #0A2A5E;
-      --blue-md:  #3D7FD4;
-      --blue-lt:  #85B7EB;
+      --blue-md: #3D7FD4;
+      --blue-lt: #85B7EB;
       --wa-green: #25D366;
-      --li-blue:  #0A66C2;
-      --white:    #FFFFFF;
-      --gray-bg:  #F5F5F5;
-      --gray-lt:  #E2E2E2;
+      --li-blue: #0A66C2;
+      --white: #FFFFFF;
+      --gray-bg: #F5F5F5;
+      --gray-lt: #E2E2E2;
       --gray-mid: #999999;
-      --gray-dk:  #2A2A2A;
-      --area-bg:  #F0EDE6;
+      --gray-dk: #2A2A2A;
+      --area-bg: #F0EDE6;
     }
 
     /* ══════════════════════════════════════
        RESET Y BASE
     ══════════════════════════════════════ */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--gray-bg);
@@ -45,291 +55,1001 @@
        TOPBAR
     ══════════════════════════════════════ */
     .topbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      background: var(--blue-xdk); height: 36px;
-      display: flex; align-items: center; padding: 0 80px; gap: 18px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      background: var(--blue-xdk);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      gap: 18px;
     }
-    .topbar-left    { display: flex; align-items: center; gap: 18px; }
-    .topbar-spacer  { flex: 1; }
-    .topbar-right   { display: flex; align-items: center; gap: 10px; }
-    .topbar-sep     { width: 1px; height: 12px; background: rgba(255,255,255,.15); }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar-spacer {
+      flex: 1;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-sep {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, .15);
+    }
 
     .topbar-link {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 11px; color: rgba(255,255,255,.55);
-      text-decoration: none; letter-spacing: .03em; transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      letter-spacing: .03em;
+      transition: color .2s;
     }
-    .topbar-link:hover { color: #fff; }
-    .topbar-link-icon { width: 12px; height: 12px; flex-shrink: 0; }
+
+    .topbar-link:hover {
+      color: #fff;
+    }
+
+    .topbar-link-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
 
     .topbar-btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      height: 24px; padding: 0 12px;
-      font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      text-decoration: none; border-radius: 1px; color: #fff; background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 24px;
+      padding: 0 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      color: #fff;
+      background: transparent;
       transition: background .2s, border-color .2s, transform .15s;
     }
-    .topbar-btn:hover { transform: translateY(-1px); }
-    .topbar-btn-icon  { width: 12px; height: 12px; flex-shrink: 0; }
-    .topbar-btn--wa   { border: 1.5px solid rgba(255,255,255,.45); }
-    .topbar-btn--wa:hover { background: var(--wa-green); border-color: var(--wa-green); }
-    .topbar-btn--li   { border: 1.5px solid rgba(255,255,255,.25); }
-    .topbar-btn--li:hover { background: var(--li-blue); border-color: var(--li-blue); }
-    .topbar-btn-label--short { display: none; }
+
+    .topbar-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .topbar-btn-icon {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .topbar-btn--wa {
+      border: 1.5px solid rgba(255, 255, 255, .45);
+    }
+
+    .topbar-btn--wa:hover {
+      background: var(--wa-green);
+      border-color: var(--wa-green);
+    }
+
+    .topbar-btn--li {
+      border: 1.5px solid rgba(255, 255, 255, .25);
+    }
+
+    .topbar-btn--li:hover {
+      background: var(--li-blue);
+      border-color: var(--li-blue);
+    }
+
+    .topbar-btn-label--short {
+      display: none;
+    }
 
     /* ══════════════════════════════════════
        NAV — siempre sólido azul
     ══════════════════════════════════════ */
     .nav {
-      position: fixed; top: 36px; left: 0; right: 0; height: 72px; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between; padding: 0 80px;
-      background: var(--blue); box-shadow: 0 1px 0 rgba(0,0,0,.12);
+      position: fixed;
+      top: 36px;
+      left: 0;
+      right: 0;
+      height: 72px;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      background: var(--blue);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
     }
 
-    .nav-logo  { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .nav-right { display: flex; align-items: center; gap: 40px; }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
     .nav-links li a {
       font-family: 'Jost', sans-serif;
-      font-size: 13px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase;
-      text-decoration: none; transition: color .2s; white-space: nowrap;
-      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color .2s;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, .72);
     }
+
     .nav-links li a:hover,
-    .nav-links li a.active { color: #fff; }
+    .nav-links li a.active {
+      color: #fff;
+    }
+
+    /* Menú desplegable de Contacto */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0;
+      transition: color .2s;
+    }
+
+    .nav-dropdown-toggle .arrow {
+      font-size: 9px;
+      transition: transform .2s;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-toggle .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Puente invisible que cubre el gap entre botón y menú */
+    .nav-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: -20px;
+      right: -20px;
+      height: 18px;
+      /* cubre el gap de 14px + margen */
+      background: transparent;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      right: 0;
+      background: var(--blue-xdk);
+      min-width: 220px;
+      padding: 6px 0;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity .2s, transform .2s;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .7);
+      text-decoration: none;
+      letter-spacing: .06em;
+      transition: background .15s, color .15s;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .nav-dropdown-item:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .nav-dropdown-item.active {
+      color: #fff;
+      background: rgba(27, 100, 200, .5);
+    }
+
+    .nav-dropdown-item-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue-lt);
+      flex-shrink: 0;
+    }
 
     .nav-cta {
-      font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; padding: 10px 24px; border-radius: 1px;
-      color: var(--blue); background: #fff; border: 1.5px solid #fff;
-      transition: all .2s; white-space: nowrap;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 1px;
+      color: var(--blue);
+      background: #fff;
+      border: 1.5px solid #fff;
+      transition: all .2s;
+      white-space: nowrap;
     }
-    .nav-cta:hover { background: rgba(255,255,255,.88); }
+
+    .nav-cta:hover {
+      background: rgba(255, 255, 255, .88);
+    }
 
     /* ══════════════════════════════════════
        HERO
     ══════════════════════════════════════ */
-    .hero { position: relative; height: 80vh; min-height: 520px; overflow: hidden; }
-    .hero-slides { position: relative; width: 100%; height: 100%; }
+    .hero {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .hero-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
     .hero-slide {
-      position: absolute; inset: 0;
-      transform: translateX(100%);   /* oculto por defecto a la derecha */
-      background-size: cover; background-position: center; z-index: 1;
+      position: absolute;
+      inset: 0;
+      transform: translateX(100%);
+      /* oculto por defecto a la derecha */
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
     }
-    .hero-slide--active { transform: translateX(0); z-index: 2; }
 
-    .hero-slide-overlay { position: absolute; inset: 0; background: rgba(10,58,120,.58); }
-    .hero-slide-content { position: absolute; bottom: 80px; left: 240px; z-index: 2; max-width: 580px; }
+    .hero-slide--active {
+      transform: translateX(0);
+      z-index: 2;
+    }
+
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 58, 120, .58);
+    }
+
+    .hero-slide-content {
+      position: absolute;
+      bottom: 80px;
+      left: 240px;
+      z-index: 2;
+      max-width: 580px;
+    }
 
     .hero-slide-category {
-      font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 700;
-      color: rgba(255,255,255,.7); letter-spacing: .22em; text-transform: uppercase;
-      margin-bottom: 18px; display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .7);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      display: block;
     }
+
     .hero-slide-title {
-      font-size: clamp(36px,5vw,62px); font-weight: 800; color: #fff;
-      line-height: 1.05; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 28px;
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: 28px;
     }
+
     .hero-slide-btn {
-      display: inline-flex; align-items: center;
-      border: 1.5px solid rgba(255,255,255,.6); height: 44px;
-      text-decoration: none; background: transparent;
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid rgba(255, 255, 255, .6);
+      height: 44px;
+      text-decoration: none;
+      background: transparent;
       transition: background .2s, border-color .2s;
     }
-    .hero-slide-btn:hover    { background: rgba(255,255,255,.12); border-color: #fff; }
-    .hero-slide-btn-label    { font-size: 11px; font-weight: 600; color: #fff; padding: 0 18px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
-    .hero-slide-btn-divider  { width: 1.5px; height: 24px; background: rgba(255,255,255,.5); flex-shrink: 0; }
-    .hero-slide-btn-arrow    { font-size: 16px; color: #fff; padding: 0 16px; }
+
+    .hero-slide-btn:hover {
+      background: rgba(255, 255, 255, .12);
+      border-color: #fff;
+    }
+
+    .hero-slide-btn-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      padding: 0 18px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-slide-btn-divider {
+      width: 1.5px;
+      height: 24px;
+      background: rgba(255, 255, 255, .5);
+      flex-shrink: 0;
+    }
+
+    .hero-slide-btn-arrow {
+      font-size: 16px;
+      color: #fff;
+      padding: 0 16px;
+    }
 
     /* Hero logo — esquina inferior izquierda, junto al contenido del slide */
     .hero-logo {
-      position: absolute; bottom: 28px; left: 80px; z-index: 4;
-      opacity: .92; transition: opacity .2s;
+      position: absolute;
+      bottom: 28px;
+      left: 80px;
+      z-index: 4;
+      opacity: .92;
+      transition: opacity .2s;
     }
-    .hero-logo:hover { opacity: 1; }
+
+    .hero-logo:hover {
+      opacity: 1;
+    }
 
     /* Cuadrados decorativos del hero — lado derecho */
-    .hero-decor { position: absolute; z-index: 3; pointer-events: none; }
-    .hero-decor--1 { top: 110px; right: 80px;  width: 20px; height: 20px; background: var(--blue);   opacity: .85; }
-    .hero-decor--2 { top: 134px; right: 106px; width: 12px; height: 12px; background: rgba(255,255,255,.5); }
-    .hero-decor--3 { top: 118px; right: 118px; width: 14px; height: 14px; background: var(--blue-md); opacity: .55; }
+    .hero-decor {
+      position: absolute;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-decor--1 {
+      top: 110px;
+      right: 80px;
+      width: 20px;
+      height: 20px;
+      background: var(--blue);
+      opacity: .85;
+    }
+
+    .hero-decor--2 {
+      top: 134px;
+      right: 106px;
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, .5);
+    }
+
+    .hero-decor--3 {
+      top: 118px;
+      right: 118px;
+      width: 14px;
+      height: 14px;
+      background: var(--blue-md);
+      opacity: .55;
+    }
 
     .hero-controls {
       position: absolute;
       bottom: 34px;
-      right: 80px;       /* mismo margen que left: 80px del logo — equidistante */
+      right: 80px;
+      /* mismo margen que left: 80px del logo — equidistante */
       z-index: 10;
-      display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
     }
-    .hero-dots { display: flex; gap: 5px; }
+
+    .hero-dots {
+      display: flex;
+      gap: 5px;
+    }
+
     .hero-dot {
-      width: 24px; height: 3px; background: rgba(255,255,255,.35);
-      cursor: pointer; transition: background .2s;
+      width: 24px;
+      height: 3px;
+      background: rgba(255, 255, 255, .35);
+      cursor: pointer;
+      transition: background .2s;
     }
-    .hero-dot--active { background: #fff; }
-    .hero-nav         { display: flex; gap: 20px; }
+
+    .hero-dot--active {
+      background: #fff;
+    }
+
+    .hero-nav {
+      display: flex;
+      gap: 20px;
+    }
+
     .hero-nav-btn {
-      width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
-      font-size: 20px; color: #fff; cursor: pointer; border: none; background: transparent;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      background: transparent;
       transition: background .2s, transform .15s;
     }
-    .hero-nav-btn:hover        { transform: scale(1.1); }
-    .hero-nav-btn--prev        { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.4); }
-    .hero-nav-btn--prev:hover  { background: rgba(255,255,255,.28); }
-    .hero-nav-btn--next        { background: var(--blue); }
-    .hero-nav-btn--next:hover  { background: var(--blue-dk); }
+
+    .hero-nav-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .hero-nav-btn--prev {
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .4);
+    }
+
+    .hero-nav-btn--prev:hover {
+      background: rgba(255, 255, 255, .28);
+    }
+
+    .hero-nav-btn--next {
+      background: var(--blue);
+    }
+
+    .hero-nav-btn--next:hover {
+      background: var(--blue-dk);
+    }
 
     /* ══════════════════════════════════════
        LOGROS E HITOS
     ══════════════════════════════════════ */
-    .hitos-section    { background: var(--area-bg); padding: 60px 0; }
-    .hitos-container  { max-width: 1180px; margin: 0 auto; padding: 0 80px; }
-    .hitos-header     { margin-bottom: 36px; }
+    .hitos-section {
+      background: var(--area-bg);
+      padding: 60px 0;
+    }
+
+    .hitos-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .hitos-header {
+      margin-bottom: 36px;
+    }
+
     .hitos-eyebrow {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-      color: var(--blue); letter-spacing: .22em; text-transform: uppercase;
-      margin-bottom: 10px; display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
     }
+
     .hitos-title {
-      font-size: 20px; font-weight: 800; color: var(--blue-xdk);
-      text-transform: uppercase; letter-spacing: .05em;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .05em;
     }
-    .hitos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+
+    .hitos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
 
     .hito-card {
-      background: #fff; padding: 32px 28px 28px; position: relative; overflow: hidden;
-      border-bottom: 3px solid transparent; transition: border-color .25s;
+      background: #fff;
+      padding: 32px 28px 28px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid transparent;
+      transition: border-color .25s;
     }
-    .hito-card:hover { border-color: var(--blue); }
-    .hito-card-decor { position: absolute; top: 16px; right: 16px; width: 10px; height: 10px; background: var(--blue); opacity: .55; }
-    .hito-card-number { font-size: 56px; font-weight: 800; color: rgba(27,100,200,.1); line-height: 1; margin-bottom: 14px; }
-    .hito-card-label  { font-size: 14px; font-weight: 800; color: var(--blue-xdk); text-transform: uppercase; letter-spacing: .06em; line-height: 1.3; margin-bottom: 10px; }
-    .hito-card-desc   { font-size: 13px; color: var(--gray-mid); line-height: 1.7; }
+
+    .hito-card:hover {
+      border-color: var(--blue);
+    }
+
+    .hito-card-decor {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 10px;
+      height: 10px;
+      background: var(--blue);
+      opacity: .55;
+    }
+
+    .hito-card-number {
+      font-size: 56px;
+      font-weight: 800;
+      color: rgba(27, 100, 200, .1);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .hito-card-label {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .hito-card-desc {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+    }
 
     /* Bloque "Lo más leído" */
-    .hito-leido { background: var(--blue-xdk); padding: 32px 28px 28px; position: relative; overflow: hidden; }
-    .hito-leido-wave    { position: absolute; inset: 0; opacity: .15; pointer-events: none; }
+    .hito-leido {
+      background: var(--blue-xdk);
+      padding: 32px 28px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hito-leido-wave {
+      position: absolute;
+      inset: 0;
+      opacity: .15;
+      pointer-events: none;
+    }
+
     .hito-leido-eyebrow {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-      color: #4ECDC4; letter-spacing: .18em; text-transform: uppercase;
-      margin-bottom: 8px; display: block; position: relative; z-index: 2;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: #4ECDC4;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+      position: relative;
+      z-index: 2;
     }
+
     .hito-leido-title {
-      font-size: 14px; font-weight: 800; color: #fff;
-      text-transform: uppercase; letter-spacing: .05em; margin-bottom: 20px;
-      position: relative; z-index: 2;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
     }
-    .hito-leido-list { display: flex; flex-direction: column; position: relative; z-index: 2; }
+
+    .hito-leido-list {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
     .hito-leido-item {
-      display: flex; gap: 14px; align-items: flex-start;
-      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1);
-      text-decoration: none; transition: color .2s;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      text-decoration: none;
+      transition: color .2s;
     }
-    .hito-leido-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .hito-leido-item:hover .hito-leido-item-text { color: #fff; }
-    .hito-leido-item-num  { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700; color: #4ECDC4; flex-shrink: 0; min-width: 20px; padding-top: 1px; }
-    .hito-leido-item-text { font-size: 12px; color: rgba(255,255,255,.72); line-height: 1.55; transition: color .2s; }
+
+    .hito-leido-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .hito-leido-item:hover .hito-leido-item-text {
+      color: #fff;
+    }
+
+    .hito-leido-item-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #4ECDC4;
+      flex-shrink: 0;
+      min-width: 20px;
+      padding-top: 1px;
+    }
+
+    .hito-leido-item-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .72);
+      line-height: 1.55;
+      transition: color .2s;
+    }
 
     /* ══════════════════════════════════════
        EQUIPO
     ══════════════════════════════════════ */
-    .team-section   { background: white; padding: 52px 0 0; }
-    .team-container { max-width: 1180px; margin: 0 auto; padding: 0 80px; }
-    .team-eyebrow {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-      color: var(--blue); letter-spacing: .22em; text-transform: uppercase;
-      margin-bottom: 10px; display: block;
+    .team-section {
+      background: white;
+      padding: 52px 0 0;
     }
-    .team-title { font-size: 20px; font-weight: 800; color: var(--blue-xdk); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 32px; }
+
+    .team-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .team-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .team-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 32px;
+    }
 
     /* Carrusel socios */
-    .socios-carousel { position: relative; overflow: hidden; }
-    .socios-track    { display: flex; gap: 20px; transition: transform .6s cubic-bezier(.4,0,.2,1); will-change: transform; }
+    .socios-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .socios-track {
+      display: flex;
+      gap: 20px;
+      transition: transform .6s cubic-bezier(.4, 0, .2, 1);
+      will-change: transform;
+    }
+
     .socio {
-      flex: 0 0 calc((100% - 20px) / 2); height: 340px;
-      position: relative; overflow: hidden; cursor: pointer; background: var(--gray-lt);
+      flex: 0 0 calc((100% - 20px) / 2);
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--gray-lt);
     }
-    .socio img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .4s ease; }
-    .socio:hover img { transform: scale(1.04); }
+
+    .socio img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform .4s ease;
+    }
+
+    .socio:hover img {
+      transform: scale(1.04);
+    }
+
     .socio-overlay {
-      position: absolute; inset: 0; background: rgba(13,79,160,.82);
-      display: flex; flex-direction: column; justify-content: flex-start;
-      padding: 28px; transform: translateY(100%); transition: transform .35s ease;
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 79, 160, .82);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 28px;
+      transform: translateY(100%);
+      transition: transform .35s ease;
     }
-    .socio:hover .socio-overlay { transform: translateY(0); }
-    .socio-name { font-size: 18px; font-weight: 800; color: white; line-height: 1.2; margin-bottom: 6px; }
-    .socio-role { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,.8); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
-    .socio-spec { font-family: 'Crimson Pro', Georgia, serif; font-size: 15px; font-style: italic; color: rgba(255,255,255,.75); margin-bottom: 14px; }
+
+    .socio:hover .socio-overlay {
+      transform: translateY(0);
+    }
+
+    .socio-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .socio-role {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .8);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .socio-spec {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 14px;
+    }
+
     .socio-linkedin {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
-      padding: 7px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 9px;
-      font-weight: 600; color: white; letter-spacing: .06em; text-transform: uppercase;
-      cursor: pointer; transition: background .2s; margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .3);
+      padding: 7px 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: auto;
     }
-    .socio-linkedin:hover { background: rgba(255,255,255,.28); }
+
+    .socio-linkedin:hover {
+      background: rgba(255, 255, 255, .28);
+    }
 
     /* Indicadores carrusel socios */
-    .socios-dots { display: flex; justify-content: center; gap: 8px; padding: 16px 0 28px; }
-    .socios-dot  { width: 28px; height: 3px; background: var(--gray-lt); cursor: pointer; transition: background .25s; }
-    .socios-dot--active { background: var(--blue); }
+    .socios-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 0 28px;
+    }
+
+    .socios-dot {
+      width: 28px;
+      height: 3px;
+      background: var(--gray-lt);
+      cursor: pointer;
+      transition: background .25s;
+    }
+
+    .socios-dot--active {
+      background: var(--blue);
+    }
 
     /* Grilla asociados 7×4 full-width */
     .team-grid {
-      display: grid; grid-template-columns: repeat(7,1fr);
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
       grid-template-rows: repeat(4, calc(100vw / 7 * 0.8));
-      gap: 0; width: 100%;
+      gap: 0;
+      width: 100%;
     }
-    .team-cell { position: relative; overflow: hidden; cursor: pointer; }
-    .team-cell img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .4s ease; }
-    .team-cell:hover img { transform: scale(1.05); }
-    .team-cell-overlay {
-      position: absolute; inset: 0; background: rgba(13,79,160,.82);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 12px 11px; transform: translateY(100%); transition: transform .3s ease;
-    }
-    .team-cell:hover .team-cell-overlay { transform: translateY(0); }
-    .team-cell-name { font-size: 11px; font-weight: 800; color: white; line-height: 1.3; }
-    .team-cell-area { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(255,255,255,.8); text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
 
-    .team-cta-wrap { display: flex; justify-content: center; padding: 28px 0; background: white; }
+    .team-cell {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .team-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform .4s ease;
+    }
+
+    .team-cell:hover img {
+      transform: scale(1.05);
+    }
+
+    .team-cell-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 79, 160, .82);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 12px 11px;
+      transform: translateY(100%);
+      transition: transform .3s ease;
+    }
+
+    .team-cell:hover .team-cell-overlay {
+      transform: translateY(0);
+    }
+
+    .team-cell-name {
+      font-size: 11px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .team-cell-area {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .8);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: 4px;
+    }
+
+    .team-cta-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 28px 0;
+      background: white;
+    }
 
     /* ══════════════════════════════════════
        BOTÓN SPLIT — reutilizable
     ══════════════════════════════════════ */
     .btn-split {
-      display: inline-flex; align-items: center; background: none;
-      border: 1.5px solid var(--blue); height: 40px;
-      text-decoration: none; transition: background .2s;
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: 1.5px solid var(--blue);
+      height: 40px;
+      text-decoration: none;
+      transition: background .2s;
     }
-    .btn-split:hover                    { background: var(--blue); }
-    .btn-split:hover .btn-split-label   { color: white; }
-    .btn-split:hover .btn-split-divider { background: rgba(255,255,255,.4); }
-    .btn-split:hover .btn-split-arrow   { color: white; }
-    .btn-split-label   { font-size: 11px; font-weight: 600; color: var(--blue-xdk); padding: 0 16px; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
-    .btn-split-divider { width: 1.5px; height: 20px; background: var(--blue); transition: background .2s; }
-    .btn-split-arrow   { font-size: 13px; color: var(--blue); padding: 0 14px; transition: color .2s; }
+
+    .btn-split:hover {
+      background: var(--blue);
+    }
+
+    .btn-split:hover .btn-split-label {
+      color: white;
+    }
+
+    .btn-split:hover .btn-split-divider {
+      background: rgba(255, 255, 255, .4);
+    }
+
+    .btn-split:hover .btn-split-arrow {
+      color: white;
+    }
+
+    .btn-split-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue-xdk);
+      padding: 0 16px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .btn-split-divider {
+      width: 1.5px;
+      height: 20px;
+      background: var(--blue);
+      transition: background .2s;
+    }
+
+    .btn-split-arrow {
+      font-size: 13px;
+      color: var(--blue);
+      padding: 0 14px;
+      transition: color .2s;
+    }
 
     /* ══════════════════════════════════════
        ÁREAS DE PRÁCTICA — mosaico asimétrico
     ══════════════════════════════════════ */
-    .areas-section   { background: var(--blue-xdk); padding: 52px 0 0; }
-    .areas-container { padding: 0 48px 0; }
+    .areas-section {
+      background: var(--blue-xdk);
+      padding: 52px 0 0;
+    }
+
+    .areas-container {
+      padding: 0 48px 0;
+    }
+
     .areas-eyebrow {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-      color: rgba(255,255,255,.5); letter-spacing: .22em; text-transform: uppercase;
-      margin-bottom: 10px; display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
     }
-    .areas-title    { font-size: 20px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .05em; }
-    .areas-header   { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 20px; }
+
+    .areas-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .areas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 20px;
+    }
+
     .areas-cta-link {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600;
-      color: rgba(255,255,255,.55); letter-spacing: .1em; text-transform: uppercase;
-      border: 1.5px solid rgba(255,255,255,.25); padding: 8px 16px;
-      text-decoration: none; transition: all .2s;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .55);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: 1.5px solid rgba(255, 255, 255, .25);
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: all .2s;
     }
-    .areas-cta-link:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+    .areas-cta-link:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
 
     /* Grilla principal — jerarquía por tamaño */
     .areas-main-grid {
@@ -338,105 +1058,279 @@
       grid-template-rows: 200px 160px;
       gap: 3px;
     }
+
     .area-cell {
-      position: relative; overflow: hidden; cursor: pointer;
-      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       text-decoration: none;
     }
+
     .area-cell img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover; object-position: center;
-      opacity: .22; transition: opacity .3s;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .22;
+      transition: opacity .3s;
     }
-    .area-cell:hover img { opacity: .15; }
+
+    .area-cell:hover img {
+      opacity: .15;
+    }
 
     .area-cell-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 70%; z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70%;
+      z-index: 1;
     }
-    .area-cell-content { position: relative; z-index: 2; padding: 14px 16px; }
-    .area-cell-num  {
-      font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700;
-      letter-spacing: .14em; margin-bottom: 4px;
+
+    .area-cell-content {
+      position: relative;
+      z-index: 2;
+      padding: 14px 16px;
     }
+
+    .area-cell-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      margin-bottom: 4px;
+    }
+
     .area-cell-name {
-      font-size: 12px; font-weight: 800; text-transform: uppercase;
-      letter-spacing: .04em; line-height: 1.3;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.3;
     }
+
     /* número grande decorativo */
     .area-cell-bignum {
-      position: absolute; top: 10px; right: 12px; z-index: 1;
-      font-size: 52px; font-weight: 800; line-height: 1; pointer-events: none;
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      z-index: 1;
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      pointer-events: none;
     }
 
     /* Hover overlay */
     .area-cell-hover {
-      position: absolute; inset: 0;
-      background: rgba(27,100,200,.9);
-      opacity: 0; transition: opacity .25s ease;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 8px; padding: 16px; z-index: 4;
+      position: absolute;
+      inset: 0;
+      background: rgba(27, 100, 200, .9);
+      opacity: 0;
+      transition: opacity .25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+      z-index: 4;
     }
-    .area-cell:hover .area-cell-hover { opacity: 1; }
+
+    .area-cell:hover .area-cell-hover {
+      opacity: 1;
+    }
+
     .area-cell-hover-name {
-      font-size: 12px; font-weight: 800; color: #fff;
-      text-align: center; text-transform: uppercase;
-      letter-spacing: .04em; line-height: 1.3;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.3;
     }
+
     .area-cell-hover-desc {
-      font-size: 10px; color: rgba(255,255,255,.8);
-      text-align: center; line-height: 1.55;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .8);
+      text-align: center;
+      line-height: 1.55;
     }
+
     .area-cell-hover-btn {
-      font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600;
-      color: #fff; text-transform: uppercase; letter-spacing: .08em;
-      border: 1px solid rgba(255,255,255,.5); padding: 5px 12px; margin-top: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      border: 1px solid rgba(255, 255, 255, .5);
+      padding: 5px 12px;
+      margin-top: 4px;
     }
 
     /* Grid positions */
-    .area-cell--01 { grid-column: 1/2; grid-row: 1/3; } /* 2 filas, más importante */
-    .area-cell--02 { grid-column: 2/4; grid-row: 1/2; } /* 2 columnas */
-    .area-cell--03 { grid-column: 4/5; grid-row: 1/2; } /* 1×1 */
-    .area-cell--04 { grid-column: 2/3; grid-row: 2/3; } /* 1×1 */
-    .area-cell--05 { grid-column: 3/4; grid-row: 2/3; }
-    .area-cell--06 { grid-column: 4/5; grid-row: 2/3; }
+    .area-cell--01 {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    /* 2 filas, más importante */
+    .area-cell--02 {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+
+    /* 2 columnas */
+    .area-cell--03 {
+      grid-column: 4/5;
+      grid-row: 1/2;
+    }
+
+    /* 1×1 */
+    .area-cell--04 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+
+    /* 1×1 */
+    .area-cell--05 {
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+
+    .area-cell--06 {
+      grid-column: 4/5;
+      grid-row: 2/3;
+    }
 
     /* Colores de fondo — oscuros para jerarquía principal */
-    .ac-xdk  { background: var(--blue-xdk);  }
-    .ac-xdk  .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-xdk  .area-cell-name { color: #fff; }
-    .ac-xdk  .area-cell-fade { background: linear-gradient(to top, rgba(5,15,40,.75) 0%, transparent 100%); }
-    .ac-xdk  .area-cell-bignum { color: rgba(255,255,255,.04); }
+    .ac-xdk {
+      background: var(--blue-xdk);
+    }
 
-    .ac-blue { background: var(--blue); }
-    .ac-blue .area-cell-num { color: rgba(255,255,255,.45); }
-    .ac-blue .area-cell-name { color: #fff; }
-    .ac-blue .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.65) 0%, transparent 100%); }
-    .ac-blue .area-cell-bignum { color: rgba(255,255,255,.05); }
+    .ac-xdk .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
 
-    .ac-navy { background: #1450A8; }
-    .ac-navy .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-navy .area-cell-name { color: #fff; }
-    .ac-navy .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.6) 0%, transparent 100%); }
-    .ac-navy .area-cell-bignum { color: rgba(255,255,255,.04); }
+    .ac-xdk .area-cell-name {
+      color: #fff;
+    }
 
-    .ac-md   { background: var(--blue-md); }
-    .ac-md   .area-cell-num { color: rgba(255,255,255,.45); }
-    .ac-md   .area-cell-name { color: #fff; }
-    .ac-md   .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.55) 0%, transparent 100%); }
-    .ac-md   .area-cell-bignum { color: rgba(255,255,255,.05); }
+    .ac-xdk .area-cell-fade {
+      background: linear-gradient(to top, rgba(5, 15, 40, .75) 0%, transparent 100%);
+    }
 
-    .ac-pale { background: #1B3E78; }
-    .ac-pale .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-pale .area-cell-name { color: #fff; }
-    .ac-pale .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.55) 0%, transparent 100%); }
-    .ac-pale .area-cell-bignum { color: rgba(255,255,255,.04); }
+    .ac-xdk .area-cell-bignum {
+      color: rgba(255, 255, 255, .04);
+    }
 
-    .ac-lt   { background: #2A5090; }
-    .ac-lt   .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-lt   .area-cell-name { color: #fff; }
-    .ac-lt   .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.5) 0%, transparent 100%); }
-    .ac-lt   .area-cell-bignum { color: rgba(255,255,255,.04); }
+    .ac-blue {
+      background: var(--blue);
+    }
+
+    .ac-blue .area-cell-num {
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .ac-blue .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-blue .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .65) 0%, transparent 100%);
+    }
+
+    .ac-blue .area-cell-bignum {
+      color: rgba(255, 255, 255, .05);
+    }
+
+    .ac-navy {
+      background: #1450A8;
+    }
+
+    .ac-navy .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .ac-navy .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-navy .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .6) 0%, transparent 100%);
+    }
+
+    .ac-navy .area-cell-bignum {
+      color: rgba(255, 255, 255, .04);
+    }
+
+    .ac-md {
+      background: var(--blue-md);
+    }
+
+    .ac-md .area-cell-num {
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .ac-md .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-md .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .55) 0%, transparent 100%);
+    }
+
+    .ac-md .area-cell-bignum {
+      color: rgba(255, 255, 255, .05);
+    }
+
+    .ac-pale {
+      background: #1B3E78;
+    }
+
+    .ac-pale .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .ac-pale .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-pale .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .55) 0%, transparent 100%);
+    }
+
+    .ac-pale .area-cell-bignum {
+      color: rgba(255, 255, 255, .04);
+    }
+
+    .ac-lt {
+      background: #2A5090;
+    }
+
+    .ac-lt .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .ac-lt .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-lt .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .5) 0%, transparent 100%);
+    }
+
+    .ac-lt .area-cell-bignum {
+      color: rgba(255, 255, 255, .04);
+    }
 
     /* Fila inferior — 4 celdas más grandes que antes */
     .areas-bottom-grid {
@@ -445,92 +1339,361 @@
       gap: 3px;
       margin-top: 3px;
     }
-    .area-cell--bottom { height: 150px; }
 
-    .ac-b1 { background: #0D3070; }
-    .ac-b1 .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-b1 .area-cell-name { color: #fff; }
-    .ac-b1 .area-cell-fade { background: linear-gradient(to top, rgba(5,15,40,.6) 0%, transparent 100%); }
+    .area-cell--bottom {
+      height: 150px;
+    }
 
-    .ac-b2 { background: #153880; }
-    .ac-b2 .area-cell-num { color: rgba(255,255,255,.4); }
-    .ac-b2 .area-cell-name { color: #fff; }
-    .ac-b2 .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.55) 0%, transparent 100%); }
+    .ac-b1 {
+      background: #0D3070;
+    }
 
-    .ac-b3 { background: #1C4898; }
-    .ac-b3 .area-cell-num { color: rgba(255,255,255,.42); }
-    .ac-b3 .area-cell-name { color: #fff; }
-    .ac-b3 .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.5) 0%, transparent 100%); }
+    .ac-b1 .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
 
-    .ac-b4 { background: #234FA8; }
-    .ac-b4 .area-cell-num { color: rgba(255,255,255,.42); }
-    .ac-b4 .area-cell-name { color: #fff; }
-    .ac-b4 .area-cell-fade { background: linear-gradient(to top, rgba(10,26,62,.48) 0%, transparent 100%); }
+    .ac-b1 .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-b1 .area-cell-fade {
+      background: linear-gradient(to top, rgba(5, 15, 40, .6) 0%, transparent 100%);
+    }
+
+    .ac-b2 {
+      background: #153880;
+    }
+
+    .ac-b2 .area-cell-num {
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .ac-b2 .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-b2 .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .55) 0%, transparent 100%);
+    }
+
+    .ac-b3 {
+      background: #1C4898;
+    }
+
+    .ac-b3 .area-cell-num {
+      color: rgba(255, 255, 255, .42);
+    }
+
+    .ac-b3 .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-b3 .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .5) 0%, transparent 100%);
+    }
+
+    .ac-b4 {
+      background: #234FA8;
+    }
+
+    .ac-b4 .area-cell-num {
+      color: rgba(255, 255, 255, .42);
+    }
+
+    .ac-b4 .area-cell-name {
+      color: #fff;
+    }
+
+    .ac-b4 .area-cell-fade {
+      background: linear-gradient(to top, rgba(10, 26, 62, .48) 0%, transparent 100%);
+    }
 
     .areas-cta-wrap {
-      display: flex; justify-content: center;
-      padding: 28px 0; background: var(--blue-xdk);
+      display: flex;
+      justify-content: center;
+      padding: 28px 0;
+      background: var(--blue-xdk);
     }
+
     /* btn-split version blanca para fondo oscuro */
     .btn-split--white {
-      display: inline-flex; align-items: center; background: none;
-      border: 1.5px solid rgba(255,255,255,.4); height: 40px;
-      text-decoration: none; transition: background .2s;
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: 1.5px solid rgba(255, 255, 255, .4);
+      height: 40px;
+      text-decoration: none;
+      transition: background .2s;
     }
-    .btn-split--white:hover { background: rgba(255,255,255,.1); }
-    .btn-split--white .btn-split-label   { color: #fff; }
-    .btn-split--white .btn-split-divider { background: rgba(255,255,255,.35); }
-    .btn-split--white .btn-split-arrow   { color: rgba(255,255,255,.7); }
+
+    .btn-split--white:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .btn-split--white .btn-split-label {
+      color: #fff;
+    }
+
+    .btn-split--white .btn-split-divider {
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .btn-split--white .btn-split-arrow {
+      color: rgba(255, 255, 255, .7);
+    }
 
     /* ══════════════════════════════════════
        FOOTER
     ══════════════════════════════════════ */
-    .footer       { background: white; border-top: 2px solid var(--blue); }
-    .footer-inner { max-width: 1180px; margin: 0 auto; padding: 0 80px; }
-    .footer-top   { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding: 52px 0 44px; position: relative; }
+    .footer {
+      background: white;
+      border-top: 2px solid var(--blue);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding: 52px 0 44px;
+      position: relative;
+    }
 
     /* Cuadrados decorativos del footer */
-    .footer-decor-1 { position: absolute; top: 0;   right: 0;   width: 16px; height: 16px; background: var(--blue);    opacity: .7; }
-    .footer-decor-2 { position: absolute; top: 18px; right: 18px; width: 10px; height: 10px; background: var(--blue-lt); opacity: .5; }
+    .footer-decor-1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--blue);
+      opacity: .7;
+    }
 
-    .footer-logo         { display: flex; align-items: center; margin-bottom: 14px; }
-    .footer-logo-text    { font-size: 36px; font-weight: 800; color: var(--blue-xdk); line-height: 1; letter-spacing: -1px; }
-    .footer-logo-divider { width: 1.5px; height: 40px; background: var(--blue); margin: 0 14px; }
-    .footer-logo-names   { display: flex; flex-direction: column; }
-    .footer-logo-name    { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; color: var(--blue-xdk); letter-spacing: 1.5px; line-height: 1.55; }
-    .footer-sub          { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .18em; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 18px; }
-    .footer-tagline      { font-family: 'Crimson Pro', Georgia, serif; font-size: 14px; font-style: italic; color: #aaa; line-height: 1.7; }
+    .footer-decor-2 {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 10px;
+      height: 10px;
+      background: var(--blue-lt);
+      opacity: .5;
+    }
 
-    .footer-col-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700; color: var(--blue-xdk); letter-spacing: .22em; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1.5px solid var(--blue); }
-    .footer-col-link  { font-size: 13px; color: #888; font-weight: 400; text-decoration: none; padding: 8px 0; border-bottom: .5px solid #F0F0F0; display: flex; align-items: center; justify-content: space-between; transition: color .2s; }
-    .footer-col-link:hover  { color: var(--blue); }
-    .footer-col-link:last-child { border-bottom: none; }
-    .footer-col-link-arrow { font-size: 12px; color: var(--blue); opacity: 0; transition: opacity .2s; }
-    .footer-col-link:hover .footer-col-link-arrow { opacity: 1; }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
 
-    .footer-bottom        { border-top: .5px solid var(--gray-lt); padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
-    .footer-copy          { font-size: 11px; color: #aaa; font-weight: 300; }
-    .footer-legal-links   { display: flex; gap: 20px; }
-    .footer-legal-link    { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: #aaa; text-decoration: none; transition: color .2s; }
-    .footer-legal-link:hover { color: var(--blue); }
+    .footer-logo-text {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .footer-logo-divider {
+      width: 1.5px;
+      height: 40px;
+      background: var(--blue);
+      margin: 0 14px;
+    }
+
+    .footer-logo-names {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-logo-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--blue-xdk);
+      letter-spacing: 1.5px;
+      line-height: 1.55;
+    }
+
+    .footer-sub {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      margin-bottom: 18px;
+    }
+
+    .footer-tagline {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--blue);
+    }
+
+    .footer-col-link {
+      font-size: 13px;
+      color: #888;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: .5px solid #F0F0F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: color .2s;
+    }
+
+    .footer-col-link:hover {
+      color: var(--blue);
+    }
+
+    .footer-col-link:last-child {
+      border-bottom: none;
+    }
+
+    .footer-col-link-arrow {
+      font-size: 12px;
+      color: var(--blue);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .footer-col-link:hover .footer-col-link-arrow {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      border-top: .5px solid var(--gray-lt);
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #aaa;
+      font-weight: 300;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-legal-link:hover {
+      color: var(--blue);
+    }
 
     /* ══════════════════════════════════════
        FAB WHATSAPP
     ══════════════════════════════════════ */
     .fab {
-      position: fixed; bottom: 36px; right: 36px; z-index: 9999;
-      display: inline-flex; align-items: center; background: #fff;
-      border: 1.5px solid var(--wa-green); border-radius: 1px; height: 44px;
-      text-decoration: none; overflow: hidden;
-      box-shadow: 0 4px 18px rgba(37,211,102,.2); transition: box-shadow .2s, transform .2s;
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1.5px solid var(--wa-green);
+      border-radius: 1px;
+      height: 44px;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, .2);
+      transition: box-shadow .2s, transform .2s;
     }
-    .fab:hover            { box-shadow: 0 6px 24px rgba(37,211,102,.35); transform: translateY(-2px); }
-    .fab-icon-wrap        { width: 44px; height: 100%; background: var(--wa-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
-    .fab:hover .fab-icon-wrap { background: #1DA851; }
-    .fab-icon             { width: 22px; height: 22px; display: block; }
-    .fab-label            { font-size: 10px; font-weight: 700; color: var(--blue-xdk); letter-spacing: .07em; text-transform: uppercase; padding: 0 18px; white-space: nowrap; }
-    .fab-decor-1          { position: fixed; bottom: 94px;  right: 36px; width: 10px; height: 10px; background: var(--wa-green); opacity: .4; pointer-events: none; z-index: 9998; }
-    .fab-decor-2          { position: fixed; bottom: 106px; right: 50px; width: 7px;  height: 7px;  background: #fff; border: 1px solid var(--gray-lt); opacity: .7; pointer-events: none; z-index: 9998; }
+
+    .fab:hover {
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .35);
+      transform: translateY(-2px);
+    }
+
+    .fab-icon-wrap {
+      width: 44px;
+      height: 100%;
+      background: var(--wa-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+
+    .fab:hover .fab-icon-wrap {
+      background: #1DA851;
+    }
+
+    .fab-icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .fab-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 0 18px;
+      white-space: nowrap;
+    }
+
+    .fab-decor-1 {
+      position: fixed;
+      bottom: 94px;
+      right: 36px;
+      width: 10px;
+      height: 10px;
+      background: var(--wa-green);
+      opacity: .4;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .fab-decor-2 {
+      position: fixed;
+      bottom: 106px;
+      right: 50px;
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border: 1px solid var(--gray-lt);
+      opacity: .7;
+      pointer-events: none;
+      z-index: 9998;
+    }
 
     /* ══════════════════════════════════════
        ANIMACIONES SCROLL-TRIGGERED
@@ -543,16 +1706,26 @@
       transform: translateY(28px);
       transition: opacity .55s ease, transform .55s ease;
     }
+
     /* Estado visible — disparado por IntersectionObserver */
     .hito-card.is-visible,
     .hito-leido.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     /* Delays escalonados para las 3 cards */
-    .hito-card:nth-child(1) { transition-delay: 0ms; }
-    .hito-card:nth-child(2) { transition-delay: 120ms; }
-    .hito-leido             { transition-delay: 240ms; }
+    .hito-card:nth-child(1) {
+      transition-delay: 0ms;
+    }
+
+    .hito-card:nth-child(2) {
+      transition-delay: 120ms;
+    }
+
+    .hito-leido {
+      transition-delay: 240ms;
+    }
 
     /* Áreas — estado inicial */
     .area-cell {
@@ -560,68 +1733,216 @@
       transform: translateY(20px);
       transition: opacity .45s ease, transform .45s ease;
     }
+
     .area-cell.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     /* Delays en orden 01→10 */
-    .area-cell--01 { transition-delay: 0ms; }
-    .area-cell--02 { transition-delay: 80ms; }
-    .area-cell--03 { transition-delay: 160ms; }
-    .area-cell--04 { transition-delay: 200ms; }
-    .area-cell--05 { transition-delay: 240ms; }
-    .area-cell--06 { transition-delay: 280ms; }
+    .area-cell--01 {
+      transition-delay: 0ms;
+    }
+
+    .area-cell--02 {
+      transition-delay: 80ms;
+    }
+
+    .area-cell--03 {
+      transition-delay: 160ms;
+    }
+
+    .area-cell--04 {
+      transition-delay: 200ms;
+    }
+
+    .area-cell--05 {
+      transition-delay: 240ms;
+    }
+
+    .area-cell--06 {
+      transition-delay: 280ms;
+    }
+
     /* Fila inferior por índice data-delay (asignado por JS) */
-    .area-cell--bottom { transition-delay: var(--delay, 320ms); }
+    .area-cell--bottom {
+      transition-delay: var(--delay, 320ms);
+    }
+
     /* ══════════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════════ */
-      .topbar-btn-label--long  { display: none; }
-      .topbar-btn-label--short { display: inline; }
+    .topbar-btn-label--long {
+      display: none;
+    }
+
+    .topbar-btn-label--short {
+      display: inline;
+    }
     }
 
     @media(max-width:1179px) {
-      .nav, .topbar                                          { padding-left: 32px; padding-right: 32px; }
-      .hitos-container, .team-container,
-      .areas-container, .footer-inner                        { padding-left: 32px; padding-right: 32px; }
-      .hero-logo                                             { left: 32px; }
-      .hero-slide-content                                    { left: 180px; }
-      .hero-controls                                         { right: 32px; }
-      .areas-main-grid                                       { grid-template-rows: 170px 140px; }
+
+      .nav,
+      .topbar {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .hitos-container,
+      .team-container,
+      .areas-container,
+      .footer-inner {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .hero-logo {
+        left: 32px;
+      }
+
+      .hero-slide-content {
+        left: 180px;
+      }
+
+      .hero-controls {
+        right: 32px;
+      }
+
+      .areas-main-grid {
+        grid-template-rows: 170px 140px;
+      }
     }
 
     @media(max-width:767px) {
-      .nav                  { padding: 0 20px; height: 56px; }
-      .nav-links            { display: none; }
-      .topbar               { padding: 0 16px; }
-      .hero                 { height: 80vh; }
-      .hero-slide-content   { left: 20px; bottom: 60px; }
-      .hero-slide-title     { font-size: clamp(26px,6vw,36px); }
-      .hero-logo            { left: 16px; bottom: 16px; }
-      .hero-logo svg        { width: 80px; height: 80px; }
-      .hero-controls        { right: 16px; bottom: 16px; }
-      .hitos-grid           { grid-template-columns: 1fr; }
-      .hitos-container, .team-container,
-      .areas-container, .footer-inner { padding: 0 20px; }
-      .socio                { flex: 0 0 calc((100% - 20px) / 2); height: 240px; }
-      .team-grid            { grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(7, calc(100vw/4*0.8)); }
-      .footer-top           { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 24px; }
-      .footer-bottom        { flex-direction: column; gap: 12px; }
-      .areas-section        { padding: 36px 0 0; }
-      .areas-main-grid      { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .area-cell--01        { grid-column: 1/2; grid-row: 1/2; min-height: 140px; }
-      .area-cell--02        { grid-column: 2/3; grid-row: 1/2; }
-      .area-cell--03        { grid-column: 1/2; grid-row: 2/3; }
-      .area-cell--04        { grid-column: 2/3; grid-row: 2/3; }
-      .area-cell--05        { grid-column: 1/2; grid-row: 3/4; }
-      .area-cell--06        { grid-column: 2/3; grid-row: 3/4; }
-      .area-cell            { min-height: 110px; }
-      .areas-bottom-grid    { grid-template-columns: 1fr 1fr; }
-      .area-cell--bottom    { height: 115px; }
-    }
+      .nav {
+        padding: 0 20px;
+        height: 56px;
+      }
 
+      .nav-links {
+        display: none;
+      }
+
+      .topbar {
+        padding: 0 16px;
+      }
+
+      .hero {
+        height: 80vh;
+      }
+
+      .hero-slide-content {
+        left: 20px;
+        bottom: 60px;
+      }
+
+      .hero-slide-title {
+        font-size: clamp(26px, 6vw, 36px);
+      }
+
+      .hero-logo {
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .hero-logo svg {
+        width: 80px;
+        height: 80px;
+      }
+
+      .hero-controls {
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .hitos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hitos-container,
+      .team-container,
+      .areas-container,
+      .footer-inner {
+        padding: 0 20px;
+      }
+
+      .socio {
+        flex: 0 0 calc((100% - 20px) / 2);
+        height: 240px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, calc(100vw/4*0.8));
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .areas-section {
+        padding: 36px 0 0;
+      }
+
+      .areas-main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .area-cell--01 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        min-height: 140px;
+      }
+
+      .area-cell--02 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .area-cell--03 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .area-cell--04 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+
+      .area-cell--05 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+
+      .area-cell--06 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+
+      .area-cell {
+        min-height: 110px;
+      }
+
+      .areas-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .area-cell--bottom {
+        height: 115px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- TOPBAR -->
@@ -629,15 +1950,17 @@
     <div class="topbar-left">
       <a href="tel:+56949409721" class="topbar-link">
         <svg class="topbar-link-icon" viewBox="0 0 16 16" fill="none">
-          <path d="M3 1h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L11.5 9l4 1.5V14c0 1.1-.9 2-2 2C6.4 16 0 9.6 0 3c0-1.1.9-2 2-2h1z" fill="currentColor"/>
+          <path
+            d="M3 1h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L11.5 9l4 1.5V14c0 1.1-.9 2-2 2C6.4 16 0 9.6 0 3c0-1.1.9-2 2-2h1z"
+            fill="currentColor" />
         </svg>
         +56 9 4940 9721
       </a>
       <div class="topbar-sep"></div>
       <a href="mailto:info@berriospalavecino.cl" class="topbar-link">
         <svg class="topbar-link-icon" viewBox="0 0 16 12" fill="none">
-          <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M1 3l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4" />
+          <path d="M1 3l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
         </svg>
         info@berriospalavecino.cl
       </a>
@@ -646,15 +1969,21 @@
     <div class="topbar-right">
       <a href="https://wa.me/56949409721" class="topbar-btn topbar-btn--wa" target="_blank" rel="noopener">
         <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="currentColor" opacity=".95"/>
-          <path d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z" fill="#0A2A5E"/>
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+            fill="currentColor" opacity=".95" />
+          <path
+            d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
+            fill="#0A2A5E" />
         </svg>
         <span class="topbar-btn-label--long">Agendar WhatsApp</span>
         <span class="topbar-btn-label--short">WhatsApp</span>
       </a>
-      <a href="https://www.linkedin.com/company/bpp-abogados" class="topbar-btn topbar-btn--li" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/company/bpp-abogados" class="topbar-btn topbar-btn--li" target="_blank"
+        rel="noopener">
         <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+          <path
+            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
         </svg>
         <span class="topbar-btn-label--long">Síguenos en LinkedIn</span>
         <span class="topbar-btn-label--short">LinkedIn</span>
@@ -663,25 +1992,47 @@
   </div>
 
   <!-- NAV -->
-  <nav class="nav" id="main-nav">
+  <nav class="nav">
     <a href="./index.html" class="nav-logo">
       <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
-        <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1" fill="#FFFFFF">BPP</text>
-        <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1"/>
-        <text x="98" y="9"  font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">BERRÍOS</text>
-        <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PALAVECINO</text>
-        <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PINOCHET</text>
+        <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1"
+          fill="#FFFFFF">BPP</text>
+        <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1" />
+        <text x="98" y="9" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">BERRÍOS</text>
+        <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">PALAVECINO</text>
+        <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
+          fill="#FFFFFF">PINOCHET</text>
       </svg>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="./index.html" class="active">Inicio</a></li>
+        <li><a href="./index.html">Inicio</a></li>
         <li><a href="./BPP_Areas.html">Áreas</a></li>
         <li><a href="./BPP_Equipo.html">Equipo</a></li>
         <li><a href="./BPP_Noticias.html">Noticias</a></li>
-        <li><a href="#">El Estudio</a></li>
       </ul>
-      <a href="#" class="nav-cta">Contacto</a>
+      <!-- Menú desplegable Contacto -->
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle active">
+          Contacto <span class="arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="./BPP_Contacto.html?area=laboral" class="nav-dropdown-item" data-area="laboral">
+            <span class="nav-dropdown-item-dot"></span> Defensa Laboral
+          </a>
+          <a href="./BPP_Contacto.html?area=civil" class="nav-dropdown-item" data-area="civil">
+            <span class="nav-dropdown-item-dot"></span> Derecho Civil
+          </a>
+          <a href="./BPP_Contacto.html?area=penal" class="nav-dropdown-item" data-area="penal">
+            <span class="nav-dropdown-item-dot"></span> Derecho Penal
+          </a>
+          <a href="./BPP_Contacto.html?area=administrativo" class="nav-dropdown-item" data-area="administrativo">
+            <span class="nav-dropdown-item-dot"></span> Derecho Administrativo
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -728,12 +2079,16 @@
 
     <a href="./index.html" class="hero-logo">
       <svg viewBox="0 0 310 310" width="127" height="127" xmlns="http://www.w3.org/2000/svg">
-        <rect width="310" height="310" fill="#1B64C8"/>
-        <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF" letter-spacing="-1">BPP</text>
-        <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1"/>
-        <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
-        <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
-        <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
+        <rect width="310" height="310" fill="#1B64C8" />
+        <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF"
+          letter-spacing="-1">BPP</text>
+        <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
+        <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
+          letter-spacing="1.2">BERRÍOS</text>
+        <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
+          letter-spacing="1.2">PALAVECINO</text>
+        <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF"
+          letter-spacing="1.2">PINOCHET</text>
       </svg>
     </a>
 
@@ -767,36 +2122,44 @@
           <div class="hito-card-decor"></div>
           <div class="hito-card-number">1.250+</div>
           <div class="hito-card-label">Clientes vigentes</div>
-          <p class="hito-card-desc">Más de 1.250 clientes activos representados a lo largo de Chile en materias laborales, civiles y corporativas.</p>
+          <p class="hito-card-desc">Más de 1.250 clientes activos representados a lo largo de Chile en materias
+            laborales, civiles y corporativas.</p>
         </div>
 
         <div class="hito-card">
           <div class="hito-card-decor"></div>
           <div class="hito-card-number">+38</div>
           <div class="hito-card-label">Años de trayectoria</div>
-          <p class="hito-card-desc">Fundados en 1988, somos uno de los estudios jurídicos laborales de mayor tradición y continuidad en Chile.</p>
+          <p class="hito-card-desc">Fundados en 1988, somos uno de los estudios jurídicos laborales de mayor tradición y
+            continuidad en Chile.</p>
         </div>
 
         <div class="hito-leido">
-          <svg class="hito-leido-wave" viewBox="0 0 400 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,100 C80,50 160,150 240,100 S360,50 400,100" stroke="#4ECDC4" stroke-width="1.5" fill="none"/>
-            <path d="M0,130 C90,80 170,175 260,125 S375,75 400,130" stroke="#4ECDC4" stroke-width="1" fill="none" opacity=".5"/>
-            <path d="M0,70 C70,25 150,120 220,75 S345,25 400,70" stroke="#4ECDC4" stroke-width=".8" fill="none" opacity=".35"/>
+          <svg class="hito-leido-wave" viewBox="0 0 400 200" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,100 C80,50 160,150 240,100 S360,50 400,100" stroke="#4ECDC4" stroke-width="1.5" fill="none" />
+            <path d="M0,130 C90,80 170,175 260,125 S375,75 400,130" stroke="#4ECDC4" stroke-width="1" fill="none"
+              opacity=".5" />
+            <path d="M0,70 C70,25 150,120 220,75 S345,25 400,70" stroke="#4ECDC4" stroke-width=".8" fill="none"
+              opacity=".35" />
           </svg>
           <span class="hito-leido-eyebrow">Lo más leído</span>
           <div class="hito-leido-title">Noticias destacadas</div>
           <div class="hito-leido-list">
             <a href="./BPP_Noticias.html" class="hito-leido-item">
               <span class="hito-leido-item-num">01</span>
-              <span class="hito-leido-item-text">BPP lidera el primer macro evento judicial laboral tras la reforma procesal — más de 100 sentencias favorables</span>
+              <span class="hito-leido-item-text">BPP lidera el primer macro evento judicial laboral tras la reforma
+                procesal — más de 100 sentencias favorables</span>
             </a>
             <a href="./BPP_Noticias.html" class="hito-leido-item">
               <span class="hito-leido-item-num">02</span>
-              <span class="hito-leido-item-text">Acción judicial contra Multitiendas Corona: declaración de unidad económica del holding</span>
+              <span class="hito-leido-item-text">Acción judicial contra Multitiendas Corona: declaración de unidad
+                económica del holding</span>
             </a>
             <a href="./BPP_Noticias.html" class="hito-leido-item">
               <span class="hito-leido-item-num">03</span>
-              <span class="hito-leido-item-text">Claudio Palavecino en la Universidad de Alcalá: Curso de Altos Estudios en España</span>
+              <span class="hito-leido-item-text">Claudio Palavecino en la Universidad de Alcalá: Curso de Altos Estudios
+                en España</span>
             </a>
           </div>
         </div>
@@ -821,7 +2184,12 @@
               <div class="socio-role">Socio</div>
               <div class="socio-spec">Estrategia Laboral · Litigios</div>
               <div class="socio-linkedin">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4"/><circle cx="5" cy="5" r="1" fill="white"/><path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
+                  <circle cx="5" cy="5" r="1" fill="white" />
+                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
+                    stroke-linecap="round" />
+                </svg>
                 Ver LinkedIn
               </div>
             </div>
@@ -834,7 +2202,12 @@
               <div class="socio-role">Socio</div>
               <div class="socio-spec">Negociación Colectiva · Due Diligence</div>
               <div class="socio-linkedin">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4"/><circle cx="5" cy="5" r="1" fill="white"/><path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="white" stroke-width="1.4" />
+                  <circle cx="5" cy="5" r="1" fill="white" />
+                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="white" stroke-width="1.4"
+                    stroke-linecap="round" />
+                </svg>
                 Ver LinkedIn
               </div>
             </div>
@@ -850,35 +2223,175 @@
     </div>
 
     <div class="team-grid" id="team-grid">
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Patricio González</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><img src="asociado2.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Manuel Gutiérrez</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Franco Benavides</div><div class="team-cell-area">Neg. Colectiva</div></div></div>
+      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Patricio González</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado2.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Manuel Gutiérrez</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Franco Benavides</div>
+          <div class="team-cell-area">Neg. Colectiva</div>
+        </div>
+      </div>
       <!-- POSICIÓN FIJA: fila 1, celda 4 — Francisco Pinochet -->
-      <div class="team-cell" data-fixed><img src="francisco.webp" alt="Francisco Pinochet Cantwell"><div class="team-cell-overlay"><div class="team-cell-name">Francisco Pinochet</div><div class="team-cell-area">Socio Fundador</div></div></div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Polett Rodríguez</div><div class="team-cell-area">Compliance</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Dante Gariboldi</div><div class="team-cell-area">Due Diligence</div></div></div>
-      <div class="team-cell" data-random><img src="asociado6.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">José J. Ossa</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><img src="asociado7.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Gonzalo Doren</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Sofía Hernández</div><div class="team-cell-area">Compliance</div></div></div>
-      <div class="team-cell" data-random><img src="asociado9.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Constanza Godoy</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><img src="asociado10.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Felipe Kuthe</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><img src="asociado11.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Valentina Espinoza</div><div class="team-cell-area">Neg. Colectiva</div></div></div>
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Lucas Ortiz</div><div class="team-cell-area">Due Diligence</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Macarena Valenzuela</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><img src="asociado3.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Nicolás Yáñez</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Rocío Cartagena</div><div class="team-cell-area">Seg. Social</div></div></div>
-      <div class="team-cell" data-random><img src="asociado5.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Simón Gutiérrez</div><div class="team-cell-area">Estrategia</div></div></div>
-      <div class="team-cell" data-random><img src="asociado6.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Andrea Morales</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Rodrigo Pizarro</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><img src="asociado8.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Camila Reyes</div><div class="team-cell-area">Compliance</div></div></div>
-      <div class="team-cell" data-random><img src="asociado9.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Felipe Araya</div><div class="team-cell-area">Due Diligence</div></div></div>
-      <div class="team-cell" data-random><img src="asociado10.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Isidora Soto</div><div class="team-cell-area">Der. Laboral</div></div></div>
-      <div class="team-cell" data-random><img src="asociado11.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Martín Fuentes</div><div class="team-cell-area">Litigios</div></div></div>
-      <div class="team-cell" data-random><img src="asociado1.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Javiera Bravo</div><div class="team-cell-area">Neg. Colectiva</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Diego Castillo</div><div class="team-cell-area">Estrategia</div></div></div>
-      <div class="team-cell" data-random><img src="asociado3.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Fernanda Lagos</div><div class="team-cell-area">Seg. Social</div></div></div>
-      <div class="team-cell" data-random><img src="asociado4.jpeg" alt=""><div class="team-cell-overlay"><div class="team-cell-name">Sebastián Moya</div><div class="team-cell-area">Compliance</div></div></div>
-      <div class="team-cell" data-random><div class="team-cell-overlay"><div class="team-cell-name">Catalina Vera</div><div class="team-cell-area">Der. Laboral</div></div></div>
+      <div class="team-cell" data-fixed><img src="francisco.webp" alt="Francisco Pinochet Cantwell">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Francisco Pinochet</div>
+          <div class="team-cell-area">Socio Fundador</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Polett Rodríguez</div>
+          <div class="team-cell-area">Compliance</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Dante Gariboldi</div>
+          <div class="team-cell-area">Due Diligence</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">José J. Ossa</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado7.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Gonzalo Doren</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Sofía Hernández</div>
+          <div class="team-cell-area">Compliance</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Constanza Godoy</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Felipe Kuthe</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Valentina Espinoza</div>
+          <div class="team-cell-area">Neg. Colectiva</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Lucas Ortiz</div>
+          <div class="team-cell-area">Due Diligence</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Macarena Valenzuela</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Nicolás Yáñez</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Rocío Cartagena</div>
+          <div class="team-cell-area">Seg. Social</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado5.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Simón Gutiérrez</div>
+          <div class="team-cell-area">Estrategia</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado6.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Andrea Morales</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Rodrigo Pizarro</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado8.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Camila Reyes</div>
+          <div class="team-cell-area">Compliance</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado9.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Felipe Araya</div>
+          <div class="team-cell-area">Due Diligence</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado10.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Isidora Soto</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado11.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Martín Fuentes</div>
+          <div class="team-cell-area">Litigios</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado1.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Javiera Bravo</div>
+          <div class="team-cell-area">Neg. Colectiva</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Diego Castillo</div>
+          <div class="team-cell-area">Estrategia</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado3.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Fernanda Lagos</div>
+          <div class="team-cell-area">Seg. Social</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random><img src="asociado4.jpeg" alt="">
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Sebastián Moya</div>
+          <div class="team-cell-area">Compliance</div>
+        </div>
+      </div>
+      <div class="team-cell" data-random>
+        <div class="team-cell-overlay">
+          <div class="team-cell-name">Catalina Vera</div>
+          <div class="team-cell-area">Der. Laboral</div>
+        </div>
+      </div>
     </div>
 
     <div class="team-cta-wrap">
@@ -911,7 +2424,8 @@
           <div class="area-cell-fade"></div>
           <div class="area-cell-hover">
             <div class="area-cell-hover-name">Derecho Laboral</div>
-            <div class="area-cell-hover-desc">Asesoría integral en relaciones laborales individuales y colectivas, contratos y fiscalizaciones.</div>
+            <div class="area-cell-hover-desc">Asesoría integral en relaciones laborales individuales y colectivas,
+              contratos y fiscalizaciones.</div>
             <div class="area-cell-hover-btn">Ver área →</div>
           </div>
           <div class="area-cell-content">
@@ -927,7 +2441,8 @@
           <div class="area-cell-fade"></div>
           <div class="area-cell-hover">
             <div class="area-cell-hover-name">Litigios Laborales y Civiles</div>
-            <div class="area-cell-hover-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.</div>
+            <div class="area-cell-hover-desc">Representación en Juzgados del Trabajo, Cortes de Apelaciones y Corte
+              Suprema.</div>
             <div class="area-cell-hover-btn">Ver área →</div>
           </div>
           <div class="area-cell-content">
@@ -1048,7 +2563,8 @@
           <div class="area-cell-fade"></div>
           <div class="area-cell-hover">
             <div class="area-cell-hover-name">Representación · Ley de Lobby</div>
-            <div class="area-cell-hover-desc">Gestión ante organismos reguladores y representación en Ley de Lobby.</div>
+            <div class="area-cell-hover-desc">Gestión ante organismos reguladores y representación en Ley de Lobby.
+            </div>
             <div class="area-cell-hover-btn">Ver área →</div>
           </div>
           <div class="area-cell-content">
@@ -1079,36 +2595,49 @@
         <div>
           <div class="footer-logo">
             <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
-              <rect width="310" height="310" fill="#1B64C8"/>
-              <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF" letter-spacing="-1">BPP</text>
-              <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1"/>
-              <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
-              <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
-              <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
+              <rect width="310" height="310" fill="#1B64C8" />
+              <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62"
+                fill="#FFFFFF" letter-spacing="-1">BPP</text>
+              <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
+              <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
+              <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
+              <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
+                fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
             </svg>
           </div>
         </div>
         <div>
           <div class="footer-col-title">El Estudio</div>
           <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span
+              class="footer-col-link-arrow">→</span></a>
           <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span
+              class="footer-col-link-arrow">→</span></a>
         </div>
         <div>
           <div class="footer-col-title">Áreas de Práctica</div>
-          <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span
+              class="footer-col-link-arrow">→</span></a>
           <a href="./BPP_Areas.html" class="footer-col-link">Litigios <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Cumplimiento Normativo <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link">Cumplimiento Normativo <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
+              class="footer-col-link-arrow">→</span></a>
         </div>
         <div>
           <div class="footer-col-title">Contacto</div>
-          <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span class="footer-col-link-arrow">→</span></a>
+          <a href="#" class="footer-col-link">Apoquindo 3000 piso 15, Las Condes <span
+              class="footer-col-link-arrow">→</span></a>
           <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
-          <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span class="footer-col-link-arrow">→</span></a>
-          <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span class="footer-col-link-arrow">→</span></a>
+          <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
+              class="footer-col-link-arrow">→</span></a>
+          <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span
+              class="footer-col-link-arrow">→</span></a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -1126,8 +2655,12 @@
   <a href="https://wa.me/56949409721" class="fab" target="_blank" rel="noopener">
     <div class="fab-icon-wrap">
       <svg class="fab-icon" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="rgba(255,255,255,0.15)"/>
-        <path d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z" fill="white"/>
+        <path
+          d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
+          fill="rgba(255,255,255,0.15)" />
+        <path
+          d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
+          fill="white" />
       </svg>
     </div>
     <span class="fab-label">Agendar consulta</span>
@@ -1139,23 +2672,23 @@
     /* ── CARRUSEL HERO — transición direccional ── */
     let currentSlide = 0;
     const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroDots   = document.querySelectorAll('.hero-dot');
-    let   heroTimer  = setInterval(() => goSlide(currentSlide + 1, 'next'), 5000);
+    const heroDots = document.querySelectorAll('.hero-dot');
+    let heroTimer = setInterval(() => goSlide(currentSlide + 1, 'next'), 5000);
 
     function goSlide(n, dir) {
-      const total    = heroSlides.length;
-      const next     = ((n % total) + total) % total;
+      const total = heroSlides.length;
+      const next = ((n % total) + total) % total;
       if (next === currentSlide) return;
 
       const entering = heroSlides[next];
-      const leaving  = heroSlides[currentSlide];
-      const isNext   = dir !== 'prev'; /* true = izq→der (next), false = der→izq (prev) */
+      const leaving = heroSlides[currentSlide];
+      const isNext = dir !== 'prev'; /* true = izq→der (next), false = der→izq (prev) */
 
       /* Posicionar el entrante fuera del viewport en la dirección correcta */
       entering.style.transition = 'none';
-      entering.style.transform  = isNext ? 'translateX(100%)' : 'translateX(-100%)';
-      entering.style.zIndex     = '3';
-      leaving.style.zIndex      = '2';
+      entering.style.transform = isNext ? 'translateX(100%)' : 'translateX(-100%)';
+      entering.style.zIndex = '3';
+      leaving.style.zIndex = '2';
 
       /* Forzar repaint antes de animar */
       entering.offsetHeight;
@@ -1163,9 +2696,9 @@
       /* Animar ambos slides simultáneamente */
       const dur = 'transform .65s cubic-bezier(.4,0,.2,1)';
       entering.style.transition = dur;
-      leaving.style.transition  = dur;
-      entering.style.transform  = 'translateX(0)';
-      leaving.style.transform   = isNext ? 'translateX(-100%)' : 'translateX(100%)';
+      leaving.style.transition = dur;
+      entering.style.transform = 'translateX(0)';
+      leaving.style.transform = isNext ? 'translateX(-100%)' : 'translateX(100%)';
 
       /* Actualizar clases y dots */
       heroDots[currentSlide].classList.remove('hero-dot--active');
@@ -1176,8 +2709,8 @@
         /* Limpiar estados inline de todos los slides */
         heroSlides.forEach(s => {
           s.style.transition = '';
-          s.style.transform  = '';
-          s.style.zIndex     = '';
+          s.style.transform = '';
+          s.style.zIndex = '';
           s.classList.remove('hero-slide--active', 'hero-slide--leaving');
         });
         entering.classList.add('hero-slide--active');
@@ -1195,15 +2728,15 @@
 
     /* ── CARRUSEL SOCIOS — loop infinito ── */
     (function () {
-      const track     = document.getElementById('socios-track');
+      const track = document.getElementById('socios-track');
       const socioDots = document.querySelectorAll('.socios-dot');
       if (!track) return;
 
       const originals = Array.from(track.querySelectorAll('.socio'));
-      const total     = originals.length;
-      const GAP       = 20;
-      let   idx       = 0;
-      let   timer;
+      const total = originals.length;
+      const GAP = 20;
+      let idx = 0;
+      let timer;
 
       originals.forEach(s => track.appendChild(s.cloneNode(true)));
 
@@ -1211,7 +2744,7 @@
 
       function moveTo(pos, animate) {
         track.style.transition = animate ? 'transform .5s cubic-bezier(.4,0,.2,1)' : 'none';
-        track.style.transform  = `translateX(-${pos * slideW()}px)`;
+        track.style.transform = `translateX(-${pos * slideW()}px)`;
       }
 
       function next() {
@@ -1253,17 +2786,17 @@
       /* Datos de cada contador: selector del número, valor final, separador de miles */
       const counters = [
         { el: document.querySelector('.hito-card:nth-child(1) .hito-card-number'), end: 1250, prefix: '', suffix: '+', decimals: 0, thousands: '.' },
-        { el: document.querySelector('.hito-card:nth-child(2) .hito-card-number'), end: 38,   prefix: '+', suffix: '', decimals: 0, thousands: '' },
+        { el: document.querySelector('.hito-card:nth-child(2) .hito-card-number'), end: 38, prefix: '+', suffix: '', decimals: 0, thousands: '' },
       ];
 
       function animateCount(el, end, prefix, suffix, thousands, duration) {
-        const start     = 0;
+        const start = 0;
         const startTime = performance.now();
         function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
         function step(now) {
-          const elapsed  = now - startTime;
+          const elapsed = now - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          const value    = Math.round(easeOutQuart(progress) * end);
+          const value = Math.round(easeOutQuart(progress) * end);
           const formatted = thousands
             ? value.toLocaleString('es-CL')
             : String(value);
@@ -1274,8 +2807,8 @@
       }
 
       /* IntersectionObserver — apunta a las cards, no a la sección entera */
-      const hitoCards    = document.querySelectorAll('.hito-card, .hito-leido');
-      let   counted      = false;
+      const hitoCards = document.querySelectorAll('.hito-card, .hito-leido');
+      let counted = false;
 
       const hitoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1317,8 +2850,8 @@
     })();
 
     (function () {
-      const palette = ['#1B64C8','#3D7FD4','#85B7EB','#999999','#0A2A5E','#FFFFFF'];
-      const grid    = document.getElementById('team-grid');
+      const palette = ['#1B64C8', '#3D7FD4', '#85B7EB', '#999999', '#0A2A5E', '#FFFFFF'];
+      const grid = document.getElementById('team-grid');
       if (!grid) return;
 
       /* Colorear todas las celdas */
@@ -1329,9 +2862,9 @@
       });
 
       /* Shuffle solo las celdas con data-random, manteniendo data-fixed en su lugar */
-      const allCells    = Array.from(grid.children);
-      const fixedCell   = grid.querySelector('[data-fixed]');
-      const fixedIndex  = allCells.indexOf(fixedCell);
+      const allCells = Array.from(grid.children);
+      const fixedCell = grid.querySelector('[data-fixed]');
+      const fixedIndex = allCells.indexOf(fixedCell);
       const randomCells = allCells.filter(c => c.hasAttribute('data-random'));
 
       /* Fisher-Yates sobre las celdas aleatorias */
@@ -1353,4 +2886,5 @@
     })();
   </script>
 </body>
+
 </html>
