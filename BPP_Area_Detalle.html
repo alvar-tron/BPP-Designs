@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Derecho Laboral — BPP Abogados</title>
+  <meta name="description"
+    content="Asesoría legal especializada en derecho laboral: contratos, negociación colectiva, litigios y defensa ante la Dirección del Trabajo. Más de 35 años de experiencia en BPP Abogados.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Derecho Laboral — BPP Abogados">
+  <meta property="og:description"
+    content="Asesoría legal especializada en derecho laboral, negociación colectiva y litigios, con más de 35 años de experiencia.">
+  <meta property="og:image" content="assets/area-img-01.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -345,7 +352,7 @@
     .sh-img {
       position: absolute;
       inset: 0;
-      background-image: url('area-img-01.jpg');
+      background-image: url('assets/area-img-01.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -1337,7 +1344,7 @@
       </ul>
       <!-- Menú desplegable Contacto -->
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle active">
+        <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
           Contacto <span class="arrow">▾</span>
         </button>
         <div class="nav-dropdown-menu">
@@ -1500,7 +1507,7 @@
 
           <a href="./BPP_Asociado_Detalle.html" class="sidebar-lawyer">
             <div class="sidebar-lawyer-photo">
-              <img src="francisco.webp" alt="Francisco Pinochet" onerror="this.style.display='none'">
+              <img src="assets/francisco.webp" alt="Francisco Pinochet" loading="lazy" onerror="this.style.display='none'">
             </div>
             <div>
               <div class="sidebar-lawyer-name">Francisco Pinochet Cantwell</div>
@@ -1510,7 +1517,7 @@
 
           <a href="./BPP_Asociado_Detalle.html" class="sidebar-lawyer">
             <div class="sidebar-lawyer-photo">
-              <img src="claudio.webp" alt="Claudio Palavecino" onerror="this.style.display='none'">
+              <img src="assets/claudio.webp" alt="Claudio Palavecino" loading="lazy" onerror="this.style.display='none'">
             </div>
             <div>
               <div class="sidebar-lawyer-name">Claudio Palavecino Cáceres</div>
@@ -1520,7 +1527,7 @@
 
           <a href="./BPP_Asociado_Detalle.html" class="sidebar-lawyer">
             <div class="sidebar-lawyer-photo">
-              <img src="matias.webp" alt="Matías Berríos" onerror="this.style.display='none'">
+              <img src="assets/matias.webp" alt="Matías Berríos" loading="lazy" onerror="this.style.display='none'">
             </div>
             <div>
               <div class="sidebar-lawyer-name">Matías Berríos Fuchslocher</div>
@@ -1678,7 +1685,7 @@
         <div class="footer-legal-links">
           <a href="#" class="footer-legal-link">LinkedIn</a>
           <a href="#" class="footer-legal-link">Política de privacidad</a>
-          <a href="#" class="footer-legal-link">Postulaciones</a>
+          <a href="./BPP_Postulacion.html" class="footer-legal-link">Postulaciones</a>
         </div>
       </div>
     </div>
@@ -1702,6 +1709,16 @@
   <div class="fab-decor-2"></div>
 
   <script>
+    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
+    document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
+      var toggle = dd.querySelector(".nav-dropdown-toggle");
+      if (!toggle) return;
+      var setExpanded = function (v) { toggle.setAttribute("aria-expanded", v); };
+      dd.addEventListener("mouseenter", function () { setExpanded("true"); });
+      dd.addEventListener("mouseleave", function () { setExpanded("false"); });
+      dd.addEventListener("focusin", function () { setExpanded("true"); });
+      dd.addEventListener("focusout", function () { setExpanded("false"); });
+    });
     /* ── COPIAR EMAIL ── */
     function copyEmail(btn, email) {
       navigator.clipboard.writeText(email).then(() => {

@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publicaciones & Noticias — BPP Abogados</title>
+  <meta name="description"
+    content="Columnas de opinión, análisis jurídicos y noticias del estudio. Mantente al día con las publicaciones de los socios y equipo de BPP Abogados.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Publicaciones & Noticias — BPP Abogados">
+  <meta property="og:description"
+    content="Columnas de opinión, análisis jurídicos y noticias del estudio, actualizadas por los socios y equipo de BPP.">
+  <meta property="og:image" content="assets/noticia-destacada.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -345,7 +352,7 @@
     .sh-img {
       position: absolute;
       inset: 0;
-      background-image: url('./BPP_Areas_Hero.png');
+      background-image: url('assets/BPP_Areas_Hero.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -1286,7 +1293,7 @@
       </ul>
       <!-- Menú desplegable Contacto -->
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle active">
+        <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
           Contacto <span class="arrow">▾</span>
         </button>
         <div class="nav-dropdown-menu">
@@ -1339,7 +1346,7 @@
       <!-- NOTICIA DESTACADA -->
       <div class="featured-block">
         <div class="featured-img">
-          <img src="./noticia-destacada.png" alt="El impacto de la Ley Karin"
+          <img src="assets/noticia-destacada.jpg" alt="El impacto de la Ley Karin"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="featured-img-ph" style="display:none"><span>imagen destacada</span></div>
         </div>
@@ -1378,7 +1385,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-01.png" alt=""
+            <img src="assets/noticia-01.jpg" alt="Responsabilidad solidaria en grupos empresariales: criterios de la Corte Suprema 2024" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1399,7 +1406,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-02.png" alt=""
+            <img src="assets/noticia-02.jpg" alt="BPP obtiene fallo favorable en macro litigio de 140 causas laborales acumuladas" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1420,7 +1427,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-03.png" alt=""
+            <img src="assets/noticia-03.jpg" alt="Tutela laboral y libertad de empresa: análisis de fallo de la Corte de Apelaciones" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1441,7 +1448,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-04.png" alt=""
+            <img src="assets/noticia-04.jpg" alt="Negociación colectiva reglada: desafíos para la empresa moderna" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1461,7 +1468,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-05.png" alt=""
+            <img src="assets/noticia-05.jpg" alt="Subcontratación: régimen de responsabilidades tras la reforma procesal laboral" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1482,7 +1489,7 @@
 
         <a href="./BPP_Noticia_Detalle.html" class="news-card" data-page="1">
           <div class="news-card-img">
-            <img src="./noticia-06.png" alt=""
+            <img src="assets/noticia-06.jpg" alt="BPP reconocido en Chambers & Partners 2025 — Band 1 Derecho Laboral" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="news-card-img-ph" style="display:none"><span>imagen</span></div>
           </div>
@@ -1688,7 +1695,7 @@
         <div class="footer-legal-links">
           <a href="#" class="footer-legal-link">LinkedIn</a>
           <a href="#" class="footer-legal-link">Política de privacidad</a>
-          <a href="#" class="footer-legal-link">Postulaciones</a>
+          <a href="./BPP_Postulacion.html" class="footer-legal-link">Postulaciones</a>
         </div>
       </div>
     </div>
@@ -1712,6 +1719,16 @@
   <div class="fab-decor-2"></div>
 
   <script>
+    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
+    document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
+      var toggle = dd.querySelector(".nav-dropdown-toggle");
+      if (!toggle) return;
+      var setExpanded = function (v) { toggle.setAttribute("aria-expanded", v); };
+      dd.addEventListener("mouseenter", function () { setExpanded("true"); });
+      dd.addEventListener("mouseleave", function () { setExpanded("false"); });
+      dd.addEventListener("focusin", function () { setExpanded("true"); });
+      dd.addEventListener("focusout", function () { setExpanded("false"); });
+    });
     /* ── ANIMACIÓN DE ENTRADA — cards con IntersectionObserver ── */
     (function () {
       const obs = new IntersectionObserver((entries) => {

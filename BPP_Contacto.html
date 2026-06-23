@@ -8,6 +8,10 @@
   <title>Contacto — BPP Abogados</title>
   <meta name="description"
     content="Contáctenos para asesoría jurídica especializada. BPP Abogados — Berríos, Palavecino & Pinochet.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto — BPP Abogados">
+  <meta property="og:description" content="Contáctenos para asesoría jurídica especializada en derecho laboral, civil, penal y administrativo.">
+  <meta property="og:image" content="assets/contacto-laboral.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1196,7 +1200,7 @@
       </ul>
       <!-- Menú desplegable Contacto -->
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle active">
+        <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
           Contacto <span class="arrow">▾</span>
         </button>
         <div class="nav-dropdown-menu">
@@ -1333,7 +1337,7 @@
           <!-- Área preseleccionada -->
           <div class="form-group">
             <label class="form-label" for="area">Área de consulta <span>*</span></label>
-            <select class="form-select" id="area" name="area" required>
+            <select class="form-select" id="area" name="area" required aria-required="true">
               <option value="">Seleccione un área</option>
               <option value="laboral">Defensa Laboral</option>
               <option value="civil">Derecho Civil</option>
@@ -1347,7 +1351,7 @@
             <div class="form-group">
               <label class="form-label" for="nombre">Nombre completo <span>*</span></label>
               <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre" required
-                autocomplete="name">
+                aria-required="true" autocomplete="name">
             </div>
             <div class="form-group">
               <label class="form-label" for="telefono">Teléfono</label>
@@ -1360,13 +1364,13 @@
           <div class="form-group">
             <label class="form-label" for="email">Correo electrónico <span>*</span></label>
             <input class="form-input" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required
-              autocomplete="email">
+              aria-required="true" autocomplete="email">
           </div>
 
           <!-- Mensaje -->
           <div class="form-group">
             <label class="form-label" for="mensaje">Mensaje <span>*</span></label>
-            <textarea class="form-textarea" id="mensaje" name="mensaje"
+            <textarea class="form-textarea" id="mensaje" name="mensaje" aria-required="true"
               placeholder="Describa brevemente su consulta o situación jurídica…" required></textarea>
           </div>
 
@@ -1387,7 +1391,7 @@
         </form>
 
         <!-- Estado de éxito -->
-        <div class="form-success" id="form-success">
+        <div class="form-success" id="form-success" role="status" aria-live="polite">
           <div class="form-success-icon">✓</div>
           <div class="form-success-title">Mensaje enviado</div>
           <p class="form-success-desc">Hemos recibido su consulta. Uno de nuestros abogados se pondrá en contacto con
@@ -1479,6 +1483,16 @@
   <div class="fab-decor-2"></div>
 
   <script>
+    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
+    document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
+      var toggle = dd.querySelector(".nav-dropdown-toggle");
+      if (!toggle) return;
+      var setExpanded = function (v) { toggle.setAttribute("aria-expanded", v); };
+      dd.addEventListener("mouseenter", function () { setExpanded("true"); });
+      dd.addEventListener("mouseleave", function () { setExpanded("false"); });
+      dd.addEventListener("focusin", function () { setExpanded("true"); });
+      dd.addEventListener("focusout", function () { setExpanded("false"); });
+    });
     /* ══════════════════════════════════════════════════════
        DATOS POR ÁREA — diferencia el contenido para SEO
     ══════════════════════════════════════════════════════ */
@@ -1493,7 +1507,7 @@
                   <p>Ya sea que necesite asesoría en un despido injustificado, tutela laboral, acoso en el trabajo o negociación con su empleador, nuestro equipo está preparado para orientarle desde el primer contacto.</p>`,
         seoTitle: 'Abogado Defensa Laboral Santiago — BPP Abogados',
         seoDesc: 'Asesoría y representación en defensa laboral. Despidos, tutela laboral, acoso, negociación colectiva. BPP Abogados — más de 35 años de experiencia en derecho laboral chileno.',
-        heroImg: 'contacto-laboral.png',
+        heroImg: 'assets/contacto-laboral.jpg',
         selectValue: 'laboral',
       },
       civil: {
@@ -1506,7 +1520,7 @@
                   <p>Representamos a nuestros clientes con rigor técnico y enfoque estratégico, buscando siempre la solución más eficiente para su caso, ya sea en sede judicial o mediante negociación extrajudicial.</p>`,
         seoTitle: 'Abogado Derecho Civil Santiago — BPP Abogados',
         seoDesc: 'Asesoría en derecho civil: contratos, responsabilidad, litigios patrimoniales. BPP Abogados Santiago — representación legal especializada para personas y empresas.',
-        heroImg: 'contacto-civil.png',
+        heroImg: 'assets/contacto-civil.jpg',
         selectValue: 'civil',
       },
       penal: {
@@ -1519,7 +1533,7 @@
                   <p>Si usted o su empresa enfrenta una investigación penal o formalización, contáctenos de inmediato. La oportunidad de la asesoría jurídica es crítica en materia penal.</p>`,
         seoTitle: 'Abogado Defensa Penal Santiago — BPP Abogados',
         seoDesc: 'Defensa penal económica y corporativa en Santiago. Investigaciones penales, delitos financieros, responsabilidad empresarial. BPP Abogados — asesoría legal especializada.',
-        heroImg: 'contacto-penal.png',
+        heroImg: 'assets/contacto-penal.jpg',
         selectValue: 'penal',
       },
       administrativo: {
@@ -1532,7 +1546,7 @@
                   <p>Nuestro equipo tiene experiencia en la defensa frente a la Superintendencia del Trabajo, la DT, la CMF y otros organismos fiscalizadores del Estado chileno.</p>`,
         seoTitle: 'Abogado Derecho Administrativo Santiago — BPP Abogados',
         seoDesc: 'Asesoría en derecho administrativo y sancionador. Procedimientos ante organismos reguladores, recursos, Contraloría. BPP Abogados Santiago.',
-        heroImg: 'contacto-administrativo.png',
+        heroImg: 'assets/contacto-administrativo.jpg',
         selectValue: 'administrativo',
       },
     };
@@ -1646,9 +1660,11 @@
       required.forEach(field => {
         if (!field.value.trim()) {
           field.style.borderColor = '#e53e3e';
+          field.setAttribute('aria-invalid', 'true');
           valid = false;
         } else {
           field.style.borderColor = '';
+          field.removeAttribute('aria-invalid');
         }
       });
       if (!valid) return;

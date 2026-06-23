@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trabaja con Nosotros — BPP Abogados</title>
 <meta name="description" content="Únete al equipo de BPP Abogados. Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trabaja con Nosotros — BPP Abogados">
+<meta property="og:description" content="Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
+<meta property="og:image" content="assets/BPP_Areas_Hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -108,7 +112,7 @@ body {
 }
 .sh-img {
   position: absolute; inset: 0;
-  background-image: url('trabaja-hero.jpg');
+  background-image: url('assets/BPP_Areas_Hero.jpg');
   background-size: cover; background-position: center;
 }
 .sh-overlay {
@@ -557,7 +561,7 @@ body {
         <div class="form-grid-2">
           <div class="form-group">
             <label class="form-label" for="nombre">Nombre completo <span>*</span></label>
-            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required autocomplete="name">
+            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required aria-required="true" autocomplete="name">
           </div>
           <div class="form-group">
             <label class="form-label" for="telefono">Teléfono</label>
@@ -568,13 +572,13 @@ body {
         <!-- Email -->
         <div class="form-group">
           <label class="form-label" for="email">Correo electrónico <span>*</span></label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required autocomplete="email">
+          <input class="form-input" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required aria-required="true" autocomplete="email">
         </div>
 
         <!-- Área de interés -->
         <div class="form-group">
           <label class="form-label" for="area">Área de interés <span>*</span></label>
-          <select class="form-select" id="area" name="area" required>
+          <select class="form-select" id="area" name="area" required aria-required="true">
             <option value="">Seleccione un área</option>
             <option value="laboral">Defensa Laboral</option>
             <option value="civil">Derecho Civil</option>
@@ -594,7 +598,7 @@ body {
         <div class="form-group">
           <label class="form-label" for="cv-input">CV adjunto <span>*</span></label>
           <div class="cv-dropzone" id="cv-dropzone">
-            <input type="file" id="cv-input" name="cv" accept=".pdf,.doc,.docx" required>
+            <input type="file" id="cv-input" name="cv" accept=".pdf,.doc,.docx" required aria-required="true">
             <div class="cv-icon">
               <svg width="16" height="18" viewBox="0 0 16 20" fill="none">
                 <rect x="1" y="1" width="14" height="18" rx="2" stroke="#1B64C8" stroke-width="1.3"/>
@@ -622,7 +626,7 @@ body {
       </form>
 
       <!-- Estado de éxito -->
-      <div class="form-success" id="form-success">
+      <div class="form-success" id="form-success" role="status" aria-live="polite">
         <div class="form-success-icon">✓</div>
         <div class="form-success-title">Postulación recibida</div>
         <p class="form-success-desc">Hemos recibido tu postulación. Revisaremos tu perfil y nos pondremos en contacto contigo si tu experiencia se ajusta a nuestras necesidades actuales.</p>
@@ -654,7 +658,7 @@ body {
         <div class="footer-col-title">El Estudio</div>
         <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
         <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span class="footer-col-link-arrow">→</span></a>
-        <a href="./BPP_Trabaja.html" class="footer-col-link">Trabaja con nosotros <span class="footer-col-link-arrow">→</span></a>
+        <a href="./BPP_Postulacion.html" class="footer-col-link">Trabaja con nosotros <span class="footer-col-link-arrow">→</span></a>
         <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span class="footer-col-link-arrow">→</span></a>
       </div>
       <div>
@@ -677,7 +681,7 @@ body {
       <div class="footer-legal-links">
         <a href="#" class="footer-legal-link">LinkedIn</a>
         <a href="#" class="footer-legal-link">Política de privacidad</a>
-        <a href="./BPP_Trabaja.html" class="footer-legal-link">Postulaciones</a>
+        <a href="./BPP_Postulacion.html" class="footer-legal-link">Postulaciones</a>
       </div>
     </div>
   </div>

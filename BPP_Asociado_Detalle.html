@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Francisco Pinochet Cantwell — BPP Abogados</title>
+  <meta name="description"
+    content="Francisco Pinochet Cantwell, Socio Fundador de BPP Abogados. Más de 35 años de trayectoria en derecho laboral chileno, reconocido por Chambers & Partners y Legal 500.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Francisco Pinochet Cantwell — BPP Abogados">
+  <meta property="og:description"
+    content="Socio Fundador de BPP Abogados. Más de 35 años de trayectoria en derecho laboral chileno.">
+  <meta property="og:image" content="assets/francisco.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -1397,7 +1404,7 @@
       </ul>
       <!-- Menú desplegable Contacto -->
       <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle active">
+        <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
           Contacto <span class="arrow">▾</span>
         </button>
         <div class="nav-dropdown-menu">
@@ -1452,7 +1459,7 @@
     <div class="ficha-inner">
 
       <div class="ficha-foto">
-        <img src="francisco.webp" alt="Francisco Pinochet Cantwell"
+        <img src="assets/francisco.webp" alt="Francisco Pinochet Cantwell"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
         <div class="ficha-foto-ph" style="display:none;"><span>foto editorial</span></div>
         <div class="foto-overlay"></div>
@@ -1737,6 +1744,16 @@
   </a>
 
   <script>
+    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
+    document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
+      var toggle = dd.querySelector(".nav-dropdown-toggle");
+      if (!toggle) return;
+      var setExpanded = function (v) { toggle.setAttribute("aria-expanded", v); };
+      dd.addEventListener("mouseenter", function () { setExpanded("true"); });
+      dd.addEventListener("mouseleave", function () { setExpanded("false"); });
+      dd.addEventListener("focusin", function () { setExpanded("true"); });
+      dd.addEventListener("focusout", function () { setExpanded("false"); });
+    });
     /* ── COPIAR EMAIL ── */
     function copyEmail(btn, email) {
       navigator.clipboard.writeText(email).then(() => {
