@@ -97,7 +97,7 @@ body {
       position: relative;
       z-index: 4;
       width: 100%;
-      max-width: 1180px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 80px 44px;
       display: flex;
@@ -118,25 +118,6 @@ body {
       letter-spacing: .04em;
     }
 
-.sh-right {
-      flex: 1;
-      padding-bottom: 4px;
-    }
-
-.sh-desc {
-      font-size: 14px;
-      color: rgba(255, 255, 255, .72);
-      line-height: 1.8;
-    }
-
-.sh-desc p {
-      margin-bottom: 14px;
-    }
-
-.sh-desc p:last-child {
-      margin-bottom: 0;
-    }
-
 .equipo-section {
       background: #fff;
       padding: 40px 0 72px;
@@ -144,7 +125,7 @@ body {
     }
 
 .equipo-inner {
-      max-width: 1180px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 80px;
       box-sizing: border-box;
@@ -225,8 +206,8 @@ body {
 
 .people-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
       align-items: start;
       min-width: 0;
     }
@@ -257,8 +238,8 @@ body {
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 240px;
-      /* altura fija — uniforme en todas las cards */
+      height: 270px;
+      /* altura fija — uniforme en todas las cards, próxima al ancho de columna para que se vean cuadradas */
       flex-shrink: 0;
     }
 
@@ -386,37 +367,6 @@ body {
       gap: 6px;
     }
 
-.card-btn-li {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 9px;
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid rgba(27, 100, 200, .25);
-      background: #fff;
-      color: var(--blue-xdk);
-      transition: border-color .2s, background .2s, color .2s;
-      align-self: flex-start;
-    }
-
-.card-btn-li:hover {
-      border-color: var(--blue);
-      background: var(--blue);
-      color: #fff;
-    }
-
-.card-btn-li:hover svg rect,
-    .card-btn-li:hover svg circle,
-    .card-btn-li:hover svg path {
-      stroke: #fff !important;
-      fill: #fff !important;
-    }
-
 .card-email-row {
       display: flex;
       align-items: center;
@@ -489,11 +439,6 @@ body {
       opacity: 1;
     }
 
-.card-btn-li:hover {
-      background: var(--blue);
-      border-color: var(--blue);
-    }
-
 .person-card.hidden {
       display: none;
     }
@@ -507,15 +452,12 @@ body {
         padding: 0 32px;
       }
 .people-grid {
-        gap: 14px;
+        gap: 22px;
       }
 }
 
 @media(max-width:900px)  {
-  .people-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-.card-photo-wrap {
+  .card-photo-wrap {
         height: 200px;
       }
 }
@@ -544,7 +486,7 @@ body {
       }
 .people-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 16px;
       }
 .card-photo-wrap {
         height: 160px;
@@ -591,16 +533,6 @@ body {
       <div class="sh-left">
         <h1 class="sh-title">Nuestro<br>Equipo</h1>
       </div>
-      <div class="sh-right">
-        <div class="sh-desc">
-          <p>Fundado por los abogados Francisco Pinochet y José Antonio Kast, a 38 años de nuestra fundación la práctica
-            ha crecido de forma sostenida en experiencia y prestigio. En la última década el área laboral ha cobrado
-            especial relevancia con la incorporación de Claudio Palavecino y Matías Berríos.</p>
-          <p>Nos esforzamos por satisfacer las necesidades de las personas y empresas que han depositado su confianza en
-            nosotros, ofreciendo un servicio personalizado y confiable orientado a la mayor satisfacción de cada
-            cliente.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -611,19 +543,25 @@ body {
       <!-- FILTROS -->
       <div class="filters-wrap">
         <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="socios">Socios</button>
+        <button class="filter-btn" data-filter="ofcounsel">Directores y Of Counsel</button>
         <button class="filter-btn" data-filter="asociados">Asociados</button>
-        <button class="filter-btn" data-filter="ofcounsel">Of Counsel</button>
         <button class="filter-btn" data-filter="administracion">Administración</button>
       </div>
 
       <!-- SEPARADORES DE CATEGORÍA (visibles solo en filtros específicos) -->
+      <div class="cat-divider" data-div="socios">
+        <span class="cat-divider-label">Socios</span>
+        <div class="cat-divider-line"></div>
+        <span class="cat-divider-count">3 socios</span>
+      </div>
       <div class="cat-divider" data-div="asociados">
         <span class="cat-divider-label">Asociados</span>
         <div class="cat-divider-line"></div>
         <span class="cat-divider-count">10 asociados</span>
       </div>
       <div class="cat-divider" data-div="ofcounsel">
-        <span class="cat-divider-label">Of Counsel</span>
+        <span class="cat-divider-label">Directores y Of Counsel</span>
         <div class="cat-divider-line"></div>
         <span class="cat-divider-count">2 of counsel</span>
       </div>
@@ -650,18 +588,9 @@ body {
             <div class="card-name">Francisco Pinochet Cantwell</div>
             <div class="card-role"></div>
             <div class="card-btns">
-              <a href="https://linkedin.com/in/francisco-pinochet" class="card-btn card-btn-li" target="_blank"
-                rel="noopener">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn
-              </a>
-              <div class="card-email-row"><a href="mailto:fpinochet@berriospalavecino.cl"
-                  class="card-email">fpinochet@berriospalavecino.cl</a><button class="card-copy-btn"
-                  onclick="copyEmail(this,'fpinochet@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
+              <div class="card-email-row"><a href="mailto:fpinochet@kastpinochet.cl"
+                  class="card-email">fpinochet@kastpinochet.cl</a><button class="card-copy-btn"
+                  onclick="copyEmail(this,'fpinochet@kastpinochet.cl')" title="Copiar correo"><svg width="11"
                     height="11" viewBox="0 0 14 14" fill="none">
                     <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
                     <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
@@ -683,18 +612,9 @@ body {
             <div class="card-name">Matías Berrios Fuchslocher</div>
             <div class="card-role"></div>
             <div class="card-btns">
-              <a href="https://www.linkedin.com/in/matias-berrios-fuchslocher/" class="card-btn card-btn-li"
-                target="_blank" rel="noopener">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn
-              </a>
               <div class="card-email-row"><a href="mailto:mberrios@berriospalavecino.cl"
                   class="card-email">mberrios@berriospalavecino.cl</a><button class="card-copy-btn"
-                  onclick="copyEmail(this,'fpinochet@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
+                  onclick="copyEmail(this,'mberrios@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
                     height="11" viewBox="0 0 14 14" fill="none">
                     <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
                     <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
@@ -716,18 +636,9 @@ body {
             <div class="card-name">Claudio Palavecino Cáceres</div>
             <div class="card-role"></div>
             <div class="card-btns">
-              <a href="https://www.linkedin.com/in/claudio-palavecino-caceres/" class="card-btn card-btn-li"
-                target="_blank" rel="noopener">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn
-              </a>
               <div class="card-email-row"><a href="mailto:cpalavecino@berriospalavecino.cl"
                   class="card-email">cpalavecino@berriospalavecino.cl</a><button class="card-copy-btn"
-                  onclick="copyEmail(this,'fpinochet@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
+                  onclick="copyEmail(this,'cpalavecino@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
                     height="11" viewBox="0 0 14 14" fill="none">
                     <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
                     <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
@@ -749,13 +660,6 @@ body {
             <div class="card-name">Manuel Gutiérrez R.</div>
             <div class="card-role">Asociado</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:mgutierrez@berriospalavecino.cl"
                   class="card-email">mgutierrez@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'mgutierrez@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -780,13 +684,6 @@ body {
             <div class="card-name">Franco Benavides P.</div>
             <div class="card-role">Asociado</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:fbenavides@berriospalavecino.cl"
                   class="card-email">fbenavides@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'fbenavides@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -811,13 +708,6 @@ body {
             <div class="card-name">Polett Rodríguez M.</div>
             <div class="card-role">Asociada</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:prodriguez@berriospalavecino.cl"
                   class="card-email">prodriguez@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'prodriguez@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -841,13 +731,6 @@ body {
             <div class="card-name">Dante Gariboldi V.</div>
             <div class="card-role">Asociado</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:dgariboldi@berriospalavecino.cl"
                   class="card-email">dgariboldi@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'dgariboldi@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -871,13 +754,6 @@ body {
             <div class="card-name">Sofía Hernández L.</div>
             <div class="card-role">Asociada</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:shernandez@berriospalavecino.cl"
                   class="card-email">shernandez@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'shernandez@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -901,13 +777,6 @@ body {
             <div class="card-name">Constanza Godoy A.</div>
             <div class="card-role">Asociada</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:cgodoy@berriospalavecino.cl"
                   class="card-email">cgodoy@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'cgodoy@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -931,13 +800,6 @@ body {
             <div class="card-name">Felipe Kuthe S.</div>
             <div class="card-role">Asociado</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:fkuthe@berriospalavecino.cl"
                   class="card-email">fkuthe@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'fkuthe@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -962,13 +824,6 @@ body {
             <div class="card-name">Valentina Espinoza R.</div>
             <div class="card-role">Asociada</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:vespinoza@berriospalavecino.cl"
                   class="card-email">vespinoza@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'vespinoza@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -992,13 +847,6 @@ body {
             <div class="card-name">Lucas Ortiz M.</div>
             <div class="card-role">Asociado</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:lortiz@berriospalavecino.cl"
                   class="card-email">lortiz@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'lortiz@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -1023,13 +871,6 @@ body {
             <div class="card-name">Franco Devillaine</div>
             <div class="card-role">Of Counsel</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:fdevillaine@berriospalavecino.cl"
                   class="card-email">fdevillaine@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'fdevillaine@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
@@ -1053,13 +894,6 @@ body {
             <div class="card-name">Eduardo Armijo</div>
             <div class="card-role">Of Counsel</div>
             <div class="card-btns">
-              <a href="#" class="card-btn card-btn-li" target="_blank" rel="noopener"><svg width="10" height="10"
-                  viewBox="0 0 16 16" fill="none">
-                  <rect x="1" y="1" width="14" height="14" rx="2" stroke="#1B64C8" stroke-width="1.3" />
-                  <circle cx="5" cy="5" r="1.2" fill="#1B64C8" />
-                  <path d="M5 7v5M8 12V9c0-1.1.9-2 2-2s2 .9 2 2v3" stroke="#1B64C8" stroke-width="1.3"
-                    stroke-linecap="round" />
-                </svg> LinkedIn</a>
               <div class="card-email-row"><a href="mailto:earmijo@berriospalavecino.cl"
                   class="card-email">earmijo@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'earmijo@berriospalavecino.cl')" title="Copiar correo"><svg width="11"

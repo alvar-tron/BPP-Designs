@@ -149,13 +149,14 @@ body {
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 38% 1fr;
+      grid-template-columns: 1fr 38%;
     }
 
 .ficha-foto {
       position: relative;
       min-height: 420px;
       overflow: hidden;
+      order: 2;
       background: linear-gradient(160deg, #B5D4F4 0%, #85B7EB 100%);
     }
 
@@ -215,7 +216,8 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border-left: .5px solid var(--gray-lt);
+      order: 1;
+      border-right: .5px solid var(--gray-lt);
     }
 
 .datos-eyebrow {
@@ -693,10 +695,12 @@ body {
 .ficha-foto,
       .ficha-foto-ph {
         min-height: 280px;
+        order: 1;
       }
 .ficha-datos {
         padding: 24px 20px;
-        border-left: none;
+        order: 2;
+        border-right: none;
         border-top: .5px solid var(--gray-lt);
       }
 .tabs-nav {
@@ -797,8 +801,8 @@ body {
             LinkedIn
           </a>
           <div class="card-email-row">
-            <a href="mailto:fpinochet@berriospalavecino.cl" class="card-email">fpinochet@berriospalavecino.cl</a>
-            <button class="card-copy-btn" onclick="copyEmail(this,'fpinochet@berriospalavecino.cl')"
+            <a href="mailto:fpinochet@kastpinochet.cl" class="card-email">fpinochet@kastpinochet.cl</a>
+            <button class="card-copy-btn" onclick="copyEmail(this,'fpinochet@kastpinochet.cl')"
               title="Copiar correo">
               <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
                 <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
@@ -817,14 +821,42 @@ body {
   <div class="tabs-section-wrap">
     <div class="tabs-section">
       <div class="tabs-nav">
-        <button class="tab-btn active" onclick="switchTab(event,'estudios')">Estudios</button>
-        <button class="tab-btn" onclick="switchTab(event,'experiencia')">Experiencia</button>
-        <button class="tab-btn" onclick="switchTab(event,'practica')">Práctica</button>
-        <button class="tab-btn" onclick="switchTab(event,'academica')">Actividad Académica</button>
+        <button class="tab-btn active" onclick="switchTab(event,'practica')">Área práctica</button>
+        <button class="tab-btn" onclick="switchTab(event,'estudios')">Estudios</button>
+        <button class="tab-btn" onclick="switchTab(event,'experiencia')">Experiencia profesional</button>
+        <button class="tab-btn" onclick="switchTab(event,'idiomas')">Idiomas</button>
+        <button class="tab-btn" onclick="switchTab(event,'academica')">Actividades y membresías</button>
+        <button class="tab-btn" onclick="switchTab(event,'reconocimientos')">Reconocimientos</button>
         <button class="tab-btn" onclick="switchTab(event,'contacto')">Contacto</button>
       </div>
 
-      <div class="tab-panel active" id="tab-estudios">
+      <div class="tab-panel active" id="tab-practica">
+        <div class="academica-content">
+          <div class="academica-block anim-up">
+            <span class="academica-subtitle">Áreas de Práctica</span>
+            <ul class="academica-list">
+              <li>Derecho Laboral individual y colectivo — contratos, desvinculaciones, negociación colectiva y
+                conflictos sindicales.</li>
+              <li>Litigación laboral y civil ante Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.</li>
+              <li>Compliance laboral y penal — diseño e implementación de modelos de cumplimiento normativo y Ley Karin.
+              </li>
+              <li>Tutela laboral y recursos de protección en materia de derechos fundamentales en el trabajo.</li>
+              <li>Subcontratación y suministro de personal — régimen de responsabilidades y auditorías.</li>
+              <li>Due Diligence laboral en procesos de fusión, adquisición y reestructuración empresarial.</li>
+            </ul>
+          </div>
+          <div class="academica-block anim-up">
+            <span class="academica-subtitle">Sectores</span>
+            <ul class="academica-list">
+              <li>Grandes empresas nacionales e internacionales con operaciones en Chile.</li>
+              <li>Retail, construcción, minería, banca y servicios financieros.</li>
+              <li>Industria tecnológica y startups en etapas de crecimiento y estructuración.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-estudios">
         <div class="timeline-list">
           <div class="timeline-item anim-up">
             <div class="ti-año">2005</div>
@@ -874,27 +906,14 @@ body {
         </div>
       </div>
 
-      <div class="tab-panel" id="tab-practica">
+      <div class="tab-panel" id="tab-idiomas">
         <div class="academica-content">
           <div class="academica-block anim-up">
-            <span class="academica-subtitle">Áreas de Práctica</span>
+            <span class="academica-subtitle">Idiomas</span>
             <ul class="academica-list">
-              <li>Derecho Laboral individual y colectivo — contratos, desvinculaciones, negociación colectiva y
-                conflictos sindicales.</li>
-              <li>Litigación laboral y civil ante Juzgados del Trabajo, Cortes de Apelaciones y Corte Suprema.</li>
-              <li>Compliance laboral y penal — diseño e implementación de modelos de cumplimiento normativo y Ley Karin.
-              </li>
-              <li>Tutela laboral y recursos de protección en materia de derechos fundamentales en el trabajo.</li>
-              <li>Subcontratación y suministro de personal — régimen de responsabilidades y auditorías.</li>
-              <li>Due Diligence laboral en procesos de fusión, adquisición y reestructuración empresarial.</li>
-            </ul>
-          </div>
-          <div class="academica-block anim-up">
-            <span class="academica-subtitle">Sectores</span>
-            <ul class="academica-list">
-              <li>Grandes empresas nacionales e internacionales con operaciones en Chile.</li>
-              <li>Retail, construcción, minería, banca y servicios financieros.</li>
-              <li>Industria tecnológica y startups en etapas de crecimiento y estructuración.</li>
+              <li>Español — Nativo.</li>
+              <li>Inglés — Avanzado.</li>
+              <li>Portugués — Intermedio.</li>
             </ul>
           </div>
         </div>
@@ -912,12 +931,9 @@ body {
             </ul>
           </div>
           <div class="academica-block anim-up">
-            <span class="academica-subtitle">Membresías y Reconocimientos</span>
+            <span class="academica-subtitle">Membresías</span>
             <ul class="academica-list">
               <li>Miembro honorario del Colegio de Abogados de Lima, Perú.</li>
-              <li>Reconocido en Chambers &amp; Partners — Band 1 Derecho Laboral (desde 2018).</li>
-              <li>Incluido en Legal 500 — Tier 1 Employment (desde 2019).</li>
-              <li>Reconocido en Best Lawyers — Labour &amp; Employment (desde 2020).</li>
             </ul>
           </div>
           <div class="academica-block anim-up">
@@ -932,6 +948,19 @@ body {
         </div>
       </div>
 
+      <div class="tab-panel" id="tab-reconocimientos">
+        <div class="academica-content">
+          <div class="academica-block anim-up">
+            <span class="academica-subtitle">Reconocimientos</span>
+            <ul class="academica-list">
+              <li>Reconocido en Chambers &amp; Partners — Band 1 Derecho Laboral (desde 2018).</li>
+              <li>Incluido en Legal 500 — Tier 1 Employment (desde 2019).</li>
+              <li>Reconocido en Best Lawyers — Labour &amp; Employment (desde 2020).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="tab-panel" id="tab-contacto">
         <div class="contacto-content">
           <p class="contacto-intro anim-up">
@@ -941,8 +970,8 @@ body {
           <div class="contacto-field anim-up">
             <span class="contacto-field-label">Correo electrónico</span>
             <div class="card-email-row">
-              <a href="mailto:fpinochet@berriospalavecino.cl" class="card-email">fpinochet@berriospalavecino.cl</a>
-              <button class="card-copy-btn" onclick="copyEmail(this,'fpinochet@berriospalavecino.cl')"
+              <a href="mailto:fpinochet@kastpinochet.cl" class="card-email">fpinochet@kastpinochet.cl</a>
+              <button class="card-copy-btn" onclick="copyEmail(this,'fpinochet@kastpinochet.cl')"
                 title="Copiar correo">
                 <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
                   <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
