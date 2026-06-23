@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="assets/components.js"></script>
   <title>El impacto de la Ley Karin — BPP Abogados</title>
   <meta name="description"
     content="Análisis de los primeros doce meses de vigencia de la Ley Karin (Ley 21.643) y su efecto en la litigación laboral chilena, por BPP Abogados.">
@@ -17,40 +18,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
   <style>
-    /* ══════════════════════════════════════════════════════
-   VARIABLES
-══════════════════════════════════════════════════════ */
-    :root {
-      --blue: #1B64C8;
-      --blue-dk: #1450A8;
-      --blue-xdk: #0A2A5E;
-      --blue-md: #3D7FD4;
-      --blue-lt: #85B7EB;
-      --wa-green: #25D366;
-      --li-blue: #0A66C2;
-      --white: #FFFFFF;
-      --gray-bg: #F5F5F5;
-      --gray-lt: #E2E2E2;
-      --gray-mid: #999999;
-      --gray-dk: #2A2A2A;
-      --area-bg: #F0EDE6;
-    }
-
-    /* ══════════════════════════════════════════════════════
-   RESET Y BASE
-══════════════════════════════════════════════════════ */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
+body {
       font-family: 'Montserrat', sans-serif;
       background: #fff;
       color: var(--gray-dk);
@@ -58,289 +28,7 @@
       padding-top: 108px;
     }
 
-    /* ══════════════════════════════════════════════════════
-   TOPBAR
-══════════════════════════════════════════════════════ */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 300;
-      background: var(--blue-xdk);
-      height: 36px;
-      display: flex;
-      align-items: center;
-      padding: 0 80px;
-      gap: 18px;
-    }
-
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .topbar-spacer {
-      flex: 1;
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .topbar-sep {
-      width: 1px;
-      height: 12px;
-      background: rgba(255, 255, 255, .15);
-    }
-
-    .topbar-link {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: rgba(255, 255, 255, .55);
-      text-decoration: none;
-      letter-spacing: .03em;
-      transition: color .2s;
-    }
-
-    .topbar-link:hover {
-      color: #fff;
-    }
-
-    .topbar-link-icon {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-    }
-
-    .topbar-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      height: 24px;
-      padding: 0 12px;
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #fff;
-      background: transparent;
-      transition: background .2s, border-color .2s, transform .15s;
-    }
-
-    .topbar-btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .topbar-btn-icon {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-    }
-
-    .topbar-btn--wa {
-      border: 1.5px solid rgba(255, 255, 255, .45);
-    }
-
-    .topbar-btn--wa:hover {
-      background: var(--wa-green);
-      border-color: var(--wa-green);
-    }
-
-    .topbar-btn--li {
-      border: 1.5px solid rgba(255, 255, 255, .25);
-    }
-
-    .topbar-btn--li:hover {
-      background: var(--li-blue);
-      border-color: var(--li-blue);
-    }
-
-    .topbar-btn-label--short {
-      display: none;
-    }
-
-    /* ══════════════════════════════════════════════════════
-   NAV
-══════════════════════════════════════════════════════ */
-    .nav {
-      position: fixed;
-      top: 36px;
-      left: 0;
-      right: 0;
-      height: 72px;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 80px;
-      background: var(--blue);
-      box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links li a {
-      font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: color .2s;
-      white-space: nowrap;
-      color: rgba(255, 255, 255, .72);
-    }
-
-    .nav-links li a:hover,
-    .nav-links li a.active {
-      color: #fff;
-    }
-
-    /* Menú desplegable de Contacto */
-    .nav-dropdown {
-      position: relative;
-    }
-
-    .nav-dropdown-toggle {
-      font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 0;
-      transition: color .2s;
-    }
-
-    .nav-dropdown-toggle .arrow {
-      font-size: 9px;
-      transition: transform .2s;
-    }
-
-    .nav-dropdown:hover .nav-dropdown-toggle .arrow {
-      transform: rotate(180deg);
-    }
-
-    /* Puente invisible que cubre el gap entre botón y menú */
-    .nav-dropdown::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: -20px;
-      right: -20px;
-      height: 18px;
-      /* cubre el gap de 14px + margen */
-      background: transparent;
-    }
-
-    .nav-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 14px);
-      right: 0;
-      background: var(--blue-xdk);
-      min-width: 220px;
-      padding: 6px 0;
-      z-index: 100;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-6px);
-      transition: opacity .2s, transform .2s;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
-    }
-
-    .nav-dropdown:hover .nav-dropdown-menu,
-    .nav-dropdown:focus-within .nav-dropdown-menu {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .nav-dropdown-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      font-size: 12px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, .7);
-      text-decoration: none;
-      letter-spacing: .06em;
-      transition: background .15s, color .15s;
-      font-family: 'Jost', sans-serif;
-    }
-
-    .nav-dropdown-item:hover {
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-    }
-
-    .nav-dropdown-item.active {
-      color: #fff;
-      background: rgba(27, 100, 200, .5);
-    }
-
-    .nav-dropdown-item-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--blue-lt);
-      flex-shrink: 0;
-    }
-
-    .nav-cta {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 10px 24px;
-      color: var(--blue);
-      background: #fff;
-      border: 1.5px solid #fff;
-      transition: background .2s;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: rgba(255, 255, 255, .88);
-    }
-
-    /* ══════════════════════════════════════════════════════
-   IMAGEN FULL-WIDTH
-══════════════════════════════════════════════════════ */
-    .article-hero {
+.article-hero {
       width: 100%;
       height: 460px;
       position: relative;
@@ -348,7 +36,7 @@
       background: var(--blue-xdk);
     }
 
-    .article-hero img {
+.article-hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -356,7 +44,7 @@
       display: block;
     }
 
-    .article-hero-ph {
+.article-hero-ph {
       width: 100%;
       height: 100%;
       background: linear-gradient(135deg, var(--blue-xdk) 0%, var(--blue-dk) 100%);
@@ -365,7 +53,7 @@
       justify-content: center;
     }
 
-    .article-hero-ph span {
+.article-hero-ph span {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: rgba(255, 255, 255, .2);
@@ -373,7 +61,7 @@
       text-transform: uppercase;
     }
 
-    .article-hero-overlay {
+.article-hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom,
@@ -382,8 +70,7 @@
           rgba(255, 255, 255, .6) 100%);
     }
 
-    /* cuadrados decorativos */
-    .article-hero-sq1 {
+.article-hero-sq1 {
       position: absolute;
       top: 20px;
       right: 80px;
@@ -394,7 +81,7 @@
       z-index: 2;
     }
 
-    .article-hero-sq2 {
+.article-hero-sq2 {
       position: absolute;
       top: 38px;
       right: 98px;
@@ -404,17 +91,14 @@
       z-index: 2;
     }
 
-    /* ══════════════════════════════════════════════════════
-   CABECERA DEL ARTÍCULO
-══════════════════════════════════════════════════════ */
-    .article-header {
+.article-header {
       max-width: 720px;
       margin: 0 auto;
       padding: 40px 24px 32px;
       border-bottom: .5px solid var(--gray-lt);
     }
 
-    .article-breadcrumb {
+.article-breadcrumb {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: var(--gray-mid);
@@ -423,17 +107,17 @@
       display: block;
     }
 
-    .article-breadcrumb a {
+.article-breadcrumb a {
       color: var(--gray-mid);
       text-decoration: none;
       transition: color .2s;
     }
 
-    .article-breadcrumb a:hover {
+.article-breadcrumb a:hover {
       color: var(--blue);
     }
 
-    .article-meta {
+.article-meta {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -441,7 +125,7 @@
       margin-bottom: 18px;
     }
 
-    .article-cat {
+.article-cat {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 700;
@@ -452,25 +136,25 @@
       color: var(--blue);
     }
 
-    .article-date {
+.article-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: var(--gray-mid);
       letter-spacing: .04em;
     }
 
-    .article-meta-sep {
+.article-meta-sep {
       color: var(--gray-lt);
     }
 
-    .article-byline {
+.article-byline {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: var(--blue);
       letter-spacing: .04em;
     }
 
-    .article-title {
+.article-title {
       font-size: clamp(24px, 3vw, 38px);
       font-weight: 800;
       color: var(--blue-xdk);
@@ -480,7 +164,7 @@
       margin-bottom: 16px;
     }
 
-    .article-reading-time {
+.article-reading-time {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: var(--gray-mid);
@@ -488,17 +172,13 @@
       text-transform: uppercase;
     }
 
-    /* ══════════════════════════════════════════════════════
-   CUERPO DEL ARTÍCULO
-══════════════════════════════════════════════════════ */
-    .article-body {
+.article-body {
       max-width: 720px;
       margin: 0 auto;
       padding: 36px 24px 52px;
     }
 
-    /* Entradilla / lead */
-    .article-lead {
+.article-lead {
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 20px;
       font-style: italic;
@@ -509,8 +189,7 @@
       border-left: 3px solid var(--blue);
     }
 
-    /* Párrafos */
-    .article-body p {
+.article-body p {
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 18px;
       color: #2A2A2A;
@@ -518,12 +197,11 @@
       margin-bottom: 24px;
     }
 
-    .article-body p:last-child {
+.article-body p:last-child {
       margin-bottom: 0;
     }
 
-    /* Subtítulos H2 */
-    .article-body h2 {
+.article-body h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       font-weight: 800;
@@ -535,8 +213,7 @@
       border-bottom: 1.5px solid var(--blue);
     }
 
-    /* Subtítulos H3 */
-    .article-body h3 {
+.article-body h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       font-weight: 700;
@@ -545,8 +222,7 @@
       margin: 28px 0 12px;
     }
 
-    /* Cita destacada */
-    .article-quote {
+.article-quote {
       background: var(--area-bg);
       border-left: 4px solid var(--blue);
       padding: 20px 24px;
@@ -558,7 +234,7 @@
       line-height: 1.7;
     }
 
-    .article-quote cite {
+.article-quote cite {
       display: block;
       margin-top: 10px;
       font-family: 'IBM Plex Mono', monospace;
@@ -568,8 +244,7 @@
       letter-spacing: .06em;
     }
 
-    /* Lista */
-    .article-body ul,
+.article-body ul,
     .article-body ol {
       font-family: 'Crimson Pro', Georgia, serif;
       font-size: 18px;
@@ -579,14 +254,11 @@
       margin-bottom: 24px;
     }
 
-    .article-body li {
+.article-body li {
       margin-bottom: 8px;
     }
 
-    /* ══════════════════════════════════════════════════════
-   PIE DEL ARTÍCULO — compartir + área vinculada
-══════════════════════════════════════════════════════ */
-    .article-footer {
+.article-footer {
       max-width: 720px;
       margin: 0 auto;
       padding: 20px 24px 40px;
@@ -598,13 +270,13 @@
       flex-wrap: wrap;
     }
 
-    .article-share {
+.article-share {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .article-share-label {
+.article-share-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 700;
@@ -613,7 +285,7 @@
       text-transform: uppercase;
     }
 
-    .share-btn {
+.share-btn {
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -631,24 +303,24 @@
       transition: all .2s;
     }
 
-    .share-btn:hover {
+.share-btn:hover {
       border-color: var(--blue);
       color: var(--blue);
       background: rgba(27, 100, 200, .05);
     }
 
-    .share-btn.copied {
+.share-btn.copied {
       border-color: #25D366;
       color: #25D366;
     }
 
-    .article-area-link {
+.article-area-link {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .article-area-label {
+.article-area-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: var(--gray-mid);
@@ -656,7 +328,7 @@
       text-transform: uppercase;
     }
 
-    .article-area-btn {
+.article-area-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -669,33 +341,30 @@
       transition: all .2s;
     }
 
-    .article-area-btn:hover {
+.article-area-btn:hover {
       background: var(--blue);
       color: #fff;
     }
 
-    /* ══════════════════════════════════════════════════════
-   SECCIÓN NOTICIAS RELACIONADAS
-══════════════════════════════════════════════════════ */
-    .related-section {
+.related-section {
       background: var(--gray-bg);
       padding: 52px 0 72px;
     }
 
-    .related-inner {
+.related-inner {
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 80px;
     }
 
-    .related-header {
+.related-header {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 28px;
     }
 
-    .related-label {
+.related-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       font-weight: 700;
@@ -705,20 +374,19 @@
       white-space: nowrap;
     }
 
-    .related-line {
+.related-line {
       flex: 1;
       height: 1px;
       background: var(--gray-lt);
     }
 
-    .related-grid {
+.related-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    /* card de noticia relacionada — igual a BPP_Noticias.html */
-    .news-card {
+.news-card {
       background: #fff;
       border: .5px solid var(--gray-lt);
       display: flex;
@@ -729,17 +397,17 @@
       transition: opacity .45s ease, transform .45s ease, box-shadow .2s ease;
     }
 
-    .news-card.is-visible {
+.news-card.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .news-card.is-visible:hover {
+.news-card.is-visible:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 28px rgba(27, 100, 200, .1);
     }
 
-    .news-card-img {
+.news-card-img {
       height: 180px;
       overflow: hidden;
       position: relative;
@@ -747,7 +415,7 @@
       flex-shrink: 0;
     }
 
-    .news-card-img img {
+.news-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -755,11 +423,11 @@
       transition: transform .4s ease;
     }
 
-    .news-card.is-visible:hover .news-card-img img {
+.news-card.is-visible:hover .news-card-img img {
       transform: scale(1.05);
     }
 
-    .news-card-img-ph {
+.news-card-img-ph {
       width: 100%;
       height: 100%;
       background: linear-gradient(160deg, var(--blue-xdk) 0%, var(--blue-md) 100%);
@@ -768,7 +436,7 @@
       justify-content: center;
     }
 
-    .news-card-img-ph span {
+.news-card-img-ph span {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: rgba(255, 255, 255, .2);
@@ -776,28 +444,28 @@
       text-transform: uppercase;
     }
 
-    .news-card-bar {
+.news-card-bar {
       height: 3px;
       flex-shrink: 0;
     }
 
-    .cat-columna {
+.cat-columna {
       background: var(--blue);
     }
 
-    .cat-analisis {
+.cat-analisis {
       background: var(--blue-md);
     }
 
-    .cat-sentencia {
+.cat-sentencia {
       background: var(--blue-lt);
     }
 
-    .cat-noticia {
+.cat-noticia {
       background: var(--blue-xdk);
     }
 
-    .news-card-body {
+.news-card-body {
       padding: 18px 18px 20px;
       display: flex;
       flex-direction: column;
@@ -805,13 +473,13 @@
       flex: 1;
     }
 
-    .news-card-meta {
+.news-card-meta {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .news-card-cat {
+.news-card-cat {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 8px;
       font-weight: 700;
@@ -821,34 +489,34 @@
       border: 1px solid;
     }
 
-    .cat-tag-columna {
+.cat-tag-columna {
       color: var(--blue);
       border-color: var(--blue-lt);
     }
 
-    .cat-tag-analisis {
+.cat-tag-analisis {
       color: var(--blue-md);
       border-color: rgba(61, 127, 212, .35);
     }
 
-    .cat-tag-sentencia {
+.cat-tag-sentencia {
       color: var(--blue-lt);
       border-color: var(--blue-lt);
     }
 
-    .cat-tag-noticia {
+.cat-tag-noticia {
       color: var(--blue-xdk);
       border-color: rgba(10, 42, 94, .3);
     }
 
-    .news-card-date {
+.news-card-date {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: var(--gray-mid);
       letter-spacing: .04em;
     }
 
-    .news-card-title {
+.news-card-title {
       font-size: 14px;
       font-weight: 700;
       color: var(--blue-xdk);
@@ -856,7 +524,7 @@
       flex: 1;
     }
 
-    .news-card-author {
+.news-card-author {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       color: var(--blue);
@@ -864,7 +532,7 @@
       text-transform: uppercase;
     }
 
-    .news-card-excerpt {
+.news-card-excerpt {
       font-size: 12px;
       color: #888;
       line-height: 1.7;
@@ -874,7 +542,7 @@
       overflow: hidden;
     }
 
-    .news-card-read {
+.news-card-read {
       font-size: 10px;
       font-weight: 600;
       color: var(--blue);
@@ -886,418 +554,69 @@
       padding-top: 4px;
     }
 
-    .news-card.is-visible:hover .news-card-read {
+.news-card.is-visible:hover .news-card-read {
       opacity: 1;
     }
 
-    /* ══════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════ */
-    .footer {
-      background: white;
-      border-top: 2px solid var(--blue);
-    }
-
-    .footer-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 80px;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      padding: 52px 0 44px;
-      position: relative;
-    }
-
-    .footer-decor-1 {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 16px;
-      height: 16px;
-      background: var(--blue);
-      opacity: .7;
-    }
-
-    .footer-decor-2 {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 10px;
-      height: 10px;
-      background: var(--blue-lt);
-      opacity: .5;
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .footer-col-title {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--blue-xdk);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid var(--blue);
-    }
-
-    .footer-col-link {
-      font-size: 13px;
-      color: #888;
-      text-decoration: none;
-      padding: 8px 0;
-      border-bottom: .5px solid #F0F0F0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: color .2s;
-    }
-
-    .footer-col-link:hover {
-      color: var(--blue);
-    }
-
-    .footer-col-link:last-child {
-      border-bottom: none;
-    }
-
-    .footer-col-link-arrow {
-      font-size: 12px;
-      color: var(--blue);
-      opacity: 0;
-      transition: opacity .2s;
-    }
-
-    .footer-col-link:hover .footer-col-link-arrow {
-      opacity: 1;
-    }
-
-    .footer-bottom {
-      border-top: .5px solid var(--gray-lt);
-      padding: 18px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy {
-      font-size: 11px;
-      color: #aaa;
-      font-weight: 300;
-    }
-
-    .footer-legal-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .footer-legal-link {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #aaa;
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .footer-legal-link:hover {
-      color: var(--blue);
-    }
-
-    /* ══════════════════════════════════════════════════════
-   FAB WHATSAPP
-══════════════════════════════════════════════════════ */
-    .fab {
-      position: fixed;
-      bottom: 36px;
-      right: 36px;
-      z-index: 9999;
-      display: inline-flex;
-      align-items: center;
-      background: #fff;
-      border: 1.5px solid var(--wa-green);
-      height: 44px;
-      text-decoration: none;
-      overflow: hidden;
-      box-shadow: 0 4px 18px rgba(37, 211, 102, .2);
-      transition: box-shadow .2s, transform .2s;
-    }
-
-    .fab:hover {
-      box-shadow: 0 6px 24px rgba(37, 211, 102, .35);
-      transform: translateY(-2px);
-    }
-
-    .fab-icon-wrap {
-      width: 44px;
-      height: 100%;
-      background: var(--wa-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background .2s;
-    }
-
-    .fab:hover .fab-icon-wrap {
-      background: #1DA851;
-    }
-
-    .fab-icon {
-      width: 22px;
-      height: 22px;
-      display: block;
-    }
-
-    .fab-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--blue-xdk);
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      padding: 0 18px;
-      white-space: nowrap;
-    }
-
-    .fab-decor-1 {
-      position: fixed;
-      bottom: 94px;
-      right: 36px;
-      width: 10px;
-      height: 10px;
-      background: var(--wa-green);
-      opacity: .4;
-      pointer-events: none;
-      z-index: 9998;
-    }
-
-    .fab-decor-2 {
-      position: fixed;
-      bottom: 106px;
-      right: 50px;
-      width: 7px;
-      height: 7px;
-      background: #fff;
-      border: 1px solid var(--gray-lt);
-      opacity: .7;
-      pointer-events: none;
-      z-index: 9998;
-    }
-
-    /* ══════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .topbar-btn-label--long {
-        display: none;
-      }
-
-      .topbar-btn-label--short {
-        display: inline;
-      }
-
-      .related-grid {
+@media (max-width: 900px)  {
+  .related-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-    }
+}
 
-    @media (max-width: 1179px) {
-
-      .nav,
-      .topbar {
-        padding-left: 32px;
-        padding-right: 32px;
-      }
-
-      .related-inner {
+@media (max-width: 1179px)  {
+  .related-inner {
         padding: 0 32px;
       }
-
-      .footer-inner {
-        padding: 0 32px;
-      }
-
-      .article-hero {
+.article-hero {
         height: 380px;
       }
-    }
+}
 
-    @media (max-width: 767px) {
-      body {
+@media (max-width: 767px)  {
+  body {
         padding-top: 96px;
       }
-
-      .nav {
-        padding: 0 20px;
-        height: 56px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .topbar {
-        padding: 0 16px;
-      }
-
-      .article-hero {
+.article-hero {
         height: 240px;
       }
-
-      .article-header,
+.article-header,
       .article-body,
       .article-footer {
         padding-left: 20px;
         padding-right: 20px;
       }
-
-      .article-title {
+.article-title {
         font-size: clamp(20px, 5vw, 28px);
       }
-
-      .article-lead {
+.article-lead {
         font-size: 17px;
       }
-
-      .article-body p {
+.article-body p {
         font-size: 16px;
       }
-
-      .article-footer {
+.article-footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 14px;
       }
-
-      .related-inner {
+.related-inner {
         padding: 0 20px;
       }
-
-      .related-grid {
+.related-grid {
         grid-template-columns: 1fr;
       }
-
-      .footer-inner {
-        padding: 0 20px;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 32px 0 24px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
+}
   </style>
 </head>
 
 <body>
 
   <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <a href="tel:+56949409721" class="topbar-link">
-        <svg class="topbar-link-icon" viewBox="0 0 16 16" fill="none">
-          <path
-            d="M3 1h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L11.5 9l4 1.5V14c0 1.1-.9 2-2 2C6.4 16 0 9.6 0 3c0-1.1.9-2 2-2h1z"
-            fill="currentColor" />
-        </svg>
-        +56 9 4940 9721
-      </a>
-      <div class="topbar-sep"></div>
-      <a href="mailto:info@berriospalavecino.cl" class="topbar-link">
-        <svg class="topbar-link-icon" viewBox="0 0 16 12" fill="none">
-          <rect x="1" y="1" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4" />
-          <path d="M1 3l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
-        </svg>
-        info@berriospalavecino.cl
-      </a>
-    </div>
-    <div class="topbar-spacer"></div>
-    <div class="topbar-right">
-      <a href="https://wa.me/56949409721" class="topbar-btn topbar-btn--wa" target="_blank" rel="noopener">
-        <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
-            fill="currentColor" opacity=".95" />
-          <path
-            d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
-            fill="#0A2A5E" />
-        </svg>
-        <span class="topbar-btn-label--long">Agendar WhatsApp</span>
-        <span class="topbar-btn-label--short">WhatsApp</span>
-      </a>
-      <a href="https://www.linkedin.com/company/bpp-abogados" class="topbar-btn topbar-btn--li" target="_blank"
-        rel="noopener">
-        <svg class="topbar-btn-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
-        </svg>
-        <span class="topbar-btn-label--long">Síguenos en LinkedIn</span>
-        <span class="topbar-btn-label--short">LinkedIn</span>
-      </a>
-    </div>
-  </div>
+  <bpp-topbar></bpp-topbar>
 
   <!-- NAV -->
-  <nav class="nav">
-    <a href="./index.html" class="nav-logo">
-      <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
-        <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1"
-          fill="#FFFFFF">BPP</text>
-        <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1" />
-        <text x="98" y="9" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
-          fill="#FFFFFF">BERRÍOS</text>
-        <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
-          fill="#FFFFFF">PALAVECINO</text>
-        <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5"
-          fill="#FFFFFF">PINOCHET</text>
-      </svg>
-    </a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./BPP_Areas.html">Áreas</a></li>
-        <li><a href="./BPP_Equipo.html">Equipo</a></li>
-        <li><a href="./BPP_Noticias.html">Noticias</a></li>
-      </ul>
-      <!-- Menú desplegable Contacto -->
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
-          Contacto <span class="arrow">▾</span>
-        </button>
-        <div class="nav-dropdown-menu">
-          <a href="./BPP_Contacto.html?area=laboral" class="nav-dropdown-item" data-area="laboral">
-            <span class="nav-dropdown-item-dot"></span> Defensa Laboral
-          </a>
-          <a href="./BPP_Contacto.html?area=civil" class="nav-dropdown-item" data-area="civil">
-            <span class="nav-dropdown-item-dot"></span> Derecho Civil
-          </a>
-          <a href="./BPP_Contacto.html?area=penal" class="nav-dropdown-item" data-area="penal">
-            <span class="nav-dropdown-item-dot"></span> Derecho Penal
-          </a>
-          <a href="./BPP_Contacto.html?area=administrativo" class="nav-dropdown-item" data-area="administrativo">
-            <span class="nav-dropdown-item-dot"></span> Derecho Administrativo
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <bpp-nav></bpp-nav>
 
   <!-- IMAGEN FULL-WIDTH -->
   <div class="article-hero">
@@ -1512,97 +831,12 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-decor-1"></div>
-        <div class="footer-decor-2"></div>
-        <div>
-          <div class="footer-logo">
-            <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
-              <rect width="310" height="310" fill="#1B64C8" />
-              <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62"
-                fill="#FFFFFF" letter-spacing="-1">BPP</text>
-              <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
-              <text x="174" y="139" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">BERRÍOS</text>
-              <text x="174" y="161" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">PALAVECINO</text>
-              <text x="174" y="183" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16"
-                fill="#FFFFFF" letter-spacing="1.2">PINOCHET</text>
-            </svg>
-          </div>
-        </div>
-        <div>
-          <div class="footer-col-title">El Estudio</div>
-          <a href="#" class="footer-col-link">Quiénes somos <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="#" class="footer-col-link">Historia <span class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Noticias.html" class="footer-col-link">Publicaciones <span
-              class="footer-col-link-arrow">→</span></a>
-        </div>
-        <div>
-          <div class="footer-col-title">Áreas de Práctica</div>
-          <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Litigios Laborales y Civiles<span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span
-              class="footer-col-link-arrow">→</span></a>
-        </div>
-        <div>
-          <div class="footer-col-title">Contacto</div>
-          <a href="#" class="footer-col-link">Av. Apoquindo 3000, piso 15, of. 1501 <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="#" class="footer-col-link">Santiago, Chile <span class="footer-col-link-arrow">→</span></a>
-          <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span
-              class="footer-col-link-arrow">→</span></a>
-          <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span
-              class="footer-col-link-arrow">→</span></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos reservados.</span>
-        <div class="footer-legal-links">
-          <a href="#" class="footer-legal-link">LinkedIn</a>
-          <a href="#" class="footer-legal-link">Política de privacidad</a>
-          <a href="./BPP_Postulacion.html" class="footer-legal-link">Postulaciones</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <bpp-footer></bpp-footer>
 
   <!-- FAB WHATSAPP -->
-  <a href="https://wa.me/56949409721" class="fab" target="_blank" rel="noopener">
-    <div class="fab-icon-wrap">
-      <svg class="fab-icon" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M12 2C6.477 2 2 6.477 2 12c0 1.89.52 3.66 1.427 5.18L2 22l4.957-1.396A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"
-          fill="rgba(255,255,255,0.15)" />
-        <path
-          d="M8.5 8.5c.2-.5.7-.9 1.2-.9.4 0 .7.1.9.5l1.1 2.4c.1.3 0 .7-.2.9l-.5.6c.5 1 1.4 1.9 2.4 2.4l.6-.5c.2-.2.6-.3.9-.2l2.4 1.1c.4.2.5.5.5.9 0 .5-.4 1-.9 1.2-2.5 1-6.5-2-7.5-4.5-.5-1.3-.5-2.9.1-3.9z"
-          fill="white" />
-      </svg>
-    </div>
-    <span class="fab-label">Agendar consulta</span>
-  </a>
-  <div class="fab-decor-1"></div>
-  <div class="fab-decor-2"></div>
+  <bpp-fab></bpp-fab>
 
   <script>
-    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
-    document.querySelectorAll(".nav-dropdown").forEach(function (dd) {
-      var toggle = dd.querySelector(".nav-dropdown-toggle");
-      if (!toggle) return;
-      var setExpanded = function (v) { toggle.setAttribute("aria-expanded", v); };
-      dd.addEventListener("mouseenter", function () { setExpanded("true"); });
-      dd.addEventListener("mouseleave", function () { setExpanded("false"); });
-      dd.addEventListener("focusin", function () { setExpanded("true"); });
-      dd.addEventListener("focusout", function () { setExpanded("false"); });
-    });
     /* ── COPIAR LINK ── */
     function copyLink() {
       const btn = document.getElementById('copy-link-btn');
