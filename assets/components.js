@@ -155,7 +155,8 @@ class BppFooter extends HTMLElement {
             <div class="footer-col-title">Áreas de Práctica</div>
             <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Areas.html" class="footer-col-link">Litigios laborales y civiles <span class="footer-col-link-arrow">→</span></a>
-            <a href="./BPP_Areas.html" class="footer-col-link">Asesoría laboral corporativa y protección de datos <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Asesoría laboral corporativa <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Protección de datos <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span class="footer-col-link-arrow">→</span></a>
           </div>
           <div>
