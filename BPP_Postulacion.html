@@ -1,631 +1,954 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/components.js"></script>
-<title>Trabaja con Nosotros — BPP Abogados</title>
-<meta name="description" content="Únete al equipo de BPP Abogados. Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Trabaja con Nosotros — BPP Abogados">
-<meta property="og:description" content="Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
-<meta property="og:image" content="assets/BPP_Areas_Hero.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+  <title>Trabaja con Nosotros — BPP Abogados</title>
+  <meta name="description"
+    content="Únete al equipo de BPP Abogados. Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trabaja con Nosotros — BPP Abogados">
+  <meta property="og:description"
+    content="Postulaciones abiertas para abogados y profesionales comprometidos con la excelencia jurídica en Chile.">
+  <meta property="og:image" content="assets/BPP_Areas_Hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
   <style>
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--gray-bg);
-  color: var(--gray-dk);
-  overflow-x: hidden;
-  padding-top: 108px;
-}
-
-.section-hero {
-  height: 280px; background: var(--blue-xdk);
-  position: relative; overflow: hidden; display: flex; align-items: flex-end;
-}
-
-.sh-img {
-  position: absolute; inset: 0;
-  background-image: url('assets/BPP_Areas_Hero.jpg');
-  background-size: cover; background-position: center;
-}
-
-.sh-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(27,100,200,.95) 0%,
-    rgba(20,80,168,.82)  20%,
-    rgba(10,50,130,.72)  50%,
-    rgba(10,40,100,.62)  100%
-  );
-}
-
-.sh-wave   { position: absolute; inset: 0; opacity: .2; pointer-events: none; }
-
-.sh-sq1    { position: absolute; top: 48px; right:  80px; width: 18px; height: 18px; background: var(--blue);    opacity: .85; z-index: 3; }
-
-.sh-sq2    { position: absolute; top: 70px; right: 102px; width: 11px; height: 11px; background: rgba(255,255,255,.4);             z-index: 3; }
-
-.sh-sq3    { position: absolute; top: 58px; right: 114px; width: 13px; height: 13px; background: var(--blue-md); opacity: .5;  z-index: 3; }
-
-.sh-inner {
-  position: relative; z-index: 4; width: 100%; max-width: 1180px; margin: 0 auto;
-  padding: 0 80px 44px;
-}
-
-.sh-breadcrumb {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px;
-  color: rgba(255,255,255,.4); letter-spacing: .06em; margin-bottom: 12px; display: block;
-}
-
-.sh-breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
-
-.sh-breadcrumb a:hover { color: rgba(255,255,255,.75); }
-
-.sh-eyebrow {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700;
-  color: rgba(255,255,255,.6); letter-spacing: .22em; text-transform: uppercase;
-  margin-bottom: 10px; display: block;
-}
-
-.sh-title {
-  font-size: clamp(22px,2.2vw,32px); font-weight: 500; color: #fff;
-  line-height: 1.1; letter-spacing: .04em; margin-bottom: 8px;
-}
-
-.sh-subtitle {
-  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
-  color: rgba(255,255,255,.6); letter-spacing: .06em;
-}
-
-.intro-section { background: #fff; padding: 56px 0 52px; }
-
-.intro-inner {
-  max-width: 640px; margin: 0 auto; padding: 0 24px; text-align: center;
-}
-
-.intro-eyebrow {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700;
-  color: var(--blue); letter-spacing: .22em; text-transform: uppercase;
-  margin-bottom: 14px; display: block;
-}
-
-.intro-title {
-  font-size: 22px; font-weight: 800; color: var(--blue-xdk);
-  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 16px;
-}
-
-.intro-text {
-  font-size: 14px; color: #555; line-height: 1.85;
-}
-
-.pilares-section { background: var(--area-bg); padding: 56px 0 60px; }
-
-.pilares-inner   { max-width: 1180px; margin: 0 auto; padding: 0 80px; }
-
-.pilares-header  {
-  display: flex; align-items: center; gap: 16px; margin-bottom: 36px;
-}
-
-.pilares-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700;
-  color: var(--blue-xdk); letter-spacing: .18em; text-transform: uppercase; white-space: nowrap;
-}
-
-.pilares-line { flex: 1; height: 1px; background: #C8C4B8; }
-
-.pilares-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
-
-.pilar-card {
-  background: #fff; padding: 28px 24px;
-  border-top: 3px solid var(--blue);
-  opacity: 0; transform: translateY(20px);
-  transition: opacity .5s ease, transform .5s ease, box-shadow .2s ease;
-}
-
-.pilar-card.is-visible         { opacity: 1; transform: translateY(0); }
-
-.pilar-card.is-visible:hover   { box-shadow: 0 8px 24px rgba(27,100,200,.1); }
-
-.pilar-card:nth-child(1) { transition-delay: 0ms; }
-
-.pilar-card:nth-child(2) { transition-delay: 80ms; }
-
-.pilar-card:nth-child(3) { transition-delay: 160ms; }
-
-.pilar-card:nth-child(4) { transition-delay: 240ms; }
-
-.pilar-icon {
-  width: 36px; height: 36px; background: var(--area-bg);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 16px;
-}
-
-.pilar-num {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700;
-  color: var(--blue-lt); letter-spacing: .1em; margin-bottom: 8px;
-}
-
-.pilar-title {
-  font-size: 13px; font-weight: 800; color: var(--blue-xdk);
-  text-transform: uppercase; letter-spacing: .04em; line-height: 1.3; margin-bottom: 10px;
-}
-
-.pilar-desc {
-  font-size: 12px; color: #666; line-height: 1.8;
-}
-
-.form-section { background: #fff; padding: 60px 0 80px; }
-
-.form-outer {
-  max-width: 720px; margin: 0 auto; padding: 0 24px;
-}
-
-.form-header { margin-bottom: 32px; }
-
-.form-header-eyebrow {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700;
-  color: var(--blue); letter-spacing: .22em; text-transform: uppercase;
-  margin-bottom: 10px; display: block;
-}
-
-.form-header-title {
-  font-size: 20px; font-weight: 800; color: var(--blue-xdk);
-  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px;
-}
-
-.form-header-desc {
-  font-size: 13px; color: #777; line-height: 1.7;
-}
-
-.form-wrap { background: var(--area-bg); padding: 36px; }
-
-.form-grid-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.form-group   { margin-bottom: 16px; }
-
-.form-group:last-of-type { margin-bottom: 0; }
-
-.form-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 600;
-  color: var(--gray-dk); letter-spacing: .1em; text-transform: uppercase;
-  margin-bottom: 6px; display: block;
-}
-
-.form-label span { color: var(--blue); }
-
-.form-input,
-.form-select,
-.form-textarea {
-  width: 100%; padding: 11px 14px;
-  font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--gray-dk);
-  background: #fff; border: 1.5px solid var(--gray-lt);
-  outline: none; transition: border-color .2s;
-  -webkit-appearance: none; appearance: none;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus  { border-color: var(--blue); }
-
-.form-input::placeholder,
-.form-textarea::placeholder { color: var(--gray-mid); font-size: 12px; }
-
-.form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 14px center;
-  padding-right: 36px; cursor: pointer;
-}
-
-.form-textarea { min-height: 110px; resize: vertical; line-height: 1.6; }
-
-.cv-dropzone {
-  width: 100%; min-height: 90px; background: #fff;
-  border: 1.5px dashed var(--gray-lt);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 6px; cursor: pointer; transition: border-color .2s, background .2s;
-  padding: 20px; position: relative;
-}
-
-.cv-dropzone:hover,
-.cv-dropzone.dragover { border-color: var(--blue); background: rgba(27,100,200,.03); }
-
-.cv-dropzone input[type="file"] {
-  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
-}
-
-.cv-icon {
-  width: 32px; height: 32px; background: var(--area-bg);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-
-.cv-label {
-  font-size: 12px; color: var(--gray-mid); text-align: center; line-height: 1.5;
-}
-
-.cv-label strong { color: var(--blue); font-weight: 600; }
-
-.cv-formats {
-  font-family: 'IBM Plex Mono', monospace; font-size: 9px;
-  color: var(--gray-mid); letter-spacing: .06em;
-}
-
-.cv-filename {
-  display: none; font-size: 12px; font-weight: 600;
-  color: var(--blue-xdk); text-align: center;
-}
-
-.cv-dropzone.has-file .cv-label,
-.cv-dropzone.has-file .cv-formats,
-.cv-dropzone.has-file .cv-icon  { display: none; }
-
-.cv-dropzone.has-file .cv-filename { display: block; }
-
-.form-privacy {
-  font-size: 11px; color: var(--gray-mid); line-height: 1.6;
-  margin: 16px 0; text-align: center;
-}
-
-.form-privacy a { color: var(--blue); text-decoration: none; }
-
-.form-privacy a:hover { text-decoration: underline; }
-
-.form-submit {
-  width: 100%; height: 46px; background: var(--blue); color: #fff;
-  font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  border: none; cursor: pointer; transition: background .2s;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-
-.form-submit:hover    { background: var(--blue-dk); }
-
-.form-submit:disabled {
-  background: var(--gray-mid); cursor: not-allowed;
-  opacity: .45;
-}
-
-.form-success {
-  display: none; text-align: center; padding: 48px 24px;
-  flex-direction: column; align-items: center; gap: 14px;
-}
-
-.form-success.visible      { display: flex; }
-
-.form-success-icon         { width: 52px; height: 52px; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; }
-
-.form-success-title        { font-size: 16px; font-weight: 800; color: var(--blue-xdk); text-transform: uppercase; }
-
-.form-success-desc         { font-size: 13px; color: #555; line-height: 1.75; max-width: 360px; }
-
-.form-success-back         { font-size: 11px; color: var(--blue); text-decoration: none; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
-
-.form-success-back:hover   { text-decoration: underline; }
-
-@media (max-width: 900px)  {
-  .pilares-grid            { grid-template-columns: repeat(2,1fr); }
-}
-
-@media (max-width: 1179px)  {
-  .sh-inner        { padding: 0 32px 36px; }
-.pilares-inner   { padding: 0 32px; }
-}
-
-@media (max-width: 767px)  {
-  body             { padding-top: 96px; }
-.section-hero    { height: auto; min-height: 200px; }
-.sh-inner        { padding: 0 20px 28px; }
-.sh-title        { font-size: clamp(20px,5vw,28px); }
-.pilares-inner   { padding: 0 20px; }
-.pilares-grid    { grid-template-columns: 1fr; gap: 12px; }
-.form-outer      { padding: 0 20px; }
-.form-wrap       { padding: 24px 20px; }
-.form-grid-2     { grid-template-columns: 1fr; }
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gray-bg);
+      color: var(--gray-dk);
+      overflow-x: hidden;
+      padding-top: 108px;
+    }
+
+    .section-hero {
+      height: 280px;
+      background: var(--blue-xdk);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .sh-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/BPP_Areas_Hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sh-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(27, 100, 200, .95) 0%,
+          rgba(20, 80, 168, .82) 20%,
+          rgba(10, 50, 130, .72) 50%,
+          rgba(10, 40, 100, .62) 100%);
+    }
+
+    .sh-wave {
+      position: absolute;
+      inset: 0;
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .sh-sq1 {
+      position: absolute;
+      top: 48px;
+      right: 80px;
+      width: 18px;
+      height: 18px;
+      background: var(--blue);
+      opacity: .85;
+      z-index: 3;
+    }
+
+    .sh-sq2 {
+      position: absolute;
+      top: 70px;
+      right: 102px;
+      width: 11px;
+      height: 11px;
+      background: rgba(255, 255, 255, .4);
+      z-index: 3;
+    }
+
+    .sh-sq3 {
+      position: absolute;
+      top: 58px;
+      right: 114px;
+      width: 13px;
+      height: 13px;
+      background: var(--blue-md);
+      opacity: .5;
+      z-index: 3;
+    }
+
+    .sh-inner {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 44px;
+    }
+
+    .sh-breadcrumb {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .4);
+      letter-spacing: .06em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .sh-breadcrumb a {
+      color: rgba(255, 255, 255, .4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .sh-breadcrumb a:hover {
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .sh-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .sh-title {
+      font-size: clamp(22px, 2.2vw, 32px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    .sh-subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .6);
+      letter-spacing: .06em;
+    }
+
+    .intro-section {
+      background: #fff;
+      padding: 56px 0 52px;
+    }
+
+    .intro-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .intro-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .intro-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 16px;
+    }
+
+    .intro-text {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.85;
+    }
+
+    .pilares-section {
+      background: var(--area-bg);
+      padding: 56px 0 60px;
+    }
+
+    .pilares-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .pilares-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .pilares-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pilares-line {
+      flex: 1;
+      height: 1px;
+      background: #C8C4B8;
+    }
+
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .pilar-card {
+      background: #fff;
+      padding: 28px 24px;
+      border-top: 3px solid var(--blue);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .5s ease, transform .5s ease, box-shadow .2s ease;
+    }
+
+    .pilar-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pilar-card.is-visible:hover {
+      box-shadow: 0 8px 24px rgba(27, 100, 200, .1);
+    }
+
+    .pilar-card:nth-child(1) {
+      transition-delay: 0ms;
+    }
+
+    .pilar-card:nth-child(2) {
+      transition-delay: 80ms;
+    }
+
+    .pilar-card:nth-child(3) {
+      transition-delay: 160ms;
+    }
+
+    .pilar-card:nth-child(4) {
+      transition-delay: 240ms;
+    }
+
+    .pilar-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--area-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .pilar-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue-lt);
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    .pilar-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .pilar-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .form-section {
+      background: #fff;
+      padding: 60px 0 80px;
+    }
+
+    .form-outer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .form-header {
+      margin-bottom: 32px;
+    }
+
+    .form-header-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .form-header-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    .form-header-desc {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    .form-wrap {
+      background: var(--area-bg);
+      padding: 36px;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--gray-dk);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .form-label span {
+      color: var(--blue);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: var(--gray-dk);
+      background: #fff;
+      border: 1.5px solid var(--gray-lt);
+      outline: none;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--gray-mid);
+      font-size: 12px;
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .cv-dropzone {
+      width: 100%;
+      min-height: 90px;
+      background: #fff;
+      border: 1.5px dashed var(--gray-lt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      padding: 20px;
+      position: relative;
+    }
+
+    .cv-dropzone:hover,
+    .cv-dropzone.dragover {
+      border-color: var(--blue);
+      background: rgba(27, 100, 200, .03);
+    }
+
+    .cv-dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cv-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--area-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cv-label {
+      font-size: 12px;
+      color: var(--gray-mid);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .cv-label strong {
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .cv-formats {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-mid);
+      letter-spacing: .06em;
+    }
+
+    .cv-filename {
+      display: none;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue-xdk);
+      text-align: center;
+    }
+
+    .cv-dropzone.has-file .cv-label,
+    .cv-dropzone.has-file .cv-formats,
+    .cv-dropzone.has-file .cv-icon {
+      display: none;
+    }
+
+    .cv-dropzone.has-file .cv-filename {
+      display: block;
+    }
+
+    .form-privacy {
+      font-size: 11px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+      margin: 16px 0;
+      text-align: center;
+    }
+
+    .form-privacy a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .form-privacy a:hover {
+      text-decoration: underline;
+    }
+
+    .form-submit {
+      width: 100%;
+      height: 46px;
+      background: var(--blue);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .form-submit:hover {
+      background: var(--blue-dk);
+    }
+
+    .form-submit:disabled {
+      background: var(--gray-mid);
+      cursor: not-allowed;
+      opacity: .45;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .form-success.visible {
+      display: flex;
+    }
+
+    .form-success-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .form-success-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+    }
+
+    .form-success-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.75;
+      max-width: 360px;
+    }
+
+    .form-success-back {
+      font-size: 11px;
+      color: var(--blue);
+      text-decoration: none;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .form-success-back:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .pilares-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1179px) {
+      .sh-inner {
+        padding: 0 32px 36px;
+      }
+
+      .pilares-inner {
+        padding: 0 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        padding-top: 96px;
+      }
+
+      .section-hero {
+        height: auto;
+        min-height: 200px;
+      }
+
+      .sh-inner {
+        padding: 0 20px 28px;
+      }
+
+      .sh-title {
+        font-size: clamp(20px, 5vw, 28px);
+      }
+
+      .pilares-inner {
+        padding: 0 20px;
+      }
+
+      .pilares-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .form-outer {
+        padding: 0 20px;
+      }
+
+      .form-wrap {
+        padding: 24px 20px;
+      }
+
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<!-- TOPBAR -->
-<bpp-topbar></bpp-topbar>
+  <!-- TOPBAR -->
+  <bpp-topbar></bpp-topbar>
 
-<!-- NAV -->
-<nav class="nav">
-  <a href="./index.html" class="nav-logo">
-    <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
-      <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1" fill="#FFFFFF">BPP</text>
-      <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1"/>
-      <text x="98" y="9"  font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">BERRÍOS</text>
-      <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PALAVECINO</text>
-      <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PINOCHET</text>
+  <!-- NAV -->
+  <bpp-nav></bpp-nav>
+
+  <!-- HERO -->
+  <section class="section-hero">
+    <div class="sh-img"></div>
+    <div class="sh-overlay"></div>
+    <svg class="sh-wave" viewBox="0 0 1180 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,140 C180,90 360,190 540,140 S900,90 1180,140" stroke="#4ECDC4" stroke-width="1.8" fill="none" />
+      <path d="M0,170 C200,120 400,215 600,170 S950,120 1180,170" stroke="#4ECDC4" stroke-width="1.2" fill="none"
+        opacity=".6" />
+      <path d="M0,110 C160,65 320,155 480,110 S820,65 1180,110" stroke="#4ECDC4" stroke-width=".9" fill="none"
+        opacity=".4" />
     </svg>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="./index.html">Inicio</a></li>
-      <li><a href="./BPP_Areas.html">Áreas</a></li>
-      <li><a href="./BPP_Equipo.html">Equipo</a></li>
-      <li><a href="./BPP_Noticias.html">Noticias</a></li>
-    </ul>
-    <a href="./BPP_Contacto.html?area=laboral" class="nav-cta">Contacto</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="section-hero">
-  <div class="sh-img"></div>
-  <div class="sh-overlay"></div>
-  <svg class="sh-wave" viewBox="0 0 1180 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,140 C180,90 360,190 540,140 S900,90 1180,140"  stroke="#4ECDC4" stroke-width="1.8" fill="none"/>
-    <path d="M0,170 C200,120 400,215 600,170 S950,120 1180,170" stroke="#4ECDC4" stroke-width="1.2" fill="none" opacity=".6"/>
-    <path d="M0,110 C160,65 320,155 480,110 S820,65 1180,110"  stroke="#4ECDC4" stroke-width=".9" fill="none" opacity=".4"/>
-  </svg>
-  <div class="sh-sq1"></div><div class="sh-sq2"></div><div class="sh-sq3"></div>
-  <div class="sh-inner">
-    <span class="sh-breadcrumb">
-      <a href="./index.html">Inicio</a> › Trabaja con Nosotros
-    </span>
-    <span class="sh-eyebrow">Equipo · BPP Abogados</span>
-    <h1 class="sh-title">Trabaja con Nosotros</h1>
-    <div class="sh-subtitle">Únete al equipo de BPP Abogados</div>
-  </div>
-</section>
-
-<!-- INTRO -->
-<section class="intro-section">
-  <div class="intro-inner">
-    <span class="intro-eyebrow">Postulaciones abiertas</span>
-    <h2 class="intro-title">¿Quieres ser parte de BPP?</h2>
-    <p class="intro-text">Buscamos abogados y profesionales comprometidos con la excelencia jurídica. Si compartes nuestros valores de rigor, confianza y servicio al cliente, nos encantaría conocerte. Postula directamente y uno de nuestros socios revisará tu perfil.</p>
-  </div>
-</section>
-
-<!-- PILARES -->
-<section class="pilares-section">
-  <div class="pilares-inner">
-    <div class="pilares-header">
-      <span class="pilares-label">Por qué trabajar en BPP</span>
-      <div class="pilares-line"></div>
+    <div class="sh-sq1"></div>
+    <div class="sh-sq2"></div>
+    <div class="sh-sq3"></div>
+    <div class="sh-inner">
+      <span class="sh-breadcrumb">
+        <a href="./index.html">Inicio</a> › Trabaja con Nosotros
+      </span>
+      <span class="sh-eyebrow">Equipo · BPP Abogados</span>
+      <h1 class="sh-title">Trabaja con Nosotros</h1>
+      <div class="sh-subtitle">Únete al equipo de BPP Abogados</div>
     </div>
-    <div class="pilares-grid">
+  </section>
 
-      <div class="pilar-card">
-        <div class="pilar-icon">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-            <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z" stroke="#1B64C8" stroke-width="1.3" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pilar-num">01</div>
-        <div class="pilar-title">Trayectoria y prestigio</div>
-        <p class="pilar-desc">38 años de historia con reconocimiento en Chambers & Partners y Legal 500. Trabajarás en casos de alta complejidad con impacto jurídico real en el país.</p>
-      </div>
-
-      <div class="pilar-card">
-        <div class="pilar-icon">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-            <path d="M10 2v16M2 10h16M5 5l10 10M15 5L5 15" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="pilar-num">02</div>
-        <div class="pilar-title">Desarrollo profesional</div>
-        <p class="pilar-desc">Formación continua, acceso a litigación de alto nivel y vinculación con programas académicos nacionales e internacionales liderados por nuestros socios.</p>
-      </div>
-
-      <div class="pilar-card">
-        <div class="pilar-icon">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-            <circle cx="7" cy="7" r="3" stroke="#1B64C8" stroke-width="1.3"/>
-            <circle cx="13" cy="7" r="3" stroke="#1B64C8" stroke-width="1.3"/>
-            <path d="M1 17c0-3 2.7-5 6-5M19 17c0-3-2.7-5-6-5M10 12c3.3 0 6 2 6 5" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="pilar-num">03</div>
-        <div class="pilar-title">Equipo de excelencia</div>
-        <p class="pilar-desc">Un equipo reducido y especializado donde tu contribución es visible y valorada. Trabajarás directamente con los socios desde el primer día.</p>
-      </div>
-
-      <div class="pilar-card">
-        <div class="pilar-icon">
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-            <path d="M10 18s-8-4.5-8-10a8 8 0 0116 0c0 5.5-8 10-8 10z" stroke="#1B64C8" stroke-width="1.3"/>
-            <path d="M10 6v4l2.5 2.5" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="pilar-num">04</div>
-        <div class="pilar-title">Cultura de confianza</div>
-        <p class="pilar-desc">Ambiente colaborativo con mentoría directa de los socios y compromiso real con el equilibrio entre exigencia profesional y bienestar personal.</p>
-      </div>
-
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-inner">
+      <span class="intro-eyebrow">Postulaciones abiertas</span>
+      <h2 class="intro-title">¿Quieres ser parte de BPP?</h2>
+      <p class="intro-text">Buscamos abogados y profesionales comprometidos con la excelencia jurídica. Si compartes
+        nuestros valores de rigor, confianza y servicio al cliente, nos encantaría conocerte. Postula directamente y uno
+        de nuestros socios revisará tu perfil.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FORMULARIO -->
-<section class="form-section">
-  <div class="form-outer">
-    <div class="form-header">
-      <span class="form-header-eyebrow">Postulación espontánea</span>
-      <h2 class="form-header-title">Envía tu postulación</h2>
-      <p class="form-header-desc">Completa el formulario y adjunta tu CV. Revisamos cada postulación y nos ponemos en contacto con los perfiles que se ajusten a las necesidades del estudio.</p>
-    </div>
+  <!-- PILARES -->
+  <section class="pilares-section">
+    <div class="pilares-inner">
+      <div class="pilares-header">
+        <span class="pilares-label">Por qué trabajar en BPP</span>
+        <div class="pilares-line"></div>
+      </div>
+      <div class="pilares-grid">
 
-    <div class="form-wrap">
-      <form id="postulacion-form" onsubmit="handleSubmit(event)" novalidate>
-
-        <!-- Nombre + Teléfono -->
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label" for="nombre">Nombre completo <span>*</span></label>
-            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required aria-required="true" autocomplete="name">
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.4l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z" stroke="#1B64C8"
+                stroke-width="1.3" stroke-linejoin="round" />
+            </svg>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="telefono">Teléfono</label>
-            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+56 9 ···" autocomplete="tel">
+          <div class="pilar-num">01</div>
+          <div class="pilar-title">Trayectoria y prestigio</div>
+          <p class="pilar-desc">38 años de historia con reconocimiento en Chambers & Partners y Legal 500. Trabajarás en
+            casos de alta complejidad con impacto jurídico real en el país.</p>
+        </div>
+
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2v16M2 10h16M5 5l10 10M15 5L5 15" stroke="#1B64C8" stroke-width="1.3"
+                stroke-linecap="round" />
+            </svg>
           </div>
+          <div class="pilar-num">02</div>
+          <div class="pilar-title">Desarrollo profesional</div>
+          <p class="pilar-desc">Formación continua, acceso a litigación de alto nivel y vinculación con programas
+            académicos nacionales e internacionales liderados por nuestros socios.</p>
         </div>
 
-        <!-- Email -->
-        <div class="form-group">
-          <label class="form-label" for="email">Correo electrónico <span>*</span></label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required aria-required="true" autocomplete="email">
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+              <circle cx="7" cy="7" r="3" stroke="#1B64C8" stroke-width="1.3" />
+              <circle cx="13" cy="7" r="3" stroke="#1B64C8" stroke-width="1.3" />
+              <path d="M1 17c0-3 2.7-5 6-5M19 17c0-3-2.7-5-6-5M10 12c3.3 0 6 2 6 5" stroke="#1B64C8" stroke-width="1.3"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="pilar-num">03</div>
+          <div class="pilar-title">Equipo de excelencia</div>
+          <p class="pilar-desc">Un equipo reducido y especializado donde tu contribución es visible y valorada.
+            Trabajarás directamente con los socios desde el primer día.</p>
         </div>
 
-        <!-- Área de interés -->
-        <div class="form-group">
-          <label class="form-label" for="area">Área de interés <span>*</span></label>
-          <select class="form-select" id="area" name="area" required aria-required="true">
-            <option value="">Seleccione un área</option>
-            <option value="laboral">Defensa Laboral</option>
-            <option value="civil">Derecho Civil</option>
-            <option value="penal">Derecho Penal</option>
-            <option value="administrativo">Derecho Administrativo</option>
-            <option value="otras">Otras</option>
-          </select>
+        <div class="pilar-card">
+          <div class="pilar-icon">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+              <path d="M10 18s-8-4.5-8-10a8 8 0 0116 0c0 5.5-8 10-8 10z" stroke="#1B64C8" stroke-width="1.3" />
+              <path d="M10 6v4l2.5 2.5" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="pilar-num">04</div>
+          <div class="pilar-title">Cultura de confianza</div>
+          <p class="pilar-desc">Ambiente colaborativo con mentoría directa de los socios y compromiso real con el
+            equilibrio entre exigencia profesional y bienestar personal.</p>
         </div>
 
-        <!-- Mensaje -->
-        <div class="form-group">
-          <label class="form-label" for="mensaje">Mensaje / Motivación</label>
-          <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntenos sobre su perfil, experiencia y motivación para unirse al equipo de BPP…"></textarea>
-        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- CV drop zone -->
-        <div class="form-group">
-          <label class="form-label" for="cv-input">CV adjunto <span>*</span></label>
-          <div class="cv-dropzone" id="cv-dropzone">
-            <input type="file" id="cv-input" name="cv" accept=".pdf,.doc,.docx" required aria-required="true">
-            <div class="cv-icon">
-              <svg width="16" height="18" viewBox="0 0 16 20" fill="none">
-                <rect x="1" y="1" width="14" height="18" rx="2" stroke="#1B64C8" stroke-width="1.3"/>
-                <path d="M4 7h8M4 11h8M4 15h5" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round"/>
-              </svg>
+  <!-- FORMULARIO -->
+  <section class="form-section">
+    <div class="form-outer">
+      <div class="form-header">
+        <span class="form-header-eyebrow">Postulación espontánea</span>
+        <h2 class="form-header-title">Envía tu postulación</h2>
+        <p class="form-header-desc">Completa el formulario y adjunta tu CV. Revisamos cada postulación y nos ponemos en
+          contacto con los perfiles que se ajusten a las necesidades del estudio.</p>
+      </div>
+
+      <div class="form-wrap">
+        <form id="postulacion-form" onsubmit="handleSubmit(event)" novalidate>
+
+          <!-- Nombre + Teléfono -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre completo <span>*</span></label>
+              <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required
+                aria-required="true" autocomplete="name">
             </div>
-            <div class="cv-label">
-              <strong>Arrastra tu CV aquí</strong> o haz click para seleccionar
+            <div class="form-group">
+              <label class="form-label" for="telefono">Teléfono</label>
+              <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+56 9 ···"
+                autocomplete="tel">
             </div>
-            <div class="cv-formats">PDF · DOC · DOCX · máx. 5 MB</div>
-            <div class="cv-filename" id="cv-filename"></div>
           </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="email">Correo electrónico <span>*</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required
+              aria-required="true" autocomplete="email">
+          </div>
+
+          <!-- Área de interés -->
+          <div class="form-group">
+            <label class="form-label" for="area">Área de interés <span>*</span></label>
+            <select class="form-select" id="area" name="area" required aria-required="true">
+              <option value="">Seleccione un área</option>
+              <option value="laboral">Defensa Laboral</option>
+              <option value="civil">Derecho Civil</option>
+              <option value="penal">Derecho Penal</option>
+              <option value="administrativo">Derecho Administrativo</option>
+              <option value="otras">Otras</option>
+            </select>
+          </div>
+
+          <!-- Mensaje -->
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Mensaje / Motivación</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje"
+              placeholder="Cuéntenos sobre su perfil, experiencia y motivación para unirse al equipo de BPP…"></textarea>
+          </div>
+
+          <!-- CV drop zone -->
+          <div class="form-group">
+            <label class="form-label" for="cv-input">CV adjunto <span>*</span></label>
+            <div class="cv-dropzone" id="cv-dropzone">
+              <input type="file" id="cv-input" name="cv" accept=".pdf,.doc,.docx" required aria-required="true">
+              <div class="cv-icon">
+                <svg width="16" height="18" viewBox="0 0 16 20" fill="none">
+                  <rect x="1" y="1" width="14" height="18" rx="2" stroke="#1B64C8" stroke-width="1.3" />
+                  <path d="M4 7h8M4 11h8M4 15h5" stroke="#1B64C8" stroke-width="1.3" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="cv-label">
+                <strong>Arrastra tu CV aquí</strong> o haz click para seleccionar
+              </div>
+              <div class="cv-formats">PDF · DOC · DOCX · máx. 5 MB</div>
+              <div class="cv-filename" id="cv-filename"></div>
+            </div>
+          </div>
+
+          <!-- Privacidad -->
+          <p class="form-privacy">
+            Al enviar acepta nuestra <a href="#">Política de privacidad</a>. Sus datos serán utilizados exclusivamente
+            para el proceso de selección de BPP Abogados.
+          </p>
+
+          <button class="form-submit" type="submit" id="submit-btn" disabled>
+            Enviar postulación
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+        </form>
+
+        <!-- Estado de éxito -->
+        <div class="form-success" id="form-success" role="status" aria-live="polite">
+          <div class="form-success-icon">✓</div>
+          <div class="form-success-title">Postulación recibida</div>
+          <p class="form-success-desc">Hemos recibido tu postulación. Revisaremos tu perfil y nos pondremos en contacto
+            contigo si tu experiencia se ajusta a nuestras necesidades actuales.</p>
+          <a href="./BPP_Equipo.html" class="form-success-back">Conocer el equipo →</a>
         </div>
-
-        <!-- Privacidad -->
-        <p class="form-privacy">
-          Al enviar acepta nuestra <a href="#">Política de privacidad</a>. Sus datos serán utilizados exclusivamente para el proceso de selección de BPP Abogados.
-        </p>
-
-        <button class="form-submit" type="submit" id="submit-btn" disabled>
-          Enviar postulación
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-
-      </form>
-
-      <!-- Estado de éxito -->
-      <div class="form-success" id="form-success" role="status" aria-live="polite">
-        <div class="form-success-icon">✓</div>
-        <div class="form-success-title">Postulación recibida</div>
-        <p class="form-success-desc">Hemos recibido tu postulación. Revisaremos tu perfil y nos pondremos en contacto contigo si tu experiencia se ajusta a nuestras necesidades actuales.</p>
-        <a href="./BPP_Equipo.html" class="form-success-back">Conocer el equipo →</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<bpp-footer></bpp-footer>
+  <!-- FOOTER -->
+  <bpp-footer></bpp-footer>
 
-<!-- FAB -->
-<bpp-fab></bpp-fab>
+  <!-- FAB -->
+  <bpp-fab></bpp-fab>
 
-<script>
-/* ── VALIDACIÓN EN TIEMPO REAL ── */
-(function () {
-  const form     = document.getElementById('postulacion-form');
-  const btn      = document.getElementById('submit-btn');
-  const required = form.querySelectorAll('[required]');
+  <script>
+    /* ── VALIDACIÓN EN TIEMPO REAL ── */
+    (function () {
+      const form = document.getElementById('postulacion-form');
+      const btn = document.getElementById('submit-btn');
+      const required = form.querySelectorAll('[required]');
 
-  function isValid() {
-    return Array.from(required).every(f => {
-      if (f.type === 'file') return f.files && f.files.length > 0;
-      return f.value.trim() !== '';
-    });
-  }
+      function isValid() {
+        return Array.from(required).every(f => {
+          if (f.type === 'file') return f.files && f.files.length > 0;
+          return f.value.trim() !== '';
+        });
+      }
 
-  function updateBtn() {
-    const v = isValid();
-    btn.disabled          = !v;
-    btn.style.opacity     = v ? '1'       : '0.45';
-    btn.style.cursor      = v ? 'pointer' : 'not-allowed';
-    btn.style.background  = v ? ''        : 'var(--gray-mid)';
-  }
+      function updateBtn() {
+        const v = isValid();
+        btn.disabled = !v;
+        btn.style.opacity = v ? '1' : '0.45';
+        btn.style.cursor = v ? 'pointer' : 'not-allowed';
+        btn.style.background = v ? '' : 'var(--gray-mid)';
+      }
 
-  required.forEach(f => {
-    f.addEventListener('input',  updateBtn);
-    f.addEventListener('change', updateBtn);
-  });
+      required.forEach(f => {
+        f.addEventListener('input', updateBtn);
+        f.addEventListener('change', updateBtn);
+      });
 
-  updateBtn(); /* estado inicial */
-})();
+      updateBtn(); /* estado inicial */
+    })();
 
-/* ── CV DROP ZONE ── */
-(function () {
-  const zone    = document.getElementById('cv-dropzone');
-  const input   = document.getElementById('cv-input');
-  const fname   = document.getElementById('cv-filename');
+    /* ── CV DROP ZONE ── */
+    (function () {
+      const zone = document.getElementById('cv-dropzone');
+      const input = document.getElementById('cv-input');
+      const fname = document.getElementById('cv-filename');
 
-  function setFile(file) {
-    if (!file) return;
-    if (file.size > 5 * 1024 * 1024) {
-      alert('El archivo supera el límite de 5 MB. Seleccione un archivo más pequeño.');
-      return;
+      function setFile(file) {
+        if (!file) return;
+        if (file.size > 5 * 1024 * 1024) {
+          alert('El archivo supera el límite de 5 MB. Seleccione un archivo más pequeño.');
+          return;
+        }
+        fname.textContent = '✓ ' + file.name;
+        zone.classList.add('has-file');
+        /* Disparar validación */
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      input.addEventListener('change', () => setFile(input.files[0]));
+
+      zone.addEventListener('dragover', e => {
+        e.preventDefault(); zone.classList.add('dragover');
+      });
+      zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+      zone.addEventListener('drop', e => {
+        e.preventDefault(); zone.classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        if (file) { input.files = e.dataTransfer.files; setFile(file); }
+      });
+    })();
+
+    /* ── ANIMACIÓN PILARES ── */
+    (function () {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.pilar-card').forEach(c => obs.observe(c));
+    })();
+
+    /* ── ENVÍO ── */
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = 'Enviando…';
+
+      /* Reemplazar con fetch() al backend real */
+      setTimeout(() => {
+        document.getElementById('postulacion-form').style.display = 'none';
+        document.getElementById('form-success').classList.add('visible');
+      }, 1200);
     }
-    fname.textContent = '✓ ' + file.name;
-    zone.classList.add('has-file');
-    /* Disparar validación */
-    input.dispatchEvent(new Event('change', { bubbles: true }));
-  }
-
-  input.addEventListener('change', () => setFile(input.files[0]));
-
-  zone.addEventListener('dragover', e => {
-    e.preventDefault(); zone.classList.add('dragover');
-  });
-  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
-  zone.addEventListener('drop', e => {
-    e.preventDefault(); zone.classList.remove('dragover');
-    const file = e.dataTransfer.files[0];
-    if (file) { input.files = e.dataTransfer.files; setFile(file); }
-  });
-})();
-
-/* ── ANIMACIÓN PILARES ── */
-(function () {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.pilar-card').forEach(c => obs.observe(c));
-})();
-
-/* ── ENVÍO ── */
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.innerHTML = 'Enviando…';
-
-  /* Reemplazar con fetch() al backend real */
-  setTimeout(() => {
-    document.getElementById('postulacion-form').style.display = 'none';
-    document.getElementById('form-success').classList.add('visible');
-  }, 1200);
-}
-</script>
+  </script>
 </body>
+
 </html>

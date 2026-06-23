@@ -272,6 +272,7 @@ html {
     }
 .footer {
       display: block;
+      position: relative;
       background: white;
       border-top: 2px solid var(--blue);
     }
@@ -305,10 +306,10 @@ html {
       background: var(--blue-lt);
       opacity: .5;
     }
-.footer-logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 14px;
+.footer-logo-wrap {
+      position: absolute;
+      left: 80px;
+      top: 52px;
     }
 .footer-col-title {
       font-family: 'IBM Plex Mono', monospace;
@@ -469,6 +470,10 @@ html {
   .footer-inner {
         padding: 0 32px;
       }
+
+  .footer-logo-wrap {
+        left: 32px;
+      }
 }
 
 @media (max-width: 767px) {
@@ -493,6 +498,18 @@ html {
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 32px 0 24px;
+      }
+
+  .footer-logo-wrap {
+        position: static;
+        left: auto;
+        top: auto;
+        margin-bottom: 14px;
+      }
+
+  .footer-logo-wrap svg {
+        width: 80px;
+        height: 80px;
       }
 
   .footer-bottom {

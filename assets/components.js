@@ -58,21 +58,39 @@ class BppNav extends HTMLElement {
         <svg width="188" height="41" viewBox="0 0 210 48" fill="none">
           <text x="0" y="38" font-family="Montserrat,sans-serif" font-weight="500" font-size="40" letter-spacing="-1" fill="#FFFFFF">BPP</text>
           <rect x="89" y="0" width="2" height="50" fill="#FFFFFF" rx="1" />
-          <text x="98" y="9" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">BERRÍOS</text>
-          <text x="98" y="25" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PALAVECINO</text>
-          <text x="98" y="42" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PINOCHET</text>
+          <text x="98" y="17" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">BERRÍOS</text>
+          <text x="98" y="33" font-family="Montserrat,sans-serif" font-weight="600" font-size="10" letter-spacing="1.5" fill="#FFFFFF">PALAVECINO</text>
         </svg>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./BPP_Areas.html">Áreas</a></li>
-          <li><a href="./BPP_Equipo.html">Equipo</a></li>
           <li><a href="./BPP_Noticias.html">Noticias</a></li>
+        </ul>
+        <!-- Menú desplegable Nuestro Equipo -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="menu" aria-expanded="false">
+            Nuestro Equipo <span class="arrow">▾</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="./BPP_Equipo.html" class="nav-dropdown-item">
+              <span class="nav-dropdown-item-dot"></span> Nuestro equipo
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item-dot"></span> El estudio
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item-dot"></span> Logros
+            </a>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./BPP_Postulacion.html">Postulaciones</a></li>
         </ul>
         <!-- Menú desplegable Contacto -->
         <div class="nav-dropdown">
-          <button class="nav-dropdown-toggle active" aria-haspopup="menu" aria-expanded="false">
+          <button class="nav-dropdown-toggle" aria-haspopup="menu" aria-expanded="false">
             Contacto <span class="arrow">▾</span>
           </button>
           <div class="nav-dropdown-menu">
@@ -93,16 +111,16 @@ class BppNav extends HTMLElement {
       </div>
     `;
 
-    /* ── DROPDOWN CONTACTO — sincroniza aria-expanded ── */
-    const dd = this.querySelector('.nav-dropdown');
-    const toggle = dd && dd.querySelector('.nav-dropdown-toggle');
-    if (dd && toggle) {
+    /* ── DROPDOWNS NAV — sincroniza aria-expanded (Nuestro Equipo + Contacto) ── */
+    this.querySelectorAll('.nav-dropdown').forEach((dd) => {
+      const toggle = dd.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
       const setExpanded = (v) => toggle.setAttribute('aria-expanded', v);
       dd.addEventListener('mouseenter', () => setExpanded('true'));
       dd.addEventListener('mouseleave', () => setExpanded('false'));
       dd.addEventListener('focusin', () => setExpanded('true'));
       dd.addEventListener('focusout', () => setExpanded('false'));
-    }
+    });
   }
 }
 
@@ -115,8 +133,8 @@ class BppFooter extends HTMLElement {
           <div class="footer-decor-1"></div>
           <div class="footer-decor-2"></div>
           <div>
-            <div class="footer-logo">
-              <svg viewBox="0 0 310 310" width="108" height="108" xmlns="http://www.w3.org/2000/svg">
+            <div class="footer-logo-wrap">
+              <svg viewBox="0 0 310 310" width="127" height="127" xmlns="http://www.w3.org/2000/svg">
                 <rect width="310" height="310" fill="#1B64C8" />
                 <text x="28" y="178" font-family="Montserrat,Arial,sans-serif" font-weight="500" font-size="62" fill="#FFFFFF" letter-spacing="-1">BPP</text>
                 <rect x="162" y="113" width="3" height="84" fill="#FFFFFF" rx="1" />
@@ -136,8 +154,8 @@ class BppFooter extends HTMLElement {
           <div>
             <div class="footer-col-title">Áreas de Práctica</div>
             <a href="./BPP_Areas.html" class="footer-col-link">Derecho Laboral <span class="footer-col-link-arrow">→</span></a>
-            <a href="./BPP_Areas.html" class="footer-col-link">Litigios Laborales y Civiles <span class="footer-col-link-arrow">→</span></a>
-            <a href="./BPP_Areas.html" class="footer-col-link">Asesoría Corporativa <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Litigios laborales y civiles <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Areas.html" class="footer-col-link">Asesoría laboral corporativa y protección de datos <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Areas.html" class="footer-col-link" style="color:var(--blue);font-weight:500">Ver todas → <span class="footer-col-link-arrow">→</span></a>
           </div>
           <div>
@@ -145,11 +163,13 @@ class BppFooter extends HTMLElement {
             <a href="#" class="footer-col-link">Av. Apoquindo 3000, piso 15, of. 1501 <span class="footer-col-link-arrow">→</span></a>
             <a href="#" class="footer-col-link">Las Condes, Santiago <span class="footer-col-link-arrow">→</span></a>
             <a href="tel:+56949409721" class="footer-col-link">+56 9 4940 9721 <span class="footer-col-link-arrow">→</span></a>
+            <a href="tel:+56223456789" class="footer-col-link">+56 2 2345 6789 <span class="footer-col-link-arrow">→</span></a>
+            <a href="tel:+56223456790" class="footer-col-link">+56 2 2345 6790 <span class="footer-col-link-arrow">→</span></a>
             <a href="mailto:info@berriospalavecino.cl" class="footer-col-link">info@berriospalavecino.cl <span class="footer-col-link-arrow">→</span></a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span class="footer-copy">© 2026 Berríos & Palavecino | Pinochet Abogados. Todos los derechos reservados.</span>
+          <span class="footer-copy">© 2026 Berríos Palavecino. Todos los derechos reservados.</span>
           <div class="footer-legal-links">
             <a href="#" class="footer-legal-link">LinkedIn</a>
             <a href="#" class="footer-legal-link">Política de privacidad</a>
