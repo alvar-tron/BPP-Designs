@@ -1156,6 +1156,218 @@
       animation: pulseScale 0.6s ease-in-out;
     }
 
+    /* ── SECCIÓN LOGROS E HITOS ── */
+    @media (max-width: 1179px) {
+      .hitos-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hitos-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hitos-section {
+        padding: 48px 20px !important;
+      }
+
+      .hitos-number {
+        font-size: 56px !important;
+      }
+
+      .hitos-title {
+        font-size: 24px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hitos-description {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+      }
+
+      .hitos-card {
+        padding: 28px 24px !important;
+      }
+    }
+
+    /* ── INFORMACIONES DEL ESTUDIO (Carrusel) ── */
+    @media (max-width: 1179px) {
+      .estudio-panel-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .estudio-panel-content {
+        padding: 36px 32px !important;
+      }
+
+      .estudio-panel-side {
+        padding: 32px 28px !important;
+      }
+
+      .estudio-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      .estudio-nav-buttons {
+        flex-direction: row !important;
+        margin-top: 20px !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .estudio-section {
+        padding: 48px 20px !important;
+      }
+
+      .estudio-header {
+        gap: 20px !important;
+      }
+
+      .estudio-carousel-wrap {
+        margin-top: 28px !important;
+        min-height: auto !important;
+      }
+
+      .estudio-panel,
+      .estudio-panel.estudio-panel--active {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+      }
+
+      .estudio-panel-content,
+      .estudio-panel .estudio-panel-content {
+        padding: 28px 24px !important;
+      }
+
+      .estudio-panel-side,
+      .estudio-panel .estudio-panel-side {
+        padding: 24px 20px !important;
+        min-height: 200px !important;
+      }
+
+      .estudio-panel-title {
+        font-size: 24px !important;
+      }
+
+      .estudio-panel-description {
+        font-size: 14px !important;
+      }
+
+      .estudio-pill {
+        padding: 10px 16px !important;
+        font-size: 12px !important;
+      }
+    }
+
+    /* ── SEPARACIÓN ENTRE SECCIONES DE INFORMACIONES ── */
+    @media (max-width: 1179px) {
+      .estudio-section {
+        padding: 60px 48px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .estudio-carousel-wrap {
+        min-height: 320px !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .estudio-section {
+        padding: 48px 20px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .estudio-carousel-wrap {
+        min-height: 280px !important;
+      }
+    }
+
+    /* ── ACORDEÓN INFORMACIONES DEL ESTUDIO V2 ── */
+    @media (max-width: 1179px) {
+      .estudio-accordion {
+        height: auto !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+
+      .estudio-item {
+        flex: 0 1 calc(50% - 6px) !important;
+      }
+
+      .estudio-item--expanded {
+        flex: 1 1 100% !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .estudio-accordion-section {
+        padding: 48px 20px !important;
+        margin-top: 0 !important;
+        background: #F4F2EC;
+      }
+
+      .estudio-accordion-section > div > div:first-child {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+        margin-bottom: 28px !important;
+      }
+
+      .estudio-accordion-section > div > div:first-child > div:first-child {
+        width: 100% !important;
+      }
+
+      .estudio-accordion-section > div > div:first-child > div:first-child > div:last-child {
+        font-size: 28px !important;
+        margin-top: 8px !important;
+      }
+
+      .estudio-accordion {
+        height: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+
+      .estudio-item {
+        flex: 0 1 calc(50% - 5px) !important;
+        min-width: auto !important;
+        padding: 14px 8px !important;
+        border-radius: 8px !important;
+        min-height: 70px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .estudio-item--expanded {
+        flex: 1 1 100% !important;
+        padding: 40px 20px !important;
+        min-height: auto !important;
+      }
+
+      .estudio-item__title {
+        font-size: 22px !important;
+        max-width: 100% !important;
+      }
+
+      .estudio-item__description {
+        font-size: 14px !important;
+        max-width: 100% !important;
+      }
+
+      .estudio-item__number {
+        font-size: 36px !important;
+      }
+
+      .estudio-item__content {
+        gap: 20px !important;
+      }
+    }
+
     /* ── ACORDEÓN INFORMACIONES DEL ESTUDIO V2 ── */
     .estudio-accordion {
       display: flex;
@@ -1346,7 +1558,7 @@
     </section>
 
     <!-- LOGROS E HITOS -->
-    <section style="background:#EAE7DE; padding:72px 80px; font-family:'Archivo',sans-serif;">
+    <section class="hitos-section" style="background:#EAE7DE; padding:72px 80px; font-family:'Archivo',sans-serif;">
       <div style="max-width:1280px; margin:0 auto;">
         <div style="display:flex; align-items:center; gap:14px;">
           <span style="width:34px; height:3px; background:#C89B3C; display:inline-block;"></span>
@@ -1357,34 +1569,34 @@
           style="font:800 34px/1.05 'Archivo'; letter-spacing:.04em; text-transform:uppercase; color:#0E2342; margin-top:14px;">
           Logros e Hitos</div>
 
-        <div
+        <div class="hitos-grid"
           style="display:grid; grid-template-columns:1fr 1fr 1.15fr; gap:24px; margin-top:40px; align-items:stretch;">
           <!-- stat 1: clientes -->
-          <div
+          <div class="hitos-card"
             style="background:#fff; padding:36px 34px; display:flex; flex-direction:column; gap:10px; border-top:3px solid #1B5FC9; transition:transform .25s ease, box-shadow .25s ease; cursor:default;"
             onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(14,35,66,.16)';"
             onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-            <div style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
+            <div class="hitos-number" style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
                 style="color:#1B5FC9;">+</span><span class="hito-counter" data-target="1450" data-suffix="">0</span>
             </div>
-            <div
+            <div class="hitos-title"
               style="font:700 13px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#16243D; margin-top:6px;">
               Clientes activos</div>
-            <div style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Más de 1.450 clientes activos representados
+            <div class="hitos-description" style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Más de 1.450 clientes activos representados
               judicialmente a lo largo de todo Chile. Concentramos un porcentaje significativo de las causas laborales
               que se tramitan en los tribunales de la Región Metropolitana.</div>
           </div>
           <!-- stat 2: trayectoria -->
-          <a href="#"
+          <a href="#" class="hitos-card"
             style="background:#fff; padding:36px 34px; display:flex; flex-direction:column; gap:10px; border-top:3px solid #C89B3C; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease;"
             onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(14,35,66,.16)';"
             onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-            <div style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
+            <div class="hitos-number" style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
                 style="color:#C89B3C;">+</span><span class="hito-counter" data-target="38" data-suffix="">0</span></div>
-            <div
+            <div class="hitos-title"
               style="font:700 13px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#16243D; margin-top:6px;">
               Años de trayectoria</div>
-            <div style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Fundado en 1988, por abogados que impactaron en las
+            <div class="hitos-description" style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Fundado en 1988, por abogados que impactaron en las
               discusiones de las reformas legales del actual modelo económico chileno. Un estudio de profesores
               universitarios y abogados dedicados a la práctica del derecho laboral, civil y penal económico.</div>
             <span
@@ -1433,11 +1645,11 @@
     </section>
 
     <!-- INFORMACIONES DEL ESTUDIO -->
-    <section
-      style="background:#0B1E3A; background-image:linear-gradient(125deg,#0B1E3A 0%,#123056 60%,#173C6E 100%); padding:76px 80px; font-family:'Archivo',sans-serif;">
+    <section class="estudio-section"
+      style="background:#0B1E3A; background-image:linear-gradient(125deg,#0B1E3A 0%,#123056 60%,#173C6E 100%); padding:76px 80px; margin-bottom:0; font-family:'Archivo',sans-serif;">
       <div style="max-width:1280px; margin:0 auto;">
         <!-- header -->
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px;">
+        <div class="estudio-header" style="display:flex; justify-content:space-between; align-items:flex-end; gap:40px;">
           <div>
             <div style="display:flex; align-items:center; gap:14px;">
               <span style="width:34px; height:3px; background:#C89B3C; display:inline-block;"></span>
@@ -1452,7 +1664,7 @@
               impulsando a Berríos Palavecino como uno de los estudios de mayor proyección del mercado legal chileno.
             </div>
           </div>
-          <div style="display:flex; gap:12px; flex:none;">
+          <div class="estudio-nav-buttons" style="display:flex; gap:12px; flex:none;">
             <div class="estudio-nav-btn estudio-nav-prev"
               style="width:52px; height:52px; border-radius:50%; border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; color:#fff; font:400 22px/1 'Archivo'; transition:background .2s ease, border-color .2s ease;">
               ‹</div>
@@ -1463,19 +1675,19 @@
         </div>
 
         <!-- carousel -->
-        <div class="estudio-carousel" style="margin-top:38px; position:relative; min-height:350px;">
+        <div class="estudio-carousel-wrap estudio-carousel" style="margin-top:38px; position:relative; min-height:350px;">
           <!-- panel 1 -->
           <div class="estudio-panel estudio-panel--active" data-index="0"
             style="display:grid; grid-template-columns:1.4fr 1fr; background:#fff; border-radius:12px; overflow:hidden; min-height:330px; box-shadow:0 24px 60px rgba(0,0,0,.28); position:absolute; width:100%; opacity:0; transition:opacity .4s ease;">
-            <div style="padding:46px 48px; display:flex; flex-direction:column;">
+            <div class="estudio-panel-content" style="padding:46px 48px; display:flex; flex-direction:column;">
               <span
                 style="align-self:flex-start; background:#1B5FC9; color:#fff; font:700 11px/1 'Archivo'; letter-spacing:.16em; text-transform:uppercase; padding:9px 15px; border-radius:999px;">Crecimiento</span>
-              <div style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">El
+              <div class="estudio-panel-title" style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">El
                 estudio de más rápido crecimiento del mercado legal chileno</div>
-              <div style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Somos Berríos Palavecino, el
+              <div class="estudio-panel-description" style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Somos Berríos Palavecino, el
                 estudio jurídico con el ritmo de crecimiento más rápido en el mercado legal chileno.</div>
             </div>
-            <div
+            <div class="estudio-panel-side"
               style="background-image:linear-gradient(160deg,#1B5FC9 0%,#123A82 100%); padding:40px 44px; display:flex; flex-direction:column; justify-content:space-between; color:#fff;">
               <span
                 style="font:700 12px/1 'Archivo'; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.85);">Informaciones</span>
@@ -1487,16 +1699,16 @@
           <!-- panel 2 -->
           <div class="estudio-panel" data-index="1"
             style="display:grid; grid-template-columns:1.4fr 1fr; background:#fff; border-radius:12px; overflow:hidden; min-height:330px; box-shadow:0 24px 60px rgba(0,0,0,.28); position:absolute; width:100%; opacity:0; transition:opacity .4s ease;">
-            <div style="padding:46px 48px; display:flex; flex-direction:column;">
+            <div class="estudio-panel-content" style="padding:46px 48px; display:flex; flex-direction:column;">
               <span
                 style="align-self:flex-start; background:#C89B3C; color:#fff; font:700 11px/1 'Archivo'; letter-spacing:.16em; text-transform:uppercase; padding:9px 15px; border-radius:999px;">Reconocimiento</span>
-              <div style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">
+              <div class="estudio-panel-title" style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">
                 Verónica Fernández Omar asume como Directora en la U. de Chile</div>
-              <div style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Nuestra abogada directora de
+              <div class="estudio-panel-description" style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Nuestra abogada directora de
                 compliance fue electa Directora del Departamento de Derecho del Trabajo y la Seguridad Social de la
                 Facultad de Derecho de la Universidad de Chile.</div>
             </div>
-            <div
+            <div class="estudio-panel-side"
               style="background-image:linear-gradient(160deg,#C89B3C 0%,#9A722A 100%); padding:40px 44px; display:flex; flex-direction:column; justify-content:space-between; color:#fff;">
               <span
                 style="font:700 12px/1 'Archivo'; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.85);">Informaciones</span>
@@ -1508,15 +1720,15 @@
           <!-- panel 3 -->
           <div class="estudio-panel" data-index="2"
             style="display:grid; grid-template-columns:1.4fr 1fr; background:#fff; border-radius:12px; overflow:hidden; min-height:330px; box-shadow:0 24px 60px rgba(0,0,0,.28); position:absolute; width:100%; opacity:0; transition:opacity .4s ease;">
-            <div style="padding:46px 48px; display:flex; flex-direction:column;">
+            <div class="estudio-panel-content" style="padding:46px 48px; display:flex; flex-direction:column;">
               <span
                 style="align-self:flex-start; background:#7A5AB0; color:#fff; font:700 11px/1 'Archivo'; letter-spacing:.16em; text-transform:uppercase; padding:9px 15px; border-radius:999px;">Academia</span>
-              <div style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">Claudio
+              <div class="estudio-panel-title" style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">Claudio
                 Palavecino, electo consejero de facultad</div>
-              <div style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Nuestro abogado socio fundador
+              <div class="estudio-panel-description" style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Nuestro abogado socio fundador
                 fue electo consejero de facultad con la segunda mayoría de los votos para el período 2026–2028.</div>
             </div>
-            <div
+            <div class="estudio-panel-side"
               style="background-image:linear-gradient(160deg,#7A5AB0 0%,#543C80 100%); padding:40px 44px; display:flex; flex-direction:column; justify-content:space-between; color:#fff;">
               <span
                 style="font:700 12px/1 'Archivo'; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.85);">Informaciones</span>
@@ -1528,16 +1740,16 @@
           <!-- panel 4 -->
           <div class="estudio-panel" data-index="3"
             style="display:grid; grid-template-columns:1.4fr 1fr; background:#fff; border-radius:12px; overflow:hidden; min-height:330px; box-shadow:0 24px 60px rgba(0,0,0,.28); position:absolute; width:100%; opacity:0; transition:opacity .4s ease;">
-            <div style="padding:46px 48px; display:flex; flex-direction:column;">
+            <div class="estudio-panel-content" style="padding:46px 48px; display:flex; flex-direction:column;">
               <span
                 style="align-self:flex-start; background:#1E8E6E; color:#fff; font:700 11px/1 'Archivo'; letter-spacing:.16em; text-transform:uppercase; padding:9px 15px; border-radius:999px;">Expansión</span>
-              <div style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">14
+              <div class="estudio-panel-title" style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">14
                 nuevas empresas se incorporan como clientes</div>
-              <div style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Berríos Palavecino Abogados
+              <div class="estudio-panel-description" style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Berríos Palavecino Abogados
                 expande sus asesorías a empresas: se incorporan 14 compañías nacionales e internacionales a partir de
                 julio de 2026.</div>
             </div>
-            <div
+            <div class="estudio-panel-side"
               style="background-image:linear-gradient(160deg,#1E8E6E 0%,#12604A 100%); padding:40px 44px; display:flex; flex-direction:column; justify-content:space-between; color:#fff;">
               <span
                 style="font:700 12px/1 'Archivo'; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.85);">Informaciones</span>
@@ -1549,16 +1761,16 @@
           <!-- panel 5 -->
           <div class="estudio-panel" data-index="4"
             style="display:grid; grid-template-columns:1.4fr 1fr; background:#fff; border-radius:12px; overflow:hidden; min-height:330px; box-shadow:0 24px 60px rgba(0,0,0,.28); position:absolute; width:100%; opacity:0; transition:opacity .4s ease;">
-            <div style="padding:46px 48px; display:flex; flex-direction:column;">
+            <div class="estudio-panel-content" style="padding:46px 48px; display:flex; flex-direction:column;">
               <span
                 style="align-self:flex-start; background:#D2542E; color:#fff; font:700 11px/1 'Archivo'; letter-spacing:.16em; text-transform:uppercase; padding:9px 15px; border-radius:999px;">Resultados</span>
-              <div style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">+525
+              <div class="estudio-panel-title" style="font:800 32px/1.12 'Archivo'; letter-spacing:-0.01em; color:#0E2342; margin-top:22px;">+525
                 demandas interpuestas en defensa de los trabajadores</div>
-              <div style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Matías Berríos F., nuestro socio
+              <div class="estudio-panel-description" style="font:400 16px/1.6 'Archivo'; color:#5C6B82; margin-top:16px;">Matías Berríos F., nuestro socio
                 fundador, junto a su equipo, ha interpuesto más de 525 demandas en representación de los trabajadores
                 que han confiado en nosotros durante el primer semestre de 2026.</div>
             </div>
-            <div
+            <div class="estudio-panel-side"
               style="background-image:linear-gradient(160deg,#D2542E 0%,#9E3A1D 100%); padding:40px 44px; display:flex; flex-direction:column; justify-content:space-between; color:#fff;">
               <span
                 style="font:700 12px/1 'Archivo'; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.85);">Informaciones</span>
@@ -1569,7 +1781,7 @@
         </div>
 
         <!-- selector pills -->
-        <div style="display:flex; gap:10px; margin-top:26px; flex-wrap:wrap;">
+        <div class="estudio-pills-wrap" style="display:flex; gap:10px; margin-top:26px; flex-wrap:wrap;">
           <div class="estudio-pill estudio-pill--active" data-index="0"
             style="padding:11px 20px; border-radius:999px; background:#1B5FC9; color:#fff; font:700 13px/1 'Archivo'; letter-spacing:.06em; cursor:pointer; transition:all .3s ease;">
             01 · Crecimiento</div>
@@ -1591,7 +1803,7 @@
     </section>
 
     <!-- INFORMACIONES DEL ESTUDIO v2 - ACORDEÓN -->
-    <section style="background:#F4F2EC; padding:76px 80px; font-family:'Archivo',sans-serif;">
+    <section class="estudio-accordion-section" style="background:#F4F2EC; padding:76px 80px; margin-top:0; font-family:'Archivo',sans-serif;">
       <div style="max-width:1280px; margin:0 auto;">
 
         <!-- header -->
