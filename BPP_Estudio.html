@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="assets/components.js"></script>
+  <title>El Estudio — BPP Abogados</title>
+  <meta name="description"
+    content="Berríos & Palavecino | Pinochet Abogados — estudio jurídico fundado en 1990, especializado en derecho laboral, civil y asesoría empresarial en Chile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Jost:wght@300;400;500&family=Montserrat:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--gray-bg);
+      color: var(--gray-dk);
+      overflow-x: hidden;
+      padding-top: 108px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+    .section-hero {
+      height: 280px;
+      background: var(--blue-xdk);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .sh-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/BPP_Estudio_Hero.png');
+      background-size: cover;
+      background-position: center;
+      background-position-y: -107px;
+    }
+
+    .sh-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(27, 100, 200, .95) 0%,
+          rgba(20, 80, 168, .82) 20%,
+          rgba(10, 50, 130, .72) 50%,
+          rgba(10, 40, 100, .62) 100%);
+    }
+
+    .sh-wave {
+      position: absolute;
+      inset: 0;
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    .sh-sq1 {
+      position: absolute;
+      top: 48px;
+      right: 80px;
+      width: 18px;
+      height: 18px;
+      background: var(--blue);
+      opacity: .85;
+      z-index: 3;
+    }
+
+    .sh-sq2 {
+      position: absolute;
+      top: 70px;
+      right: 102px;
+      width: 11px;
+      height: 11px;
+      background: rgba(255, 255, 255, .4);
+      z-index: 3;
+    }
+
+    .sh-sq3 {
+      position: absolute;
+      top: 58px;
+      right: 114px;
+      width: 13px;
+      height: 13px;
+      background: var(--blue-md);
+      opacity: .5;
+      z-index: 3;
+    }
+
+    .sh-inner {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 44px;
+    }
+
+    .sh-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   SOBRE NOSOTROS
+══════════════════════════════════════════════════════ */
+    .sobre-section {
+      background: #fff;
+      padding: 64px 0 72px;
+    }
+
+    .sobre-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* columna izquierda */
+
+    .sobre-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .sobre-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--blue-xdk);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .sobre-divider {
+      height: 1.5px;
+      background: var(--blue);
+      width: 48px;
+    }
+
+    /* columna derecha */
+
+    .sobre-text {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .sobre-text p {
+      margin-bottom: 22px;
+    }
+
+    .sobre-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sobre-text .lead {
+      font-size: 20px;
+      font-style: italic;
+      color: #222;
+      border-left: 3px solid var(--blue);
+      padding-left: 20px;
+      margin-bottom: 28px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   CARRUSEL DE CLIENTES
+══════════════════════════════════════════════════════ */
+    .clientes-section {
+      background: var(--gray-bg);
+      padding: 52px 0;
+      overflow: hidden;
+    }
+
+    .clientes-header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .clientes-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-xdk);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .clientes-line {
+      flex: 1;
+      height: 1px;
+      background: var(--gray-lt);
+    }
+
+    /* track infinito */
+    .clientes-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* fade edges */
+    .clientes-track-wrap::before,
+    .clientes-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .clientes-track-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--gray-bg), transparent);
+    }
+
+    .clientes-track-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--gray-bg), transparent);
+    }
+
+    .clientes-track {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      animation: scroll-logos 40s linear infinite;
+      width: max-content;
+    }
+
+    .clientes-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 40px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+
+    .logo-item img {
+      max-height: 64px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(100%) opacity(.55);
+      transition: filter .3s ease;
+    }
+
+    .logo-item img:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+
+    /* placeholder para logos que fallan */
+    .logo-placeholder {
+      height: 36px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-lt);
+      border-radius: 2px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════════════════════
+   ÁREAS DE PRÁCTICA — cards full-bleed
+══════════════════════════════════════════════════════ */
+    .areas-section {
+      background: var(--blue-xdk);
+      padding: 52px 0 80px;
+    }
+
+    .areas-header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 80px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .areas-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .areas-header-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .areas-btn {
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: 1.5px solid rgba(255, 255, 255, .4);
+      height: 40px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .areas-btn:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .areas-btn-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      padding: 0 16px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .areas-btn-divider {
+      width: 1.5px;
+      height: 20px;
+      background: rgba(255, 255, 255, .35);
+      transition: background .2s;
+    }
+
+    .areas-btn-arrow {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .7);
+      padding: 0 14px;
+      transition: color .2s;
+    }
+
+    .areas-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 48px 80px 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+
+    .area-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-end;
+      height: 180px;
+    }
+
+    .area-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform .4s ease;
+    }
+
+    .area-card:hover .area-bg {
+      transform: scale(1.06);
+    }
+
+    .area-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 26, 62, .92) 0%, rgba(10, 26, 62, .55) 50%, rgba(10, 26, 62, .28) 100%);
+      transition: background .3s;
+    }
+
+    .area-card:hover .area-ov {
+      background: linear-gradient(to top, rgba(27, 100, 200, .92) 0%, rgba(27, 100, 200, .65) 50%, rgba(27, 100, 200, .35) 100%);
+    }
+
+    .area-accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      z-index: 2;
+    }
+
+    .area-body {
+      position: relative;
+      z-index: 2;
+      padding: 12px 14px;
+      width: 100%;
+    }
+
+    .area-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .4);
+      letter-spacing: .14em;
+      margin-bottom: 4px;
+    }
+
+    .area-name {
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .area-cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      color: rgba(255, 255, 255, .5);
+      letter-spacing: .08em;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .2s, transform .2s;
+    }
+
+    .area-card:hover .area-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* colores de acento por área */
+    .ac-01 {
+      background: #0A2A5E;
+    }
+
+    .ac-02 {
+      background: #1B64C8;
+    }
+
+    .ac-03 {
+      background: #1450A8;
+    }
+
+    .ac-04 {
+      background: #3D7FD4;
+    }
+
+    .ac-05 {
+      background: #5A90DA;
+    }
+
+    .ac-06 {
+      background: #85B7EB;
+    }
+
+    .ac-07 {
+      background: #6B9CD4;
+    }
+
+    .ac-08 {
+      background: #7AAED8;
+    }
+
+    .ac-09 {
+      background: #8ABCDE;
+    }
+
+    .ac-10 {
+      background: #9ACAE4;
+    }
+
+
+    /* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+    @media (max-width: 1179px) {
+
+      .nav,
+      .topbar {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .sh-inner {
+        padding: 0 32px 36px;
+      }
+
+      .sobre-inner {
+        padding: 0 32px;
+        gap: 48px;
+      }
+
+      .clientes-header {
+        padding: 0 32px 28px;
+      }
+
+      .areas-header {
+        padding: 0 32px 24px;
+      }
+
+      .areas-grid {
+        padding: 48px 32px 0;
+      }
+
+      .footer-inner {
+        padding: 0 32px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .area-card {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        padding-top: 96px;
+      }
+
+      .nav {
+        padding: 0 20px;
+        height: 56px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .topbar {
+        padding: 0 16px;
+      }
+
+      .section-hero {
+        height: auto;
+        min-height: 240px;
+      }
+
+      .sh-inner {
+        padding: 0 20px 28px;
+      }
+
+      .sh-title {
+        font-size: clamp(24px, 6vw, 36px);
+      }
+
+      .sobre-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 0 20px;
+      }
+
+      .sobre-section {
+        padding: 48px 0 56px;
+      }
+
+      .clientes-header {
+        padding: 0 20px 24px;
+      }
+
+      .areas-header {
+        padding: 0 20px 20px;
+      }
+
+      .areas-section {
+        padding: 40px 0 56px;
+      }
+
+      .areas-grid {
+        padding: 40px 20px 0;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .area-card {
+        height: 130px;
+      }
+
+      .footer-inner {
+        padding: 0 20px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <bpp-topbar></bpp-topbar>
+
+  <!-- NAV -->
+  <bpp-nav></bpp-nav>
+
+  <!-- HERO -->
+  <section class="section-hero">
+    <div class="sh-img"></div>
+    <div class="sh-overlay"></div>
+    <svg class="sh-wave" viewBox="0 0 1180 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,140 C180,90 360,190 540,140 S900,90 1180,140" stroke="#4ECDC4" stroke-width="1.8" fill="none" />
+      <path d="M0,170 C200,120 400,215 600,170 S950,120 1180,170" stroke="#4ECDC4" stroke-width="1.2" fill="none"
+        opacity=".6" />
+      <path d="M0,110 C160,65 320,155 480,110 S820,65 1180,110" stroke="#4ECDC4" stroke-width=".9" fill="none"
+        opacity=".4" />
+    </svg>
+    <div class="sh-sq1"></div>
+    <div class="sh-sq2"></div>
+    <div class="sh-sq3"></div>
+    <div class="sh-inner">
+      <h1 class="sh-title">El Estudio</h1>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="sobre-section">
+    <div class="sobre-inner">
+      <div class="sobre-left">
+        <span class="sobre-eyebrow">Sobre Nosotros · Desde 1990</span>
+        <h2 class="sobre-title">Estudio jurídico especializado</h2>
+        <div class="sobre-divider"></div>
+      </div>
+      <div class="sobre-right">
+        <div class="sobre-text">
+          <p class="lead">Berríos & Palavecino | Pinochet es un estudio jurídico altamente especializado en la
+            representación de personas naturales y empresas, que brinda a sus clientes atención de calidad y excelencia,
+            destacando en litigios laborales, civiles y asesoría a empresas.</p>
+          <p>El estudio fue fundado en 1990 y, a más de 30 años de su creación, ha crecido progresivamente en
+            experiencia y prestigio. Desde sus inicios nos hemos comprometido con satisfacer la creciente demanda de
+            servicios jurídicos profesionales, poniendo al centro el éxito de las personas y empresas que han confiado
+            en nuestra dedicación.</p>
+          <p>Contamos con una amplia práctica profesional en las distintas áreas del derecho, siendo nuestro objetivo
+            brindar un servicio personalizado que garantice confiabilidad, calidad y responsabilidad. Para ello
+            disponemos de un equipo de profesionales altamente calificados que combina experiencia consolidada con la
+            energía y rigor de una nueva generación de abogados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRUSEL DE CLIENTES -->
+  <section class="clientes-section">
+    <div class="clientes-header">
+      <span class="clientes-label">Empresas que confían en BPP</span>
+      <div class="clientes-line"></div>
+    </div>
+    <div class="clientes-track-wrap">
+      <div class="clientes-track" id="clientes-track">
+        <!-- Logos originales -->
+        <div class="logo-item"><img src="assets/Colun.webp" alt="Colun"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Colun</div>'"></div>
+        <div class="logo-item"><img src="assets/uyustools.webp" alt="UISStools"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>UISStools</div>'"></div>
+        <div class="logo-item"><img src="assets/Arnec-1 " alt="ARNEC"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>ARNEC</div>'"></div>
+        <div class="logo-item"><img src="assets/bio-rec.webp" alt="BIO-rec Ltda"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>BIO-rec</div>'"></div>
+        <div class="logo-item"><img src="assets/bielco.webp" alt="Bielco Constructora"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Bielco</div>'"></div>
+        <div class="logo-item"><img src="assets/pmt-1024x655.webp" alt="PMT Pavimentos"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>PMT</div>'"></div>
+        <div class="logo-item"><img src="assets/tierra_del_sol.webp" alt="Tierra del Sol"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Tierra del Sol</div>'"></div>
+        <div class="logo-item"><img src="assets/Logo-tragal-oficial.webp" alt="TraGal"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>TraGal</div>'"></div>
+        <div class="logo-item"><img src="assets/brands-club-Photoroom.webp" alt="The Brands Club"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>The Brands Club</div>'"></div>
+        <div class="logo-item"><img src="assets/orocub.pg-Photoroom.webp" alt="Orocup"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Orocup</div>'"></div>
+        <div class="logo-item"><img src="assets/clinica_santa_elena_logo-Photoroom.webp" alt="Clínica Santa Elena"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Clínica Santa Elena</div>'"></div>
+        <div class="logo-item"><img src="assets/cegin-logo-1-Photoroom.webp" alt="CEGIN"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>CEGIN</div>'"></div>
+        <div class="logo-item"><img src="assets/PHOTO-2025-03-24-16-46-15-removebg-preview.webp"
+            alt="Transportes Benavides"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Transportes Benavides</div>'"></div>
+        <div class="logo-item"><img src="assets/1631325723766__1_-removebg-preview.webp" alt="Delfin Group"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Delfin Group</div>'"></div>
+        <!-- Duplicado para loop infinito -->
+        <div class="logo-item"><img src="assets/Colun.webp" alt="Colun"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Colun</div>'"></div>
+        <div class="logo-item"><img src="assets/uyustools.webp" alt="UISStools"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>UISStools</div>'"></div>
+        <div class="logo-item"><img src="assets/Arnec-1.webp" alt="ARNEC"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>ARNEC</div>'"></div>
+        <div class="logo-item"><img src="assets/bio-rec.webp" alt="BIO-rec Ltda"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>BIO-rec</div>'"></div>
+        <div class="logo-item"><img src="assets/bielco.webp" alt="Bielco Constructora"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Bielco</div>'"></div>
+        <div class="logo-item"><img src="assets/pmt-1024x655.png" alt="PMT Pavimentos"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>PMT</div>'"></div>
+        <div class="logo-item"><img src="assets/tierra_del_sol.png" alt="Tierra del Sol"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Tierra del Sol</div>'"></div>
+        <div class="logo-item"><img src="assets/Logo-tragal-oficial.jpeg" alt="TraGal"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>TraGal</div>'"></div>
+        <div class="logo-item"><img src="assets/brands-club-Photoroom.png" alt="The Brands Club"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>The Brands Club</div>'"></div>
+        <div class="logo-item"><img src="assets/orocub.pg-Photoroom.png" alt="Orocup"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Orocup</div>'"></div>
+        <div class="logo-item"><img src="assets/clinica_santa_elena_logo-Photoroom.png" alt="Clínica Santa Elena"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Clínica Santa Elena</div>'"></div>
+        <div class="logo-item"><img src="assets/cegin-logo-1-Photoroom.png" alt="CEGIN"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>CEGIN</div>'"></div>
+        <div class="logo-item"><img src="assets/PHOTO-2025-03-24-16-46-15-removebg-preview.png"
+            alt="Transportes Benavides"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Transportes Benavides</div>'"></div>
+        <div class="logo-item"><img src="assets/1631325723766__1_-removebg-preview.png" alt="Delfin Group"
+            onerror="this.outerHTML='<div class=\'logo-placeholder\'>Delfin Group</div>'"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE PRÁCTICA -->
+  <section class="areas-section">
+    <div class="areas-header">
+      <span class="areas-label">Conoce nuestras Áreas de Práctica</span>
+      <div class="areas-header-line"></div>
+      <a href="./BPP_Areas.html" class="areas-btn">
+        <span class="areas-btn-label">Ver todas las áreas</span>
+        <span class="areas-btn-divider"></span>
+        <span class="areas-btn-arrow">→</span>
+      </a>
+    </div>
+    <div class="areas-grid">
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-01.jpg');background-color:#0A2A5E;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-01"></div>
+        <div class="area-body">
+          <div class="area-num">01</div>
+          <div class="area-name">Derecho Laboral</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-02.jpg');background-color:#1B64C8;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-02"></div>
+        <div class="area-body">
+          <div class="area-num">02</div>
+          <div class="area-name">Litigios Laborales y Civiles</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-03.jpg');background-color:#1450A8;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-03"></div>
+        <div class="area-body">
+          <div class="area-num">03</div>
+          <div class="area-name">Asesoría Laboral Corporativa</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-04.jpg');background-color:#3D7FD4;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-04"></div>
+        <div class="area-body">
+          <div class="area-num">04</div>
+          <div class="area-name">Cumplimiento Normativo</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-05.jpg');background-color:#5A90DA;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-05"></div>
+        <div class="area-body">
+          <div class="area-num">05</div>
+          <div class="area-name">Protección de Datos</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-06.jpg');background-color:#85B7EB;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-06"></div>
+        <div class="area-body">
+          <div class="area-num">06</div>
+          <div class="area-name">Derecho Administrativo y Sancionador</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-07.jpg');background-color:#6B9CD4;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-07"></div>
+        <div class="area-body">
+          <div class="area-num">07</div>
+          <div class="area-name">Derecho Penal Económico</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-08.jpg');background-color:#7AAED8;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-08"></div>
+        <div class="area-body">
+          <div class="area-num">08</div>
+          <div class="area-name">Patrimonios Familiares y Planificación Sucesoria</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-09.jpg');background-color:#8ABCDE;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-09"></div>
+        <div class="area-body">
+          <div class="area-num">09</div>
+          <div class="area-name">Estrategia Comunicacional</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+      <a href="./BPP_Area_Detalle.html" class="area-card">
+        <div class="area-bg" style="background-image:url('assets/area-img-10.jpg');background-color:#9ACAE4;"></div>
+        <div class="area-ov"></div>
+        <div class="area-accent ac-10"></div>
+        <div class="area-body">
+          <div class="area-num">10</div>
+          <div class="area-name">Representación Org. Públicos · Lobby</div>
+          <div class="area-cta">Ver área →</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <bpp-footer></bpp-footer>
+
+  <!-- FAB -->
+  <bpp-fab></bpp-fab>
+
+</body>
+
+</html>

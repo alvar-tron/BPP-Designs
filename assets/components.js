@@ -77,11 +77,8 @@ class BppNav extends HTMLElement {
             <a href="./BPP_Equipo.html" class="nav-dropdown-item">
               <span class="nav-dropdown-item-dot"></span> Nuestro equipo
             </a>
-            <a href="#" class="nav-dropdown-item">
+            <a href="./BPP_Estudio.html" class="nav-dropdown-item">
               <span class="nav-dropdown-item-dot"></span> El estudio
-            </a>
-            <a href="#" class="nav-dropdown-item">
-              <span class="nav-dropdown-item-dot"></span> Logros
             </a>
           </div>
         </div>
@@ -146,7 +143,7 @@ class BppFooter extends HTMLElement {
           </div>
           <div>
             <div class="footer-col-title">El Estudio</div>
-            <a href="#" class="footer-col-link">El estudio <span class="footer-col-link-arrow">→</span></a>
+            <a href="./BPP_Estudio.html" class="footer-col-link">El estudio <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Equipo.html" class="footer-col-link">Nuestro equipo <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Postulacion.html" class="footer-col-link">Postulaciones <span class="footer-col-link-arrow">→</span></a>
             <a href="./BPP_Noticias.html" class="footer-col-link">Noticias <span class="footer-col-link-arrow">→</span></a>
