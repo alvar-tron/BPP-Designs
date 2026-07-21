@@ -1473,6 +1473,681 @@
       align-items: stretch !important;
       justify-content: flex-start !important;
     }
+
+    /* ─── SECTION HEADER STYLES ─── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .section-header--light span {
+      color: #fff;
+    }
+
+    .section-header--dark span {
+      color: var(--blue-dk);
+    }
+
+    .section-header::before {
+      content: '';
+      width: 34px;
+      height: 3px;
+      background: var(--gold-lt);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .section-header span {
+      font-family: 'Archivo', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Archivo', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 0;
+      margin-bottom: 32px;
+    }
+
+    .section-title--dark {
+      color: #0E2342;
+    }
+
+    .section-title--light {
+      color: #fff;
+    }
+
+    /* ─── LOGROS E HITOS SECTION ─── */
+    .logros-section {
+      background: #EAE7DE;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logros-container {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .logros-diagonal {
+      display: flex;
+      position: relative;
+      flex: 1;
+      min-height: 420px;
+      background: var(--cream);
+    }
+
+    .logros-col-left {
+      width: 62%;
+      flex-shrink: 0;
+      padding: 55px 100px 55px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logros-col-left::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgb(61, 127, 212);
+      clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    .logros-col-right {
+      flex: 1;
+      padding: 60px 48px 60px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logros-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .logros-eyebrow::before {
+      content: '';
+      width: 34px;
+      height: 3px;
+      background: var(--gold);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .logros-eyebrow span {
+      font-family: 'Archivo', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #fff
+    }
+
+    .logros-title {
+      font-family: 'Archivo', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .logros-stat {
+      font-size: 88px;
+      font-weight: 300;
+      line-height: .85;
+      letter-spacing: -.03em;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+      margin-top: 12px;
+    }
+
+    .logros-col-left .logros-stat {
+      color: #fff;
+    }
+
+    .logros-col-left .logros-stat.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .logros-col-left .logros-stat em {
+      font-style: normal;
+      font-size: 44px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .logros-col-right .logros-stat {
+      color: var(--blue-xdk);
+      transition: opacity .7s ease .12s, transform .7s ease .12s;
+    }
+
+    .logros-col-right .logros-stat.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .logros-col-right .logros-stat em {
+      font-style: normal;
+      font-size: 44px;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .logros-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .logros-col-left .logros-label {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .logros-col-right .logros-label {
+      color: var(--blue);
+    }
+
+    .logros-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 8px;
+      max-width: 380px;
+    }
+
+    .logros-col-left .logros-text {
+      color: rgba(255, 255, 255, .65);
+    }
+
+    .logros-col-right .logros-text {
+      color: #555;
+      max-width: 380px;
+    }
+
+    .logros-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 14px;
+      transition: color .2s;
+    }
+
+    .logros-link:hover {
+      color: var(--blue);
+    }
+
+    .logros-news {
+      background: var(--blue-dk);
+      display: flex;
+      gap: 0;
+    }
+
+    .logros-news-item {
+      flex: 1;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 28px;
+      border-right: 1px solid rgba(255, 255, 255, .07);
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .logros-news-item:first-child {
+      padding-left: 60px;
+    }
+
+    .logros-news-item:hover {
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .logros-news-item:last-child {
+      border-right: none;
+    }
+
+    .logros-news-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold-lt);
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+
+    .logros-news-txt {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.45;
+    }
+
+    .logros-news-cta {
+      display: flex;
+      align-items: center;
+      padding: 18px 28px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--blue-lt);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      flex-shrink: 0;
+      border-left: 1px solid rgba(255, 255, 255, .07);
+      transition: color .2s;
+    }
+
+    .logros-news-cta:hover {
+      color: #fff;
+    }
+
+    /* Counter animation */
+    .count-up {
+      display: inline;
+    }
+
+    /* ═══ INFORMACIONES DEL ESTUDIO - CARRUSEL RESKIN ═══ */
+    .estudio-reskin-section {
+      background: var(--gray-bg);
+      padding: 72px 0;
+      border-top: 1px solid #E4E1D6;
+    }
+
+    .estudio-reskin-container {
+      padding: 0 80px;
+    }
+
+    .estudio-reskin-header {
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .estudio-reskin-title-group {
+      padding-right: 100px;
+    }
+
+    .estudio-reskin-controls {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      gap: 0;
+    }
+
+    .estudio-reskin-desc {
+      font-family: 'Archivo', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #5C6B82;
+      margin: 0;
+      max-width: 560px;
+    }
+
+    .estudio-reskin-controls {
+      display: flex;
+      gap: 0;
+      flex-shrink: 0;
+    }
+
+    .estudio-reskin-btn {
+      width: 44px;
+      height: 40px;
+      border: 1.5px solid #0E2342;
+      background: white;
+      color: #0E2342;
+      font-size: 18px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .estudio-reskin-btn:hover {
+      background: #0E2342;
+      color: white;
+    }
+
+    .estudio-reskin-divider {
+      width: 1.5px;
+      height: 40px;
+      background: #0E2342;
+    }
+
+    .estudio-reskin-carousel {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      background: white;
+      border: 1px solid #E4E1D6;
+      min-height: 300px;
+      margin-bottom: 20px;
+    }
+
+    .estudio-reskin-content {
+      padding: 44px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .estudio-reskin-badge {
+      align-self: flex-start;
+      background: #1B5FC9;
+      color: white;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      margin-bottom: 22px;
+    }
+
+    .estudio-reskin-item-title {
+      font-family: 'Archivo', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      color: #0E2342;
+      margin: 0 0 16px 0;
+      line-height: 1.15;
+    }
+
+    .estudio-reskin-item-desc {
+      font-family: 'Archivo', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #5C6B82;
+      margin: 0;
+    }
+
+    .estudio-reskin-stats {
+      background: #1B5FC9;
+      color: white;
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .estudio-reskin-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85);
+      margin-bottom: auto;
+    }
+
+    .estudio-reskin-number {
+      font-family: 'Archivo', sans-serif;
+      font-size: 108px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      line-height: .82;
+      margin-top: 22px;
+    }
+
+    .estudio-reskin-total {
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .7);
+      margin-left: 6px;
+    }
+
+    .estudio-reskin-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .estudio-reskin-pill {
+      padding: 10px 18px;
+      background: white;
+      color: #0E2342;
+      border: 1px solid #0E2342;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .estudio-reskin-pill:hover {
+      background: #F4F2EC;
+    }
+
+    .estudio-reskin-pill--active {
+      background: #0E2342;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 1179px) {
+      .estudio-reskin-container {
+        padding: 0 32px;
+      }
+
+      .estudio-reskin-item-title {
+        font-size: 26px;
+      }
+
+      .estudio-reskin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .estudio-reskin-controls {
+        align-self: flex-end;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .estudio-reskin-container {
+        padding: 0 20px;
+      }
+
+      .estudio-reskin-section {
+        padding: 32px 0;
+      }
+
+      .estudio-reskin-header {
+        margin-bottom: 24px;
+      }
+
+      .estudio-reskin-carousel {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .estudio-reskin-content {
+        padding: 32px 24px;
+      }
+
+      .estudio-reskin-stats {
+        padding: 24px 24px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .estudio-reskin-item-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .estudio-reskin-item-desc {
+        font-size: 14px;
+      }
+
+      .estudio-reskin-number {
+        font-size: 52px;
+        margin-top: 0;
+      }
+
+      .estudio-reskin-label {
+        order: 2;
+      }
+
+      .estudio-reskin-desc {
+        font-size: 14px;
+      }
+
+      .estudio-reskin-pills {
+        justify-content: center;
+      }
+    }
+
+    /* Responsive breakpoints */
+    @media(max-width:1179px) {
+      .logros-col-left {
+        width: 65%;
+        padding: 48px 60px 48px 32px;
+      }
+
+      .logros-col-left::before {
+        clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+      }
+
+      .logros-col-right {
+        padding: 48px 40px 48px 40px;
+      }
+
+      .logros-title {
+        font-size: 28px;
+      }
+
+      .logros-stat {
+        font-size: 72px;
+      }
+
+      .logros-col-left .logros-stat em,
+      .logros-col-right .logros-stat em {
+        font-size: 36px;
+      }
+
+      .logros-text {
+        font-size: 13px;
+      }
+
+      .logros-news {
+        flex-wrap: wrap;
+      }
+
+      .logros-news-item,
+      .logros-news-cta {
+        flex: 1 1 50%;
+        padding: 14px 20px;
+        border: none;
+      }
+
+      .logros-news-item:first-child {
+        padding-left: 20px;
+      }
+    }
+
+    @media(max-width:767px) {
+      .logros-diagonal {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .logros-col-left {
+        width: 100%;
+        padding: 40px 20px;
+      }
+
+      .logros-col-left::before {
+        clip-path: none;
+        background: var(--blue-xdk);
+      }
+
+      .logros-col-right {
+        width: 100%;
+        padding: 40px 24px;
+        background: var(--cream);
+      }
+
+      .logros-title {
+        font-size: 24px;
+      }
+
+      .logros-stat {
+        font-size: 56px;
+      }
+
+      .logros-col-left .logros-stat em,
+      .logros-col-right .logros-stat em {
+        font-size: 28px;
+      }
+
+      .logros-text {
+        font-size: 13px;
+        max-width: 100%;
+      }
+
+      .logros-news {
+        flex-direction: column;
+      }
+
+      .logros-news-item,
+      .logros-news-cta {
+        flex: 1;
+        padding: 12px 16px;
+        border-top: 1px solid rgba(255, 255, 255, .07) !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+
+      .logros-news-item:first-child {
+        padding-left: 16px;
+        border-top: none;
+      }
+
+      .logros-news-cta {
+        border-top: 1px solid rgba(255, 255, 255, .07);
+      }
+    }
   </style>
 </head>
 
@@ -1559,90 +2234,94 @@
     </section>
 
     <!-- LOGROS E HITOS -->
-    <section class="hitos-section" style="background:#EAE7DE; padding:72px 80px; font-family:'Archivo',sans-serif;">
-      <div style="max-width:1280px; margin:0 auto;">
-        <div style="display:flex; align-items:center; gap:14px;">
-          <span style="width:34px; height:3px; background:#C89B3C; display:inline-block;"></span>
-          <span style="font:700 12px/1 'Archivo'; letter-spacing:.22em; text-transform:uppercase; color:#1B5FC9;">BPP
-            Abogados · Resultados</span>
+    <section class="logros-section">
+      <div class="logros-container">
+        <div class="logros-diagonal">
+          <div class="logros-col-left">
+            <div>
+              <div class="section-header section-header--light"><span>Resultados</span>
+              </div>
+              <h2 class="section-title section-title--light">Logros e Hitos</h2>
+            </div>
+            <div>
+              <div class="logros-stat" data-anim><em>+</em><span class="count-up" data-target="1450"
+                  data-sep=".">0</span>
+              </div>
+              <div class="logros-label">Clientes activos</div>
+              <div class="logros-text">Más de 1.450 clientes activos representados judicialmente a lo largo de todo
+                Chile. Concentramos un porcentaje significativo de las causas laborales que se tramitan en los
+                tribunales de la Región Metropolitana.</div>
+            </div>
+          </div>
+          <div class="logros-col-right">
+            <div>
+              <div class="logros-stat" data-anim><em>+</em><span class="count-up" data-target="38">0</span></div>
+              <div class="logros-label">Años de trayectoria</div>
+              <div class="logros-text">Fundado en 1988, por abogados que impactaron en las discusiones de las reformas
+                legales del actual modelo económico chileno. Un estudio de profesores universitarios y abogados
+                dedicados a la práctica del derecho laboral, civil y penal económico.</div>
+              <a href="./BPP_Hitos_Propuestas.html" class="logros-link">Conoce el estudio →</a>
+            </div>
+          </div>
         </div>
-        <div
-          style="font:800 34px/1.05 'Archivo'; letter-spacing:.04em; text-transform:uppercase; color:#0E2342; margin-top:14px;">
-          Logros e Hitos</div>
-
-        <div class="hitos-grid"
-          style="display:grid; grid-template-columns:1fr 1fr 1.15fr; gap:24px; margin-top:40px; align-items:stretch;">
-          <!-- stat 1: clientes -->
-          <div class="hitos-card"
-            style="background:#fff; padding:36px 34px; display:flex; flex-direction:column; gap:10px; border-top:3px solid #1B5FC9; transition:transform .25s ease, box-shadow .25s ease; cursor:default;"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(14,35,66,.16)';"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-            <div class="hitos-number" style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
-                style="color:#1B5FC9;">+</span><span class="hito-counter" data-target="1450" data-suffix="">0</span>
-            </div>
-            <div class="hitos-title"
-              style="font:700 13px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#16243D; margin-top:6px;">
-              Clientes activos</div>
-            <div class="hitos-description" style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Más de 1.450 clientes
-              activos representados
-              judicialmente a lo largo de todo Chile. Concentramos un porcentaje significativo de las causas laborales
-              que se tramitan en los tribunales de la Región Metropolitana.</div>
-          </div>
-          <!-- stat 2: trayectoria -->
-          <a href="#" class="hitos-card"
-            style="background:#fff; padding:36px 34px; display:flex; flex-direction:column; gap:10px; border-top:3px solid #C89B3C; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease;"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 14px 30px rgba(14,35,66,.16)';"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-            <div class="hitos-number" style="font:800 72px/0.9 'Archivo'; letter-spacing:-0.02em; color:#0E2342;"><span
-                style="color:#C89B3C;">+</span><span class="hito-counter" data-target="38" data-suffix="">0</span></div>
-            <div class="hitos-title"
-              style="font:700 13px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#16243D; margin-top:6px;">
-              Años de trayectoria</div>
-            <div class="hitos-description" style="font:400 14px/1.6 'Archivo'; color:#5C6B82;">Fundado en 1988, por
-              abogados que impactaron en las
-              discusiones de las reformas legales del actual modelo económico chileno. Un estudio de profesores
-              universitarios y abogados dedicados a la práctica del derecho laboral, civil y penal económico.</div>
-            <span
-              style="margin-top:auto; padding-top:14px; font:700 11px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#C89B3C;">Conoce
-              el estudio →</span>
+        <div class="logros-news">
+          <a href="./BPP_Noticias.html" class="logros-news-item">
+            <div class="logros-news-num">01</div>
+            <div class="logros-news-txt">Reforma laboral 2025: claves para empleadores</div>
           </a>
-          <!-- noticias y publicaciones -->
-          <div
-            style="background:#0E2342; background-image:linear-gradient(150deg,#0E2342 0%,#16345C 100%); padding:36px 34px; display:flex; flex-direction:column;">
-            <div style="display:flex; align-items:center; gap:12px;">
-              <span style="width:26px; height:3px; background:#C89B3C; display:inline-block;"></span>
-              <span
-                style="font:700 12px/1 'Archivo'; letter-spacing:.18em; text-transform:uppercase; color:#E7C77E;">Noticias
-                y publicaciones</span>
+          <a href="./BPP_Noticias.html" class="logros-news-item">
+            <div class="logros-news-num">02</div>
+            <div class="logros-news-txt">Presentación del libro «Derecho Laboral Aplicado»</div>
+          </a>
+          <a href="./BPP_Noticias.html" class="logros-news-item">
+            <div class="logros-news-num">03</div>
+            <div class="logros-news-txt">Nueva jurisprudencia sobre teletrabajo y jornada</div>
+          </a>
+          <a href="./BPP_Noticias.html" class="logros-news-cta">Ver todas las publicaciones →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMACIONES DEL ESTUDIO - CARRUSEL RESKIN (1c) -->
+    <section class="estudio-reskin-section">
+      <div class="estudio-reskin-container">
+        <div class="estudio-reskin-header">
+          <div class="estudio-reskin-title-group">
+            <div class="section-header section-header--dark">
+              <span>El estudio en movimiento</span>
             </div>
-            <div style="display:flex; flex-direction:column; margin-top:22px;">
-              <a href="./BPP_Noticias.html"
-                style="display:flex; gap:18px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(255,255,255,.12); text-decoration:none; transition:background .2s;"
-                onmouseover="this.style.background='rgba(255,255,255,.05)';" onmouseout="this.style.background='none';">
-                <span style="font:700 13px/1.4 'Archivo'; color:#E7C77E; letter-spacing:.05em;">01</span>
-                <span style="font:500 15px/1.4 'Archivo'; color:#EDF1F8;">Reforma laboral 2025: claves para
-                  empleadores</span>
-              </a>
-              <a href="./BPP_Noticias.html"
-                style="display:flex; gap:18px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(255,255,255,.12); text-decoration:none; transition:background .2s;"
-                onmouseover="this.style.background='rgba(255,255,255,.05)';" onmouseout="this.style.background='none';">
-                <span style="font:700 13px/1.4 'Archivo'; color:#E7C77E; letter-spacing:.05em;">02</span>
-                <span style="font:500 15px/1.4 'Archivo'; color:#EDF1F8;">Presentación del libro «Derecho Laboral
-                  Aplicado»</span>
-              </a>
-              <a href="./BPP_Noticias.html"
-                style="display:flex; gap:18px; align-items:flex-start; padding:16px 0; border-top:1px solid rgba(255,255,255,.12); border-bottom:1px solid rgba(255,255,255,.12); text-decoration:none; transition:background .2s;"
-                onmouseover="this.style.background='rgba(255,255,255,.05)';" onmouseout="this.style.background='none';">
-                <span style="font:700 13px/1.4 'Archivo'; color:#E7C77E; letter-spacing:.05em;">03</span>
-                <span style="font:500 15px/1.4 'Archivo'; color:#EDF1F8;">Nueva jurisprudencia sobre teletrabajo y
-                  jornada</span>
-              </a>
-            </div>
-            <a href="./BPP_Noticias.html"
-              style="margin-top:auto; padding-top:22px; font:700 12px/1 'Archivo'; letter-spacing:.14em; text-transform:uppercase; color:#E7C77E; text-decoration:none; transition:color .2s;"
-              onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#E7C77E';">Ver todas las
-              publicaciones →</a>
+            <h2 class="section-title section-title--dark">Informaciones del Estudio</h2>
+            <p class="estudio-reskin-desc">Lo que está impulsando a Berríos Palavecino como uno de los estudios de mayor
+              proyección del mercado legal chileno.</p>
           </div>
+          <div class="estudio-reskin-controls">
+            <button class="estudio-reskin-btn estudio-reskin-btn-prev" aria-label="Anterior">‹</button>
+            <div class="estudio-reskin-divider"></div>
+            <button class="estudio-reskin-btn estudio-reskin-btn-next" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+
+        <div class="estudio-reskin-carousel">
+          <div class="estudio-reskin-content">
+            <div class="estudio-reskin-badge" id="current-label">Crecimiento</div>
+            <h3 class="estudio-reskin-item-title" id="current-title">El estudio de más rápido crecimiento del mercado
+              legal chileno</h3>
+            <p class="estudio-reskin-item-desc" id="current-desc">Somos Berríos Palavecino, el estudio jurídico con el
+              ritmo de crecimiento más rápido en el mercado legal chileno.</p>
+          </div>
+          <div class="estudio-reskin-stats" id="current-stats">
+            <div class="estudio-reskin-label">Informaciones</div>
+            <div class="estudio-reskin-number"><span id="current-number">01</span><span
+                class="estudio-reskin-total">/05</span></div>
+          </div>
+        </div>
+
+        <div class="estudio-reskin-pills">
+          <button class="estudio-reskin-pill estudio-reskin-pill--active" data-index="0">01</button>
+          <button class="estudio-reskin-pill" data-index="1">02</button>
+          <button class="estudio-reskin-pill" data-index="2">03</button>
+          <button class="estudio-reskin-pill" data-index="3">04</button>
+          <button class="estudio-reskin-pill" data-index="4">05</button>
         </div>
       </div>
     </section>
@@ -1650,15 +2329,10 @@
     <!-- EQUIPO -->
     <section class="team-section">
       <div class="team-container">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:10px;">
-          <span style="width:34px; height:3px; background:#C89B3C; display:inline-block;"></span>
-          <span
-            style="font:700 12px/1 'Archivo'; letter-spacing:.22em; text-transform:uppercase; color:#1B5FC9;">Quiénes
-            somos</span>
+        <div class="section-header section-header--dark">
+          <span>Quiénes somos</span>
         </div>
-        <h2
-          style="font:800 34px/1.05 'Archivo'; letter-spacing:.04em; text-transform:uppercase; color:#0E2342; margin:0; margin-bottom:32px;">
-          Nuestro Equipo</h2>
+        <h2 class="section-title section-title--dark">Nuestro Equipo</h2>
 
         <div class="socios-carousel" id="socios-carousel">
           <div class="socios-track" id="socios-track">
@@ -2562,6 +3236,115 @@
       if (counters.length > 0) {
         observer.observe(counters[0].closest('div'));
       }
+    })();
+
+    /* ── LOGROS ANIMACIONES ── */
+    (() => {
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function runCounter(span, dur) {
+        const target = parseInt(span.dataset.target, 10);
+        const sep = span.dataset.sep || '';
+        const start = performance.now();
+        function fmt(v) {
+          return sep ? v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, sep) : v;
+        }
+        function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const e = easeOutCubic(p);
+          span.textContent = fmt(Math.round(target * e));
+          if (p < 1) requestAnimationFrame(tick);
+          else span.textContent = fmt(target);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const animObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.done) {
+            entry.target.dataset.done = '1';
+            entry.target.classList.add('in');
+            const countUpEl = entry.target.querySelector('.count-up');
+            if (countUpEl) runCounter(countUpEl, 1400);
+            animObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.logros-stat[data-anim]').forEach(el => animObs.observe(el));
+    })();
+
+    /* ── CARRUSEL INFORMACIONES DEL ESTUDIO RESKIN ── */
+    (() => {
+      const content = [
+        {
+          i: '01',
+          label: 'Crecimiento',
+          title: 'El estudio de más rápido crecimiento del mercado legal chileno',
+          desc: 'Somos Berríos Palavecino, el estudio jurídico con el ritmo de crecimiento más rápido en el mercado legal chileno.',
+          color: '#1B5FC9'
+        },
+        {
+          i: '02',
+          label: 'Reconocimiento',
+          title: 'Verónica Fernández Omar asume como Directora en la U. de Chile',
+          desc: 'Nuestra abogada directora de compliance fue electa Directora del Departamento de Derecho del Trabajo y la Seguridad Social de la Facultad de Derecho de la Universidad de Chile.',
+          color: '#C89B3C'
+        },
+        {
+          i: '03',
+          label: 'Academia',
+          title: 'Claudio Palavecino, electo consejero de facultad',
+          desc: 'Nuestro abogado socio fundador fue electo consejero de facultad con la segunda mayoría de los votos para el período 2026–2028.',
+          color: '#7A5AB0'
+        },
+        {
+          i: '04',
+          label: 'Expansión',
+          title: '14 nuevas empresas se incorporan como clientes',
+          desc: 'Berríos Palavecino Abogados expande sus asesorías a empresas: se incorporan 14 compañías nacionales e internacionales a partir de julio de 2026.',
+          color: '#1E8E6E'
+        },
+        {
+          i: '05',
+          label: 'Resultados',
+          title: '+525 demandas interpuestas en defensa de los trabajadores',
+          desc: 'Matías Berríos F., nuestro socio fundador, junto a su equipo, ha interpuesto más de 525 demandas en representación de los trabajadores que han confiado en nosotros durante el primer semestre de 2026.',
+          color: '#D2542E'
+        }
+      ];
+
+      let currentIdx = 0;
+
+      function updateCarousel() {
+        const item = content[currentIdx];
+        document.getElementById('current-label').textContent = item.label;
+        document.getElementById('current-title').textContent = item.title;
+        document.getElementById('current-desc').textContent = item.desc;
+        document.getElementById('current-number').textContent = item.i;
+        document.getElementById('current-stats').style.backgroundColor = item.color;
+
+        document.querySelectorAll('.estudio-reskin-pill').forEach((pill, idx) => {
+          pill.classList.toggle('estudio-reskin-pill--active', idx === currentIdx);
+        });
+      }
+
+      document.querySelector('.estudio-reskin-btn-prev').addEventListener('click', () => {
+        currentIdx = (currentIdx - 1 + content.length) % content.length;
+        updateCarousel();
+      });
+
+      document.querySelector('.estudio-reskin-btn-next').addEventListener('click', () => {
+        currentIdx = (currentIdx + 1) % content.length;
+        updateCarousel();
+      });
+
+      document.querySelectorAll('.estudio-reskin-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          currentIdx = parseInt(pill.dataset.index, 10);
+          updateCarousel();
+        });
+      });
     })();
   </script>
 </body>
