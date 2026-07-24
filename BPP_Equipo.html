@@ -20,14 +20,14 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-body {
+    body {
       font-family: 'Montserrat', sans-serif;
       background: var(--gray-bg);
       overflow-x: hidden;
       padding-top: 108px;
     }
 
-.section-hero {
+    .section-hero {
       height: 275px;
       background: var(--blue-xdk);
       position: relative;
@@ -36,7 +36,7 @@ body {
       align-items: flex-end;
     }
 
-.sh-img {
+    .sh-img {
       position: absolute;
       inset: 0;
       background-image: url('assets/BPP_Areas_Hero.jpg');
@@ -44,7 +44,7 @@ body {
       background-position: center;
     }
 
-.sh-overlay {
+    .sh-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg,
@@ -54,14 +54,14 @@ body {
           rgba(10, 40, 100, .62) 100%);
     }
 
-.sh-wave {
+    .sh-wave {
       position: absolute;
       inset: 0;
       opacity: .2;
       pointer-events: none;
     }
 
-.sh-sq1 {
+    .sh-sq1 {
       position: absolute;
       top: 48px;
       right: 80px;
@@ -72,7 +72,7 @@ body {
       z-index: 3;
     }
 
-.sh-sq2 {
+    .sh-sq2 {
       position: absolute;
       top: 70px;
       right: 102px;
@@ -82,7 +82,7 @@ body {
       z-index: 3;
     }
 
-.sh-sq3 {
+    .sh-sq3 {
       position: absolute;
       top: 58px;
       right: 114px;
@@ -93,7 +93,7 @@ body {
       z-index: 3;
     }
 
-.sh-inner {
+    .sh-inner {
       position: relative;
       z-index: 4;
       width: 100%;
@@ -105,11 +105,11 @@ body {
       gap: 80px;
     }
 
-.sh-left {
+    .sh-left {
       flex: 0 0 320px;
     }
 
-.sh-title {
+    .sh-title {
       font-size: clamp(32px, 4vw, 44px);
       font-weight: 500;
       color: #fff;
@@ -118,20 +118,20 @@ body {
       letter-spacing: .04em;
     }
 
-.equipo-section {
+    .equipo-section {
       background: #fff;
       padding: 40px 0 72px;
       overflow: hidden;
     }
 
-.equipo-inner {
+    .equipo-inner {
       max-width: 1320px;
       margin: 0 auto;
       padding: 0 80px;
       box-sizing: border-box;
     }
 
-.filters-wrap {
+    .filters-wrap {
       padding: 0 0 32px;
       display: flex;
       align-items: center;
@@ -139,7 +139,7 @@ body {
       flex-wrap: wrap;
     }
 
-.filter-btn {
+    .filter-btn {
       font-family: 'Jost', sans-serif;
       font-size: 11px;
       font-weight: 400;
@@ -153,18 +153,18 @@ body {
       transition: all .2s;
     }
 
-.filter-btn:hover {
+    .filter-btn:hover {
       border-color: var(--blue);
       color: var(--blue);
     }
 
-.filter-btn.active {
+    .filter-btn.active {
       background: var(--blue);
       border-color: var(--blue);
       color: #fff;
     }
 
-.cat-divider {
+    .cat-divider {
       display: none;
       /* JS lo muestra cuando aplica */
       align-items: center;
@@ -172,15 +172,15 @@ body {
       margin: 40px 0 20px;
     }
 
-.cat-divider.visible {
+    .cat-divider.visible {
       display: flex;
     }
 
-.cat-divider:first-of-type {
+    .cat-divider:first-of-type {
       margin-top: 0;
     }
 
-.cat-divider-label {
+    .cat-divider-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       font-weight: 700;
@@ -190,13 +190,13 @@ body {
       white-space: nowrap;
     }
 
-.cat-divider-line {
+    .cat-divider-line {
       flex: 1;
       height: 1px;
       background: var(--gray-lt);
     }
 
-.cat-divider-count {
+    .cat-divider-count {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
       color: var(--gray-mid);
@@ -204,7 +204,7 @@ body {
       white-space: nowrap;
     }
 
-.people-grid {
+    .people-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
@@ -212,7 +212,7 @@ body {
       min-width: 0;
     }
 
-.person-card {
+    .person-card {
       display: flex;
       flex-direction: column;
       background: #fff;
@@ -224,17 +224,17 @@ body {
       transition: opacity .5s ease, transform .5s ease, box-shadow .25s ease;
     }
 
-.person-card.is-visible {
+    .person-card.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-.person-card.is-visible:hover {
+    .person-card.is-visible:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(27, 100, 200, .14);
     }
 
-.card-photo-wrap {
+    .card-photo-wrap {
       position: relative;
       overflow: hidden;
       width: 100%;
@@ -243,7 +243,7 @@ body {
       flex-shrink: 0;
     }
 
-.card-photo {
+    .card-photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -252,11 +252,11 @@ body {
       transition: transform .4s ease;
     }
 
-.person-card:hover .card-photo {
+    .person-card:hover .card-photo {
       transform: scale(1.04);
     }
 
-.card-ph {
+    .card-ph {
       width: 100%;
       height: 100%;
       display: flex;
@@ -265,11 +265,11 @@ body {
       transition: transform .4s ease;
     }
 
-.person-card:hover .card-ph {
+    .person-card:hover .card-ph {
       transform: scale(1.04);
     }
 
-.card-ph span {
+    .card-ph span {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 8px;
       color: rgba(255, 255, 255, .35);
@@ -277,35 +277,35 @@ body {
       text-transform: uppercase;
     }
 
-.ph-a {
+    .ph-a {
       background: linear-gradient(160deg, #C5D8EE, #A0BCDA);
     }
 
-.ph-b {
+    .ph-b {
       background: linear-gradient(160deg, #B5D4F4, #85B7EB);
     }
 
-.ph-c {
+    .ph-c {
       background: linear-gradient(160deg, #8AB8DC, #5A96C8);
     }
 
-.ph-d {
+    .ph-d {
       background: linear-gradient(160deg, #7AACD8, #4A86B8);
     }
 
-.ph-e {
+    .ph-e {
       background: linear-gradient(160deg, #95BCE0, #6A9CC8);
     }
 
-.ph-f {
+    .ph-f {
       background: linear-gradient(160deg, #AAC8E4, #78A8D0);
     }
 
-.ph-g {
+    .ph-g {
       background: linear-gradient(160deg, #B8CEEA, #8AACD8);
     }
 
-.card-photo-overlay {
+    .card-photo-overlay {
       position: absolute;
       inset: 0;
       background: rgba(27, 100, 200, .18);
@@ -314,11 +314,11 @@ body {
       pointer-events: none;
     }
 
-.person-card:hover .card-photo-overlay {
+    .person-card:hover .card-photo-overlay {
       opacity: 1;
     }
 
-.card-photo-wrap::after {
+    .card-photo-wrap::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -331,18 +331,18 @@ body {
       transition: transform .3s ease;
     }
 
-.person-card:hover .card-photo-wrap::after {
+    .person-card:hover .card-photo-wrap::after {
       transform: scaleX(1);
     }
 
-.card-bar {
+    .card-bar {
       border-top: 2px solid var(--blue);
       padding: 12px 14px 14px;
       background: #fff;
       flex-shrink: 0;
     }
 
-.card-name {
+    .card-name {
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       font-weight: 800;
@@ -351,7 +351,7 @@ body {
       margin-bottom: 3px;
     }
 
-.card-role {
+    .card-role {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9px;
       font-weight: 600;
@@ -361,19 +361,19 @@ body {
       margin-bottom: 10px;
     }
 
-.card-btns {
+    .card-btns {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
 
-.card-email-row {
+    .card-email-row {
       display: flex;
       align-items: center;
       gap: 5px;
     }
 
-.card-email {
+    .card-email {
       flex: 1;
       font-family: 'IBM Plex Mono', monospace;
       font-size: 9.5px;
@@ -389,12 +389,12 @@ body {
       transition: border-color .2s, color .2s;
     }
 
-.card-email:hover {
+    .card-email:hover {
       border-color: var(--blue);
       color: var(--blue-dk);
     }
 
-.card-copy-btn {
+    .card-copy-btn {
       width: 26px;
       height: 26px;
       display: flex;
@@ -408,17 +408,17 @@ body {
       transition: border-color .2s, background .2s;
     }
 
-.card-copy-btn:hover {
+    .card-copy-btn:hover {
       border-color: var(--blue);
       background: var(--blue);
     }
 
-.card-copy-btn:hover svg rect,
+    .card-copy-btn:hover svg rect,
     .card-copy-btn:hover svg path {
       stroke: #fff !important;
     }
 
-.card-copy-btn .copy-check {
+    .card-copy-btn .copy-check {
       position: absolute;
       inset: 0;
       display: flex;
@@ -431,76 +431,86 @@ body {
       transition: opacity .2s;
     }
 
-.card-copy-btn.copied {
+    .card-copy-btn.copied {
       border-color: var(--blue);
     }
 
-.card-copy-btn.copied .copy-check {
+    .card-copy-btn.copied .copy-check {
       opacity: 1;
     }
 
-.person-card.hidden {
+    .person-card.hidden {
       display: none;
     }
 
-@media(max-width:1179px)  {
-  .sh-inner {
+    @media(max-width:1179px) {
+      .sh-inner {
         padding: 0 32px 36px;
         gap: 48px;
       }
-.equipo-inner {
+
+      .equipo-inner {
         padding: 0 32px;
       }
-.people-grid {
+
+      .people-grid {
         gap: 22px;
       }
-}
+    }
 
-@media(max-width:900px)  {
-  .card-photo-wrap {
+    @media(max-width:900px) {
+      .card-photo-wrap {
         height: 200px;
       }
-}
+    }
 
-@media(max-width:767px)  {
-  body {
+    @media(max-width:767px) {
+      body {
         padding-top: 96px;
       }
-.section-hero {
+
+      .section-hero {
         height: auto;
         min-height: 260px;
       }
-.sh-inner {
+
+      .sh-inner {
         flex-direction: column;
         gap: 16px;
         padding: 20px 20px 28px;
       }
-.sh-left {
+
+      .sh-left {
         flex: none;
       }
-.sh-title {
+
+      .sh-title {
         font-size: clamp(26px, 6vw, 38px);
       }
-.equipo-inner {
+
+      .equipo-inner {
         padding: 0 20px;
       }
-.people-grid {
+
+      .people-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
       }
-.card-photo-wrap {
+
+      .card-photo-wrap {
         height: 160px;
       }
-}
+    }
 
-@media(max-width:499px)  {
-  .people-grid {
+    @media(max-width:499px) {
+      .people-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-.card-photo-wrap {
+
+      .card-photo-wrap {
         height: 180px;
       }
-}
+    }
   </style>
 </head>
 
@@ -578,30 +588,6 @@ body {
         <div class="person-card" data-cat="socios">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/francisco.webp" alt="Francisco Pinochet Cantwell" class="card-photo" loading="lazy"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="card-ph ph-a" style="display:none"><span>foto</span></div>
-              <div class="card-photo-overlay"></div>
-            </div>
-          </a>
-          <div class="card-bar">
-            <div class="card-name">Francisco Pinochet Cantwell</div>
-            <div class="card-role"></div>
-            <div class="card-btns">
-              <div class="card-email-row"><a href="mailto:fpinochet@kastpinochet.cl"
-                  class="card-email">fpinochet@kastpinochet.cl</a><button class="card-copy-btn"
-                  onclick="copyEmail(this,'fpinochet@kastpinochet.cl')" title="Copiar correo"><svg width="11"
-                    height="11" viewBox="0 0 14 14" fill="none">
-                    <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
-                    <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
-                  </svg><span class="copy-check">✓</span></button></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="person-card" data-cat="socios">
-          <a href="BPP_Asociado_Detalle.html" class="card-link">
-            <div class="card-photo-wrap">
               <img src="assets/matias.webp" alt="Matias Berrios Fuchslocher" class="card-photo" loading="lazy"
                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="card-ph ph-a" style="display:none"><span>foto</span></div>
@@ -610,7 +596,7 @@ body {
           </a>
           <div class="card-bar">
             <div class="card-name">Matías Berrios Fuchslocher</div>
-            <div class="card-role"></div>
+            <div class="card-role">Socio</div>
             <div class="card-btns">
               <div class="card-email-row"><a href="mailto:mberrios@berriospalavecino.cl"
                   class="card-email">mberrios@berriospalavecino.cl</a><button class="card-copy-btn"
@@ -634,7 +620,7 @@ body {
           </a>
           <div class="card-bar">
             <div class="card-name">Claudio Palavecino Cáceres</div>
-            <div class="card-role"></div>
+            <div class="card-role">Socio</div>
             <div class="card-btns">
               <div class="card-email-row"><a href="mailto:cpalavecino@berriospalavecino.cl"
                   class="card-email">cpalavecino@berriospalavecino.cl</a><button class="card-copy-btn"
@@ -722,7 +708,8 @@ body {
         <div class="person-card" data-cat="asociados">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado5.jpeg" alt="Dante Gariboldi V." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado5.jpeg" alt="Dante Gariboldi V." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-a"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -745,7 +732,8 @@ body {
         <div class="person-card" data-cat="asociados">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado6.jpeg" alt="Sofía Hernández L." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado6.jpeg" alt="Sofía Hernández L." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-b"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -768,7 +756,8 @@ body {
         <div class="person-card" data-cat="asociados">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado7.jpeg" alt="Constanza Godoy A." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado7.jpeg" alt="Constanza Godoy A." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-c"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -791,7 +780,8 @@ body {
         <div class="person-card" data-cat="asociados">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado8.jpeg" alt="Felipe Kuthe S." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado8.jpeg" alt="Felipe Kuthe S." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-d"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -838,7 +828,8 @@ body {
         <div class="person-card" data-cat="asociados">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado10.jpeg" alt="Lucas Ortiz M." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado10.jpeg" alt="Lucas Ortiz M." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-f"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -862,7 +853,8 @@ body {
         <div class="person-card" data-cat="ofcounsel">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado11.jpeg" alt="Franco Devillaine" class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado11.jpeg" alt="Franco Devillaine" class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-g"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -885,7 +877,8 @@ body {
         <div class="person-card" data-cat="ofcounsel">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado1.jpeg" alt="Eduardo Armijo" class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado1.jpeg" alt="Eduardo Armijo" class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-a"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -909,7 +902,8 @@ body {
         <div class="person-card" data-cat="administracion">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado2.jpeg" alt="María González S." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado2.jpeg" alt="María González S." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-b"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
@@ -932,7 +926,8 @@ body {
         <div class="person-card" data-cat="administracion">
           <a href="BPP_Asociado_Detalle.html" class="card-link">
             <div class="card-photo-wrap">
-              <img src="assets/asociado3.jpeg" alt="Ana Martínez P." class="card-photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/asociado3.jpeg" alt="Ana Martínez P." class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
               <div class="card-ph ph-c"><span>foto</span></div>
               <div class="card-photo-overlay"></div>
             </div>
