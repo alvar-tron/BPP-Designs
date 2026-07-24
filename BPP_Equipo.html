@@ -557,6 +557,8 @@
         <button class="filter-btn" data-filter="ofcounsel">Directores y Of Counsel</button>
         <button class="filter-btn" data-filter="asociados">Asociados</button>
         <button class="filter-btn" data-filter="administracion">Administración</button>
+        <button class="filter-btn" data-filter="directores">Directores</button>
+        <button class="filter-btn" data-filter="pasantes">Pasantes</button>
       </div>
 
       <!-- SEPARADORES DE CATEGORÍA (visibles solo en filtros específicos) -->
@@ -579,6 +581,16 @@
         <span class="cat-divider-label">Administración</span>
         <div class="cat-divider-line"></div>
         <span class="cat-divider-count">2 personas</span>
+      </div>
+      <div class="cat-divider" data-div="directores">
+        <span class="cat-divider-label">Directores</span>
+        <div class="cat-divider-line"></div>
+        <span class="cat-divider-count">1 director</span>
+      </div>
+      <div class="cat-divider" data-div="pasantes">
+        <span class="cat-divider-label">Pasantes</span>
+        <div class="cat-divider-line"></div>
+        <span class="cat-divider-count">0 pasantes</span>
       </div>
 
       <!-- GRILLA ÚNICA — orden aleatorio por JS al cargar -->
@@ -939,6 +951,31 @@
               <div class="card-email-row"><a href="mailto:amartinez@berriospalavecino.cl"
                   class="card-email">amartinez@berriospalavecino.cl</a><button class="card-copy-btn"
                   onclick="copyEmail(this,'amartinez@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
+                    height="11" viewBox="0 0 14 14" fill="none">
+                    <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
+                    <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
+                  </svg><span class="copy-check">✓</span></button></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DIRECTORES ── -->
+        <div class="person-card" data-cat="directores">
+          <a href="BPP_Asociado_Detalle.html" class="card-link">
+            <div class="card-photo-wrap">
+              <img src="assets/veronicafernandez.jpeg" alt="Verónica Fernández Omar" class="card-photo" loading="lazy"
+                onerror="this.style.display='none'">
+              <div class="card-ph ph-d"><span>foto</span></div>
+              <div class="card-photo-overlay"></div>
+            </div>
+          </a>
+          <div class="card-bar">
+            <div class="card-name">Verónica Fernández Omar</div>
+            <div class="card-role">Directora de Compliance</div>
+            <div class="card-btns">
+              <div class="card-email-row"><a href="mailto:vfernandez@berriospalavecino.cl"
+                  class="card-email">vfernandez@berriospalavecino.cl</a><button class="card-copy-btn"
+                  onclick="copyEmail(this,'vfernandez@berriospalavecino.cl')" title="Copiar correo"><svg width="11"
                     height="11" viewBox="0 0 14 14" fill="none">
                     <rect x="4" y="4" width="9" height="9" rx="1" stroke="#999" stroke-width="1.2" />
                     <path d="M2 10V2h8" stroke="#999" stroke-width="1.2" stroke-linecap="round" />
