@@ -315,6 +315,14 @@ html {
   background: rgba(255, 255, 255, .88);
 }
 
+.nav-hamburger {
+  display: none;
+}
+
+.nav-mobile-menu {
+  display: none;
+}
+
 .footer {
   display: block;
   position: relative;
@@ -545,13 +553,203 @@ html {
 }
 
 @media (max-width: 767px) {
+  .topbar {
+    padding: 0 16px;
+    gap: 8px;
+    height: 32px;
+  }
+
+  .topbar-left {
+    gap: 8px;
+  }
+
+  .topbar-link {
+    font-size: 10px;
+  }
+
+  .topbar-link:nth-child(3) {
+    display: none;
+  }
+
+  .topbar-sep {
+    display: none;
+  }
+
+  .topbar-spacer {
+    flex: 1;
+  }
+
+  .topbar-right {
+    gap: 6px;
+  }
+
+  .topbar-btn {
+    padding: 0 8px;
+    font-size: 9px;
+    gap: 4px;
+    height: 20px;
+  }
+
+  .topbar-btn-icon {
+    width: 10px;
+    height: 10px;
+  }
+
   .nav {
-    padding: 0 20px;
+    top: 32px;
+    padding: 0 16px;
     height: 56px;
+  }
+
+  .nav-logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: all .3s;
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  .nav-right {
+    display: none;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .nav-dropdown {
+    display: none;
+  }
+
+  .nav-mobile-menu {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--blue-xdk);
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+  }
+
+  .nav-mobile-menu--open {
+    max-height: 500px;
+  }
+
+  .nav-mobile-link {
+    padding: 16px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    transition: background .2s, color .2s;
+  }
+
+  .nav-mobile-link:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+  }
+
+  .nav-mobile-dropdown-toggle {
+    width: 100%;
+    padding: 16px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .7);
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    cursor: pointer;
+    text-align: left;
+    transition: background .2s, color .2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-mobile-dropdown-toggle::after {
+    content: '▾';
+    font-size: 9px;
+    transition: transform .2s;
+  }
+
+  .nav-mobile-dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+  .nav-mobile-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+  }
+
+  .nav-mobile-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+  }
+
+  .nav-mobile-dropdown-menu--open {
+    max-height: 300px;
+  }
+
+  .nav-mobile-dropdown-link {
+    display: block;
+    padding: 12px 20px 12px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+    transition: background .2s, color .2s;
+  }
+
+  .nav-mobile-dropdown-link:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
   }
 
   .topbar {

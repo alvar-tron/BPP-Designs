@@ -57,6 +57,11 @@ class BppNav extends HTMLElement {
       <a href="./index.html" class="nav-logo">
         <img src="./assets/logo-navbar.svg" alt="BPP Berríos Palavecino" width="188" height="50" />
       </a>
+      <button class="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="./index.html">Inicio</a></li>
@@ -101,7 +106,56 @@ class BppNav extends HTMLElement {
           </div>
         </div>
       </div>
+      <div class="nav-mobile-menu">
+        <a href="./index.html" class="nav-mobile-link">Inicio</a>
+        <a href="./BPP_Areas.html" class="nav-mobile-link">Áreas</a>
+        <a href="./BPP_Noticias.html" class="nav-mobile-link">Noticias</a>
+        <button class="nav-mobile-dropdown-toggle" aria-expanded="false">Nuestro Equipo</button>
+        <div class="nav-mobile-dropdown-menu">
+          <a href="./BPP_Equipo.html" class="nav-mobile-dropdown-link">Nuestro equipo</a>
+          <a href="./BPP_Estudio.html" class="nav-mobile-dropdown-link">El estudio</a>
+        </div>
+        <a href="./BPP_Postulacion.html" class="nav-mobile-link">Postulaciones</a>
+        <button class="nav-mobile-dropdown-toggle" aria-expanded="false">Contacto</button>
+        <div class="nav-mobile-dropdown-menu">
+          <a href="./BPP_Contacto.html?area=laboral" class="nav-mobile-dropdown-link">Defensa Laboral</a>
+          <a href="./BPP_Contacto.html?area=civil" class="nav-mobile-dropdown-link">Derecho Civil</a>
+          <a href="./BPP_Contacto.html?area=penal" class="nav-mobile-dropdown-link">Derecho Penal</a>
+          <a href="./BPP_Contacto.html?area=administrativo" class="nav-mobile-dropdown-link">Derecho Administrativo</a>
+        </div>
+      </div>
     `;
+
+    /* ── HAMBURGER MENU ── */
+    const hamburger = this.querySelector('.nav-hamburger');
+    const mobileMenu = this.querySelector('.nav-mobile-menu');
+    const mobileLinks = this.querySelectorAll('.nav-mobile-link, .nav-mobile-dropdown-link');
+    const mobileDropdownToggles = this.querySelectorAll('.nav-mobile-dropdown-toggle');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isOpen);
+      mobileMenu.classList.toggle('nav-mobile-menu--open');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('nav-mobile-menu--open');
+      });
+    });
+
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        const menu = toggle.nextElementSibling;
+        if (menu) {
+          menu.classList.toggle('nav-mobile-dropdown-menu--open');
+        }
+      });
+    });
 
     /* ── DROPDOWNS NAV — sincroniza aria-expanded (Nuestro Equipo + Contacto) ── */
     this.querySelectorAll('.nav-dropdown').forEach((dd) => {
