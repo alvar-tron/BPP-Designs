@@ -55,7 +55,10 @@ class BppNav extends HTMLElement {
     this.className = 'nav';
     this.innerHTML = `
       <a href="./index.html" class="nav-logo">
-        <img src="./assets/logo-navbar.svg" alt="BPP Berríos Palavecino" width="188" height="50" />
+        <svg width="188" height="50" viewBox="0 0 210 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="26" font-family="Montserrat,Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="1.2" fill="#FFFFFF">BERRÍOS</text>
+          <text x="0" y="47" font-family="Montserrat,Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="1.2" fill="#FFFFFF">PALAVECINO</text>
+        </svg>
       </a>
       <button class="nav-hamburger" aria-label="Menú" aria-expanded="false">
         <span></span>
