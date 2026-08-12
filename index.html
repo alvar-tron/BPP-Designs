@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
   <script src="assets/components.js"></script>
   <title>BPP Abogados — Berríos Palavecino Pinochet</title>
   <meta name="description"
@@ -25,12 +25,19 @@
       background: var(--gray-bg);
       color: var(--gray-dk);
       overflow-x: hidden;
+      overflow-y: auto;
       padding-top: 36px;
+      width: 100%;
+      margin: 0;
     }
 
     .content-wrap {
       position: absolute;
       top: 108px;
+      width: 100%;
+      left: 0;
+      margin: 0;
+      padding: 0;
     }
 
     .hero {
@@ -38,6 +45,8 @@
       height: 70vh;
       min-height: 520px;
       overflow: hidden;
+      margin: 0;
+      padding: 0;
     }
 
     .hero-slides {
@@ -69,7 +78,7 @@
 
     .hero-slide-content {
       position: absolute;
-      bottom: 80px;
+      bottom: 140px;
       left: 240px;
       z-index: 2;
       max-width: 580px;
@@ -138,7 +147,7 @@
       position: absolute;
       bottom: 28px;
       left: 80px;
-      z-index: 4;
+      z-index: 3;
       opacity: .92;
       transition: opacity .2s;
     }
@@ -1012,6 +1021,9 @@
     }
 
     @media(max-width:1179px) {
+      .content-wrap {
+        top: 108px;
+      }
 
       .hitos-container,
       .team-container,
@@ -1026,6 +1038,7 @@
 
       .hero-slide-content {
         left: 180px;
+        bottom: 120px;
       }
 
       .hero-controls {
@@ -1038,13 +1051,19 @@
     }
 
     @media(max-width:767px) {
+      .content-wrap {
+        top: 88px;
+      }
+
       .hero {
         height: 80vh;
+        margin: 0;
+        padding: 0;
       }
 
       .hero-slide-content {
         left: 20px;
-        bottom: 60px;
+        bottom: 100px;
       }
 
       .hero-slide-title {
@@ -1068,12 +1087,35 @@
 
       .socio {
         flex: 0 0 calc((100% - 20px) / 2);
-        height: 240px;
+        height: 200px;
+      }
+
+      .team-section {
+        padding: 72px 0 !important;
+      }
+
+      .team-container {
+        padding: 0 20px !important;
       }
 
       .team-grid {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(7, calc(100vw/4*0.8));
+        margin: 0 !important;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%) !important;
+      }
+
+      .team-cell-name {
+        font-size: 8px;
+      }
+
+      .team-cell-area {
+        font-size: 7px;
+      }
+
+      .team-cta-wrap {
+        padding: 28px 20px !important;
       }
 
       .areas-section {
